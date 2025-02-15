@@ -1,5 +1,320 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>别喊我磊哥</title><link>https://yanglei-985.github.io/yanglei-988.github.io</link><description>你磊哥我喜欢干就完了</description><copyright>别喊我磊哥</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>yanglei-985.github.io/yanglei-988.github.io</url><title>avatar</title><link>https://yanglei-985.github.io/yanglei-988.github.io</link></image><lastBuildDate>Wed, 29 Jan 2025 16:13:01 +0000</lastBuildDate><managingEditor>别喊我磊哥</managingEditor><ttl>60</ttl><webMaster>别喊我磊哥</webMaster><item><title>1月27随笔</title><link>https://yanglei-985.github.io/yanglei-988.github.io/post/1-yue-27-sui-bi.html</link><description>愿有公民意识者 1/27 10:02:40
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>别喊我磊哥</title><link>https://yanglei-985.github.io/yanglei-988.github.io</link><description>你磊哥我喜欢干就完了</description><copyright>别喊我磊哥</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>yanglei-985.github.io/yanglei-988.github.io</url><title>avatar</title><link>https://yanglei-985.github.io/yanglei-988.github.io</link></image><lastBuildDate>Sat, 15 Feb 2025 10:21:05 +0000</lastBuildDate><managingEditor>别喊我磊哥</managingEditor><ttl>60</ttl><webMaster>别喊我磊哥</webMaster><item><title>机场</title><link>https://yanglei-985.github.io/yanglei-988.github.io/post/ji-chang.html</link><description>&lt;!DOCTYPE html&gt;
+&lt;html lang='zh'&gt;
+&lt;head&gt;
+    &lt;meta charset='UTF-8'&gt;
+    &lt;meta name='viewport' content='width=device-width, initial-scale=1.0'&gt;
+    &lt;title&gt;机场英语对话与词汇学习&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f7f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .dialogue-section {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        .section-title {
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .dialogue-content {
+            margin-bottom: 15px;
+        }
+        .dialogue-en, .dialogue-zh {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .dialogue-en {
+            background-color: #e9ecef;
+            color: #212529;
+        }
+        .dialogue-zh {
+            background-color: #f8f9fa;
+            color: #495057;
+            font-size: 0.9em;
+        }
+        .bold-text {
+            font-weight: bold;
+        }
+        .animated-title {
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 2s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+        
+        .hover-effect:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .practice-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .practice-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .practice-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        
+        .dialogue-line {
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .dialogue-line:hover {
+            background-color: #e9ecef;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .audio-control {
+            margin: 10px 0;
+        }
+        
+        .practice-controls {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        /* 新增词汇卡片样式 */
+        .vocab-section {
+            margin-top: 30px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .vocab-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border-left: 4px solid #007bff;
+        }
+
+        .vocab-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .vocab-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .vocab-word {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2d3436;
+        }
+
+        .vocab-phonetic {
+            color: #636e72;
+            font-style: italic;
+            font-size: 0.9em;
+        }
+
+        .vocab-pos {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            background: #007bff;
+            color: white;
+            font-size: 0.8em;
+        }
+
+        .vocab-def {
+            color: #2d3436;
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+
+        .vocab-example {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 10px;
+            position: relative;
+        }
+
+        .vocab-example::before {
+            content: '🗨';
+            position: absolute;
+            left: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2em;
+        }
+
+        .audio-button {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #007bff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .audio-button:hover {
+            background: #0056b3;
+            transform: scale(1.1);
+        }
+
+        .audio-button::after {
+            content: '🔊';
+            color: white;
+            font-size: 1.2em;
+        }
+
+        /* 新增布局优化 */
+        .main-container {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .dialogue-container {
+            order: 1;
+        }
+
+        .vocab-container {
+            order: 2;
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class='main-container'&gt;
+        &lt;!-- 对话内容容器 --&gt;
+        &lt;div class='dialogue-container'&gt;
+            &lt;h1 class='animated-title'&gt;机场英语口语练习&lt;/h1&gt;
+            &lt;p class='fade-in'&gt;点击对话进行练习，跟读更有效！&lt;/p&gt;
+
+            &lt;!-- 练习控制按钮 --&gt;
+            &lt;div class='practice-section'&gt;
+                &lt;div class='practice-controls'&gt;
+                    &lt;button class='practice-button' onclick='toggleTranslation()'&gt;显示/隐藏翻译&lt;/button&gt;
+                    &lt;button class='practice-button' onclick='startPractice()'&gt;开始练习&lt;/button&gt;
+                    &lt;button class='practice-button' onclick='toggleAutoPlay()'&gt;自动播放&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class='dialogue-section'&gt;
+                &lt;h2 class='section-title'&gt;1. Check-in at the Counter (柜台办理登机手续)&lt;/h2&gt;
+                &lt;div class='dialogue-content'&gt;
+                    &lt;div class='dialogue-en'&gt;
+                        &lt;div class='dialogue-line' onclick='playAudio(this)'&gt;
+                            &lt;span class='bold-text'&gt;A:&lt;/span&gt; Good morning, where would you like to fly today?
+                            &lt;span class='practice-hint'&gt;👆 点击练习&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class='dialogue-line' onclick='playAudio(this)'&gt;
+                            &lt;span class='bold-text'&gt;B:&lt;/span&gt; Good morning. I'm flying to New York.
+                            &lt;span class='practice-hint'&gt;👆 点击练习&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class='dialogue-line' onclick='playAudio(this)'&gt;
+                            &lt;span class='bold-text'&gt;A:&lt;/span&gt; Can I have your passport and ticket, please?
+                            &lt;span class='practice-hint'&gt;👆 点击练习&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class='dialogue-line' onclick='playAudio(this)'&gt;
+                            &lt;span class='bold-text'&gt;B:&lt;/span&gt; Sure, here you are.
+                            &lt;span class='practice-hint'&gt;👆 点击练习&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class='dialogue-line' onclick='playAudio(this)'&gt;
+                            &lt;span class='bold-text'&gt;A:&lt;/span&gt; Thank you. Do you have any luggage to check in?
+                            &lt;span class='practice-hint'&gt;👆 点击练习&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class='dialogue-line' onclick='playAudio(this)'&gt;
+                            &lt;span class='bold-text'&gt;B:&lt;/span&gt; Yes, I have this suitcase.
+                            &lt;span class='practice-hint'&gt;👆 点击练习&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class='dialogue-line' onclick='playAudio(this)'&gt;
+                            &lt;span class='bold-text'&gt;A:&lt;/span&gt; Great. Your flight leaves at 10:30 AM from Gate 23.
+                            &lt;span class='practice-hint'&gt;👆 点击练习&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class='dialogue-zh hidden'&gt;
+                        &lt;div class='dialogue-line' onclick='playAudio(this)'&gt;
+                            &lt;span class='bold-text'&gt;中文翻译:&lt;/span&gt;&lt;br&gt;
+                            &lt;span class='bold-text'&gt;A:&lt;/span&gt; 早晨好，您今天想飞往哪里？
+                            &lt;span class='practice-hint'&gt;👆 点击练习&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class='dialogue-line' onclick='playAudio(this)'&gt;
+                            &lt;span class='bold-text'&gt;B:&lt;/span&gt; 早上好。</description><guid isPermaLink="true">https://yanglei-985.github.io/yanglei-988.github.io/post/ji-chang.html</guid><pubDate>Sat, 15 Feb 2025 10:20:34 +0000</pubDate></item><item><title>1月27随笔</title><link>https://yanglei-985.github.io/yanglei-988.github.io/post/1-yue-27-sui-bi.html</link><description>愿有公民意识者 1/27 10:02:40
 当你的青春只值8r一个小时的时候，我们已经无话可说。</description><guid isPermaLink="true">https://yanglei-985.github.io/yanglei-988.github.io/post/1-yue-27-sui-bi.html</guid><pubDate>Wed, 29 Jan 2025 14:46:45 +0000</pubDate></item><item><title>1月29随笔</title><link>https://yanglei-985.github.io/yanglei-988.github.io/post/1-yue-29-sui-bi.html</link><description>愿有公民意识者 1/29 15:56:12
 参加了我初中同学松的婚礼，他说他很嫉妒我现在还在读书。</description><guid isPermaLink="true">https://yanglei-985.github.io/yanglei-988.github.io/post/1-yue-29-sui-bi.html</guid><pubDate>Wed, 29 Jan 2025 14:41:58 +0000</pubDate></item><item><title>1月29号随笔</title><link>https://yanglei-985.github.io/yanglei-988.github.io/post/1-yue-29-hao-sui-bi.html</link><description>愿有公民意识者 1/29 15:56:12
 参加了我初中同学松的婚礼，他说他很嫉妒我现在还在读书。</description><guid isPermaLink="true">https://yanglei-985.github.io/yanglei-988.github.io/post/1-yue-29-hao-sui-bi.html</guid><pubDate>Wed, 29 Jan 2025 14:39:14 +0000</pubDate></item><item><title>信息永存</title><link>https://yanglei-985.github.io/yanglei-988.github.io/post/xin-xi-yong-cun.html</link><description>你可以把你所用过的内容都放到这个博客里面，方便别人去阅读一些关于你的内容。</description><guid isPermaLink="true">https://yanglei-985.github.io/yanglei-988.github.io/post/xin-xi-yong-cun.html</guid><pubDate>Tue, 28 Jan 2025 09:26:56 +0000</pubDate></item></channel></rss>

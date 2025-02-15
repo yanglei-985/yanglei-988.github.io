@@ -1,0 +1,2144 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    
+    <link rel="icon" href="yanglei-985.github.io/yanglei-988.github.io"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="<!DOCTYPE html>
+<html lang='zh'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>机场英语对话与词汇学习</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f7f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .dialogue-section {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        .section-title {
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .dialogue-content {
+            margin-bottom: 15px;
+        }
+        .dialogue-en, .dialogue-zh {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .dialogue-en {
+            background-color: #e9ecef;
+            color: #212529;
+        }
+        .dialogue-zh {
+            background-color: #f8f9fa;
+            color: #495057;
+            font-size: 0.9em;
+        }
+        .bold-text {
+            font-weight: bold;
+        }
+        .animated-title {
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 2s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+        
+        .hover-effect:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .practice-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .practice-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .practice-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        
+        .dialogue-line {
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .dialogue-line:hover {
+            background-color: #e9ecef;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .audio-control {
+            margin: 10px 0;
+        }
+        
+        .practice-controls {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        /* 新增词汇卡片样式 */
+        .vocab-section {
+            margin-top: 30px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .vocab-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border-left: 4px solid #007bff;
+        }
+
+        .vocab-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .vocab-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .vocab-word {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2d3436;
+        }
+
+        .vocab-phonetic {
+            color: #636e72;
+            font-style: italic;
+            font-size: 0.9em;
+        }
+
+        .vocab-pos {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            background: #007bff;
+            color: white;
+            font-size: 0.8em;
+        }
+
+        .vocab-def {
+            color: #2d3436;
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+
+        .vocab-example {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 10px;
+            position: relative;
+        }
+
+        .vocab-example::before {
+            content: '🗨';
+            position: absolute;
+            left: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2em;
+        }
+
+        .audio-button {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #007bff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .audio-button:hover {
+            background: #0056b3;
+            transform: scale(1.1);
+        }
+
+        .audio-button::after {
+            content: '🔊';
+            color: white;
+            font-size: 1.2em;
+        }
+
+        /* 新增布局优化 */
+        .main-container {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .dialogue-container {
+            order: 1;
+        }
+
+        .vocab-container {
+            order: 2;
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+        }
+    </style>
+</head>
+<body>
+    <div class='main-container'>
+        <!-- 对话内容容器 -->
+        <div class='dialogue-container'>
+            <h1 class='animated-title'>机场英语口语练习</h1>
+            <p class='fade-in'>点击对话进行练习，跟读更有效！</p>
+
+            <!-- 练习控制按钮 -->
+            <div class='practice-section'>
+                <div class='practice-controls'>
+                    <button class='practice-button' onclick='toggleTranslation()'>显示/隐藏翻译</button>
+                    <button class='practice-button' onclick='startPractice()'>开始练习</button>
+                    <button class='practice-button' onclick='toggleAutoPlay()'>自动播放</button>
+                </div>
+            </div>
+
+            <div class='dialogue-section'>
+                <h2 class='section-title'>1. Check-in at the Counter (柜台办理登机手续)</h2>
+                <div class='dialogue-content'>
+                    <div class='dialogue-en'>
+                        <div class='dialogue-line' onclick='playAudio(this)'>
+                            <span class='bold-text'>A:</span> Good morning, where would you like to fly today?
+                            <span class='practice-hint'>👆 点击练习</span>
+                        </div>
+                        <div class='dialogue-line' onclick='playAudio(this)'>
+                            <span class='bold-text'>B:</span> Good morning. I'm flying to New York.
+                            <span class='practice-hint'>👆 点击练习</span>
+                        </div>
+                        <div class='dialogue-line' onclick='playAudio(this)'>
+                            <span class='bold-text'>A:</span> Can I have your passport and ticket, please?
+                            <span class='practice-hint'>👆 点击练习</span>
+                        </div>
+                        <div class='dialogue-line' onclick='playAudio(this)'>
+                            <span class='bold-text'>B:</span> Sure, here you are.
+                            <span class='practice-hint'>👆 点击练习</span>
+                        </div>
+                        <div class='dialogue-line' onclick='playAudio(this)'>
+                            <span class='bold-text'>A:</span> Thank you. Do you have any luggage to check in?
+                            <span class='practice-hint'>👆 点击练习</span>
+                        </div>
+                        <div class='dialogue-line' onclick='playAudio(this)'>
+                            <span class='bold-text'>B:</span> Yes, I have this suitcase.
+                            <span class='practice-hint'>👆 点击练习</span>
+                        </div>
+                        <div class='dialogue-line' onclick='playAudio(this)'>
+                            <span class='bold-text'>A:</span> Great. Your flight leaves at 10:30 AM from Gate 23.
+                            <span class='practice-hint'>👆 点击练习</span>
+                        </div>
+                    </div>
+                    <div class='dialogue-zh hidden'>
+                        <div class='dialogue-line' onclick='playAudio(this)'>
+                            <span class='bold-text'>中文翻译:</span><br>
+                            <span class='bold-text'>A:</span> 早晨好，您今天想飞往哪里？
+                            <span class='practice-hint'>👆 点击练习</span>
+                        </div>
+                        <div class='dialogue-line' onclick='playAudio(this)'>
+                            <span class='bold-text'>B:</span> 早上好。">
+<meta property="og:title" content="机场">
+<meta property="og:description" content="<!DOCTYPE html>
+<html lang='zh'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>机场英语对话与词汇学习</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f7f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .dialogue-section {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        .section-title {
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .dialogue-content {
+            margin-bottom: 15px;
+        }
+        .dialogue-en, .dialogue-zh {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .dialogue-en {
+            background-color: #e9ecef;
+            color: #212529;
+        }
+        .dialogue-zh {
+            background-color: #f8f9fa;
+            color: #495057;
+            font-size: 0.9em;
+        }
+        .bold-text {
+            font-weight: bold;
+        }
+        .animated-title {
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 2s ease-out forwards;
+            animation-delay: 0.5s;
+        }
+        
+        .hover-effect:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .practice-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .practice-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .practice-button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        
+        .dialogue-line {
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        
+        .dialogue-line:hover {
+            background-color: #e9ecef;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .audio-control {
+            margin: 10px 0;
+        }
+        
+        .practice-controls {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        /* 新增词汇卡片样式 */
+        .vocab-section {
+            margin-top: 30px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .vocab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .vocab-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            position: relative;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+            border-left: 4px solid #007bff;
+        }
+
+        .vocab-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .vocab-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .vocab-word {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #2d3436;
+        }
+
+        .vocab-phonetic {
+            color: #636e72;
+            font-style: italic;
+            font-size: 0.9em;
+        }
+
+        .vocab-pos {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            background: #007bff;
+            color: white;
+            font-size: 0.8em;
+        }
+
+        .vocab-def {
+            color: #2d3436;
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+
+        .vocab-example {
+            background: #f8f9fa;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 10px;
+            position: relative;
+        }
+
+        .vocab-example::before {
+            content: '🗨';
+            position: absolute;
+            left: -8px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.2em;
+        }
+
+        .audio-button {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #007bff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .audio-button:hover {
+            background: #0056b3;
+            transform: scale(1.1);
+        }
+
+        .audio-button::after {
+            content: '🔊';
+            color: white;
+            font-size: 1.2em;
+        }
+
+        /* 新增布局优化 */
+        .main-container {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .dialogue-container {
+            order: 1;
+        }
+
+        .vocab-container {
+            order: 2;
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+        }
+    </style>
+</head>
+<body>
+    <div class='main-container'>
+        <!-- 对话内容容器 -->
+        <div class='dialogue-container'>
+            <h1 class='animated-title'>机场英语口语练习</h1>
+            <p class='fade-in'>点击对话进行练习，跟读更有效！</p>
+
+            <!-- 练习控制按钮 -->
+            <div class='practice-section'>
+                <div class='practice-controls'>
+                    <button class='practice-button' onclick='toggleTranslation()'>显示/隐藏翻译</button>
+                    <button class='practice-button' onclick='startPractice()'>开始练习</button>
+                    <button class='practice-button' onclick='toggleAutoPlay()'>自动播放</button>
+                </div>
+            </div>
+
+            <div class='dialogue-section'>
+                <h2 class='section-title'>1. Check-in at the Counter (柜台办理登机手续)</h2>
+                <div class='dialogue-content'>
+                    <div class='dialogue-en'>
+                        <div class='dialogue-line' onclick='playAudio(this)'>
+                            <span class='bold-text'>A:</span> Good morning, where would you like to fly today?
+                            <span class='practice-hint'>👆 点击练习</span>
+                        </div>
+                        <div class='dialogue-line' onclick='playAudio(this)'>
+                            <span class='bold-text'>B:</span> Good morning. I'm flying to New York.
+                            <span class='practice-hint'>👆 点击练习</span>
+                        </div>
+                        <div class='dialogue-line' onclick='playAudio(this)'>
+                            <span class='bold-text'>A:</span> Can I have your passport and ticket, please?
+                            <span class='practice-hint'>👆 点击练习</span>
+                        </div>
+                        <div class='dialogue-line' onclick='playAudio(this)'>
+                            <span class='bold-text'>B:</span> Sure, here you are.
+                            <span class='practice-hint'>👆 点击练习</span>
+                        </div>
+                        <div class='dialogue-line' onclick='playAudio(this)'>
+                            <span class='bold-text'>A:</span> Thank you. Do you have any luggage to check in?
+                            <span class='practice-hint'>👆 点击练习</span>
+                        </div>
+                        <div class='dialogue-line' onclick='playAudio(this)'>
+                            <span class='bold-text'>B:</span> Yes, I have this suitcase.
+                            <span class='practice-hint'>👆 点击练习</span>
+                        </div>
+                        <div class='dialogue-line' onclick='playAudio(this)'>
+                            <span class='bold-text'>A:</span> Great. Your flight leaves at 10:30 AM from Gate 23.
+                            <span class='practice-hint'>👆 点击练习</span>
+                        </div>
+                    </div>
+                    <div class='dialogue-zh hidden'>
+                        <div class='dialogue-line' onclick='playAudio(this)'>
+                            <span class='bold-text'>中文翻译:</span><br>
+                            <span class='bold-text'>A:</span> 早晨好，您今天想飞往哪里？
+                            <span class='practice-hint'>👆 点击练习</span>
+                        </div>
+                        <div class='dialogue-line' onclick='playAudio(this)'>
+                            <span class='bold-text'>B:</span> 早上好。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yanglei-985.github.io/yanglei-988.github.io/post/ji-chang.html">
+<meta property="og:image" content="yanglei-985.github.io/yanglei-988.github.io">
+<title>机场</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+.copy-feedback {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 50px;
+    color: var(--color-fg-on-emphasis);
+    background-color: var(--color-fg-muted);
+    border-radius: 3px;
+    padding: 5px 8px;
+    font-size: 12px;
+}
+</style>
+
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">机场</h1>
+<div class="title-right">
+    <a href="https://yanglei-985.github.io/yanglei-988.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/yanglei-985/yanglei-988.github.io/issues/6" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody">
+
+
+    
+    
+    &lt;title&gt;机场英语对话与词汇学习&lt;/title&gt;
+    &lt;style&gt;
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f7f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .dialogue-section {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        .section-title {
+            color: #007bff;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        .dialogue-content {
+            margin-bottom: 15px;
+        }
+        .dialogue-en, .dialogue-zh {
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .dialogue-en {
+            background-color: #e9ecef;
+            color: #212529;
+        }
+        .dialogue-zh {
+            background-color: #f8f9fa;
+            color: #495057;
+            font-size: 0.9em;
+        }
+        .bold-text {
+            font-weight: bold;
+        }
+        .animated-title {
+            animation: fadeInDown 1s ease-out;
+        }
+<pre class="notranslate"><code class="notranslate">    .fade-in {
+        opacity: 0;
+        animation: fadeIn 2s ease-out forwards;
+        animation-delay: 0.5s;
+    }
+    
+    .hover-effect:hover {
+        transform: scale(1.1);
+        transition: transform 0.3s ease;
+    }
+    
+    @keyframes fadeInDown {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+    .practice-section {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin: 20px 0;
+    }
+    
+    .practice-button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    
+    .practice-button:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+    
+    .dialogue-line {
+        cursor: pointer;
+        padding: 8px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+    
+    .dialogue-line:hover {
+        background-color: #e9ecef;
+    }
+    
+    .hidden {
+        display: none;
+    }
+    
+    .audio-control {
+        margin: 10px 0;
+    }
+    
+    .practice-controls {
+        display: flex;
+        gap: 10px;
+        margin: 10px 0;
+    }
+
+    /* 新增词汇卡片样式 */
+    .vocab-section {
+        margin-top: 30px;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    .vocab-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+        margin-top: 15px;
+    }
+
+    .vocab-card {
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        position: relative;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        cursor: pointer;
+        border-left: 4px solid #007bff;
+    }
+
+    .vocab-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+
+    .vocab-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .vocab-word {
+        font-size: 1.2em;
+        font-weight: 600;
+        color: #2d3436;
+    }
+
+    .vocab-phonetic {
+        color: #636e72;
+        font-style: italic;
+        font-size: 0.9em;
+    }
+
+    .vocab-pos {
+        display: inline-block;
+        padding: 3px 8px;
+        border-radius: 4px;
+        background: #007bff;
+        color: white;
+        font-size: 0.8em;
+    }
+
+    .vocab-def {
+        color: #2d3436;
+        margin: 10px 0;
+        line-height: 1.5;
+    }
+
+    .vocab-example {
+        background: #f8f9fa;
+        padding: 12px;
+        border-radius: 6px;
+        margin-top: 10px;
+        position: relative;
+    }
+
+    .vocab-example::before {
+        content: "🗨";
+        position: absolute;
+        left: -8px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.2em;
+    }
+
+    .audio-button {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: #007bff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .audio-button:hover {
+        background: #0056b3;
+        transform: scale(1.1);
+    }
+
+    .audio-button::after {
+        content: "🔊";
+        color: white;
+        font-size: 1.2em;
+    }
+
+    /* 新增布局优化 */
+    .main-container {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    @media (max-width: 768px) {
+        .main-container {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .dialogue-container {
+        order: 1;
+    }
+
+    .vocab-container {
+        order: 2;
+        position: sticky;
+        top: 20px;
+        height: fit-content;
+    }
+&lt;/style&gt;
+</code></pre>
+
+
+    <div>
+        
+        <div>
+            <h1>机场英语口语练习</h1>
+            <p>点击对话进行练习，跟读更有效！</p>
+<pre class="notranslate"><code class="notranslate">        &lt;!-- 练习控制按钮 --&gt;
+        &lt;div class="practice-section"&gt;
+            &lt;div class="practice-controls"&gt;
+                &lt;button class="practice-button" onclick="toggleTranslation()"&gt;显示/隐藏翻译&lt;/button&gt;
+                &lt;button class="practice-button" onclick="startPractice()"&gt;开始练习&lt;/button&gt;
+                &lt;button class="practice-button" onclick="toggleAutoPlay()"&gt;自动播放&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="dialogue-section"&gt;
+            &lt;h2 class="section-title"&gt;1. Check-in at the Counter (柜台办理登机手续)&lt;/h2&gt;
+            &lt;div class="dialogue-content"&gt;
+                &lt;div class="dialogue-en"&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; Good morning, where would you like to fly today?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; Good morning. I'm flying to New York.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; Can I have your passport and ticket, please?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; Sure, here you are.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; Thank you. Do you have any luggage to check in?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; Yes, I have this suitcase.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; Great. Your flight leaves at 10:30 AM from Gate 23.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="dialogue-zh hidden"&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;中文翻译:&lt;/span&gt;&lt;br&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 早晨好，您今天想飞往哪里？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 早上好。我要去纽约。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 我可以看一下您的护照和机票吗？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 当然，给你。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 谢谢。您有行李需要托运吗？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 是的，我有这个手提箱。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 非常好。您的航班将在上午10:30从23号登机口起飞。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="dialogue-section"&gt;
+            &lt;h2 class="section-title"&gt;2. Security Check (安全检查)&lt;/h2&gt;
+            &lt;div class="dialogue-content"&gt;
+                &lt;div class="dialogue-en"&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; Please remove any metal objects and place your belongings in the tray.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; Do I need to take off my shoes?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; Yes, shoes and belts too, please.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; What about my laptop and phone?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; They should be in the tray as well.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; Is this bag allowed as a carry-on?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; Yes, it meets the size requirements.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="dialogue-zh hidden"&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;中文翻译:&lt;/span&gt;&lt;br&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 请移除任何金属物品，并将您的物品放入托盘中。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 我需要脱鞋吗？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 是的，请脱鞋和皮带。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 我的笔记本电脑和手机怎么办？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 它们也应该放入托盘中。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 这个包可以作为随身行李携带吗？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 可以，它符合尺寸要求。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="dialogue-section"&gt;
+            &lt;h2 class="section-title"&gt;3. Boarding (登机)&lt;/h2&gt;
+            &lt;div class="dialogue-content"&gt;
+                &lt;div class="dialogue-en"&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; Can I board the plane now?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; Not yet, the boarding will start in 10 minutes.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; What's the boarding group for my seat?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; You're in Group 3, it will be called shortly.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; Do I need to show my boarding pass again?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; Yes, please have it ready when you board.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; Is there a place to store my coat on the plane?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; Yes, the overhead compartments are for that purpose.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="dialogue-zh hidden"&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;中文翻译:&lt;/span&gt;&lt;br&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 我现在可以登机了吗？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 还没有，登机将在10分钟后开始。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 我的座位属于哪个登机组？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 您在第三组，很快就会叫到。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 我需要再次出示我的登机牌吗？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 是的，请在登机时准备好。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 飞机上有存放外套的地方吗？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 有的，头顶的行李舱就是为此设计的。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="dialogue-section"&gt;
+            &lt;h2 class="section-title"&gt;4. In-flight Service (机上服务)&lt;/h2&gt;
+            &lt;div class="dialogue-content"&gt;
+                &lt;div class="dialogue-en"&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; Excuse me, may I have a blanket, please?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; Of course, here's one for you.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; Can I order a meal now?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; Yes, we have chicken or pasta. Which would you prefer?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; I'll have the chicken, please.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; Anything to drink with that?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; An orange juice, please.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="dialogue-zh hidden"&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;中文翻译:&lt;/span&gt;&lt;br&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 打扰一下，可以给我一条毯子吗？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 当然，这是您的毯子。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 我现在可以点餐吗？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 可以，我们有鸡肉或意大利面。您更喜欢哪个？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 我要鸡肉。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 需要喝点什么吗？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 请给我一杯橙汁。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="dialogue-section"&gt;
+            &lt;h2 class="section-title"&gt;5. Customs (海关)&lt;/h2&gt;
+            &lt;div class="dialogue-content"&gt;
+                &lt;div class="dialogue-en"&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; Do you have anything to declare?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; No, everything is for personal use.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; Are you bringing any fruits or plants into the country?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; No, I'm not.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; How long are you planning to stay?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; I'll be here for two weeks.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; Welcome to the country. Enjoy your stay.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="dialogue-zh hidden"&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;中文翻译:&lt;/span&gt;&lt;br&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 您有什么需要申报的吗？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 没有，一切都是个人使用的。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 您是否携带任何水果或植物进入该国？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 没有，我没有。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 您计划停留多久？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 我将在这里停留两周。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 欢迎来到这个国家。祝您旅途愉快。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="dialogue-section"&gt;
+            &lt;h2 class="section-title"&gt;6. Baggage Claim (行李领取)&lt;/h2&gt;
+            &lt;div class="dialogue-content"&gt;
+                &lt;div class="dialogue-en"&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; Where can I find the baggage claim area?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; Follow the signs for Baggage Claim, it's on the lower level.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; How do I know which carousel my luggage will be on?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; Your flight number is displayed on the carousel.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; What if my bag doesn't show up?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; Please report to the lost luggage office over there.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; Can I get a luggage cart?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; Yes, they are available for a small fee.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="dialogue-zh hidden"&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;中文翻译:&lt;/span&gt;&lt;br&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 我在哪里可以找到行李领取区？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 请跟随行李领取的标志，它在下一层。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 我怎么知道我的行李会在哪个行李传送带上？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 您的航班号会显示在行李传送带上。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 如果我的行李没有出现怎么办？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 请向那边的失物招领处报告。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 我可以拿一个行李车吗？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 可以，它们需要支付一小笔费用。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="dialogue-section"&gt;
+            &lt;h2 class="section-title"&gt;7. Currency Exchange (货币兑换)&lt;/h2&gt;
+            &lt;div class="dialogue-content"&gt;
+                &lt;div class="dialogue-en"&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; Can you help me exchange money?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; Sure, what currency would you like to exchange?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; I need to exchange US dollars to local currency.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; How much would you like to exchange?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; I'd like to exchange $500.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; Here's your local currency, and the exchange rate is listed on the receipt.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="dialogue-zh hidden"&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;中文翻译:&lt;/span&gt;&lt;br&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 您能帮我兑换货币吗？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 当然，您想兑换哪种货币？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 我需要将美元兑换成当地货币。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 您想兑换多少？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 我想兑换500美元。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 这是您的当地货币，汇率会在收据上列出。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="dialogue-section"&gt;
+            &lt;h2 class="section-title"&gt;8. Airport Shuttle (机场班车)&lt;/h2&gt;
+            &lt;div class="dialogue-content"&gt;
+                &lt;div class="dialogue-en"&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; Is there a shuttle to the city center?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; Yes, it's just outside the terminal building.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; How often does it run?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; Every 30 minutes.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; How much is the fare?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; It's $10 per person.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; Does it stop at any hotels?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; Yes, you can request a stop at your hotel.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="dialogue-zh hidden"&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;中文翻译:&lt;/span&gt;&lt;br&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 有到市中心的班车吗？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 有，就在航站楼外面。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 它多久运行一次？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 每30分钟。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 车费是多少？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 每人10美元。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 它会在任何酒店停靠吗？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 是的，您可以在您的酒店请求停车。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="dialogue-section"&gt;
+            &lt;h2 class="section-title"&gt;9. Rental Car (租车)&lt;/h2&gt;
+            &lt;div class="dialogue-content"&gt;
+                &lt;div class="dialogue-en"&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; I have a reservation for a rental car.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; Great, can I have your reservation number?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; It's 123-456-7890.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; Do you need a GPS or additional insurance?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; Yes, I'd like a GPS, please.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; Your car is ready. Here are the keys.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="dialogue-zh hidden"&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;中文翻译:&lt;/span&gt;&lt;br&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 我有一个租车的预订。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 太好了，可以给我您的预订号码吗？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 是123-456-7890。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 您需要GPS或额外的保险吗？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 是的，我想要一个GPS。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 您的车已经准备好了。这是钥匙。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="dialogue-section"&gt;
+            &lt;h2 class="section-title"&gt;10. Airport Lounge (机场休息室)&lt;/h2&gt;
+            &lt;div class="dialogue-content"&gt;
+                &lt;div class="dialogue-en"&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; Can I access the lounge with my credit card?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; Yes, your card provides complimentary lounge access.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; How long can I stay?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; You can stay until your flight is called.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; Is there free Wi-Fi?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; Yes, the Wi-Fi code is on the counter.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="dialogue-zh hidden"&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;中文翻译:&lt;/span&gt;&lt;br&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 我可以用信用卡进入休息室吗？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 可以，您的卡提供免费的休息室使用权。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 我可以待多久？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 您可以待到您的航班被呼叫。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 有免费的Wi-Fi吗？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 有，Wi-Fi密码在柜台上。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="dialogue-section"&gt;
+            &lt;h2 class="section-title"&gt;11. Lost and Found (失物招领)&lt;/h2&gt;
+            &lt;div class="dialogue-content"&gt;
+                &lt;div class="dialogue-en"&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; I think I left my phone on the plane.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; Don't worry, we can check with the lost and found.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; What's the process?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; Fill out this form with your details, and we'll contact you if it's found.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; How long does it take to hear back?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; Usually within 24 hours.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="dialogue-zh hidden"&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;中文翻译:&lt;/span&gt;&lt;br&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 我觉得我把手机忘在飞机上了。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 别担心，我们可以检查一下失物招领处。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 流程是怎样的？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 请填写这张表格，提供您的详细信息，如果找到了我们会联系您。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 多久能收到回复？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 通常在24小时内。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+
+        &lt;div class="dialogue-section"&gt;
+            &lt;h2 class="section-title"&gt;12. Flight Delay (航班延误)&lt;/h2&gt;
+            &lt;div class="dialogue-content"&gt;
+                &lt;div class="dialogue-en"&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; I heard there might be a delay with my flight. Is that true?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; Yes, due to weather conditions, there's a 2-hour delay.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; Can I get a hotel voucher for the delay?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; I'm sorry, but vouchers are only provided for overnight delays.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; Is there a lounge I can wait in?
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; Yes, we have a lounge you can use until your flight is ready.
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class="dialogue-zh hidden"&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;中文翻译:&lt;/span&gt;&lt;br&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 我听说我的航班可能会延误。这是真的吗？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 是的，由于天气条件，有2小时的延误。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 我可以因为延误获得酒店代金券吗？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 很抱歉，只有过夜延误才会提供代金券。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;A:&lt;/span&gt; 有我可以等待的休息室吗？
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                    &lt;div class="dialogue-line" onclick="playAudio(this)"&gt;
+                        &lt;span class="bold-text"&gt;B:&lt;/span&gt; 有的，您可以使用我们的休息室，直到您的航班准备好。
+                        &lt;span class="practice-hint"&gt;👆 点击练习&lt;/span&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- 新增重点词汇侧边栏 --&gt;
+    &lt;div class="vocab-container"&gt;
+        &lt;div class="dialogue-section"&gt;
+            &lt;h2 class="section-title"&gt;✈️ 重点机场词汇&lt;/h2&gt;
+            &lt;div class="vocab-section"&gt;
+                &lt;div class="vocab-grid"&gt;
+                    &lt;!-- 行李托运 --&gt;
+                    &lt;div class="vocab-card"&gt;
+                        &lt;div class="vocab-header"&gt;
+                            &lt;div&gt;
+                                &lt;div class="vocab-word"&gt;Check-in&lt;/div&gt;
+                                &lt;div class="vocab-phonetic"&gt;/ˈtʃek.ɪn/&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;span class="vocab-pos"&gt;n.&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class="vocab-def"&gt;办理登机手续&lt;/div&gt;
+                        &lt;div class="vocab-example"&gt;
+                            "Your check-in time is 2 hours before departure."
+                            &lt;div class="translation"&gt;您的值机时间是起飞前2小时&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="audio-button" onclick="playWordAudio('check-in')"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;!-- 登机牌 --&gt;
+                    &lt;div class="vocab-card"&gt;
+                        &lt;div class="vocab-header"&gt;
+                            &lt;div&gt;
+                                &lt;div class="vocab-word"&gt;Boarding pass&lt;/div&gt;
+                                &lt;div class="vocab-phonetic"&gt;/ˈbɔːr.dɪŋ ˌpæs/&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;span class="vocab-pos"&gt;n.&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class="vocab-def"&gt;登机牌&lt;/div&gt;
+                        &lt;div class="vocab-example"&gt;
+                            "Please have your boarding pass ready."
+                            &lt;div class="translation"&gt;请准备好您的登机牌&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="audio-button" onclick="playWordAudio('boarding-pass')"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;!-- 行李领取 --&gt;
+                    &lt;div class="vocab-card"&gt;
+                        &lt;div class="vocab-header"&gt;
+                            &lt;div&gt;
+                                &lt;div class="vocab-word"&gt;Baggage claim&lt;/div&gt;
+                                &lt;div class="vocab-phonetic"&gt;/ˈbæɡ.ɪdʒ ˌkleɪm/&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;span class="vocab-pos"&gt;n.&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class="vocab-def"&gt;行李领取处&lt;/div&gt;
+                        &lt;div class="vocab-example"&gt;
+                            "Proceed to baggage claim area 3."
+                            &lt;div class="translation"&gt;请前往3号行李提取处&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="audio-button" onclick="playWordAudio('baggage-claim')"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;!-- 安全检查 --&gt;
+                    &lt;div class="vocab-card"&gt;
+                        &lt;div class="vocab-header"&gt;
+                            &lt;div&gt;
+                                &lt;div class="vocab-word"&gt;Security check&lt;/div&gt;
+                                &lt;div class="vocab-phonetic"&gt;/sɪˈkjʊr.ə.ti ˌtʃek/&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;span class="vocab-pos"&gt;n.&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class="vocab-def"&gt;安全检查&lt;/div&gt;
+                        &lt;div class="vocab-example"&gt;
+                            "All passengers must go through security check."
+                            &lt;div class="translation"&gt;所有乘客必须通过安全检查&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="audio-button" onclick="playWordAudio('security-check')"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;!-- 海关申报 --&gt;
+                    &lt;div class="vocab-card"&gt;
+                        &lt;div class="vocab-header"&gt;
+                            &lt;div&gt;
+                                &lt;div class="vocab-word"&gt;Customs declaration&lt;/div&gt;
+                                &lt;div class="vocab-phonetic"&gt;/ˈkʌs.təmz ˌdek.ləˈreɪ.ʃən/&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;span class="vocab-pos"&gt;n.&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class="vocab-def"&gt;海关申报&lt;/div&gt;
+                        &lt;div class="vocab-example"&gt;
+                            "Do you have anything to declare?"
+                            &lt;div class="translation"&gt;您有什么需要申报的吗？&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="audio-button" onclick="playWordAudio('customs-declaration')"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+
+                    &lt;!-- 航班延误 --&gt;
+                    &lt;div class="vocab-card"&gt;
+                        &lt;div class="vocab-header"&gt;
+                            &lt;div&gt;
+                                &lt;div class="vocab-word"&gt;Flight delay&lt;/div&gt;
+                                &lt;div class="vocab-phonetic"&gt;/flaɪt dɪˈleɪ/&lt;/div&gt;
+                            &lt;/div&gt;
+                            &lt;span class="vocab-pos"&gt;n.&lt;/span&gt;
+                        &lt;/div&gt;
+                        &lt;div class="vocab-def"&gt;航班延误&lt;/div&gt;
+                        &lt;div class="vocab-example"&gt;
+                            "We regret to inform you of a 3-hour flight delay."
+                            &lt;div class="translation"&gt;我们很遗憾通知您航班延误3小时&lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class="audio-button" onclick="playWordAudio('flight-delay')"&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+    // 新增单词发音功能
+    function playWordAudio(word) {
+        const synth = window.speechSynthesis;
+        const utterance = new SpeechSynthesisUtterance();
+        utterance.text = word.replace('-', ' ');
+        utterance.lang = 'en-US';
+        utterance.rate = 0.9;
+        synth.speak(utterance);
+        
+        // 添加点击动画
+        event.currentTarget.style.transform = 'scale(0.9)';
+        setTimeout(() =&gt; {
+            event.currentTarget.style.transform = 'scale(1)';
+        }, 200);
+    }
+
+    // 卡片翻转效果（可选）
+    document.querySelectorAll('.vocab-card').forEach(card =&gt; {
+        card.addEventListener('click', function() {
+            this.classList.toggle('is-flipped');
+        });
+    });
+
+    let isTranslationVisible = true;
+    let isAutoPractice = false;
+    let currentPracticeIndex = 0;
+    
+    function toggleTranslation() {
+        const translations = document.querySelectorAll('.dialogue-zh');
+        translations.forEach(trans =&gt; {
+            trans.classList.toggle('hidden');
+        });
+        isTranslationVisible = !isTranslationVisible;
+    }
+    
+    function playAudio(element) {
+        // 这里可以添加真实的音频播放功能
+        element.style.backgroundColor = '#e9ecef';
+        setTimeout(() =&gt; {
+            element.style.backgroundColor = 'transparent';
+        }, 500);
+    }
+    
+    function startPractice() {
+        const dialogueLines = document.querySelectorAll('.dialogue-line');
+        currentPracticeIndex = 0;
+        
+        function practiceLine() {
+            if (currentPracticeIndex &lt; dialogueLines.length) {
+                dialogueLines[currentPracticeIndex].click();
+                // 给用户3秒时间跟读
+                setTimeout(() =&gt; {
+                    currentPracticeIndex++;
+                    if (isAutoPractice) {
+                        practiceLine();
+                    }
+                }, 3000);
+            }
+        }
+        
+        practiceLine();
+    }
+    
+    function toggleAutoPlay() {
+        isAutoPractice = !isAutoPractice;
+        if (isAutoPractice) {
+            startPractice();
+        }
+    }
+
+    // 填空题示例
+    const fillInTheBlanks = [
+        { sentence: "The capital of France is ___", answer: "Paris" },
+    ];
+
+    function checkFillInAnswer(userInput, index) {
+        if (userInput === fillInTheBlanks[index].answer) {
+            // ...反馈正确...
+        } else {
+            // ...反馈错误...
+        }
+    }
+&lt;/script&gt;
+</code></pre>
+
+</div></div></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://yanglei-985.github.io/yanglei-988.github.io">别喊我磊哥</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if(""!=""){
+    var startSite=new Date("");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行"+diffDay+"天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z', 'copy': 'M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z', 'check': 'M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","yanglei-985/yanglei-988.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const createClipboardHTML = (codeContent, additionalClasses = '') => `
+        <pre class="notranslate"><code class="notranslate">${codeContent}</code></pre>
+        <div class="clipboard-container position-absolute right-0 top-0 ${additionalClasses}">
+            <clipboard-copy class="ClipboardButton btn m-2 p-0" role="button" style="display: inherit;">
+                <svg height="16" width="16" class="octicon octicon-copy m-2"><path d="${IconList["copy"]}"></path></svg>
+                <svg height="16" width="16" class="octicon octicon-check color-fg-success m-2 d-none"><path d="${IconList["check"]}"></path></svg>
+            </clipboard-copy>
+            <div class="copy-feedback">Copied!</div>
+        </div>
+    `;
+
+    const handleCodeElements = (selector = '') => {
+        document.querySelectorAll(selector).forEach(codeElement => {
+            const codeContent = codeElement.innerHTML;
+            const newStructure = document.createElement('div');
+            newStructure.className = 'snippet-clipboard-content position-relative overflow-auto';
+            newStructure.innerHTML = createClipboardHTML(codeContent);
+
+            const parentElement = codeElement.parentElement;
+            if (selector.includes('highlight')) {
+                parentElement.insertBefore(newStructure, codeElement.nextSibling);
+                parentElement.removeChild(codeElement);
+            } else {
+                parentElement.parentElement.replaceChild(newStructure, parentElement);
+            }
+        });
+    };
+
+    handleCodeElements('pre.notranslate > code.notranslate');
+    handleCodeElements('div.highlight > pre.notranslate');
+
+    let currentFeedback = null;
+    document.querySelectorAll('clipboard-copy').forEach(copyButton => {
+        copyButton.addEventListener('click', () => {
+            const codeContent = copyButton.closest('.snippet-clipboard-content').innerText;
+            const tempTextArea = document.createElement('textarea');
+            tempTextArea.value = codeContent;
+            document.body.appendChild(tempTextArea);
+            tempTextArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(tempTextArea);
+
+            const copyIcon = copyButton.querySelector('.octicon-copy');
+            const checkIcon = copyButton.querySelector('.octicon-check');
+            const copyFeedback = copyButton.nextElementSibling;
+
+            if (currentFeedback && currentFeedback !== copyFeedback) {currentFeedback.style.display = 'none';}
+            currentFeedback = copyFeedback;
+
+            copyIcon.classList.add('d-none');
+            checkIcon.classList.remove('d-none');
+            copyFeedback.style.display = 'block';
+            copyButton.style.borderColor = 'var(--color-success-fg)';
+
+            setTimeout(() => {
+                copyIcon.classList.remove('d-none');
+                checkIcon.classList.add('d-none');
+                copyFeedback.style.display = 'none';
+                copyButton.style.borderColor = '';
+            }, 2000);
+        });
+    });
+});
+
+</script>
+
+
+</html>
