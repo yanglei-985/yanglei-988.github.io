@@ -24,4 +24,4 @@ Deepseek可以展示它的思维链_
 
 于是在这个用户搜索的需求下，有了很多工具：
 _**[Scira](https://scira.app/)**_
-**_[Mineru文件处理](mineru.net)_**
+**_[Mineru文件处理](https://mineru.net/)_**
