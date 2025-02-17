@@ -5,6 +5,8 @@
 
 [cursor101](https://cursor101.com/zh)里面备好了关于cursor使用的细节。为什么我现在开始使用cursor作为我的主要生产工具？一是其快速生成具有互动性网页的能力，使得我在创作教案时，可以跟学生进行更有深度有趣的互动。过往我用[sigil](https://sigil-ebook.com/)去创建equb文件，但文件本身始终是静态的，所以有了网页的互动，学习的趣味性得到了提升。
 
+[cursor directory](https://cursor.directory/)
+
 下面是一个学习如何在机场中对话的网页.[nor.txt](https://github.com/user-attachments/files/18810110/nor.txt) （电脑中打开，后缀改为html）
 
 这样的网站使得交互性变好了，而设计它的时候不超过10分钟，这对生产力的提升非常惊人的。
