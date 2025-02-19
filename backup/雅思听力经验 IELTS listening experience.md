@@ -14,3 +14,7 @@
 [手机播放音频地址](http://sn.1kao.com.cn/)序列号——6403645381488K231102
 
 先把3，4，5，11章全部听完。
+
+我的学习方法，就是你把书籍
+
+[book.txt](https://github.com/user-attachments/files/18858498/book.txt)把后缀改为md，导入cursor进行学习，不懂的地方问AI。
