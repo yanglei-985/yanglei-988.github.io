@@ -4,7 +4,8 @@
 
 现在从Google里面搜索到的zlib都是套壳无效网站，而我现在主要是使用的app来下载我所需要的书，下面是安装包。
 
-<!-- Failed to upload "1_Z-Lib [1.10.2].txt" -->（电脑打开，把后缀改为apk之后发送到手机里即可）。
+[
+百度网盘](https://pan.baidu.com/s/1lCVapVb0K3lkmThYKKuPaA?pwd=ylyl )提取码: ylyl
 
 ### 安娜
 [地址](https://annas-archive.org/)
