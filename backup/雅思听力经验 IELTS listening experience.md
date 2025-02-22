@@ -18,3 +18,6 @@
 我的学习方法，就是你把书籍
 
 [book.txt](https://github.com/user-attachments/files/18858498/book.txt)把后缀改为md，导入cursor进行学习，不懂的地方问AI。
+
+### 关于听力基本功
+例如你想一下toward这个单词的发音，然后
