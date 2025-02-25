@@ -3,3 +3,6 @@
 
 ### 文章置顶功能
 [快速上手](https://blog.meekdai.com/post/Gmeek-kuai-su-shang-shou.html)
+
+<img width="1351" alt="Image" src="https://github.com/user-attachments/assets/dfe44ad3-4d66-4f3d-801d-168316c0c6e2" />
+原来它就藏在界面的右侧。
