@@ -45,4 +45,5 @@ Shift键——没有理解文本，需要纳入错题本。
 以及最近更新一个循环播放的功能，这个功能源于**泡耳朵**，直到自己听懂为止。
 TIP:等待每个音频播放完毕之后再enter.
 
+
 ![Image](https://github.com/user-attachments/assets/53102175-3369-447e-ab03-178638dd07d9)
