@@ -9,7 +9,7 @@
 先提供一下[github原始项目地址](https://github.com/chengazhen/cursor-auto-free)
 
 不过研究各种代码的运转还是需要时间，需要一定的phtyon基础，在这一点上，还是得受教于人。
-[vip项目地址](https://www.yuque.com/azhen-qsdq6/zce227/pcm42lu1aw52cvc9?singleDoc) 密码：ggvg
+[vip项目地址](https://www.yuque.com/azhen-qsdq6/zce227/ypkatz8dc5q25sev?singleDoc) 密码：xp1q
 
 [自行查询系统](https://cursor.codecheng.me/)（可选，最好自己研究下怎么用的）
 
