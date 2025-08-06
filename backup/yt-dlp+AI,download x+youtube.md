@@ -35,7 +35,7 @@ pip install yt-dlp`
 <img width="1112" height="252" alt="Image" src="https://github.com/user-attachments/assets/3a3d4e08-06cd-47d4-b211-0ff0a04662f7" />
 
 只需要输入这个指令就好
-`yt-dlp "ytsearch5:IELTS speaking memory `topic"`
+` yt-dlp "ytsearch5:IELTS speaking memory topic" `
 引号是后面想要搜索的内容，search后面的数字是我们想要搜索下载的视频数量。
 
 再来关于用yt-dlp下载x视频，其实也就是一个比较简答的指令。看图
