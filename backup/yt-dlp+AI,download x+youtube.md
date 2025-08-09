@@ -42,3 +42,20 @@ pip install yt-dlp`
 
 <img width="1121" height="262" alt="Image" src="https://github.com/user-attachments/assets/bcb0dc29-09cf-46d3-99ac-50e79b2b6777" />
 我们在使用引号的时候，注意使用英文的"，不要选用中文的括号和斜引号，注意，此方法不能下载涉黄和暴力视频。
+
+但是有的时候，我们会遇到无法下载youtube的情况，例如。
+
+<img width="1319" height="87" alt="Image" src="https://github.com/user-attachments/assets/689a7c0a-07aa-4a52-8640-78202b9c9c3e" />
+也就是youtube要验证我们是否为机器人，所以我们就需要给cookies给它，这个时候可以选择使用新的代码进行解析：
+
+1. 完全退出 Chrome（包括后台进程）
+   - 右下角任务栏 → 找到 Chrome 图标 → 右键 → 退出
+   - 或者在任务管理器里结束所有 `chrome.exe` 进程。
+
+2. 再运行：
+
+   ```bash
+   yt-dlp --cookies-from-browser chrome "https://www.youtube.com/watch?v=9BnUUtlQbFU（示例）"
+   ```
+
+3. 缺点：执行期间不能用 Chrome 看视频。
