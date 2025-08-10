@@ -59,3 +59,9 @@ pip install yt-dlp`
    ```
 
 3. 缺点：执行期间不能用 Chrome 看视频。
+
+理解了上面的基础，我们继续进阶，关于批量下载视频。
+1.在足够空间的地方创建一个文件夹，以及一个txt文件，文件的每一行是你需要的youtube链接，可以高达40多个（我的记录），批量下载，直接到你的文件夹里面。
+`yt-dlp -a "D:\bruce\bruce.txt" --cookies-from-browser chrome`
+例如我这个文件，引号就是txt文件的位置，然后再获取chrome关于youtube的cookie，yt-dlp就可以直接读取你的txt文件中
+所包含的youtube链接了。
