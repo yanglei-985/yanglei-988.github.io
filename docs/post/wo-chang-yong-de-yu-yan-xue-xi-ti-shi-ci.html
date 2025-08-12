@@ -159,7 +159,45 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 ②设计一个quiz，对此单词进行法法解释。设计三个选项，在我们第二轮对话时，再显示答案。<br>
 ③结合法语数据库，把单词的词根、词干进行提取，然后用简单的法语进行解释。<br>
 ④在youglish中寻找有关此单词有趣的片段。<br>
-⑤找一些涉及此单词的古往文学作品例句。</p></div>
+⑤找一些涉及此单词的古往文学作品例句。</p>
+<p>Youtube 总结的 Prompt。</p>
+<p>完整的 Prompt 如下：</p>
+<p>你将把一段 YouTube 视频重写成"阅读版本"，按内容主题分成若干小节；目标是让读者通过阅读就能完整理解视频讲了什么，就好像是在读一篇 Blog 版的文章一样。</p>
+<p>输出要求：</p>
+<ol>
+<li>Metadata</li>
+</ol>
+<ul>
+<li>Title</li>
+<li>Author</li>
+<li>URL</li>
+</ul>
+<ol start="2">
+<li>
+<p>Overview<br>
+用一段话点明视频的核心论题与结论。</p>
+</li>
+<li>
+<p>按照主题来梳理</p>
+</li>
+</ol>
+<ul>
+<li>每个小节都需要根据视频中的内容详细展开，让我不需要再二次查看视频了解详情，每个小节不少于 500 字。</li>
+<li>若出现方法/框架/流程，将其重写为条理清晰的步骤或段落。</li>
+<li>若有关键数字、定义、原话，请如实保留核心词，并在括号内补充注释。</li>
+</ul>
+<ol start="4">
+<li>框架 &amp; 心智模型（Framework &amp; Mindset）<br>
+可以从视频中抽象出什么 framework &amp; mindset，将其重写为条理清晰的步骤或段落，每个 framework &amp; mindset 不少于 500 字。</li>
+</ol>
+<p>风格与限制：</p>
+<ul>
+<li>永远不要高度浓缩！</li>
+<li>不新增事实；若出现含混表述，请保持原意并注明不确定性。</li>
+<li>专有名词保留原文，并在括号给出中文释义（若转录中出现或能直译）。</li>
+<li>要求类的问题不用体现出来（例如 &gt; 500 字）。</li>
+<li>避免一个段落的内容过多，可以拆解成多个逻辑段落（使用 bullet points）。</li>
+</ul></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
