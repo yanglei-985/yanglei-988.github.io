@@ -65,3 +65,17 @@ pip install yt-dlp`
 `yt-dlp -a "D:\bruce\bruce.txt" --cookies-from-browser chrome`
 例如我这个文件，引号就是txt文件的位置，然后再获取chrome关于youtube的cookie，yt-dlp就可以直接读取你的txt文件中
 所包含的youtube链接了。
+
+
+随着你使用的次数越多，你就会遇到更多的问题，而今天我遇到的问题就是，当你下载的次数过多了，会出现
+` [youtube:tab] PLB043E64B8BE05FB7: Playlists that require authentication may not extract correctly without a successful webpage download. If you are not downloading private content, or your cookies are only for the first account and channel, pass "--extractor-args youtubetab:skip=authcheck" to skip this check`
+
+`WARNING: [youtube] Unable to download webpage: HTTP Error 429: Too Many Requests (caused by <HTTPError 429: Too Many Requests>)`
+
+前者是验证问题，后者是下载次数过多的问题，如何解决？我直接解决的方法就是问一下AI，然后结合yt-dlp的资料，它就给了我解答方法。
+
+`yt-dlp -a "D:\bruce\bruce.txt" --cookies-from-browser chrome --extractor-args youtubetab:skip=authcheck`
+这里多加了一个--extractor-args youtubetab:skip=authcheck
+
+然后`yt-dlp -a "D:\bruce\bruce.txt" --cookies-from-browser chrome --extractor-args youtubetab:skip=authcheck --sleep-interval 5`
+这个意在你每次下载完一个视频的时候，出现5秒的间隔，这个时间可以调整。以及可以通过切换ip地址来防止下载过量。

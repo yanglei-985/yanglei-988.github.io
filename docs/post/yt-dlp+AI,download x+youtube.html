@@ -168,7 +168,15 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 1.在足够空间的地方创建一个文件夹，以及一个txt文件，文件的每一行是你需要的youtube链接，可以高达40多个（我的记录），批量下载，直接到你的文件夹里面。<br>
 <code class="notranslate">yt-dlp -a "D:\bruce\bruce.txt" --cookies-from-browser chrome</code><br>
 例如我这个文件，引号就是txt文件的位置，然后再获取chrome关于youtube的cookie，yt-dlp就可以直接读取你的txt文件中<br>
-所包含的youtube链接了。</p></div>
+所包含的youtube链接了。</p>
+<p>随着你使用的次数越多，你就会遇到更多的问题，而今天我遇到的问题就是，当你下载的次数过多了，会出现<br>
+<code class="notranslate"> [youtube:tab] PLB043E64B8BE05FB7: Playlists that require authentication may not extract correctly without a successful webpage download. If you are not downloading private content, or your cookies are only for the first account and channel, pass "--extractor-args youtubetab:skip=authcheck" to skip this check</code></p>
+<p><code class="notranslate">WARNING: [youtube] Unable to download webpage: HTTP Error 429: Too Many Requests (caused by &lt;HTTPError 429: Too Many Requests&gt;)</code></p>
+<p>前者是验证问题，后者是下载次数过多的问题，如何解决？我直接解决的方法就是问一下AI，然后结合yt-dlp的资料，它就给了我解答方法。</p>
+<p><code class="notranslate">yt-dlp -a "D:\bruce\bruce.txt" --cookies-from-browser chrome --extractor-args youtubetab:skip=authcheck</code><br>
+这里多加了一个--extractor-args youtubetab:skip=authcheck</p>
+<p>然后<code class="notranslate">yt-dlp -a "D:\bruce\bruce.txt" --cookies-from-browser chrome --extractor-args youtubetab:skip=authcheck --sleep-interval 5</code><br>
+这个意在你每次下载完一个视频的时候，出现5秒的间隔，这个时间可以调整。以及可以通过切换ip地址来防止下载过量。</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
