@@ -10,45 +10,15 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="* 第一步——安装yt-dlp
+<meta name="description" content="新电脑可能会遇到这些问题，要先下载powershell
 
-windows
-
- ` 使用scoop安装（推荐）
-scoop install yt-dlp`
-
-`或使用pip安装
-pip install yt-dlp`
-
-macos
-
-`使用brew安装
-brew install yt-dlp`
-
-`或使用pip安装
-pip install yt-dlp`
-
-注意，在安装的过程中，关闭vpn。">
+```
+'scoop' 不是内部或外部命令，也不是可运行的程序或批处理文件。">
 <meta property="og:title" content="yt-dlp+AI,download x+youtube">
-<meta property="og:description" content="* 第一步——安装yt-dlp
+<meta property="og:description" content="新电脑可能会遇到这些问题，要先下载powershell
 
-windows
-
- ` 使用scoop安装（推荐）
-scoop install yt-dlp`
-
-`或使用pip安装
-pip install yt-dlp`
-
-macos
-
-`使用brew安装
-brew install yt-dlp`
-
-`或使用pip安装
-pip install yt-dlp`
-
-注意，在安装的过程中，关闭vpn。">
+```
+'scoop' 不是内部或外部命令，也不是可运行的程序或批处理文件。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://yanglei-985.github.io/yanglei-988.github.io/post/yt-dlp%2BAI%2Cdownload%20x%2Byoutube.html">
 <meta property="og:image" content="https://s21.ax1x.com/2025/02/15/pEK09q1.jpg">
@@ -119,7 +89,55 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><ul>
+<div class="markdown-body" id="postBody"><p>新电脑可能会遇到这些问题，要先下载powershell</p>
+<pre class="notranslate"><code class="notranslate">'scoop' 不是内部或外部命令，也不是可运行的程序或批处理文件。
+</code></pre>
+<p>意思是 <strong>Windows 找不到 scoop 命令</strong>，说明你还没有安装 <strong>Scoop</strong>，或者安装路径没加入系统环境变量。</p>
+<hr>
+<h2>🧭 一步步解决方法（最简洁、可直接复制粘贴）</h2>
+<h3>✅ 第1步：确认 PowerShell 可用</h3>
+<p>打开 Windows 搜索 → 输入 <strong>PowerShell</strong> →<br>
+右键 “以管理员身份运行”。</p>
+<p>在 PowerShell 里先允许脚本运行（只需执行一次）：</p>
+<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-c1">Set-ExecutionPolicy</span> RemoteSigned <span class="pl-k">-</span>Scope CurrentUser</pre></div>
+<p>输入 <code class="notranslate">Y</code> 然后回车。</p>
+<hr>
+<h3>✅ 第2步：安装 Scoop</h3>
+<p>复制并粘贴以下命令回车：</p>
+<div class="highlight highlight-source-powershell"><pre class="notranslate">irm get.scoop.sh <span class="pl-k">|</span> iex</pre></div>
+<p>（<code class="notranslate">irm</code> 是 <code class="notranslate">Invoke-RestMethod</code> 的简写）</p>
+<p>安装完成后，会提示类似：</p>
+<pre class="notranslate"><code class="notranslate">Scoop was installed successfully!
+</code></pre>
+<hr>
+<h3>✅ 第3步：关闭 PowerShell，再重新打开</h3>
+<p>然后输入：</p>
+<div class="highlight highlight-source-powershell"><pre class="notranslate">scoop <span class="pl-k">--</span>version</pre></div>
+<p>如果能看到版本号，就说明安装成功。</p>
+<hr>
+<h3>✅ 第4步：安装 yt-dlp</h3>
+<p>执行：</p>
+<div class="highlight highlight-source-powershell"><pre class="notranslate">scoop install yt<span class="pl-k">-</span>dlp</pre></div>
+<p>等安装完后，输入：</p>
+<div class="highlight highlight-source-powershell"><pre class="notranslate">yt<span class="pl-k">-</span>dlp <span class="pl-k">--</span>version</pre></div>
+<p>若能显示版本号，你就可以直接在命令行用它下载视频了。</p>
+<hr>
+<h2><g-emoji class="g-emoji" alias="warning">⚠️</g-emoji> 常见问题提示</h2>
+<ul>
+<li>
+<p>❗ <strong>如果你不是管理员用户</strong><br>
+Scoop 会默认安装在你的用户目录下：<br>
+<code class="notranslate">C:\Users\&lt;用户名&gt;\scoop</code></p>
+</li>
+<li>
+<p>❗ <strong>如果提示找不到 scoop</strong><br>
+请确保 PowerShell 关闭再重新打开（环境变量需要刷新）。</p>
+</li>
+</ul>
+<hr>
+<p>是否希望我帮你写一个“一键安装 scoop + yt-dlp”的批处理文件？<br>
+这样你只要双击一次就能自动完成安装。</p>
+<ul>
 <li>第一步——安装yt-dlp</li>
 </ul>
 <p>windows</p>

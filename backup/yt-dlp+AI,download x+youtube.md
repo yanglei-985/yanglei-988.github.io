@@ -1,3 +1,97 @@
+新电脑可能会遇到这些问题，要先下载powershell
+
+```
+'scoop' 不是内部或外部命令，也不是可运行的程序或批处理文件。
+```
+
+意思是 **Windows 找不到 scoop 命令**，说明你还没有安装 **Scoop**，或者安装路径没加入系统环境变量。
+
+---
+
+## 🧭 一步步解决方法（最简洁、可直接复制粘贴）
+
+### ✅ 第1步：确认 PowerShell 可用
+
+打开 Windows 搜索 → 输入 **PowerShell** →
+右键 “以管理员身份运行”。
+
+在 PowerShell 里先允许脚本运行（只需执行一次）：
+
+```powershell
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
+输入 `Y` 然后回车。
+
+---
+
+### ✅ 第2步：安装 Scoop
+
+复制并粘贴以下命令回车：
+
+```powershell
+irm get.scoop.sh | iex
+```
+
+（`irm` 是 `Invoke-RestMethod` 的简写）
+
+安装完成后，会提示类似：
+
+```
+Scoop was installed successfully!
+```
+
+---
+
+### ✅ 第3步：关闭 PowerShell，再重新打开
+
+然后输入：
+
+```powershell
+scoop --version
+```
+
+如果能看到版本号，就说明安装成功。
+
+---
+
+### ✅ 第4步：安装 yt-dlp
+
+执行：
+
+```powershell
+scoop install yt-dlp
+```
+
+等安装完后，输入：
+
+```powershell
+yt-dlp --version
+```
+
+若能显示版本号，你就可以直接在命令行用它下载视频了。
+
+---
+
+## ⚠️ 常见问题提示
+
+* ❗ **如果你不是管理员用户**
+  Scoop 会默认安装在你的用户目录下：
+  `C:\Users\<用户名>\scoop`
+
+* ❗ **如果提示找不到 scoop**
+  请确保 PowerShell 关闭再重新打开（环境变量需要刷新）。
+
+---
+
+是否希望我帮你写一个“一键安装 scoop + yt-dlp”的批处理文件？
+这样你只要双击一次就能自动完成安装。
+
+
+
+
+
+
 * 第一步——安装yt-dlp
 
 windows
