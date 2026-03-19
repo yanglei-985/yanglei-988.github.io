@@ -23,7 +23,7 @@
 <meta property="og:url" content="https://yanglei-985.github.io/yanglei-988.github.io/post/yt-dlp%2BAI%2Cdownload%20x%2Byoutube.html">
 <meta property="og:image" content="https://s21.ax1x.com/2025/02/15/pEK09q1.jpg">
 <title>yt-dlp+AI,download x+youtube</title>
-
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
 
 
 </head>
@@ -99,14 +99,12 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <p>打开 Windows 搜索 → 输入 <strong>PowerShell</strong> →<br>
 右键 “以管理员身份运行”。</p>
 <p>在 PowerShell 里先允许脚本运行（只需执行一次）：</p>
-<pre lang="powershell" class="notranslate"><code class="notranslate">Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-</code></pre>
+<div class="highlight highlight-source-powershell"><pre class="notranslate"><span class="pl-c1">Set-ExecutionPolicy</span> RemoteSigned <span class="pl-k">-</span>Scope CurrentUser</pre></div>
 <p>输入 <code class="notranslate">Y</code> 然后回车。</p>
 <hr>
 <h3>✅ 第2步：安装 Scoop</h3>
 <p>复制并粘贴以下命令回车：</p>
-<pre lang="powershell" class="notranslate"><code class="notranslate">irm get.scoop.sh | iex
-</code></pre>
+<div class="highlight highlight-source-powershell"><pre class="notranslate">irm get.scoop.sh <span class="pl-k">|</span> iex</pre></div>
 <p>（<code class="notranslate">irm</code> 是 <code class="notranslate">Invoke-RestMethod</code> 的简写）</p>
 <p>安装完成后，会提示类似：</p>
 <pre class="notranslate"><code class="notranslate">Scoop was installed successfully!
@@ -114,17 +112,14 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <hr>
 <h3>✅ 第3步：关闭 PowerShell，再重新打开</h3>
 <p>然后输入：</p>
-<pre lang="powershell" class="notranslate"><code class="notranslate">scoop --version
-</code></pre>
+<div class="highlight highlight-source-powershell"><pre class="notranslate">scoop <span class="pl-k">--</span>version</pre></div>
 <p>如果能看到版本号，就说明安装成功。</p>
 <hr>
 <h3>✅ 第4步：安装 yt-dlp</h3>
 <p>执行：</p>
-<pre lang="powershell" class="notranslate"><code class="notranslate">scoop install yt-dlp
-</code></pre>
+<div class="highlight highlight-source-powershell"><pre class="notranslate">scoop install yt<span class="pl-k">-</span>dlp</pre></div>
 <p>等安装完后，输入：</p>
-<pre lang="powershell" class="notranslate"><code class="notranslate">yt-dlp --version
-</code></pre>
+<div class="highlight highlight-source-powershell"><pre class="notranslate">yt<span class="pl-k">-</span>dlp <span class="pl-k">--</span>version</pre></div>
 <p>若能显示版本号，你就可以直接在命令行用它下载视频了。</p>
 <hr>
 <h2><g-emoji class="g-emoji" alias="warning">⚠️</g-emoji> 常见问题提示</h2>
@@ -181,8 +176,7 @@ Scoop 会默认安装在你的用户目录下：<br>
 </li>
 <li>
 <p>再运行：</p>
-<pre lang="bash" class="notranslate"><code class="notranslate">yt-dlp --cookies-from-browser chrome "https://www.youtube.com/watch?v=9BnUUtlQbFU（示例）"
-</code></pre>
+<div class="highlight highlight-source-shell"><pre class="notranslate">yt-dlp --cookies-from-browser chrome <span class="pl-s"><span class="pl-pds">"</span>https://www.youtube.com/watch?v=9BnUUtlQbFU（示例）<span class="pl-pds">"</span></span></pre></div>
 </li>
 <li>
 <p>缺点：执行期间不能用 Chrome 看视频。</p>
