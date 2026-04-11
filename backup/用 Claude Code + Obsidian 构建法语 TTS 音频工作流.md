@@ -142,6 +142,54 @@ claude skills list
 
 ### 4.3 设置方法（永久生效）
 
+<img width="580" height="290" alt="Image" src="https://github.com/user-attachments/assets/61d4a6a6-e60d-48ad-b68f-943e2b30d21b" />
+快速设置 `OBSIDIAN_API_KEY`：
+
+## 1️⃣ 在 Obsidian 中启用 Local REST API
+
+- 打开 Obsidian → **设置** → **社区插件**
+- 搜索 **"Local REST API"** 并安装
+- 启用插件
+- 进入插件设置，复制 **API Key**（通常在插件设置页面显示）
+
+## 2️⃣ 设置环境变量
+
+选择一个方式：
+
+### 方式 A：临时设置（当前终端会话）
+```bash
+export OBSIDIAN_API_KEY="你的API密钥"
+export OBSIDIAN_VAULT_PATH="/home/yanglei/文档/Obsidian Vault"
+```
+
+### 方式 B：永久设置（推荐）
+编辑 `~/.bashrc` 或 `~/.zshrc`：
+```bash
+nano ~/.bashrc
+```
+
+在文件末尾添加：
+```bash
+export OBSIDIAN_API_KEY="你的API密钥"
+export OBSIDIAN_VAULT_PATH="/home/yanglei/文档/Obsidian Vault"
+```
+
+保存后运行：
+```bash
+source ~/.bashrc
+```
+
+## 3️⃣ 验证设置
+```bash
+echo $OBSIDIAN_API_KEY
+```
+
+如果输出你的 API 密钥，就设置成功了！
+
+---
+
+以上为方法一，如果你找不到自己vault的位置，就直接问claudian.
+
 在终端执行以下命令（把引号里的内容换成你自己的）：
 
 ```bash

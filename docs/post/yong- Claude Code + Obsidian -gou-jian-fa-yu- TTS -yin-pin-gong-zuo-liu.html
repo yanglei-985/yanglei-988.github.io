@@ -237,6 +237,33 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </tbody>
 </table></markdown-accessiblity-table>
 <h3>4.3 设置方法（永久生效）</h3>
+<p><a target="_blank" rel="noopener noreferrer" href="https://github.com/user-attachments/assets/61d4a6a6-e60d-48ad-b68f-943e2b30d21b"><img width="580" height="290" alt="Image" src="https://github.com/user-attachments/assets/61d4a6a6-e60d-48ad-b68f-943e2b30d21b" style="max-width: 100%; height: auto; max-height: 290px;"></a></p>
+快速设置 `OBSIDIAN_API_KEY`：
+<h2>1️⃣ 在 Obsidian 中启用 Local REST API</h2>
+<ul>
+<li>打开 Obsidian → <strong>设置</strong> → <strong>社区插件</strong></li>
+<li>搜索 <strong>"Local REST API"</strong> 并安装</li>
+<li>启用插件</li>
+<li>进入插件设置，复制 <strong>API Key</strong>（通常在插件设置页面显示）</li>
+</ul>
+<h2>2️⃣ 设置环境变量</h2>
+<p>选择一个方式：</p>
+<h3>方式 A：临时设置（当前终端会话）</h3>
+<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-k">export</span> OBSIDIAN_API_KEY=<span class="pl-s"><span class="pl-pds">"</span>你的API密钥<span class="pl-pds">"</span></span>
+<span class="pl-k">export</span> OBSIDIAN_VAULT_PATH=<span class="pl-s"><span class="pl-pds">"</span>/home/yanglei/文档/Obsidian Vault<span class="pl-pds">"</span></span></pre></div>
+<h3>方式 B：永久设置（推荐）</h3>
+<p>编辑 <code class="notranslate">~/.bashrc</code> 或 <code class="notranslate">~/.zshrc</code>：</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate">nano <span class="pl-k">~</span>/.bashrc</pre></div>
+<p>在文件末尾添加：</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-k">export</span> OBSIDIAN_API_KEY=<span class="pl-s"><span class="pl-pds">"</span>你的API密钥<span class="pl-pds">"</span></span>
+<span class="pl-k">export</span> OBSIDIAN_VAULT_PATH=<span class="pl-s"><span class="pl-pds">"</span>/home/yanglei/文档/Obsidian Vault<span class="pl-pds">"</span></span></pre></div>
+<p>保存后运行：</p>
+<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c1">source</span> <span class="pl-k">~</span>/.bashrc</pre></div>
+<h2>3️⃣ 验证设置</h2>
+<div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c1">echo</span> <span class="pl-smi">$OBSIDIAN_API_KEY</span></pre></div>
+<p>如果输出你的 API 密钥，就设置成功了！</p>
+<hr>
+<p>以上为方法一，如果你找不到自己vault的位置，就直接问claudian.</p>
 <p>在终端执行以下命令（把引号里的内容换成你自己的）：</p>
 <div class="highlight highlight-source-shell"><pre class="notranslate"><span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>export OBSIDIAN_API_KEY="你的API Key"<span class="pl-pds">'</span></span> <span class="pl-k">&gt;&gt;</span> <span class="pl-k">~</span>/.bashrc
 <span class="pl-c1">echo</span> <span class="pl-s"><span class="pl-pds">'</span>export OBSIDIAN_VAULT_PATH="/你的vault路径"<span class="pl-pds">'</span></span> <span class="pl-k">&gt;&gt;</span> <span class="pl-k">~</span>/.bashrc
