@@ -15,6 +15,13 @@ if %errorlevel% neq 0 (
 )
 
 :: ─────────────────────────────────────────
+:: 刷新当前会话的 PATH
+:: ─────────────────────────────────────────
+for /f "tokens=*" %%i in ('powershell -Command "[System.Environment]::GetEnvironmentVariable(\"PATH\",\"Machine\")"') do set "SYS_PATH=%%i"
+for /f "tokens=*" %%i in ('powershell -Command "[System.Environment]::GetEnvironmentVariable(\"PATH\",\"User\")"') do set "USR_PATH=%%i"
+set "PATH=%SYS_PATH%;%USR_PATH%"
+
+:: ─────────────────────────────────────────
 :: 安装 winget（如果没有）
 :: ─────────────────────────────────────────
 echo [检测] winget...
@@ -43,12 +50,6 @@ if %errorlevel% neq 0 (
     echo [安装] 正在安装 Git，请稍候...
     winget install Git.Git -e --silent --accept-package-agreements --accept-source-agreements
     for /f "tokens=*" %%i in ('powershell -Command "[System.Environment]::GetEnvironmentVariable(\"PATH\",\"Machine\")"') do set "PATH=%%i;%PATH%"
-    git --version >nul 2>&1
-    if %errorlevel% neq 0 (
-        echo [提示] Git 安装完成，继续执行...
-    ) else (
-        echo [OK] Git 安装成功
-    )
 ) else (
     echo [OK] Git 已安装
 )
@@ -62,16 +63,14 @@ node --version >nul 2>&1
 if %errorlevel% neq 0 (
     echo [安装] 正在安装 Node.js，请稍候...
     winget install OpenJS.NodeJS.LTS -e --silent --accept-package-agreements --accept-source-agreements
-    for /f "tokens=*" %%i in ('powershell -Command "[System.Environment]::GetEnvironmentVariable(\"PATH\",\"Machine\")"') do set "PATH=%%i;%PATH%"
-    node --version >nul 2>&1
-    if %errorlevel% neq 0 (
-        echo [错误] Node.js 安装后仍无法识别，请重启电脑后重新运行此脚本
-        pause
-        exit /b 1
-    )
-    echo [OK] Node.js 安装成功
+    echo.
+    echo [提示] Node.js 安装完成，需要重启脚本使环境变量生效
+    echo [提示] 请关闭此窗口后重新双击运行脚本！
+    pause
+    exit /b 0
 ) else (
-    echo [OK] Node.js 已安装
+    echo [OK] Node.js 已安装：
+    node --version
 )
 
 :: ─────────────────────────────────────────

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Humdrum thing Diverting guide</title><link>https://yanglei-985.github.io/yanglei-988.github.io</link><description>long-term investment。</description><copyright>Humdrum thing Diverting guide</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://s21.ax1x.com/2025/02/15/pEK09q1.jpg</url><title>avatar</title><link>https://yanglei-985.github.io/yanglei-988.github.io</link></image><lastBuildDate>Sun, 12 Apr 2026 14:52:25 +0000</lastBuildDate><managingEditor>Humdrum thing Diverting guide</managingEditor><ttl>60</ttl><webMaster>Humdrum thing Diverting guide</webMaster><item><title>脚本安装codex</title><link>https://yanglei-985.github.io/yanglei-988.github.io/post/jiao-ben-an-zhuang-codex.html</link><description>@echo off
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Humdrum thing Diverting guide</title><link>https://yanglei-985.github.io/yanglei-988.github.io</link><description>long-term investment。</description><copyright>Humdrum thing Diverting guide</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://s21.ax1x.com/2025/02/15/pEK09q1.jpg</url><title>avatar</title><link>https://yanglei-985.github.io/yanglei-988.github.io</link></image><lastBuildDate>Sun, 12 Apr 2026 15:01:33 +0000</lastBuildDate><managingEditor>Humdrum thing Diverting guide</managingEditor><ttl>60</ttl><webMaster>Humdrum thing Diverting guide</webMaster><item><title>脚本安装codex</title><link>https://yanglei-985.github.io/yanglei-988.github.io/post/jiao-ben-an-zhuang-codex.html</link><description>@echo off
 chcp 65001 &gt;nul
 title Codex 一键安装脚本
 echo ========================================
@@ -14,6 +14,13 @@ if %errorlevel% neq 0 (
     powershell -Command 'Start-Process '%~f0' -Verb RunAs'
     exit /b
 )
+
+:: ─────────────────────────────────────────
+:: 刷新当前会话的 PATH
+:: ─────────────────────────────────────────
+for /f 'tokens=*' %%i in ('powershell -Command '[System.Environment]::GetEnvironmentVariable(\'PATH\',\'Machine\')'') do set 'SYS_PATH=%%i'
+for /f 'tokens=*' %%i in ('powershell -Command '[System.Environment]::GetEnvironmentVariable(\'PATH\',\'User\')'') do set 'USR_PATH=%%i'
+set 'PATH=%SYS_PATH%;%USR_PATH%'
 
 :: ─────────────────────────────────────────
 :: 安装 winget（如果没有）
@@ -44,12 +51,6 @@ if %errorlevel% neq 0 (
     echo [安装] 正在安装 Git，请稍候...
     winget install Git.Git -e --silent --accept-package-agreements --accept-source-agreements
     for /f 'tokens=*' %%i in ('powershell -Command '[System.Environment]::GetEnvironmentVariable(\'PATH\',\'Machine\')'') do set 'PATH=%%i;%PATH%'
-    git --version &gt;nul 2&gt;&amp;1
-    if %errorlevel% neq 0 (
-        echo [提示] Git 安装完成，继续执行...
-    ) else (
-        echo [OK] Git 安装成功
-    )
 ) else (
     echo [OK] Git 已安装
 )
@@ -63,16 +64,14 @@ node --version &gt;nul 2&gt;&amp;1
 if %errorlevel% neq 0 (
     echo [安装] 正在安装 Node.js，请稍候...
     winget install OpenJS.NodeJS.LTS -e --silent --accept-package-agreements --accept-source-agreements
-    for /f 'tokens=*' %%i in ('powershell -Command '[System.Environment]::GetEnvironmentVariable(\'PATH\',\'Machine\')'') do set 'PATH=%%i;%PATH%'
-    node --version &gt;nul 2&gt;&amp;1
-    if %errorlevel% neq 0 (
-        echo [错误] Node.js 安装后仍无法识别，请重启电脑后重新运行此脚本
-        pause
-        exit /b 1
-    )
-    echo [OK] Node.js 安装成功
+    echo.
+    echo [提示] Node.js 安装完成，需要重启脚本使环境变量生效
+    echo [提示] 请关闭此窗口后重新双击运行脚本！
+    pause
+    exit /b 0
 ) else (
-    echo [OK] Node.js 已安装
+    echo [OK] Node.js 已安装：
+    node --version
 )
 
 :: ─────────────────────────────────────────
