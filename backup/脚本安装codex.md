@@ -127,3 +127,6 @@ echo.
 echo 使用方法：打开 CMD 或 PowerShell，输入 codex 启动
 echo.
 pause
+
+
+vless://45b4bd9c-6a6d-4c57-cfb4-e85b535d844f@69.63.218.212:44?security=reality&encryption=none&pbk=5ZKqYySQiiqjmG_LkVtN3HDbVBAkHlhjMPkwPzGOGzQ&headerType=none&fp=firefox&type=tcp&flow=xtls-rprx-vision&sni=apps.mzstatic.com#vless-reality
