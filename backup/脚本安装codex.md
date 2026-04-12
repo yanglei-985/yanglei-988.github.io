@@ -14,42 +14,23 @@ if %errorlevel% neq 0 (
     exit /b
 )
 
-:: ─────────────────────────────────────────
-:: 刷新当前会话的 PATH
-:: ─────────────────────────────────────────
+:: 刷新 PATH
 for /f "tokens=*" %%i in ('powershell -Command "[System.Environment]::GetEnvironmentVariable(\"PATH\",\"Machine\")"') do set "SYS_PATH=%%i"
 for /f "tokens=*" %%i in ('powershell -Command "[System.Environment]::GetEnvironmentVariable(\"PATH\",\"User\")"') do set "USR_PATH=%%i"
 set "PATH=%SYS_PATH%;%USR_PATH%"
 
 :: ─────────────────────────────────────────
-:: 安装 winget（如果没有）
-:: ─────────────────────────────────────────
-echo [检测] winget...
-winget --version >nul 2>&1
-if %errorlevel% neq 0 (
-    echo [提示] 未检测到 winget，正在安装...
-    powershell -Command "Add-AppxPackage -RegisterByFamilyName -MainPackage Microsoft.DesktopAppInstaller_8wekyb3d8bbwe" >nul 2>&1
-    winget --version >nul 2>&1
-    if %errorlevel% neq 0 (
-        echo [错误] winget 安装失败，请手动安装 Node.js 和 Git：
-        echo   Node.js：https://nodejs.org/zh-cn/download
-        echo   Git：https://git-scm.com/download/win
-        pause
-        exit /b 1
-    )
-)
-echo [OK] winget 可用
-
-:: ─────────────────────────────────────────
 :: 安装 Git
 :: ─────────────────────────────────────────
-echo.
 echo [检测] Git...
 git --version >nul 2>&1
 if %errorlevel% neq 0 (
-    echo [安装] 正在安装 Git，请稍候...
-    winget install Git.Git -e --silent --accept-package-agreements --accept-source-agreements
+    echo [安装] 正在下载 Git，请稍候...
+    powershell -Command "Invoke-WebRequest -Uri 'https://github.com/git-for-windows/git/releases/download/v2.44.0.windows.1/Git-2.44.0-64-bit.exe' -OutFile '%TEMP%\git_installer.exe'"
+    echo [安装] 正在安装 Git...
+    "%TEMP%\git_installer.exe" /VERYSILENT /NORESTART
     for /f "tokens=*" %%i in ('powershell -Command "[System.Environment]::GetEnvironmentVariable(\"PATH\",\"Machine\")"') do set "PATH=%%i;%PATH%"
+    echo [OK] Git 安装完成
 ) else (
     echo [OK] Git 已安装
 )
@@ -61,11 +42,12 @@ echo.
 echo [检测] Node.js...
 node --version >nul 2>&1
 if %errorlevel% neq 0 (
-    echo [安装] 正在安装 Node.js，请稍候...
-    winget install OpenJS.NodeJS.LTS -e --silent --accept-package-agreements --accept-source-agreements
+    echo [安装] 正在下载 Node.js，请稍候...
+    powershell -Command "Invoke-WebRequest -Uri 'https://nodejs.org/dist/v22.14.0/node-v22.14.0-x64.msi' -OutFile '%TEMP%\node_installer.msi'"
+    echo [安装] 正在安装 Node.js...
+    msiexec /i "%TEMP%\node_installer.msi" /quiet /norestart
     echo.
-    echo [提示] Node.js 安装完成，需要重启脚本使环境变量生效
-    echo [提示] 请关闭此窗口后重新双击运行脚本！
+    echo [提示] Node.js 安装完成，请关闭此窗口后重新双击运行脚本！
     pause
     exit /b 0
 ) else (
