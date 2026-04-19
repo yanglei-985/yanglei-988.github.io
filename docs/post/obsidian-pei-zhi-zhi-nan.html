@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="dark" data-light-theme="light" lang="zh-CN">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <script src='https://blog.meekdai.com/Gmeek/plugins/GmeekBSZ.js'></script>
+    <link rel="icon" href="https://s21.ax1x.com/2025/02/15/pEK09q1.jpg"><script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+<meta name="description" content="# Obsidian + Claude Code 教程整理（Step by Step）
+
+
+> - **Obsidian CLI**
+> - **Claude Code**
+> - **Claudian**
+> - **Skills**
+
+## 这套组合到底是什么？
+
+- **Obsidian**：你的知识库与笔记空间
+- **Claude Code**：负责理解指令、分析内容、执行操作的 AI 助手
+- **Claudian**：面向 Obsidian 使用场景定制的 Claude/Claude Code 助手
+- **Obsidian CLI**：让 AI 更顺畅地和 Obsidian 配合
+- **Skills**：把常见工作流封装成可复用能力
+
+一句话理解：
+
+> Obsidian 负责存知识，Claude Code 负责理解和执行，Skills 负责把高频任务变成“可复用动作”。">
+<meta property="og:title" content="obsidian配置指南">
+<meta property="og:description" content="# Obsidian + Claude Code 教程整理（Step by Step）
+
+
+> - **Obsidian CLI**
+> - **Claude Code**
+> - **Claudian**
+> - **Skills**
+
+## 这套组合到底是什么？
+
+- **Obsidian**：你的知识库与笔记空间
+- **Claude Code**：负责理解指令、分析内容、执行操作的 AI 助手
+- **Claudian**：面向 Obsidian 使用场景定制的 Claude/Claude Code 助手
+- **Obsidian CLI**：让 AI 更顺畅地和 Obsidian 配合
+- **Skills**：把常见工作流封装成可复用能力
+
+一句话理解：
+
+> Obsidian 负责存知识，Claude Code 负责理解和执行，Skills 负责把高频任务变成“可复用动作”。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://yanglei-985.github.io/yanglei-988.github.io/post/obsidian-pei-zhi-zhi-nan.html">
+<meta property="og:image" content="https://s21.ax1x.com/2025/02/15/pEK09q1.jpg">
+<title>obsidian配置指南</title>
+
+
+
+</head>
+<style>
+body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
+#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
+#footer {margin-top:64px; text-align: center;font-size: small;}
+
+</style>
+
+<style>
+.postTitle{margin: auto 0;font-size:40px;font-weight:bold;}
+.title-right{display:flex;margin:auto 0 0 auto;}
+.title-right .circle{padding: 14px 16px;margin-right:8px;}
+#postBody{border-bottom: 1px solid var(--color-border-default);padding-bottom:36px;}
+#postBody hr{height:2px;}
+#cmButton{height:48px;margin-top:48px;}
+#comments{margin-top:64px;}
+.g-emoji{font-size:24px;}
+@media (max-width: 600px) {
+    body {padding: 8px;}
+    .postTitle{font-size:24px;}
+}
+
+</style>
+<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}</style><style>.markdown-alert.markdown-alert-tip {border-left-color:var(--borderColor-success-emphasis, var(--color-success-emphasis));background-color:var(--color-success-subtle);}.markdown-alert.markdown-alert-tip .markdown-alert-title {color: var(--fgColor-success,var(--color-success-fg));}</style><style>.markdown-alert.markdown-alert-warning {border-left-color:var(--borderColor-attention-emphasis, var(--color-attention-emphasis));background-color:var(--color-attention-subtle);}.markdown-alert.markdown-alert-warning .markdown-alert-title {color: var(--fgColor-attention,var(--color-attention-fg));}</style>
+
+
+
+<body>
+    <div id="header">
+<h1 class="postTitle">obsidian配置指南</h1>
+<div class="title-right">
+    <a href="https://yanglei-985.github.io/yanglei-988.github.io" id="buttonHome" class="btn btn-invisible circle" title="首页">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathHome" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+    <a href="https://github.com/yanglei-985/yanglei-988.github.io/issues/46" target="_blank" class="btn btn-invisible circle" title="Issue">
+        <svg class="octicon" width="16" height="16">
+            <path id="pathIssue" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+    
+
+    <a class="btn btn-invisible circle" onclick="modeSwitch();" title="切换主题">
+        <svg class="octicon" width="16" height="16" >
+            <path id="themeSwitch" fill-rule="evenodd"></path>
+        </svg>
+    </a>
+
+</div>
+</div>
+    <div id="content">
+<div class="markdown-body" id="postBody"><h1>Obsidian + Claude Code 教程整理（Step by Step）</h1>
+<blockquote>
+<ul>
+<li><strong>Obsidian CLI</strong></li>
+<li><strong>Claude Code</strong></li>
+<li><strong>Claudian</strong></li>
+<li><strong>Skills</strong></li>
+</ul>
+</blockquote>
+<h2>这套组合到底是什么？</h2>
+<ul>
+<li><strong>Obsidian</strong>：你的知识库与笔记空间</li>
+<li><strong>Claude Code</strong>：负责理解指令、分析内容、执行操作的 AI 助手</li>
+<li><strong>Claudian</strong>：面向 Obsidian 使用场景定制的 Claude/Claude Code 助手</li>
+<li><strong>Obsidian CLI</strong>：让 AI 更顺畅地和 Obsidian 配合</li>
+<li><strong>Skills</strong>：把常见工作流封装成可复用能力</li>
+</ul>
+<p>一句话理解：</p>
+<blockquote>
+<p>Obsidian 负责存知识，Claude Code 负责理解和执行，Skills 负责把高频任务变成“可复用动作”。</p>
+</blockquote>
+<hr>
+<h2>Step 0：开始前先确认 3 个前提</h2>
+<p>在正式开始前，先确认你已经具备下面这些条件：</p>
+<ol>
+<li>已安装并更新 <strong>Obsidian</strong></li>
+<li>已经能正常使用 <strong>Claude Code</strong></li>
+<li>已配置好可用的 <strong>API / 模型</strong></li>
+</ol>
+<h2>Step 1：升级 Obsidian，并开启 Obsidian CLI</h2>
+<h3>操作步骤</h3>
+<ol>
+<li>打开 Obsidian</li>
+<li>升级到最新版本</li>
+<li>进入 <strong>设置 → 关于</strong></li>
+<li>找到命令行界面 / CLI 相关功能</li>
+<li>按提示完成注册</li>
+<li>重启 Obsidian</li>
+</ol>
+<h3>这一步的意义</h3>
+<ul>
+<li>让 Obsidian 可以被命令行能力调用</li>
+<li>让 Claude Code 不只是“读文件”，还能更深入地和 Obsidian 配合</li>
+</ul>
+<hr>
+<h2>Step 2：安装 Claudian 插件</h2>
+<h3>操作步骤</h3>
+<ol>
+<li>打开 <strong>Claudian 插件</strong>的 GitHub 仓库<a href="https://github.com/YishenTu/claudian">https://github.com/YishenTu/claudian</a></li>
+<li>点击右侧 <strong>Releases</strong></li>
+<li>下载最新版本中的 3 个文件</li>
+<li>打开你的 Vault 中的 <code class="notranslate">.obsidian/plugins/</code></li>
+<li>新建对应的插件文件夹</li>
+<li>把刚才下载的 3 个文件放进去</li>
+<li>重启 Obsidian</li>
+<li>打开 <strong>设置 → 第三方插件</strong></li>
+<li>启用 Claudian</li>
+<li>看到侧边栏图标后，打开对话界面</li>
+</ol>
+<div class="markdown-alert markdown-alert-tip"><p class="markdown-alert-title"><svg class="octicon octicon-light-bulb mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</p><p>如果你找不到 <code class="notranslate">.obsidian</code> 或 <code class="notranslate">plugins</code> 文件夹，先打开系统里的“显示隐藏文件夹”选项。</p>
+</div>
+<h3>这一步完成后，你应该得到什么？</h3>
+<ul>
+<li>Obsidian 侧边栏出现 Claudian 图标</li>
+<li>你可以直接在 Obsidian 内和 Claude Code 风格的助手对话</li>
+</ul>
+<h3>注意</h3>
+<p>想在这里顺利使用 Claudian，前提仍然是：</p>
+<ul>
+<li>Claude Code 本体已可用</li>
+<li>API / 模型配置已经完成</li>
+</ul>
+<hr>
+<h2>Step 3：安装 Obsidian Skills</h2>
+<h3>操作步骤</h3>
+<ol>
+<li>打开 <strong>Obsidian Skills</strong> 的 GitHub 仓库</li>
+<li>下载压缩包并解压</li>
+<li>找到其中推荐的 5 个 Skill</li>
+<li>打开 Claudian / Claude Code 对应的 <code class="notranslate">skills</code> 目录</li>
+<li>把这 5 个 Skill 文件夹复制进去</li>
+<li>重启或重新加载工具</li>
+</ol>
+<h3>Skills 的作用</h3>
+<ul>
+<li>把高频任务固化为现成能力</li>
+<li>以后可以直接调用，不用每次重新写复杂提示词</li>
+<li>适合做结构化输出、画板、数据库、整理资料等任务</li>
+</ul>
+<hr>
+<h2>Step 4：先做 3 个最小测试，确认整套流程已经跑通</h2>
+<p>建议按下面顺序测试。</p>
+<h3>测试 1：创建一篇标准化笔记</h3>
+<p>你可以这样说：</p>
+<blockquote>
+<p>帮我创建一篇名为《纳瓦尔宝典》的读书笔记，并按照我现有的读书笔记风格填写内容。</p>
+</blockquote>
+<p>理想结果：</p>
+<ul>
+<li>笔记被创建到了正确位置</li>
+<li>使用了正确模板或接近你现有风格</li>
+<li>AI 会参考你已有的相似笔记，而不只是机械套模板</li>
+</ul>
+<h3>测试 2：整理一篇收藏资料</h3>
+<p>你可以这样说：</p>
+<blockquote>
+<p>帮我整理这篇 Python 收藏文档：去重、归类，并给我一个清晰目录。</p>
+</blockquote>
+<p>理想结果：</p>
+<ul>
+<li>资料被重新分组</li>
+<li>重复内容被处理</li>
+<li>文档结构变得更容易阅读</li>
+</ul>
+<h3>测试 3：调用 Skill</h3>
+<p>例如：</p>
+<ul>
+<li>用画板 Skill 把这篇文章整理成思维导图</li>
+<li>帮我生成一个“2025 年读书笔记汇总数据库”</li>
+</ul>
+<p>理想结果：</p>
+<ul>
+<li>AI 会主动判断什么时候该调用 Skill</li>
+<li>复杂任务能明显减少手工操作</li>
+</ul>
+<hr>
+<h2>Step 5：理解两个关键工作模式</h2>
+<h3>模式 1：自动执行 / YOLO 模式</h3>
+<p>特点：</p>
+<ul>
+<li>AI 会连续自动执行操作</li>
+<li>可能直接修改、整理甚至删除文件</li>
+</ul>
+<p>适合：</p>
+<ul>
+<li>你已经非常确定目标是什么</li>
+<li>任务比较标准化</li>
+</ul>
+<p>风险：</p>
+<ul>
+<li>改动会来得很快</li>
+<li>如果你没盯着看，可能已经改完了</li>
+</ul>
+<h3>模式 2：Plan 模式（先方案，后执行）</h3>
+<p>特点：</p>
+<ul>
+<li>AI 先列出执行方案和步骤</li>
+<li>你可以先讨论、修改，再让它正式执行</li>
+</ul>
+<p>适合：</p>
+<ul>
+<li>工作流搭建</li>
+<li>批量整理</li>
+<li>大范围改写</li>
+<li>结构调整类任务</li>
+</ul>
+<h3>建议用法</h3>
+<ul>
+<li><strong>简单任务</strong>：普通模式即可</li>
+<li><strong>复杂任务</strong>：优先用 Plan 模式</li>
+</ul>
+<hr>
+<h2>Step 6：学会几个高频实用技巧</h2>
+<h3>1. 调整思考等级</h3>
+<ul>
+<li>简单任务：低等级或不开思考</li>
+<li>复杂任务：提高思考等级</li>
+<li>代价：等级越高，通常越耗 token</li>
+</ul>
+<h3>2. 上传文件一起分析</h3>
+<ul>
+<li>对话框下方的文件夹图标可以上传文件</li>
+<li>适合把“不在 Vault 里的资料”一起交给 AI 分析</li>
+</ul>
+<h3>3. 用斜杠命令调用 Skill 或系统能力</h3>
+<ul>
+<li>可以快速调用指定 Skill</li>
+<li>适合高频固定动作</li>
+</ul>
+<h3>4. 指定文件 / 框选提问</h3>
+<ul>
+<li>可以针对某个文件单独处理</li>
+<li>也可以只框选一段文字，做定向分析或改写</li>
+</ul>
+<hr>
+<h2>Step 7：这套系统最适合做什么？</h2>
+<h3>场景 1：创建标准化笔记</h3>
+<p>比如：</p>
+<ul>
+<li>读书笔记</li>
+<li>人物卡</li>
+<li>项目卡</li>
+<li>课程总结</li>
+</ul>
+<h3>场景 2：整理收藏资料</h3>
+<p>比如：</p>
+<ul>
+<li>去重</li>
+<li>归类</li>
+<li>抽提纲</li>
+<li>改成清晰目录</li>
+</ul>
+<h3>场景 3：生成思维导图 / 画板内容</h3>
+<p>适合把长文章快速结构化，帮助理解和复习。</p>
+<h3>场景 4：生成数据库或索引页</h3>
+<p>比如：</p>
+<ul>
+<li>2025 年读书汇总</li>
+<li>项目追踪页</li>
+<li>学习资料总表</li>
+</ul>
+<h3>场景 5：辅助写作</h3>
+<p>比如：</p>
+<ul>
+<li>总结</li>
+<li>扩写</li>
+<li>改写</li>
+<li>润色</li>
+<li>改标题</li>
+</ul>
+<hr>
+<h2>Step 8：安全建议（非常重要）</h2>
+<ol>
+<li><strong>大改之前先备份</strong></li>
+<li><strong>最好给 Vault 建 Git 仓库，方便回滚</strong></li>
+<li><strong>新工作流先在测试文件夹试</strong></li>
+<li><strong>不确定时关闭自动执行，改用逐步确认</strong></li>
+<li><strong>如果改崩了，优先回滚版本，不要让 AI 硬改回去</strong></li>
+</ol>
+<div class="markdown-alert markdown-alert-warning"><p class="markdown-alert-title"><svg class="octicon octicon-alert mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M6.457 1.047c.659-1.234 2.427-1.234 3.086 0l6.082 11.378A1.75 1.75 0 0 1 14.082 15H1.918a1.75 1.75 0 0 1-1.543-2.575Zm1.763.707a.25.25 0 0 0-.44 0L1.698 13.132a.25.25 0 0 0 .22.368h12.164a.25.25 0 0 0 .22-.368Zm.53 3.996v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Warning</p><p>真正浪费时间和 token 的，往往不是第一次修改，而是“改坏后再补救”。<br>
+所以：先备份，再放手让 AI 动手。</p>
+</div>
+<hr>
+<h2>最小上手路径（第一次用就照这个来）</h2>
+<p>如果你只想先把整套流程跑通，可以按下面做：</p>
+<ol>
+<li>更新 Obsidian，并开启 CLI</li>
+<li>安装 Claudian</li>
+<li>确认 Claude Code / API 可用</li>
+<li>安装 Skills（可选，但很推荐）</li>
+<li>先让 AI 创建一篇标准化笔记</li>
+<li>再让它整理一篇已有收藏文档</li>
+<li>最后尝试一个 Skill（思维导图或数据库）</li>
+</ol>
+<hr>
+<h2>一句话总结</h2>
+<p>这套系统的重点，不是“把 AI 放进 Obsidian 聊天”，而是让 AI 真正参与到你的知识整理、写作和内容生产流程里。</p>
+<hr></div>
+<div style="font-size:small;margin-top:8px;float:right;"></div>
+
+<button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
+<div class="comments" id="comments"></div>
+
+</div>
+    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://yanglei-985.github.io/yanglei-988.github.io">磊磊的秘密武器</a></div>
+<div id="footer2">
+    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
+</div>
+
+<script>
+var now=new Date();
+document.getElementById("copyrightYear").innerHTML=now.getFullYear();
+
+if(""!=""){
+    var startSite=new Date("");
+    var diff=now.getTime()-startSite.getTime();
+    var diffDay=Math.floor(diff/(1000*60*60*24));
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+}
+</script></div>
+</body>
+<script>
+var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'home': 'M6.906.664a1.749 1.749 0 0 1 2.187 0l5.25 4.2c.415.332.657.835.657 1.367v7.019A1.75 1.75 0 0 1 13.25 15h-3.5a.75.75 0 0 1-.75-.75V9H7v5.25a.75.75 0 0 1-.75.75h-3.5A1.75 1.75 0 0 1 1 13.25V6.23c0-.531.242-1.034.657-1.366l5.25-4.2Zm1.25 1.171a.25.25 0 0 0-.312 0l-5.25 4.2a.25.25 0 0 0-.094.196v7.019c0 .138.112.25.25.25H5.5V8.25a.75.75 0 0 1 .75-.75h3.5a.75.75 0 0 1 .75.75v5.25h2.75a.25.25 0 0 0 .25-.25V6.23a.25.25 0 0 0-.094-.195Z', 'github': 'M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z'};
+var utterancesLoad=0;
+
+let themeSettings={
+    "dark": ["dark","moon","#00f0ff","dark-blue"],
+    "light": ["light","sun","#ff5000","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    document.getElementById("themeSwitch").parentNode.style.color=color;
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+</script>
+
+<script>
+document.getElementById("pathHome").setAttribute("d",IconList["home"]);
+document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
+
+
+
+function openComments(){
+    cm=document.getElementById("comments");
+    cmButton=document.getElementById("cmButton");
+    cmButton.disabled=true;
+    cmButton.innerHTML="loading";
+    span=document.createElement("span");
+    span.setAttribute("class","AnimatedEllipsis");
+    cmButton.appendChild(span);
+
+    script=document.createElement("script");
+    script.setAttribute("src","https://utteranc.es/client.js");
+    script.setAttribute("repo","yanglei-985/yanglei-988.github.io");
+    script.setAttribute("issue-term","title");
+    
+    if(localStorage.getItem("meek_theme")=="dark"){script.setAttribute("theme","dark-blue");}
+    else if(localStorage.getItem("meek_theme")=="light") {script.setAttribute("theme","github-light");}
+    else{script.setAttribute("theme","preferred-color-scheme");}
+    
+    script.setAttribute("crossorigin","anonymous");
+    script.setAttribute("async","");
+    cm.appendChild(script);
+
+    int=self.setInterval("iFrameLoading()",200);
+}
+
+function iFrameLoading(){
+    var utterances=document.getElementsByClassName('utterances');
+    if(utterances.length==1){
+        if(utterances[0].style.height!=""){
+            utterancesLoad=1;
+            int=window.clearInterval(int);
+            document.getElementById("cmButton").style.display="none";
+            console.log("utterances Load OK");
+        }
+    }
+}
+
+
+
+</script>
+
+
+</html>

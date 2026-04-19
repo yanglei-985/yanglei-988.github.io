@@ -1,5 +1,23 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>磊磊的秘密武器</title><link>https://yanglei-985.github.io/yanglei-988.github.io</link><description>Value+Grow^247</description><copyright>磊磊的秘密武器</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://s21.ax1x.com/2025/02/15/pEK09q1.jpg</url><title>avatar</title><link>https://yanglei-985.github.io/yanglei-988.github.io</link></image><lastBuildDate>Tue, 14 Apr 2026 16:55:33 +0000</lastBuildDate><managingEditor>磊磊的秘密武器</managingEditor><ttl>60</ttl><webMaster>磊磊的秘密武器</webMaster><item><title>脚本安装codex</title><link>https://yanglei-985.github.io/yanglei-988.github.io/post/jiao-ben-an-zhuang-codex.html</link><description>@echo off
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>磊磊的秘密武器</title><link>https://yanglei-985.github.io/yanglei-988.github.io</link><description>Value+Grow^247</description><copyright>磊磊的秘密武器</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://s21.ax1x.com/2025/02/15/pEK09q1.jpg</url><title>avatar</title><link>https://yanglei-985.github.io/yanglei-988.github.io</link></image><lastBuildDate>Sun, 19 Apr 2026 02:13:36 +0000</lastBuildDate><managingEditor>磊磊的秘密武器</managingEditor><ttl>60</ttl><webMaster>磊磊的秘密武器</webMaster><item><title>obsidian配置指南</title><link>https://yanglei-985.github.io/yanglei-988.github.io/post/obsidian-pei-zhi-zhi-nan.html</link><description># Obsidian + Claude Code 教程整理（Step by Step）
+
+
+&gt; - **Obsidian CLI**
+&gt; - **Claude Code**
+&gt; - **Claudian**
+&gt; - **Skills**
+
+## 这套组合到底是什么？
+
+- **Obsidian**：你的知识库与笔记空间
+- **Claude Code**：负责理解指令、分析内容、执行操作的 AI 助手
+- **Claudian**：面向 Obsidian 使用场景定制的 Claude/Claude Code 助手
+- **Obsidian CLI**：让 AI 更顺畅地和 Obsidian 配合
+- **Skills**：把常见工作流封装成可复用能力
+
+一句话理解：
+
+&gt; Obsidian 负责存知识，Claude Code 负责理解和执行，Skills 负责把高频任务变成“可复用动作”。</description><guid isPermaLink="true">https://yanglei-985.github.io/yanglei-988.github.io/post/obsidian-pei-zhi-zhi-nan.html</guid><pubDate>Sun, 19 Apr 2026 02:13:02 +0000</pubDate></item><item><title>脚本安装codex</title><link>https://yanglei-985.github.io/yanglei-988.github.io/post/jiao-ben-an-zhuang-codex.html</link><description>@echo off
 chcp 65001 &gt;nul
 title Codex 一键安装脚本
 echo ========================================
