@@ -1,5 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>磊磊的秘密武器</title><link>https://yanglei-985.github.io/yanglei-988.github.io</link><description>Value+Grow^247</description><copyright>磊磊的秘密武器</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://s21.ax1x.com/2025/02/15/pEK09q1.jpg</url><title>avatar</title><link>https://yanglei-985.github.io/yanglei-988.github.io</link></image><lastBuildDate>Sun, 26 Apr 2026 01:51:06 +0000</lastBuildDate><managingEditor>磊磊的秘密武器</managingEditor><ttl>60</ttl><webMaster>磊磊的秘密武器</webMaster><item><title>codex危险模式</title><link>https://yanglei-985.github.io/yanglei-988.github.io/post/codex-wei-xian-mo-shi.html</link><description># 折腾笔记
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>磊磊的秘密武器</title><link>https://yanglei-985.github.io/yanglei-988.github.io</link><description>Value+Grow^247</description><copyright>磊磊的秘密武器</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://s21.ax1x.com/2025/02/15/pEK09q1.jpg</url><title>avatar</title><link>https://yanglei-985.github.io/yanglei-988.github.io</link></image><lastBuildDate>Sat, 23 May 2026 13:43:22 +0000</lastBuildDate><managingEditor>磊磊的秘密武器</managingEditor><ttl>60</ttl><webMaster>磊磊的秘密武器</webMaster><item><title>remotion + agent</title><link>https://yanglei-985.github.io/yanglei-988.github.io/post/remotion%20%2B%20agent.html</link><description>1.第一步骤是去github上面下载remotion的源码
+2.观看大致操作视频https://www.youtube.com/watch?v=XB23PD8IZA0
+3.https://www.youtube.com/watch?v=fB4uipaYYeU
+4.别人怎么去用代码制作视频https://pathunfold.com/blog/claude-vibe-code-video
+
+&lt;img width='1012' height='405' alt='Image' src='https://github.com/user-attachments/assets/e0f095b8-93bd-4d1b-82d5-ec51a93b403c' /&gt;
+
+4.里面有一些安装进程，比如选择project,就是安装到项目，global就是安装到全局。</description><guid isPermaLink="true">https://yanglei-985.github.io/yanglei-988.github.io/post/remotion%20%2B%20agent.html</guid><pubDate>Sat, 23 May 2026 13:42:53 +0000</pubDate></item><item><title>codex危险模式</title><link>https://yanglei-985.github.io/yanglei-988.github.io/post/codex-wei-xian-mo-shi.html</link><description># 折腾笔记
 
 ## 工具与命令
 
