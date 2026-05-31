@@ -1,5 +1,11 @@
 ```
-Gmeek-html<style>#postBody pre.notranslate{background:transparent!important;border:0!important;padding:0!important;margin:0!important;white-space:normal!important;font-family:inherit!important;line-height:inherit!important;overflow:visible!important;}</style>
+Gmeek-html<div class="gmeek-embed">
+<style>
+
+/* fix: Gmeek-html 反转义后会残留一层 <pre>,这里中和它的灰底/等宽/空白保留 */
+#postBody pre.notranslate{background:transparent!important;border:0!important;padding:0!important;margin:0!important;white-space:normal!important;font-family:inherit!important;line-height:inherit!important;overflow:visible!important;}
+.gmeek-embed,.gmeek-embed *{{box-sizing:border-box;}}
+</style>
 <section data-role="outer" label="S31宝玉风格整理" style="margin:0;padding:0;background:#fbfaf7;box-sizing:border-box;">
 <section style="max-width:700px;margin:0 auto;padding:28px 18px 56px;background:#fbfaf7;box-sizing:border-box;">
 
@@ -186,5 +192,5 @@ Gmeek-html<style>#postBody pre.notranslate{background:transparent!important;bord
 </section>
 </section>
 <p style="display:none;"><mp-style-type data-value="3"></mp-style-type></p>
-
+</div>
 ```
