@@ -1,5 +1,24 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>磊磊的秘密武器</title><link>https://yanglei-985.github.io/yanglei-988.github.io</link><description>Value+Grow^247</description><copyright>磊磊的秘密武器</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://s21.ax1x.com/2025/02/15/pEK09q1.jpg</url><title>avatar</title><link>https://yanglei-985.github.io/yanglei-988.github.io</link></image><lastBuildDate>Sun, 31 May 2026 12:08:49 +0000</lastBuildDate><managingEditor>磊磊的秘密武器</managingEditor><ttl>60</ttl><webMaster>磊磊的秘密武器</webMaster><item><title>remotion + agent</title><link>https://yanglei-985.github.io/yanglei-988.github.io/post/remotion%20%2B%20agent.html</link><description>1.第一步骤是去github上面下载remotion的源码
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>磊磊的秘密武器</title><link>https://yanglei-985.github.io/yanglei-988.github.io</link><description>Value+Grow^247</description><copyright>磊磊的秘密武器</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://s21.ax1x.com/2025/02/15/pEK09q1.jpg</url><title>avatar</title><link>https://yanglei-985.github.io/yanglei-988.github.io</link></image><lastBuildDate>Sun, 31 May 2026 12:21:04 +0000</lastBuildDate><managingEditor>磊磊的秘密武器</managingEditor><ttl>60</ttl><webMaster>磊磊的秘密武器</webMaster><item><title>AI是最好的杠杆</title><link>https://yanglei-985.github.io/yanglei-988.github.io/post/AI-shi-zui-hao-de-gang-gan.html</link><description>```
+Gmeek-html&lt;div class='gmeek-embed'&gt;
+&lt;style&gt;
+
+/* fix: Gmeek-html 反转义后会残留一层 &lt;pre&gt;,这里中和它的灰底/等宽/空白保留 */
+#postBody pre.notranslate{background:transparent!important;border:0!important;padding:0!important;margin:0!important;white-space:normal!important;font-family:inherit!important;line-height:inherit!important;overflow:visible!important;}
+.gmeek-embed,.gmeek-embed *{{box-sizing:border-box;}}
+&lt;/style&gt;
+&lt;section data-role='outer' label='宝玉风格会议整理' style='margin:0;padding:0;background:#fbfaf7;box-sizing:border-box;'&gt;
+&lt;section style='max-width:680px;margin:0 auto;padding:28px 18px 48px;background:#fbfaf7;box-sizing:border-box;'&gt;
+
+&lt;section style='margin:0 0 26px;padding:30px 0 22px;border-bottom:1px solid rgba(120,112,100,.20);box-sizing:border-box;'&gt;
+&lt;p style='margin:0 0 12px;color:#c43b2f;font-size:12px;letter-spacing:3px;text-transform:uppercase;font-family:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;'&gt;MEETING NOTES · AI × EDUCATION × TRAFFIC&lt;/p&gt;
+&lt;h1 style='margin:0 0 16px;color:#2b2b28;font-size:32px;line-height:1.25;font-weight:800;font-family:'Noto Serif SC','Source Han Serif SC','Songti SC',STSong,Georgia,serif;letter-spacing:.3px;'&gt;快速会议整理：&lt;br/&gt;把 AI 当杠杆，把内容做成系统&lt;/h1&gt;
+&lt;p style='margin:0;color:#77736b;font-size:14px;line-height:1.8;font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;'&gt;会议时间：约 56 分钟｜参会：BNY搭、Silence｜来源：逐字稿整理&lt;/p&gt;
+&lt;/section&gt;
+
+&lt;section style='margin:20px 0 24px;padding:18px;background:#f7f3ed;border:1px solid rgba(120,112,100,.20);border-radius:16px;box-sizing:border-box;'&gt;
+&lt;p style='margin:0 0 8px;color:#2b2b28;font-size:16px;line-height:1.6;font-weight:700;font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;'&gt;一句话结论&lt;/p&gt;
+&lt;p style='margin:0;color:#55514a;font-size:14px;line-height:1.85;font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;'&gt;这场会议核心不是闲聊，而是在把「AI 工具、知识库、英语教培产品、流量定位、抽卡奖励机制」串成一个可执行系统：先整理沉淀，再用 AI 放大，再用内容验证，再用产品承接。</description><guid isPermaLink="true">https://yanglei-985.github.io/yanglei-988.github.io/post/AI-shi-zui-hao-de-gang-gan.html</guid><pubDate>Sun, 31 May 2026 12:20:36 +0000</pubDate></item><item><title>remotion + agent</title><link>https://yanglei-985.github.io/yanglei-988.github.io/post/remotion%20%2B%20agent.html</link><description>1.第一步骤是去github上面下载remotion的源码
 2.观看大致操作视频https://www.youtube.com/watch?v=XB23PD8IZA0
 3.https://www.youtube.com/watch?v=fB4uipaYYeU
 4.别人怎么去用代码制作视频https://pathunfold.com/blog/claude-vibe-code-video
