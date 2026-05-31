@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>磊磊的秘密武器</title><link>https://yanglei-985.github.io/yanglei-988.github.io</link><description>Value+Grow^247</description><copyright>磊磊的秘密武器</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://s21.ax1x.com/2025/02/15/pEK09q1.jpg</url><title>avatar</title><link>https://yanglei-985.github.io/yanglei-988.github.io</link></image><lastBuildDate>Sat, 23 May 2026 13:43:22 +0000</lastBuildDate><managingEditor>磊磊的秘密武器</managingEditor><ttl>60</ttl><webMaster>磊磊的秘密武器</webMaster><item><title>remotion + agent</title><link>https://yanglei-985.github.io/yanglei-988.github.io/post/remotion%20%2B%20agent.html</link><description>1.第一步骤是去github上面下载remotion的源码
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>磊磊的秘密武器</title><link>https://yanglei-985.github.io/yanglei-988.github.io</link><description>Value+Grow^247</description><copyright>磊磊的秘密武器</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://s21.ax1x.com/2025/02/15/pEK09q1.jpg</url><title>avatar</title><link>https://yanglei-985.github.io/yanglei-988.github.io</link></image><lastBuildDate>Sun, 31 May 2026 12:08:49 +0000</lastBuildDate><managingEditor>磊磊的秘密武器</managingEditor><ttl>60</ttl><webMaster>磊磊的秘密武器</webMaster><item><title>remotion + agent</title><link>https://yanglei-985.github.io/yanglei-988.github.io/post/remotion%20%2B%20agent.html</link><description>1.第一步骤是去github上面下载remotion的源码
 2.观看大致操作视频https://www.youtube.com/watch?v=XB23PD8IZA0
 3.https://www.youtube.com/watch?v=fB4uipaYYeU
 4.别人怎么去用代码制作视频https://pathunfold.com/blog/claude-vibe-code-video
@@ -215,14 +215,10 @@ And we can follow the steps from the website,like downing the file to operate in
 
 &gt; 怎么用Cursor写我的简历，它会基于readme的文件给你最快的步骤，按照它给的步骤去做。</description><guid isPermaLink="true">https://yanglei-985.github.io/yanglei-988.github.io/post/ge-ren-jian-li-zhi-zuo-Ton%20CV.html</guid><pubDate>Sun, 16 Feb 2025 05:37:11 +0000</pubDate></item><item><title>AI+cursor的人生发展</title><link>https://yanglei-985.github.io/yanglei-988.github.io/post/AI%2Bcursor-de-ren-sheng-fa-zhan.html</link><description>### AI历程
 2024年4月份开始集中学习AI的使用，慢慢地去理解这些AI使用的同时，英文能力也在不断提升，反过来思考AI真正的价值在于放大人的专业能力，显而易见地发现自己在生产内容上面的速度变得快很多了，输出自己的想法也是顷刻间。</description><guid isPermaLink="true">https://yanglei-985.github.io/yanglei-988.github.io/post/AI%2Bcursor-de-ren-sheng-fa-zhan.html</guid><pubDate>Sat, 15 Feb 2025 12:08:08 +0000</pubDate></item><item><title>一些文件</title><link>https://yanglei-985.github.io/yanglei-988.github.io/post/yi-xie-wen-jian.html</link><description>[新经典1词汇.docx](https://github.com/user-attachments/files/18809929/1.docx)。</description><guid isPermaLink="true">https://yanglei-985.github.io/yanglei-988.github.io/post/yi-xie-wen-jian.html</guid><pubDate>Sat, 15 Feb 2025 10:57:54 +0000</pubDate></item><item><title>价值如何去界定</title><link>https://yanglei-985.github.io/yanglei-988.github.io/post/jia-zhi-ru-he-qu-jie-ding.html</link><description>愿有公民意识者:
-如果说一个东西有价值，但是它很贵，所以他的价值感就被削弱了。</description><guid isPermaLink="true">https://yanglei-985.github.io/yanglei-988.github.io/post/jia-zhi-ru-he-qu-jie-ding.html</guid><pubDate>Sat, 15 Feb 2025 10:25:12 +0000</pubDate></item><item><title>机场</title><link>https://yanglei-985.github.io/yanglei-988.github.io/post/ji-chang.html</link><description>&lt;!DOCTYPE html&gt;
-&lt;html lang='zh'&gt;
-&lt;head&gt;
-    &lt;meta charset='UTF-8'&gt;
-    &lt;meta name='viewport' content='width=device-width, initial-scale=1.0'&gt;
-    &lt;title&gt;机场英语对话与词汇学习&lt;/title&gt;
-    &lt;style&gt;
-        body {
+如果说一个东西有价值，但是它很贵，所以他的价值感就被削弱了。</description><guid isPermaLink="true">https://yanglei-985.github.io/yanglei-988.github.io/post/jia-zhi-ru-he-qu-jie-ding.html</guid><pubDate>Sat, 15 Feb 2025 10:25:12 +0000</pubDate></item><item><title>机场</title><link>https://yanglei-985.github.io/yanglei-988.github.io/post/ji-chang.html</link><description>```
+Gmeek-html&lt;div class='airport-app'&gt;
+&lt;style&gt;
+        .airport-app {
             font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
@@ -447,7 +443,7 @@ And we can follow the steps from the website,like downing the file to operate in
         }
 
         /* 新增布局优化 */
-        .main-container {
+        .airport-main {
             display: grid;
             grid-template-columns: 1fr 300px;
             gap: 30px;
@@ -457,7 +453,7 @@ And we can follow the steps from the website,like downing the file to operate in
         }
 
         @media (max-width: 768px) {
-            .main-container {
+            .airport-main {
                 grid-template-columns: 1fr;
             }
         }
@@ -472,10 +468,12 @@ And we can follow the steps from the website,like downing the file to operate in
             top: 20px;
             height: fit-content;
         }
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div class='main-container'&gt;
+    
+        /* fix: Gmeek-html injects inside a leftover &lt;pre&gt;; reset it */
+        #postBody pre.notranslate{background:transparent!important;border:0!important;padding:0!important;margin:0!important;white-space:normal!important;font-family:inherit!important;line-height:inherit!important;overflow:visible!important;}
+        .airport-app,.airport-app *{box-sizing:border-box;}
+&lt;/style&gt;
+&lt;div class='airport-main'&gt;
         &lt;!-- 对话内容容器 --&gt;
         &lt;div class='dialogue-container'&gt;
             &lt;h1 class='animated-title'&gt;机场英语口语练习&lt;/h1&gt;
