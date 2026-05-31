@@ -41,6 +41,10 @@ jobs:
           lastTag=$(git describe --tags `git rev-list --tags --max-count=1`)
           if [ $GMEEK_VERSION == 'last' ]; then git checkout $lastTag; else git checkout $GMEEK_VERSION; fi;
 
+      - name: Patch Gmeek raw HTML support
+        run: |
+          python scripts/patch_gmeek_raw_html.py /opt/Gmeek/Gmeek.py
+
       - name: Install dependencies
         run: |
           pip install --upgrade pip
