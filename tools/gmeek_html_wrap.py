@@ -169,6 +169,9 @@ def build_snippet(html: str, wrapper: str) -> str:
     neutralize = NEUTRALIZE_TMPL.replace("{scope}", scope)
     style_block = "<style>\n%s\n%s\n</style>\n" % (scoped, neutralize)
     app = '<div class="%s">\n%s%s\n</div>' % (wrapper, style_block, body)
+    # 压缩：去掉标签间的所有空白/换行/缩进，避免残留 <pre> 把空白渲染成可见字符
+    app = re.sub(r'>\s+<', '><', app)
+    app = re.sub(r'\n\s*', '', app)
     return "```\nGmeek-html" + app + "\n```\n"
 
 
