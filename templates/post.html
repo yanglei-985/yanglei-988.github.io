@@ -43,7 +43,9 @@
 {%- endif -%}
 {%- endfor -%}
 {%- endfor %}
-<article class="post">
+{%- set bodyHead = blogBase['postBody'][:60]|trim %}
+{%- set isEmbed = bodyHead.startswith('<pre class="notranslate"><div') or bodyHead.startswith('<pre class="notranslate"><section') %}
+<article class="post{% if isEmbed %} post--wide{% endif %}">
     <a class="back" href="{{ blogBase['homeUrl'] }}">← {{ i18n['home'] }}</a>
     <div class="post-kicker kicker">
         {%- if info.date %}<span>{{ info.date|replace('-', '.') }}</span>{% endif %}
@@ -51,7 +53,7 @@
     </div>
     <h1 class="post-title">{{ blogBase['postTitle'] }}</h1>
     <div class="post-meta">
-        {%- if info.words %}<span>约 {{ info.words }} 字 · 阅读 {{ [((info.words / 400)|round(0, 'ceil'))|int, 1]|max }} 分钟</span>{% endif %}
+        {%- if info.words and not isEmbed %}<span>约 {{ info.words }} 字 · 阅读 {{ [((info.words / 400)|round(0, 'ceil'))|int, 1]|max }} 分钟</span>{% endif %}
         {%- if blogBase['commentNum']>0 %}<span>{{ blogBase['commentNum'] }} 条评论</span>{% endif %}
         {%- if blogBase['showPostSource']==1 %}<a href="{{ blogBase['postSourceUrl'] }}" target="_blank" rel="noopener">在 GitHub 查看原文 ↗</a>{% endif %}
     </div>

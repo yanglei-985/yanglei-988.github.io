@@ -379,3 +379,17 @@ a:hover { color: var(--accent-2); text-decoration: none; }
 /* tag page rows show the full date */
 .tag-list .row a { grid-template-columns: 92px minmax(0, 1fr) auto; }
 @media (max-width: 640px) { .tag-list .row a { grid-template-columns: 1fr; } }
+
+/* Posts that are a whole embedded HTML page (Gmeek-html apps) get a wider canvas */
+.post--wide { max-width: 1160px; }
+.post--wide #postBody { border-bottom: 0; }
+
+/* 《机场》练习页：让双栏能收缩、词汇卡不溢出、侧栏停在顶栏下方 */
+.post--wide #postBody .airport-main { grid-template-columns: minmax(0, 1fr) 300px; }
+.post--wide #postBody .vocab-grid { grid-template-columns: minmax(0, 1fr); }
+.post--wide #postBody .vocab-container { top: 84px; }
+@media (max-width: 768px) {
+  .post--wide #postBody .airport-main { grid-template-columns: minmax(0, 1fr); padding: 0; }
+  .post--wide #postBody .airport-app { padding: 12px; }
+  .post--wide #postBody .practice-controls { flex-wrap: wrap; }
+}
