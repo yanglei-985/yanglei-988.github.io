@@ -390,6 +390,20 @@ a:hover { color: var(--accent-2); text-decoration: none; }
 /* tag page rows show the full date */
 .tag-list .row a { grid-template-columns: 92px minmax(0, 1fr) auto; }
 @media (max-width: 640px) { .tag-list .row a { grid-template-columns: 1fr; } }
+
+/* Posts that are a whole embedded HTML page (Gmeek-html apps) get a wider canvas */
+.post--wide { max-width: 1160px; }
+.post--wide #postBody { border-bottom: 0; }
+
+/* 《机场》练习页：让双栏能收缩、词汇卡不溢出、侧栏停在顶栏下方 */
+.post--wide #postBody .airport-main { grid-template-columns: minmax(0, 1fr) 300px; }
+.post--wide #postBody .vocab-grid { grid-template-columns: minmax(0, 1fr); }
+.post--wide #postBody .vocab-container { top: 84px; }
+@media (max-width: 768px) {
+  .post--wide #postBody .airport-main { grid-template-columns: minmax(0, 1fr); padding: 0; }
+  .post--wide #postBody .airport-app { padding: 12px; }
+  .post--wide #postBody .practice-controls { flex-wrap: wrap; }
+}
     </style>
     <script src='https://blog.meekdai.com/Gmeek/plugins/GmeekBSZ.js'></script>
     <link rel="icon" href="https://s21.ax1x.com/2025/02/15/pEK09q1.jpg">
@@ -492,12 +506,12 @@ Gmeek-html<div class='gmeek-embed'>
     </header>
     <div id="header"></div>
     <main id="content">
-<article class="post">
+<article class="post post--wide">
     <a class="back" href="https://yanglei-985.github.io/yanglei-988.github.io">← 首页</a>
     <div class="post-kicker kicker"><span>2026.05.31</span><a href="https://yanglei-985.github.io/yanglei-988.github.io/tag.html#documentation">#笔记</a>
     </div>
     <h1 class="post-title">AI是最好的杠杆</h1>
-    <div class="post-meta"><span>约 26028 字 · 阅读 66 分钟</span><a href="https://github.com/yanglei-985/yanglei-988.github.io/issues/51" target="_blank" rel="noopener">在 GitHub 查看原文 ↗</a>
+    <div class="post-meta"><a href="https://github.com/yanglei-985/yanglei-988.github.io/issues/51" target="_blank" rel="noopener">在 GitHub 查看原文 ↗</a>
     </div>
 
     <div class="markdown-body" id="postBody"><pre class="notranslate"><div class="gmeek-embed">
@@ -591,7 +605,7 @@ Gmeek-html<div class='gmeek-embed'>
 <h3 style="margin:30px 0 14px;color:#2b2b28;font-size:19px;line-height:1.45;font-weight:700;font-family:'Noto Serif SC','Source Han Serif SC','Songti SC',STSong,Georgia,serif;"><span style="color:#c43b2f;font-family:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;font-size:14px;margin-right:8px;">▍</span>可借鉴案例</h3>
 
 
-<section style="max-width:680px;margin:0 auto;padding:28px 18px 48px;background:#fbfaf7;box-sizing:border-box;">0
+<section style="margin:12px 0 20px;padding:2px 0;box-sizing:border-box;">
 
 
 <p style="margin:0 0 8px;color:#3f3d38;font-size:15px;line-height:1.75;font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;"><span style="display:inline-block;width:6px;height:6px;margin:0 10px 2px 2px;background:#c43b2f;border-radius:50%;vertical-align:middle;"></span>教培积分制：学生打卡、累计积分，再兑换文具、零食、小奖励。</p>
@@ -599,7 +613,7 @@ Gmeek-html<div class='gmeek-embed'>
 <p style="margin:0 0 8px;color:#3f3d38;font-size:15px;line-height:1.75;font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;"><span style="display:inline-block;width:6px;height:6px;margin:0 10px 2px 2px;background:#c43b2f;border-radius:50%;vertical-align:middle;"></span>卡片层级：青铜、白银、黑金、王者、SSR 等，可以作为后期情绪价值系统。</p>
 
 
-<section style="max-width:680px;margin:0 auto;padding:28px 18px 48px;background:#fbfaf7;box-sizing:border-box;">1
+</section>
 
 
 <p style="margin:0 0 16px;color:#3f3d38;font-size:15.5px;line-height:1.95;font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;">但会议也强调：前期不要急着做复杂交易或金融化设计，先把实用价值做好。先让学习有效，再让奖励好玩。</p>
@@ -614,7 +628,7 @@ Gmeek-html<div class='gmeek-embed'>
 <h3 style="margin:30px 0 14px;color:#2b2b28;font-size:19px;line-height:1.45;font-weight:700;font-family:'Noto Serif SC','Source Han Serif SC','Songti SC',STSong,Georgia,serif;"><span style="color:#c43b2f;font-family:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;font-size:14px;margin-right:8px;">▍</span>定位链路</h3>
 
 
-<section style="max-width:680px;margin:0 auto;padding:28px 18px 48px;background:#fbfaf7;box-sizing:border-box;">2
+<section style="margin:12px 0 20px;padding:2px 0;box-sizing:border-box;">
 
 
 <p style="margin:0 0 8px;color:#3f3d38;font-size:15px;line-height:1.75;font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;"><span style="display:inline-block;width:6px;height:6px;margin:0 10px 2px 2px;background:#c43b2f;border-radius:50%;vertical-align:middle;"></span><strong>定赛道：</strong>从擅长、喜欢、值得三个圆的交集里找；如果没有交集，优先做擅长的。</p>
@@ -623,7 +637,7 @@ Gmeek-html<div class='gmeek-embed'>
 <p style="margin:0 0 8px;color:#3f3d38;font-size:15px;line-height:1.75;font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;"><span style="display:inline-block;width:6px;height:6px;margin:0 10px 2px 2px;background:#c43b2f;border-radius:50%;vertical-align:middle;"></span><strong>定内容：</strong>内容服务于目标用户，内容越垂直，人设越清晰。</p>
 
 
-<section style="max-width:680px;margin:0 auto;padding:28px 18px 48px;background:#fbfaf7;box-sizing:border-box;">3
+</section>
 
 
 <section style="margin:18px 0 22px;padding:18px 18px;background:#f7f3ed;border:1px solid rgba(120,112,100,.20);border-radius:14px;box-sizing:border-box;"><p style="margin:0 0 6px;color:#2b2b28;font-size:16px;line-height:1.6;font-weight:700;font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;">关键金句</p><p style="margin:0;color:#55514a;font-size:13.5px;line-height:1.8;font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;">创业最聪明的方式不是参与竞争，而是避开竞争。用户切得越细，竞争对手越少。</p></section>
@@ -632,7 +646,7 @@ Gmeek-html<div class='gmeek-embed'>
 <p style="margin:0 0 16px;color:#3f3d38;font-size:15.5px;line-height:1.95;font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;">产品不能只有一个价格。会议里明确提到要有入门款、流量款、爆款。入门款和流量款不只是赚钱，它们本身也是筛选机制，为升单和高价值服务做准备。</p>
 
 
-<section style="max-width:680px;margin:0 auto;padding:28px 18px 48px;background:#fbfaf7;box-sizing:border-box;">4
+<section style="margin:12px 0 20px;padding:2px 0;box-sizing:border-box;">
 
 
 <p style="margin:0 0 8px;color:#3f3d38;font-size:15px;line-height:1.75;font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;"><span style="display:inline-block;width:6px;height:6px;margin:0 10px 2px 2px;background:#c43b2f;border-radius:50%;vertical-align:middle;"></span>入门款：降低尝试门槛，吸引潜在用户。</p>
@@ -640,7 +654,7 @@ Gmeek-html<div class='gmeek-embed'>
 <p style="margin:0 0 8px;color:#3f3d38;font-size:15px;line-height:1.75;font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;"><span style="display:inline-block;width:6px;height:6px;margin:0 10px 2px 2px;background:#c43b2f;border-radius:50%;vertical-align:middle;"></span>爆款：真正赚钱和交付价值的主产品。</p>
 
 
-<section style="max-width:680px;margin:0 auto;padding:28px 18px 48px;background:#fbfaf7;box-sizing:border-box;">5
+</section>
 
 
 
@@ -659,20 +673,20 @@ Gmeek-html<div class='gmeek-embed'>
 <h3 style="margin:30px 0 14px;color:#2b2b28;font-size:19px;line-height:1.45;font-weight:700;font-family:'Noto Serif SC','Source Han Serif SC','Songti SC',STSong,Georgia,serif;"><span style="color:#c43b2f;font-family:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;font-size:14px;margin-right:8px;">▍</span>近期工具决策</h3>
 
 
-<section style="max-width:680px;margin:0 auto;padding:28px 18px 48px;background:#fbfaf7;box-sizing:border-box;">6
+<section style="margin:12px 0 20px;padding:2px 0;box-sizing:border-box;">
 
 
 <p style="margin:0 0 8px;color:#3f3d38;font-size:15px;line-height:1.75;font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;"><span style="display:inline-block;width:6px;height:6px;margin:0 10px 2px 2px;background:#c43b2f;border-radius:50%;vertical-align:middle;"></span>6 月 1 日前后，需要决策使用 Claude Opus 还是 GPT 5.5 Pro 一类高阶模型。</p>
 <p style="margin:0 0 8px;color:#3f3d38;font-size:15px;line-height:1.75;font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;"><span style="display:inline-block;width:6px;height:6px;margin:0 10px 2px 2px;background:#c43b2f;border-radius:50%;vertical-align:middle;"></span>考虑因素：Claude 封号概率较高，5.5 Pro 也存在使用门槛，但做大事需要尽快选一个。</p>
 
 
-<section style="max-width:680px;margin:0 auto;padding:28px 18px 48px;background:#fbfaf7;box-sizing:border-box;">7
+</section>
 
 
 <h3 style="margin:30px 0 14px;color:#2b2b28;font-size:19px;line-height:1.45;font-weight:700;font-family:'Noto Serif SC','Source Han Serif SC','Songti SC',STSong,Georgia,serif;"><span style="color:#c43b2f;font-family:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;font-size:14px;margin-right:8px;">▍</span>英语产品 Deadline</h3>
 
 
-<section style="max-width:680px;margin:0 auto;padding:28px 18px 48px;background:#fbfaf7;box-sizing:border-box;">8
+<section style="margin:12px 0 20px;padding:2px 0;box-sizing:border-box;">
 
 
 <p style="margin:0 0 8px;color:#3f3d38;font-size:15px;line-height:1.75;font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;"><span style="display:inline-block;width:6px;height:6px;margin:0 10px 2px 2px;background:#c43b2f;border-radius:50%;vertical-align:middle;"></span><strong>单词系统：</strong>6 月 7 日前跑出来，优先跑 100-200 个词做测试。</p>
@@ -680,14 +694,14 @@ Gmeek-html<div class='gmeek-embed'>
 <p style="margin:0 0 8px;color:#3f3d38;font-size:15px;line-height:1.75;font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;"><span style="display:inline-block;width:6px;height:6px;margin:0 10px 2px 2px;background:#c43b2f;border-radius:50%;vertical-align:middle;"></span><strong>语法点：</strong>人称代词部分已做出雏形，包括主格、宾格、形物代、名物代、反身代词等；最好与单词系统并行推进。</p>
 
 
-<section style="max-width:680px;margin:0 auto;padding:28px 18px 48px;background:#fbfaf7;box-sizing:border-box;">9
+</section>
 
 
 
 <section style="margin:42px 0 20px;padding:0;box-sizing:border-box;"><p style="margin:0 0 8px;color:#c43b2f;font-size:12px;letter-spacing:2.5px;text-transform:uppercase;font-family:'JetBrains Mono','SF Mono',Menlo,Consolas,monospace;">summary</p><h2 style="margin:0;color:#2b2b28;font-size:25px;line-height:1.35;font-weight:700;font-family:'Noto Serif SC','Source Han Serif SC','Songti SC',STSong,Georgia,serif;"><span style="display:inline-block;padding-left:12px;border-left:4px solid #c43b2f;">最后压缩成 5 条</span></h2></section>
 
 
-<section style="margin:0 0 26px;padding:30px 0 22px;border-bottom:1px solid rgba(120,112,100,.20);box-sizing:border-box;">0
+<section style="margin:12px 0 20px;padding:2px 0;box-sizing:border-box;">
 
 
 <p style="margin:0 0 8px;color:#3f3d38;font-size:15px;line-height:1.75;font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;"><span style="display:inline-block;width:6px;height:6px;margin:0 10px 2px 2px;background:#c43b2f;border-radius:50%;vertical-align:middle;"></span>所有有价值的会议和项目，都要沉淀成可复用知识库。</p>
@@ -697,36 +711,36 @@ Gmeek-html<div class='gmeek-embed'>
 <p style="margin:0 0 8px;color:#3f3d38;font-size:15px;line-height:1.75;font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;"><span style="display:inline-block;width:6px;height:6px;margin:0 10px 2px 2px;background:#c43b2f;border-radius:50%;vertical-align:middle;"></span>6 月 7 日前，先把单词系统跑出可测试版本，再用反馈不断迭代。</p>
 
 
-<section style="margin:0 0 26px;padding:30px 0 22px;border-bottom:1px solid rgba(120,112,100,.20);box-sizing:border-box;">1
+</section>
 
 
 
 
 
-<section style="margin:0 0 26px;padding:30px 0 22px;border-bottom:1px solid rgba(120,112,100,.20);box-sizing:border-box;">2
+<section style="margin:32px 0 0;padding:18px;background:#2b2b28;border-radius:16px;box-sizing:border-box;">
 
 
 <p style="margin:0 0 6px;color:#fbfaf7;font-size:16px;line-height:1.6;font-weight:700;font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;">下一步建议</p>
 <p style="margin:0;color:#d8d2c8;font-size:13.5px;line-height:1.8;font-family:'Noto Sans SC','PingFang SC','Microsoft YaHei',sans-serif;">把本会议整理继续拆成三个可执行文件：① 单词系统 6 月 7 日冲刺清单；② 英语教培流量定位画布；③ 抽卡奖励机制 MVP 设计。</p>
 
 
-<section style="margin:0 0 26px;padding:30px 0 22px;border-bottom:1px solid rgba(120,112,100,.20);box-sizing:border-box;">3
+</section>
 
 
 
 
 
-<section style="margin:0 0 26px;padding:30px 0 22px;border-bottom:1px solid rgba(120,112,100,.20);box-sizing:border-box;">4
+</section>
 
 
 
 
-<section style="margin:0 0 26px;padding:30px 0 22px;border-bottom:1px solid rgba(120,112,100,.20);box-sizing:border-box;">5
+</section>
 
 
 
 
-<section style="margin:0 0 26px;padding:30px 0 22px;border-bottom:1px solid rgba(120,112,100,.20);box-sizing:border-box;">6
+</div>
 
 
 </pre></div>
