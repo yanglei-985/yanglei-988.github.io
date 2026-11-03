@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html data-color-mode="light" data-dark-theme="{{ blogBase['nightTheme'] }}" data-light-theme="{{ blogBase['dayTheme'] }}" lang={% if blogBase['i18n']=='CN' %}"zh-CN"{% elif blogBase['i18n']=='RU' %}"ru"{% else -%}"en"{%- endif -%}>
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {{ blogBase['primerCSS'] }}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,500&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@600;700;900&display=swap" rel="stylesheet">
+    <link href="{{ blogBase['homeUrl'] }}/theme.css?v={{ blogBase.get('themeVersion', '1') }}" rel="stylesheet">
+    {{ blogBase['allHead'] }}
+    <link rel="icon" href="{{ blogBase['faviconUrl'] }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ blogBase['title'] }}" href="{{ blogBase['homeUrl'] }}/rss.xml">
+    {%- if blogBase['themeMode']=='manual' -%}
+    <script>
+        let theme = localStorage.getItem("meek_theme") || "light";
+        document.documentElement.setAttribute("data-color-mode", theme);
+    </script>
+    {%- endif -%}
+    {% block head %}{% endblock %}
+</head>
+{% block style %}{% endblock %}
+
+<body>
+    <header class="site-bar">
+        <div class="wrap">
+            <a class="brand" href="{{ blogBase['homeUrl'] }}">
+                <img src="{{ blogBase['avatarUrl'] }}" alt="avatar">
+                <span class="brand-text">
+                    <span class="brand-name">{{ blogBase['displayTitle'] }}</span>
+                    <span class="brand-sub">{{ blogBase['subTitle'] }}</span>
+                </span>
+            </a>
+            <nav class="site-nav">
+                <a href="{{ blogBase['homeUrl'] }}"><span class="nav-text">首页</span></a>
+                <a href="{{ blogBase['homeUrl'] }}/tag.html#All"><span class="nav-text">标签</span></a>
+                {% for num in blogBase['singeListJson'] -%}
+                <a href="{{ blogBase['homeUrl'] }}/{{ blogBase['singeListJson'][num]['labels'][0] }}.html"><span class="nav-text">{{ blogBase['singeListJson'][num]['postTitle'] }}</span></a>
+                {%- endfor %}
+                {% for key, value in blogBase['exlink'].items() -%}
+                <a href="{{ value }}" target="_blank" rel="noopener"><span class="nav-text">{{ key }}</span></a>
+                {%- endfor %}
+                <a class="icon-btn" href="{{ blogBase['homeUrl'] }}/tag.html" title="{{ i18n['Search'] }}" aria-label="{{ i18n['Search'] }}">
+                    <svg class="stroke" viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.6"/><path d="M10.4 10.4 14 14"/></svg>
+                </a>
+                <a class="icon-btn" href="{{ blogBase['homeUrl'] }}/rss.xml" target="_blank" title="RSS" aria-label="RSS">
+                    <svg class="stroke" viewBox="0 0 16 16"><path d="M3 2.8a10.2 10.2 0 0 1 10.2 10.2M3 7a6 6 0 0 1 6 6"/><circle cx="3.6" cy="12.4" r="1" fill="currentColor" stroke="none"/></svg>
+                </a>
+                <button class="icon-btn" type="button" onclick="modeSwitch()" title="{{ i18n['switchTheme'] }}" aria-label="{{ i18n['switchTheme'] }}" {%- if blogBase['themeMode']=='fix' %} style="display:none;"{%- endif -%}>
+                    <svg viewBox="0 0 16 16"><path id="themeSwitch" fill-rule="evenodd"></path></svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+    <div id="header">{% block header %}{% endblock %}</div>
+    <main id="content">{% block content %}{% endblock %}</main>
+    <footer id="footer" class="site-foot">{% include 'footer.html' %}</footer>
+</body>
+<script>
+var IconList={{ IconList }};
+var utterancesLoad=0;
+{% if blogBase['themeMode']=='manual' %}
+let themeSettings={
+    "dark": ["dark","moon","","dark-blue"],
+    "light": ["light","sun","","github-light"],
+    "auto": ["auto","sync","","preferred-color-scheme"]
+};
+function changeTheme(mode, icon, color, utheme){
+    document.documentElement.setAttribute("data-color-mode",mode);
+    document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
+    if(utterancesLoad==1){utterancesTheme(utheme);}
+}
+function modeSwitch(){
+    let currentMode=document.documentElement.getAttribute('data-color-mode');
+    let newMode = currentMode === "light" ? "dark" : currentMode === "dark" ? "auto" : "light";
+    localStorage.setItem("meek_theme", newMode);
+    if(themeSettings[newMode]){
+        changeTheme(...themeSettings[newMode]);
+    }
+}
+function utterancesTheme(theme){
+    const message={type:'set-theme',theme: theme};
+    const iframe=document.getElementsByClassName('utterances-frame')[0];
+    iframe.contentWindow.postMessage(message,'https://utteranc.es');
+}
+if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
+{%- endif %}
+console.log("\n %c Gmeek {{ blogBase['GMEEK_VERSION'] }} https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#2f5d4e;color:#fff");
+</script>
+{% block script %}{% endblock %}
+</html>

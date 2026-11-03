@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{% block head %}
+<meta name="description" content="{{ blogBase['title'] }} search page">
+<title>{{ blogBase['title'] }} - Tag</title>
+{% endblock %}
+
+{% block content %}
+<section class="sec tag-list">
+    <div class="wrap">
+        <div class="tag-top">
+            <div>
+                <div class="kicker">Index · 标签与搜索</div>
+                <span class="tagTitle">Loading…</span>
+            </div>
+            <form class="search-box" onsubmit="searchShow();return false;">
+                <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="M10.4 10.4 14 14"/></svg>
+                <input type="search" class="subnav-search-input" aria-label="Search site" placeholder="搜索文章标题…" value="">
+                <button type="submit">{{ i18n['Search'] }}</button>
+            </form>
+        </div>
+        <div id="taglabel" class="chips"></div>
+        <ol class="rows" id="postRows"></ol>
+        <div class="notFind" style="display:none;"></div>
+    </div>
+</section>
+{% endblock %}
+
+{% block script %}
+<script>
+var labelAlias={{ blogBase.get('labelAlias', {})|tojson }};
+function aliasOf(label){ return label=="All" ? "全部" : (labelAlias[label] || label); }
+
+tagList=[];
+labelsCount={};
+jsonData='';
+let requestJson="postList.json"
+let request=new XMLHttpRequest();
+request.open("GET",requestJson);
+request.responseType='text';
+request.send();
+request.onload=function(){
+    jsonData=JSON.parse(request.response);
+    showList(labelsCount);
+    setClassDisplay(decodeURI(window.location.hash.slice(1)) || "All");
+}
+
+function el(tag, cls, text){
+    let e=document.createElement(tag);
+    if(cls){e.className=cls;}
+    if(text!==undefined){e.textContent=text;}
+    return e;
+}
+
+function showList(labelsCount){
+    let list=document.getElementById("postRows");
+    let taglabel=document.getElementById("taglabel");
+
+    labelsCount["All"]=0;
+    for (let key in jsonData) {
+        if (key !== 'labelColorDict' && Array.isArray(jsonData[key]['labels'])) {
+            labelsCount["All"]++;
+            for (let label of jsonData[key]['labels']) {
+                labelsCount[label] = (labelsCount[label] || 0) + 1;
+            }
+        }
+    }
+
+    let sortedLabelsList = Object.keys(labelsCount).sort((a, b) => labelsCount[b] - labelsCount[a]);
+    for (let label of sortedLabelsList) {
+        tagList.push(label);
+        let chip=el("button","chip",aliasOf(label));
+        chip.type="button";
+        chip.dataset.label=label;
+        chip.appendChild(el("em","",String(labelsCount[label])));
+        chip.addEventListener("click",()=>updateShowTag(label));
+        taglabel.appendChild(chip);
+    }
+
+    for(let i in jsonData){
+        if(i=='labelColorDict'){continue;}
+        let post=jsonData[i];
+        let li=el("li","row lists");
+        li.dataset.labels=JSON.stringify(post['labels']);
+        let a=el("a");
+        a.href=post['postUrl'];
+        a.appendChild(el("time","row-date",post['createdDate'].replace(/-/g,'.')));
+        let main=el("span","row-main");
+        main.appendChild(el("span","row-title listTitle",post['postTitle']));
+        a.appendChild(main);
+        let tags=el("span","row-tags");
+        for(let label of post['labels']){ tags.appendChild(el("span","tag",aliasOf(label))); }
+        tags.appendChild(el("span","arrow","→"));
+        a.appendChild(tags);
+        li.appendChild(a);
+        list.appendChild(li);
+    }
+}
+
+function markChip(label){
+    for(let c of document.querySelectorAll("#taglabel .chip")){
+        c.classList.toggle("on", c.dataset.label===label);
+    }
+}
+
+function updateShowTag(label){
+    if(window.location.hash.slice(1)!=encodeURI(label)){
+        window.location.hash="#"+(label);
+    }
+    setClassDisplay(label);
+}
+
+function setClassDisplay(label){
+    let lists = document.getElementsByClassName("lists");
+    let tagTitle = document.getElementsByClassName("tagTitle")[0];
+    let notFind = document.getElementsByClassName("notFind")[0];
+    document.getElementsByClassName("subnav-search-input")[0].value='';
+    if(tagList.indexOf(label)!=-1){
+        tagTitle.textContent = label=="All" ? "全部文章" : "#"+aliasOf(label);
+        document.title=aliasOf(label)+" - {{ blogBase['title'] }}";
+        markChip(label);
+        for(let i = 0; i < lists.length; i++){
+            let labels=JSON.parse(lists[i].dataset.labels);
+            lists[i].style.display = (label=="All" || labels.indexOf(label)!=-1) ? '' : 'none';
+        }
+        notFind.style.display='none';
+    }
+    else{
+        document.getElementsByClassName("subnav-search-input")[0].value=label;
+        searchShow();
+    }
+}
+
+function searchShow(){
+    let lists = document.getElementsByClassName("lists");
+    let tagTitle = document.getElementsByClassName("tagTitle")[0];
+    let notFind = document.getElementsByClassName("notFind")[0];
+    let searchInput = document.getElementsByClassName("subnav-search-input")[0].value.trim();
+    tagTitle.textContent = searchInput=='' ? "全部文章" : "搜索：" + searchInput;
+    document.title=(searchInput=='' ? "Search" : searchInput)+" - {{ blogBase['title'] }}";
+    markChip(searchInput=='' ? "All" : "");
+    let a=0;
+    window.location.hash="#"+(searchInput);
+    for(let i = 0; i < lists.length; i++){
+        let title=lists[i].querySelector(".row-title").textContent;
+        if(title.toUpperCase().indexOf(searchInput.toUpperCase())==-1){lists[i].style.display='none';}
+        else{lists[i].style.display='';a=a+1;}
+    }
+    if(a==0){
+        notFind.style.display='block';
+        notFind.textContent='没有找到包含「'+searchInput+'」的文章';
+    }
+    else{notFind.style.display='none';}
+}
+</script>
+{% endblock %}

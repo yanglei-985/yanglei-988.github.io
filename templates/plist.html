@@ -1,0 +1,112 @@
+{% extends 'base.html' %}
+{% block head %}
+<meta name="description" content="{{ blogBase['subTitle'] }}">
+<meta property="og:title" content="{{ blogBase['title'] }}">
+<meta property="og:description" content="{{ blogBase['subTitle'] }}">
+<meta property="og:type" content="blog">
+<meta property="og:url" content="{{ blogBase['homeUrl'] }}">
+<meta property="og:image" content="{{ blogBase['ogImage'] }}">
+<title>{{ blogBase['title'] }}</title>
+{% endblock %}
+
+{% block style %}
+{{ blogBase['indexStyle'] }}
+{% endblock %}
+
+{% block content %}
+{%- set alias = blogBase.get('labelAlias', {}) -%}
+{%- set allPosts = blogBase['postListJson'] -%}
+{%- set allLabels = [] -%}
+{%- for k in allPosts -%}{%- for l in allPosts[k]['labels'] -%}{%- set _ = allLabels.append(l) -%}{%- endfor -%}{%- endfor -%}
+{%- set labelPairs = [] -%}
+{%- for l in allLabels|unique -%}{%- set _ = labelPairs.append([allLabels|select('equalto', l)|list|length, l]) -%}{%- endfor -%}
+{%- set labelPairs = labelPairs|sort(reverse=true) -%}
+
+{% if blogBase['prevUrl']=='disabled' %}
+<section class="hero">
+    <div class="wrap">
+        <div>
+            <div class="kicker">{{ blogBase.get('heroKicker', 'YANGLEI · AI 工具 / 语言学习 / 知识管理') }}</div>
+            <h1>磊磊的<br><span class="mark">秘密武器</span></h1>
+            <p class="formula">Value<span class="op">+</span>Grow<sup>247</sup></p>
+            <p class="hero-intro">{{ blogBase.get('heroIntro', '') }}</p>
+            <div class="hero-cta">
+                <a class="btn-ink" href="#archive">浏览全部文章 <span aria-hidden="true">↓</span></a>
+                <a class="btn-line" href="{{ blogBase['homeUrl'] }}/tag.html#All">按标签查找 <span aria-hidden="true">→</span></a>
+            </div>
+        </div>
+        <aside class="arsenal" aria-label="武器库">
+            <div class="arsenal-head"><span class="kicker">Arsenal · 武器库</span><span>INVENTORY</span></div>
+            <div class="stats">
+                <div class="stat"><b>{{ allPosts|length }}</b><span>篇文章</span></div>
+                <div class="stat"><b>{{ labelPairs|length }}</b><span>个分类</span></div>
+                <div class="stat"><b class="small">{{ (allPosts.values()|map(attribute='createdDate')|max)[2:]|replace('-', '.') if allPosts else '—' }}</b><span>最近更新</span></div>
+            </div>
+            <ul class="inventory">
+                {%- set maxCount = labelPairs[0][0] if labelPairs else 1 -%}
+                {%- for pair in labelPairs[:6] %}
+                <li><a href="{{ blogBase['homeUrl'] }}/tag.html#{{ pair[1] }}">
+                    <span class="idx">{{ '%02d' % loop.index }}</span>
+                    <span><span class="name">{{ alias.get(pair[1], pair[1]) }}</span><span class="bar"><i style="width:{{ (pair[0] / maxCount * 100)|round(1) }}%"></i></span></span>
+                    <span class="num">{{ pair[0] }}</span>
+                </a></li>
+                {%- endfor %}
+            </ul>
+        </aside>
+    </div>
+</section>
+{% endif %}
+
+<section class="sec" id="archive">
+    <div class="wrap">
+        <div class="sec-head">
+            <div>
+                <div class="kicker">Archive · 文章索引</div>
+                <h2>{% if blogBase['prevUrl']=='disabled' %}按时间翻一翻{% else %}更早的记录{% endif %}</h2>
+            </div>
+            <a class="text-link" href="{{ blogBase['homeUrl'] }}/tag.html#All">全部标签与搜索 →</a>
+        </div>
+
+        {%- for num in postListJson %}
+        {%- set p = postListJson[num] %}
+        {%- set grp = '置顶' if p['top']==1 else p['createdDate'][:4] %}
+        {%- if loop.changed(grp) %}
+        {%- if not loop.first %}</ol></div>{% endif %}
+        <div class="yg">
+            <h3 class="yg-year{% if p['top']==1 %} pinned{% endif %}"><span>{{ grp }}</span></h3>
+            <ol class="rows">
+        {%- endif %}
+                <li class="row"><a href="{{ p['postUrl']|e }}">
+                    <time class="row-date">{{ (p['createdDate'][2:] if p['top']==1 else p['createdDate'][5:])|replace('-', '.') }}</time>
+                    <span class="row-main">
+                        <span class="row-title">{{ p['postTitle']|e }}</span>
+                        {%- set desc = p['description']|striptags|replace('#', '')|replace('*', '')|replace('`', '')|replace('> ', '')|replace('[[', '')|replace(']]', '')|trim %}
+                        {%- if desc and 'Gmeek-html' not in p['description'] and desc|length > 4 %}<span class="row-desc">{{ desc|e }}</span>{% endif %}
+                    </span>
+                    <span class="row-tags">
+                        {%- for label in p['labels'] %}<span class="tag">{{ alias.get(label, label) }}</span>{% endfor -%}
+                        {%- if p['commentNum']>0 %}<span>💬 {{ p['commentNum'] }}</span>{% endif -%}
+                        <span class="arrow">→</span>
+                    </span>
+                </a></li>
+        {%- if loop.last %}
+            </ol>
+        </div>
+        {%- endif %}
+        {%- endfor %}
+
+        {%- if blogBase['prevUrl']!='disabled' or blogBase['nextUrl']!='disabled' %}
+        <nav class="pager" aria-label="Pagination">
+            {%- if blogBase['prevUrl']=='disabled' %}<span class="off">← {{ i18n['Previous'] }}</span>
+            {%- else %}<a rel="previous" href="{{ blogBase['homeUrl'] }}{{ blogBase['prevUrl'] }}">← {{ i18n['Previous'] }}</a>{% endif %}
+            {%- if blogBase['nextUrl']=='disabled' %}<span class="off">{{ i18n['Next'] }} →</span>
+            {%- else %}<a rel="next" href="{{ blogBase['homeUrl'] }}{{ blogBase['nextUrl'] }}#archive">{{ i18n['Next'] }} →</a>{% endif %}
+        </nav>
+        {%- endif %}
+    </div>
+</section>
+{% endblock %}
+
+{% block script %}
+{{ blogBase['indexScript'] }}
+{% endblock %}
