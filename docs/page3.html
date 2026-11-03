@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href='https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/Primer/21.0.7/primer.css' rel='stylesheet' />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,500&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@600;700;900&display=swap" rel="stylesheet">
+    <link href="https://yanglei-985.github.io/yanglei-988.github.io/theme.css?v=1" rel="stylesheet">
     <script src='https://blog.meekdai.com/Gmeek/plugins/GmeekBSZ.js'></script>
-    <link rel="icon" href="https://s21.ax1x.com/2025/02/15/pEK09q1.jpg"><script>
+    <link rel="icon" href="https://s21.ax1x.com/2025/02/15/pEK09q1.jpg">
+    <link rel="alternate" type="application/rss+xml" title="磊磊的秘密武器" href="https://yanglei-985.github.io/yanglei-988.github.io/rss.xml"><script>
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
@@ -19,240 +24,190 @@
 <title>磊磊的秘密武器</title>
 
 </head>
-<style>
-body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;padding: 45px;font-size: 16px;font-family: sans-serif;line-height: 1.25;}
-#header{display:flex;padding-bottom:8px;border-bottom: 1px solid var(--borderColor-muted, var(--color-border-muted));margin-bottom: 16px;}
-#footer {margin-top:64px; text-align: center;font-size: small;}
 
-</style>
-
-<style>
-.avatar {transition: 0.8s;width:64px;height:64px;object-fit: cover;}
-.avatar:hover{transform: scale(1.15) rotate(360deg);}
-.title-left a{color:inherit;text-decoration:none;vertical-align: bottom;font-size:40px;font-weight: bold;font-family:Monaco;margin-left:8px;}
-.title-right{display:flex;margin:auto 0 0 auto;}
-.title-right button{margin-right:8px;padding:16px;}
-.title-right .circle{padding: 14px 16px;}
-
-.SideNav{min-width: 360px;}
-.SideNav-icon{margin-right: 16px}
-.SideNav-item .Label{color: #fff;margin-left:4px;}
-.d-flex{min-width:0;}
-.listTitle{overflow:hidden;white-space:nowrap;text-overflow: ellipsis;max-width: 100%;}
-.listLabels{white-space:nowrap;display:flex;}
-.listLabels object{max-height:16px;max-width:24px;}
-
-@media (max-width: 600px) {
-    body {padding: 8px;}
-    .avatar {width:40px;height:40px;}
-    .blogTitle{display:none;}
-    #buttonRSS{display:none;}
-    .LabelTime{display:none;}
-}
-</style>
 
 
 
 <body>
-    <div id="header">
-<div class="title-left">
-    <img src="https://s21.ax1x.com/2025/02/15/pEK09q1.jpg" class="avatar circle" id="avatarImg" alt="avatar"><a class="blogTitle">磊磊的秘密武器</a></div>
-<div class="title-right">
-    <a href="https://yanglei-985.github.io/yanglei-988.github.io/tag.html" id="buttonSearch" class="btn btn-invisible circle" title="搜索">
-        <svg class="octicon" width="16" height="16" >
-            <path id="pathSearch" fill-rule="evenodd"></path>
-        </svg>
-    </a>
-    
-    
-    <a href="https://yanglei-985.github.io/yanglei-988.github.io/rss.xml" target="_blank" id="buttonRSS" class="btn btn-invisible circle" title="RSS">
-        <svg class="octicon" width="16" height="16" >
-            <path id="pathRSS" fill-rule="evenodd"></path>
-        </svg>
-    </a>
-    <a class="btn btn-invisible circle" onclick="modeSwitch()" title="切换主题">
-        <svg class="octicon" width="16" height="16" >
-            <path id="themeSwitch" fill-rule="evenodd"></path>
-        </svg>
-    </a>
-</div>
-</div>
-    <div id="content">
-<div style="margin-bottom: 16px;">Value+Grow^247</div>
-<nav class="SideNav border">
-<a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/ni-shuo-fa-yu-zui-nan-de-di-fang-shi-shen-me-%EF%BC%9F.html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">你说法语最难的地方是什么？</span>
+    <header class="site-bar">
+        <div class="wrap">
+            <a class="brand" href="https://yanglei-985.github.io/yanglei-988.github.io">
+                <img src="https://s21.ax1x.com/2025/02/15/pEK09q1.jpg" alt="avatar">
+                <span class="brand-text">
+                    <span class="brand-name">磊磊的秘密武器</span>
+                    <span class="brand-sub">Value+Grow^247</span>
+                </span>
+            </a>
+            <nav class="site-nav">
+                <a href="https://yanglei-985.github.io/yanglei-988.github.io"><span class="nav-text">首页</span></a>
+                <a href="https://yanglei-985.github.io/yanglei-988.github.io/tag.html#All"><span class="nav-text">标签</span></a>
+                
+                
+                <a class="icon-btn" href="https://yanglei-985.github.io/yanglei-988.github.io/tag.html" title="搜索" aria-label="搜索">
+                    <svg class="stroke" viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.6"/><path d="M10.4 10.4 14 14"/></svg>
+                </a>
+                <a class="icon-btn" href="https://yanglei-985.github.io/yanglei-988.github.io/rss.xml" target="_blank" title="RSS" aria-label="RSS">
+                    <svg class="stroke" viewBox="0 0 16 16"><path d="M3 2.8a10.2 10.2 0 0 1 10.2 10.2M3 7a6 6 0 0 1 6 6"/><circle cx="3.6" cy="12.4" r="1" fill="currentColor" stroke="none"/></svg>
+                </a>
+                <button class="icon-btn" type="button" onclick="modeSwitch()" title="切换主题" aria-label="切换主题">
+                    <svg viewBox="0 0 16 16"><path id="themeSwitch" fill-rule="evenodd"></path></svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+    <div id="header"></div>
+    <main id="content">
+
+<section class="sec" id="archive">
+    <div class="wrap">
+        <div class="sec-head">
+            <div>
+                <div class="kicker">Archive · 文章索引</div>
+                <h2>更早的记录</h2>
+            </div>
+            <a class="text-link" href="https://yanglei-985.github.io/yanglei-988.github.io/tag.html#All">全部标签与搜索 →</a>
+        </div>
+        <div class="yg">
+            <h3 class="yg-year"><span>2025</span></h3>
+            <ol class="rows">
+                <li class="row"><a href="post/ni-shuo-fa-yu-zui-nan-de-di-fang-shi-shen-me-%EF%BC%9F.html">
+                    <time class="row-date">03.07</time>
+                    <span class="row-main">
+                        <span class="row-title">你说法语最难的地方是什么？</span><span class="row-desc">答案不一定是动词变位，但是动词变位的难度之大，我们看下文。</span>
+                    </span>
+                    <span class="row-tags"><span class="tag">笔记</span><span class="arrow">→</span>
+                    </span>
+                </a></li>
+                <li class="row"><a href="post/Svg%20with%20the%20code.html">
+                    <time class="row-date">03.04</time>
+                    <span class="row-main">
+                        <span class="row-title">Svg with the code</span><span class="row-desc">[先上svg转png的Website](https://www.svgviewer.dev/) 这个svg代码给出的思维导图样式还不错，于是我可以经常沿用这个代码格式，发给AI去做相关的思维导图，把线形的文本转位立体的结构图。</span>
+                    </span>
+                    <span class="row-tags"><span class="tag">笔记</span><span class="arrow">→</span>
+                    </span>
+                </a></li>
+                <li class="row"><a href="post/xue-xi-Community.html">
+                    <time class="row-date">03.04</time>
+                    <span class="row-main">
+                        <span class="row-title">学习Community</span><span class="row-desc">1.我们从自己基本的结构开始，我的思路来源于何？——《show your work》，我以前很喜欢潜龙勿用，觉得低调才能做成事，或者可以保有内心的平和，太多言语意味着动荡或者不安。</span>
+                    </span>
+                    <span class="row-tags"><span class="tag">笔记</span><span class="arrow">→</span>
+                    </span>
+                </a></li>
+                <li class="row"><a href="post/wo-chang-yong-de-yu-yan-xue-xi-ti-shi-ci.html">
+                    <time class="row-date">03.04</time>
+                    <span class="row-main">
+                        <span class="row-title">我常用的语言学习提示词</span><span class="row-desc">不改变任何意群的情况下，左边是句子，且把句子分成小的部分，右边是翻译，地道的翻译。</span>
+                    </span>
+                    <span class="row-tags"><span class="tag">笔记</span><span class="arrow">→</span>
+                    </span>
+                </a></li>
+                <li class="row"><a href="post/Use%20wcplus%20pro.html">
+                    <time class="row-date">03.03</time>
+                    <span class="row-main">
+                        <span class="row-title">Use wcplus pro</span><span class="row-desc">When I find the tool,I am quite excited,because I could find the resources in the Wechat,and get all the things from the place.like lonely reader. And then,I will introduce how to make use of it,and my experience of using it. The [github link](https://github.com/wonderfulsuccess/weixin_crawler)and the [website](https://www.wcplus.cn/?s=g). Because the company charges a high price,nowadays I cannot afford it,but it gives us one hour free time to use it,and I have download all the txts from lonereader,and ohter Wechat official acount. And we can follow the steps from the website,like downing the file to operate in your computer. [wcplusPro_windows_amd64.zip](https://github.com/user-attachments/files/19051137/wcplusPro_windows_amd64.zip) Wish you could create your own datebase. 。</span>
+                    </span>
+                    <span class="row-tags"><span class="tag">笔记</span><span class="arrow">→</span>
+                    </span>
+                </a></li>
+                <li class="row"><a href="post/Gmeek-pei-zhi-guo-cheng.html">
+                    <time class="row-date">02.25</time>
+                    <span class="row-main">
+                        <span class="row-title">Gmeek配置过程</span><span class="row-desc">📝之益 过往记录了很多的内容，但是没有妥善地保存，所以很多内容你需要在学习完一次之后，下次面对同样的问题时，需要再去整理一次，而接触到Gmeek之后，有免费的服务器，加上一个有良好背书的github，所以没有犹豫便在上面写了几份自己的学习过程。</span>
+                    </span>
+                    <span class="row-tags"><span class="tag">笔记</span><span class="arrow">→</span>
+                    </span>
+                </a></li>
+                <li class="row"><a href="post/Free%20book%20download..html">
+                    <time class="row-date">02.21</time>
+                    <span class="row-main">
+                        <span class="row-title">Free book download.</span><span class="row-desc">说起一件事，就是zlibrary，下文简称zlib，骗了我400块钱，当时我有一个形象的比喻就是，一个假冒你挚友的人向你伸手骗了你一笔钱，但当时我只懊悔了一个晚自习，当是给这么多年下了553本书一个启事，书不在多，一天能下载10本，足不出户了然天下事已是事实，慢慢地，人就能得到阅读的滋养，使自己成长起来，时间久了，连自己都感到惊叹。</span>
+                    </span>
+                    <span class="row-tags"><span class="tag">笔记</span><span class="arrow">→</span>
+                    </span>
+                </a></li>
+                <li class="row"><a href="post/wo-de-qian-duan-xue-xi-zhi-lu.html">
+                    <time class="row-date">02.20</time>
+                    <span class="row-main">
+                        <span class="row-title">我的前端学习之路</span><span class="row-desc">[1.先上链接](https://www.youtube.com/watch?v=p8WFfxD07_g)当我用cursor做了很多好看的网页之后，我发现前端的开发并没有我想的那么难，主要是三板斧，html搭建框架，css皮肤美化，javascript进行互动性展示——操作DOM，处理事件，发送AJAX请求，数据处理。</span>
+                    </span>
+                    <span class="row-tags"><span class="tag">笔记</span><span class="arrow">→</span>
+                    </span>
+                </a></li>
+                <li class="row"><a href="post/ya-si-ting-li-jing-yan-%20IELTS%20listening%20experience.html">
+                    <time class="row-date">02.19</time>
+                    <span class="row-main">
+                        <span class="row-title">雅思听力经验 IELTS listening experience</span><span class="row-desc">[天狗老师视频，先上链接。</span>
+                    </span>
+                    <span class="row-tags"><span class="tag">笔记</span><span class="arrow">→</span>
+                    </span>
+                </a></li>
+                <li class="row"><a href="post/ya-si-yue-du-jing-yan-%20The%20ielts%20reading%20experience.html">
+                    <time class="row-date">02.18</time>
+                    <span class="row-main">
+                        <span class="row-title">雅思阅读经验 The ielts reading experience</span><span class="row-desc">1.先把题看懂，再去找关键词，在题目上面花的时间比较少的话，阅读都是乱的，明确别人的需求做事。</span>
+                    </span>
+                    <span class="row-tags"><span class="tag">笔记</span><span class="arrow">→</span>
+                    </span>
+                </a></li>
+                <li class="row"><a href="post/Unlimited%20cursor%20and%20Copyright.html">
+                    <time class="row-date">02.16</time>
+                    <span class="row-main">
+                        <span class="row-title">Unlimited cursor and Copyright</span><span class="row-desc">What My french teacher said. He told us that we need to respect the author&#39;s efforts,and pay for it,that lesson really change my whole view about Copyright,and I suddenly realize that I need to pay for something that benefits to me,but I also in the process,when I can pay all the bill by myself,I will respect the copyright. 最近Cursor用得比较频繁，让过往读不懂github的我很快地解决了自己的问题，可以看懂很多源码，于是电脑上就多了很多如，实时语音转文本工具，几分钟就做出来的互动性学习网页，把自己的CV以非常美观的形式进行编辑，下载各种视频，获取更多的学习资料。</span>
+                    </span>
+                    <span class="row-tags"><span class="tag">笔记</span><span class="arrow">→</span>
+                    </span>
+                </a></li>
+                <li class="row"><a href="post/ge-ren-jian-li-zhi-zuo-Ton%20CV.html">
+                    <time class="row-date">02.16</time>
+                    <span class="row-main">
+                        <span class="row-title">个人简历制作Ton CV</span><span class="row-desc">1. 先从github的一个项目入手，我们先下载源码 [github地址](https://github.com/BingyanStudio/LapisCV) 2. 用Cursor打开解压后的文件，先直接问一下Cursor 怎么用Cursor写我的简历，它会基于readme的文件给你最快的步骤，按照它给的步骤去做。</span>
+                    </span>
+                    <span class="row-tags"><span class="tag">笔记</span><span class="arrow">→</span>
+                    </span>
+                </a></li>
+                <li class="row"><a href="post/yi-xie-wen-jian.html">
+                    <time class="row-date">02.15</time>
+                    <span class="row-main">
+                        <span class="row-title">一些文件</span><span class="row-desc">[新经典1词汇.docx](https://github.com/user-attachments/files/18809929/1.docx)。</span>
+                    </span>
+                    <span class="row-tags"><span class="tag">笔记</span><span class="arrow">→</span>
+                    </span>
+                </a></li>
+                <li class="row"><a href="post/jia-zhi-ru-he-qu-jie-ding.html">
+                    <time class="row-date">02.15</time>
+                    <span class="row-main">
+                        <span class="row-title">价值如何去界定</span><span class="row-desc">愿有公民意识者: 如果说一个东西有价值，但是它很贵，所以他的价值感就被削弱了。</span>
+                    </span>
+                    <span class="row-tags"><span class="tag">笔记</span><span class="arrow">→</span>
+                    </span>
+                </a></li>
+                <li class="row"><a href="post/ji-chang.html">
+                    <time class="row-date">02.15</time>
+                    <span class="row-main">
+                        <span class="row-title">机场</span>
+                    </span>
+                    <span class="row-tags"><span class="tag">笔记</span><span class="arrow">→</span>
+                    </span>
+                </a></li>
+            </ol>
+        </div>
+        <nav class="pager" aria-label="Pagination"><a rel="previous" href="https://yanglei-985.github.io/yanglei-988.github.io/page2.html">← 上一页</a><a rel="next" href="https://yanglei-985.github.io/yanglei-988.github.io/page4.html#archive">下一页 →</a>
+        </nav>
     </div>
-    <div class="listLabels">
-        
-        <span class="Label LabelName" style="background-color:#0075ca"><object><a style="color:#fff" href="tag.html#documentation">documentation</a></object></span>
-        <span class="Label LabelTime" style="background-color:#0969da">2025-03-07</span>
+</section>
+</main>
+    <footer id="footer" class="site-foot"><div class="wrap">
+    <div class="foot-brand">
+        <b>磊磊的秘密武器</b>
+        <span>Value+Grow^247</span>
     </div>
-</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/Svg%20with%20the%20code.html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">Svg with the code</span>
+    <div class="foot-meta">
+        <div id="footer1">© <span id="copyrightYear"></span> <a href="https://yanglei-985.github.io/yanglei-988.github.io">磊磊的秘密武器</a> · <a href="https://yanglei-985.github.io/yanglei-988.github.io/rss.xml" target="_blank">RSS</a></div>
+        <div id="footer2">
+            <span id="runday"></span><span>Powered by <a href="https://github.com/Meekdai/Gmeek" target="_blank">Gmeek</a></span>
+        </div>
     </div>
-    <div class="listLabels">
-        
-        <span class="Label LabelName" style="background-color:#0075ca"><object><a style="color:#fff" href="tag.html#documentation">documentation</a></object></span>
-        <span class="Label LabelTime" style="background-color:#0969da">2025-03-04</span>
-    </div>
-</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/xue-xi-Community.html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">学习Community</span>
-    </div>
-    <div class="listLabels">
-        
-        <span class="Label LabelName" style="background-color:#0075ca"><object><a style="color:#fff" href="tag.html#documentation">documentation</a></object></span>
-        <span class="Label LabelTime" style="background-color:#0969da">2025-03-04</span>
-    </div>
-</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/wo-chang-yong-de-yu-yan-xue-xi-ti-shi-ci.html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">我常用的语言学习提示词</span>
-    </div>
-    <div class="listLabels">
-        
-        <span class="Label LabelName" style="background-color:#0075ca"><object><a style="color:#fff" href="tag.html#documentation">documentation</a></object></span>
-        <span class="Label LabelTime" style="background-color:#0969da">2025-03-04</span>
-    </div>
-</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/Use%20wcplus%20pro.html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">Use wcplus pro</span>
-    </div>
-    <div class="listLabels">
-        
-        <span class="Label LabelName" style="background-color:#0075ca"><object><a style="color:#fff" href="tag.html#documentation">documentation</a></object></span>
-        <span class="Label LabelTime" style="background-color:#0969da">2025-03-03</span>
-    </div>
-</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/Gmeek-pei-zhi-guo-cheng.html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">Gmeek配置过程</span>
-    </div>
-    <div class="listLabels">
-        
-        <span class="Label LabelName" style="background-color:#0075ca"><object><a style="color:#fff" href="tag.html#documentation">documentation</a></object></span>
-        <span class="Label LabelTime" style="background-color:#0969da">2025-02-25</span>
-    </div>
-</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/Free%20book%20download..html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">Free book download.</span>
-    </div>
-    <div class="listLabels">
-        
-        <span class="Label LabelName" style="background-color:#0075ca"><object><a style="color:#fff" href="tag.html#documentation">documentation</a></object></span>
-        <span class="Label LabelTime" style="background-color:#0969da">2025-02-21</span>
-    </div>
-</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/wo-de-qian-duan-xue-xi-zhi-lu.html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">我的前端学习之路</span>
-    </div>
-    <div class="listLabels">
-        
-        <span class="Label LabelName" style="background-color:#0075ca"><object><a style="color:#fff" href="tag.html#documentation">documentation</a></object></span>
-        <span class="Label LabelTime" style="background-color:#0969da">2025-02-20</span>
-    </div>
-</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/ya-si-ting-li-jing-yan-%20IELTS%20listening%20experience.html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">雅思听力经验 IELTS listening experience</span>
-    </div>
-    <div class="listLabels">
-        
-        <span class="Label LabelName" style="background-color:#0075ca"><object><a style="color:#fff" href="tag.html#documentation">documentation</a></object></span>
-        <span class="Label LabelTime" style="background-color:#0969da">2025-02-19</span>
-    </div>
-</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/ya-si-yue-du-jing-yan-%20The%20ielts%20reading%20experience.html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">雅思阅读经验 The ielts reading experience</span>
-    </div>
-    <div class="listLabels">
-        
-        <span class="Label LabelName" style="background-color:#0075ca"><object><a style="color:#fff" href="tag.html#documentation">documentation</a></object></span>
-        <span class="Label LabelTime" style="background-color:#0969da">2025-02-18</span>
-    </div>
-</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/Unlimited%20cursor%20and%20Copyright.html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">Unlimited cursor and Copyright</span>
-    </div>
-    <div class="listLabels">
-        
-        <span class="Label LabelName" style="background-color:#0075ca"><object><a style="color:#fff" href="tag.html#documentation">documentation</a></object></span>
-        <span class="Label LabelTime" style="background-color:#0969da">2025-02-16</span>
-    </div>
-</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/ge-ren-jian-li-zhi-zuo-Ton%20CV.html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">个人简历制作Ton CV</span>
-    </div>
-    <div class="listLabels">
-        
-        <span class="Label LabelName" style="background-color:#0075ca"><object><a style="color:#fff" href="tag.html#documentation">documentation</a></object></span>
-        <span class="Label LabelTime" style="background-color:#0969da">2025-02-16</span>
-    </div>
-</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/yi-xie-wen-jian.html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">一些文件</span>
-    </div>
-    <div class="listLabels">
-        
-        <span class="Label LabelName" style="background-color:#0075ca"><object><a style="color:#fff" href="tag.html#documentation">documentation</a></object></span>
-        <span class="Label LabelTime" style="background-color:#0969da">2025-02-15</span>
-    </div>
-</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/jia-zhi-ru-he-qu-jie-ding.html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">价值如何去界定</span>
-    </div>
-    <div class="listLabels">
-        
-        <span class="Label LabelName" style="background-color:#0075ca"><object><a style="color:#fff" href="tag.html#documentation">documentation</a></object></span>
-        <span class="Label LabelTime" style="background-color:#0969da">2025-02-15</span>
-    </div>
-</a><a class="SideNav-item d-flex flex-items-center flex-justify-between" href="post/ji-chang.html">
-    <div class="d-flex flex-items-center">
-        <svg class="SideNav-icon octicon" style="width:16px;height:16px"><path class="svgTop0" d=""></path>
-        </svg>
-        <span class="listTitle">机场</span>
-    </div>
-    <div class="listLabels">
-        
-        <span class="Label LabelName" style="background-color:#0075ca"><object><a style="color:#fff" href="tag.html#documentation">documentation</a></object></span>
-        <span class="Label LabelTime" style="background-color:#0969da">2025-02-15</span>
-    </div>
-</a>
-</nav><nav class="paginate-container" aria-label="Pagination">
-    <div class="pagination"><a class="previous_page" rel="previous" href="https://yanglei-985.github.io/yanglei-988.github.io/page2.html" aria-label="Previous Page">上一页</a><a class="next_page" rel="next" href="https://yanglei-985.github.io/yanglei-988.github.io/page4.html" aria-label="Next Page">下一页</a></div>
-</nav>
-</div>
-    <div id="footer"><div id="footer1">Copyright © <span id="copyrightYear"></span> <a href="https://yanglei-985.github.io/yanglei-988.github.io">磊磊的秘密武器</a></div>
-<div id="footer2">
-    <span id="runday"></span><span>Powered by <a href="https://meekdai.com/Gmeek.html" target="_blank">Gmeek</a></span>
 </div>
 
 <script>
@@ -263,23 +218,22 @@ if(""!=""){
     var startSite=new Date("");
     var diff=now.getTime()-startSite.getTime();
     var diffDay=Math.floor(diff/(1000*60*60*24));
-    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" • ";
+    document.getElementById("runday").innerHTML="网站运行 "+diffDay+" 天"+" · ";
 }
-</script></div>
+</script></footer>
 </body>
 <script>
 var IconList={'sun': 'M8 10.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5zM8 12a4 4 0 100-8 4 4 0 000 8zM8 0a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0V.75A.75.75 0 018 0zm0 13a.75.75 0 01.75.75v1.5a.75.75 0 01-1.5 0v-1.5A.75.75 0 018 13zM2.343 2.343a.75.75 0 011.061 0l1.06 1.061a.75.75 0 01-1.06 1.06l-1.06-1.06a.75.75 0 010-1.06zm9.193 9.193a.75.75 0 011.06 0l1.061 1.06a.75.75 0 01-1.06 1.061l-1.061-1.06a.75.75 0 010-1.061zM16 8a.75.75 0 01-.75.75h-1.5a.75.75 0 010-1.5h1.5A.75.75 0 0116 8zM3 8a.75.75 0 01-.75.75H.75a.75.75 0 010-1.5h1.5A.75.75 0 013 8zm10.657-5.657a.75.75 0 010 1.061l-1.061 1.06a.75.75 0 11-1.06-1.06l1.06-1.06a.75.75 0 011.06 0zm-9.193 9.193a.75.75 0 010 1.06l-1.06 1.061a.75.75 0 11-1.061-1.06l1.06-1.061a.75.75 0 011.061 0z', 'moon': 'M9.598 1.591a.75.75 0 01.785-.175 7 7 0 11-8.967 8.967.75.75 0 01.961-.96 5.5 5.5 0 007.046-7.046.75.75 0 01.175-.786zm1.616 1.945a7 7 0 01-7.678 7.678 5.5 5.5 0 107.678-7.678z', 'sync': 'M1.705 8.005a.75.75 0 0 1 .834.656 5.5 5.5 0 0 0 9.592 2.97l-1.204-1.204a.25.25 0 0 1 .177-.427h3.646a.25.25 0 0 1 .25.25v3.646a.25.25 0 0 1-.427.177l-1.38-1.38A7.002 7.002 0 0 1 1.05 8.84a.75.75 0 0 1 .656-.834ZM8 2.5a5.487 5.487 0 0 0-4.131 1.869l1.204 1.204A.25.25 0 0 1 4.896 6H1.25A.25.25 0 0 1 1 5.75V2.104a.25.25 0 0 1 .427-.177l1.38 1.38A7.002 7.002 0 0 1 14.95 7.16a.75.75 0 0 1-1.49.178A5.5 5.5 0 0 0 8 2.5Z', 'search': 'M15.7 13.3l-3.81-3.83A5.93 5.93 0 0 0 13 6c0-3.31-2.69-6-6-6S1 2.69 1 6s2.69 6 6 6c1.3 0 2.48-.41 3.47-1.11l3.83 3.81c.19.2.45.3.7.3.25 0 .52-.09.7-.3a.996.996 0 0 0 0-1.41v.01zM7 10.7c-2.59 0-4.7-2.11-4.7-4.7 0-2.59 2.11-4.7 4.7-4.7 2.59 0 4.7 2.11 4.7 4.7 0 2.59-2.11 4.7-4.7 4.7z', 'rss': 'M2.002 2.725a.75.75 0 0 1 .797-.699C8.79 2.42 13.58 7.21 13.974 13.201a.75.75 0 0 1-1.497.098 10.502 10.502 0 0 0-9.776-9.776.747.747 0 0 1-.7-.798ZM2.84 7.05h-.002a7.002 7.002 0 0 1 6.113 6.111.75.75 0 0 1-1.49.178 5.503 5.503 0 0 0-4.8-4.8.75.75 0 0 1 .179-1.489ZM2 13a1 1 0 1 1 2 0 1 1 0 0 1-2 0Z', 'upload': 'M2.75 14A1.75 1.75 0 0 1 1 12.25v-2.5a.75.75 0 0 1 1.5 0v2.5c0 .138.112.25.25.25h10.5a.25.25 0 0 0 .25-.25v-2.5a.75.75 0 0 1 1.5 0v2.5A1.75 1.75 0 0 1 13.25 14Z M11.78 4.72a.749.749 0 1 1-1.06 1.06L8.75 3.811V9.5a.75.75 0 0 1-1.5 0V3.811L5.28 5.78a.749.749 0 1 1-1.06-1.06l3.25-3.25a.749.749 0 0 1 1.06 0l3.25 3.25Z', 'post': 'M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25Zm1.75-.25a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25ZM3.5 6.25a.75.75 0 0 1 .75-.75h7a.75.75 0 0 1 0 1.5h-7a.75.75 0 0 1-.75-.75Zm.75 2.25h4a.75.75 0 0 1 0 1.5h-4a.75.75 0 0 1 0-1.5Z'};
 var utterancesLoad=0;
 
 let themeSettings={
-    "dark": ["dark","moon","#00f0ff","dark-blue"],
-    "light": ["light","sun","#ff5000","github-light"],
+    "dark": ["dark","moon","","dark-blue"],
+    "light": ["light","sun","","github-light"],
     "auto": ["auto","sync","","preferred-color-scheme"]
 };
 function changeTheme(mode, icon, color, utheme){
     document.documentElement.setAttribute("data-color-mode",mode);
     document.getElementById("themeSwitch").setAttribute("d",value=IconList[icon]);
-    document.getElementById("themeSwitch").parentNode.style.color=color;
     if(utterancesLoad==1){utterancesTheme(utheme);}
 }
 function modeSwitch(){
@@ -296,26 +250,9 @@ function utterancesTheme(theme){
     iframe.contentWindow.postMessage(message,'https://utteranc.es');
 }
 if(themeSettings[theme]){changeTheme(...themeSettings[theme]);}
-console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#02d81d;color:#fff");
+console.log("\n %c Gmeek v2.25 https://github.com/Meekdai/Gmeek \n","padding:5px 0;background:#2f5d4e;color:#fff");
 </script>
 
-<script>
-document.getElementById("pathSearch").setAttribute("d",IconList["search"]);
-document.getElementById("pathRSS").setAttribute("d",IconList["rss"]);
-iconTOP=document.getElementsByClassName("svgTop1");
-iconPost=document.getElementsByClassName("svgTop0");
-for(var i=0;i<iconTOP.length;i++){
-    iconTOP[i].setAttribute("d",IconList["upload"]);
-    iconTOP[i].parentNode.style.color="red";
-}
-for(var i=0;i<iconPost.length;i++){
-    iconPost[i].setAttribute("d",IconList["post"]);
-}
-
-
-
-
-</script>
 
 
 </html>
