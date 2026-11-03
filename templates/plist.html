@@ -81,7 +81,7 @@
                     <span class="row-main">
                         <span class="row-title">{{ p['postTitle']|e }}</span>
                         {%- set desc = p['description']|striptags|replace('#', '')|replace('*', '')|replace('`', '')|replace('> ', '')|replace('[[', '')|replace(']]', '')|trim %}
-                        {%- if desc and 'Gmeek-html' not in p['description'] and desc|length > 4 %}<span class="row-desc">{{ desc|e }}</span>{% endif %}
+                        {%- if desc and 'Gmeek-html' not in p['description'] and desc|length > 4 %}<span class="row-desc">{{ desc|truncate(140, true, '…')|e }}</span>{% endif %}
                     </span>
                     <span class="row-tags">
                         {%- for label in p['labels'] %}<span class="tag">{{ alias.get(label, label) }}</span>{% endfor -%}

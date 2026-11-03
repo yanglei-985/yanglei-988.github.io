@@ -7,8 +7,10 @@
     {{ blogBase['primerCSS'] }}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,500&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@600;700;900&display=swap" rel="stylesheet">
-    <link href="{{ blogBase['homeUrl'] }}/theme.css?v={{ blogBase.get('themeVersion', '1') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,500&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@600;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <style>
+{% include 'theme.css' %}
+    </style>
     {{ blogBase['allHead'] }}
     <link rel="icon" href="{{ blogBase['faviconUrl'] }}">
     <link rel="alternate" type="application/rss+xml" title="{{ blogBase['title'] }}" href="{{ blogBase['homeUrl'] }}/rss.xml">
