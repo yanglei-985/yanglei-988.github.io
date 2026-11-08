@@ -57,6 +57,37 @@
 </section>
 {% endif %}
 
+{%- if blogBase['prevUrl']=='disabled' and blogBase.get('featured') %}
+<section class="sec feat" id="featured">
+    <div class="wrap">
+        <div class="sec-head">
+            <div>
+                <div class="kicker">Core · 核心专题</div>
+                <h2>先把这几篇读透</h2>
+            </div>
+        </div>
+        {%- for f in blogBase['featured'] %}
+        <a class="feat-card" href="{{ blogBase['homeUrl'] }}/{{ f['url'] }}">
+            <div class="feat-main">
+                <div class="feat-no">{{ '%02d' % loop.index }} · {{ f.get('kicker', '') }}</div>
+                <h3 class="feat-title">{{ f['title'] }}</h3>
+                <p class="feat-desc">{{ f.get('desc', '') }}</p>
+                <div class="feat-meta">{% for m in f.get('meta', []) %}<span>{{ m }}</span>{% endfor %}</div>
+                <span class="feat-cta">开始阅读 <span aria-hidden="true">→</span></span>
+            </div>
+            {%- if f.get('chapters') %}
+            <ol class="feat-chapters">
+                {%- for c in f['chapters'] %}
+                <li><span class="feat-ch-no">{{ ['一','二','三','四','五','六','七','八'][loop.index0] }}</span><span>{{ c }}</span></li>
+                {%- endfor %}
+            </ol>
+            {%- endif %}
+        </a>
+        {%- endfor %}
+    </div>
+</section>
+{%- endif %}
+
 <section class="sec" id="archive">
     <div class="wrap">
         <div class="sec-head">

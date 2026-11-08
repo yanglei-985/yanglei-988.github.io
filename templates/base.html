@@ -37,6 +37,9 @@
             <nav class="site-nav">
                 <a href="{{ blogBase['homeUrl'] }}"><span class="nav-text">首页</span></a>
                 <a href="{{ blogBase['homeUrl'] }}/tag.html#All"><span class="nav-text">标签</span></a>
+                {% for f in blogBase.get('featured', []) if f.get('nav') -%}
+                <a href="{{ blogBase['homeUrl'] }}/{{ f['url'] }}"><span class="nav-text">{{ f['nav'] }}</span></a>
+                {%- endfor %}
                 {% for num in blogBase['singeListJson'] -%}
                 <a href="{{ blogBase['homeUrl'] }}/{{ blogBase['singeListJson'][num]['labels'][0] }}.html"><span class="nav-text">{{ blogBase['singeListJson'][num]['postTitle'] }}</span></a>
                 {%- endfor %}
