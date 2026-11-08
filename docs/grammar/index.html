@@ -1,0 +1,2970 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-color-mode="light" data-light-theme="light" data-dark-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>半个月，搭建你的英语语法体系 · 磊磊的秘密武器</title>
+<meta name="description" content="核心专题：半个月，搭建你的英语语法体系。词性即成分、简单句、从句、非谓语动词，配图解、目录、搜索与 AI 问答。">
+<meta property="og:title" content="半个月，搭建你的英语语法体系">
+<meta property="og:type" content="article">
+<link rel="icon" href="https://s21.ax1x.com/2025/02/15/pEK09q1.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,500&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+SC:wght@600;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<script>
+  (function(){var t="light";try{t=localStorage.getItem("meek_theme")||"light";}catch(e){}document.documentElement.setAttribute("data-color-mode",t);})();
+</script>
+<style>
+/* ==========================================================================
+   磊磊的秘密武器 · 自定义主题 (for Gmeek)
+   宣纸底 + 墨绿主色 + 荧光笔金色点缀；宋体标题、等宽小标签、细线分隔
+   ========================================================================== */
+
+/* ---------- Tokens: light ---------- */
+html[data-color-mode][data-light-theme] {
+  --paper: #f1efe8;
+  --paper-2: #f8f7f2;
+  --paper-3: #e7e4d9;
+  --ink: #1d1f1c;
+  --ink-2: #3b3e38;
+  --muted: #6d6f66;
+  --line: #d9d5c7;
+  --line-2: #b9b4a3;
+  --accent: #2f5d4e;
+  --accent-2: #234a3e;
+  --accent-ink: #f4f2ea;
+  --gold: #9a7420;
+  --marker: rgba(232, 199, 102, .55);
+  --shadow: 0 10px 30px -22px rgba(29, 31, 28, .35);
+  color-scheme: light;
+}
+
+/* ---------- Tokens: dark ---------- */
+html[data-color-mode="dark"][data-dark-theme] {
+  --paper: #131714;
+  --paper-2: #1a1f1b;
+  --paper-3: #222924;
+  --ink: #e9e7df;
+  --ink-2: #c3c4bb;
+  --muted: #8b8f86;
+  --line: #2c332e;
+  --line-2: #46504a;
+  --accent: #8cc4ad;
+  --accent-2: #a9d6c3;
+  --accent-ink: #10231c;
+  --gold: #d9b45a;
+  --marker: rgba(201, 165, 74, .28);
+  --shadow: 0 14px 34px -24px rgba(0, 0, 0, .7);
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: dark) {
+  html[data-color-mode="auto"][data-dark-theme] {
+    --paper: #131714;
+    --paper-2: #1a1f1b;
+    --paper-3: #222924;
+    --ink: #e9e7df;
+    --ink-2: #c3c4bb;
+    --muted: #8b8f86;
+    --line: #2c332e;
+    --line-2: #46504a;
+    --accent: #8cc4ad;
+    --accent-2: #a9d6c3;
+    --accent-ink: #10231c;
+    --gold: #d9b45a;
+    --marker: rgba(201, 165, 74, .28);
+    --shadow: 0 14px 34px -24px rgba(0, 0, 0, .7);
+    color-scheme: dark;
+  }
+}
+
+/* ---------- Map Primer variables onto our palette (post body, buttons) ---------- */
+html[data-color-mode] {
+  --font-serif: "Fraunces", "Noto Serif SC", "Source Han Serif SC", "Songti SC", "STSong", serif;
+  --font-sans: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --wrap: 1080px;
+
+  --fgColor-default: var(--ink);       --color-fg-default: var(--ink);
+  --fgColor-muted: var(--muted);       --color-fg-muted: var(--muted);
+  --fgColor-accent: var(--accent);     --color-accent-fg: var(--accent);
+  --bgColor-default: var(--paper);     --color-canvas-default: var(--paper);
+  --bgColor-muted: var(--paper-3);     --color-canvas-subtle: var(--paper-3);
+  --bgColor-neutral-muted: var(--paper-3); --color-neutral-muted: var(--paper-3);
+  --borderColor-default: var(--line);  --color-border-default: var(--line);
+  --borderColor-muted: var(--line);    --color-border-muted: var(--line);
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { background: var(--paper); }
+body {
+  margin: 0;
+  padding: 0;
+  max-width: none;
+  min-width: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-2); text-decoration: none; }
+::selection { background: var(--marker); color: var(--ink); }
+
+.wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 32px; }
+
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.mark {
+  background: linear-gradient(transparent 58%, var(--marker) 58%, var(--marker) 92%, transparent 92%);
+  padding: 0 .06em;
+}
+
+/* ---------- Site bar ---------- */
+.site-bar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: color-mix(in srgb, var(--paper) 88%, transparent);
+  -webkit-backdrop-filter: saturate(1.2) blur(10px);
+  backdrop-filter: saturate(1.2) blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.site-bar .wrap { display: flex; align-items: center; gap: 24px; height: 64px; }
+.brand { display: flex; align-items: center; gap: 12px; color: var(--ink); min-width: 0; }
+.brand:hover { color: var(--ink); }
+.brand img { width: 34px; height: 34px; border-radius: 50%; object-fit: cover; border: 1px solid var(--line-2); }
+.brand-text { display: flex; flex-direction: column; line-height: 1.15; min-width: 0; }
+.brand-name { font-family: var(--font-serif); font-weight: 700; font-size: 17px; white-space: nowrap; }
+.brand-sub { font-family: var(--font-mono); font-size: 10px; letter-spacing: .14em; color: var(--muted); text-transform: uppercase; white-space: nowrap; }
+.site-nav { margin-left: auto; display: flex; align-items: center; gap: 4px; }
+.site-nav a, .site-nav button {
+  display: inline-flex; align-items: center; gap: 6px;
+  height: 34px; padding: 0 12px;
+  border: 0; border-radius: 999px; background: transparent;
+  color: var(--ink-2); font-size: 14px; cursor: pointer;
+}
+.site-nav a:hover, .site-nav button:hover { background: var(--paper-3); color: var(--ink); }
+.site-nav .icon-btn { width: 34px; padding: 0; justify-content: center; }
+.site-nav svg { width: 16px; height: 16px; fill: currentColor; }
+.site-nav svg.stroke { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- Buttons ---------- */
+.btn-ink, .btn-line {
+  display: inline-flex; align-items: center; gap: 8px;
+  height: 44px; padding: 0 20px;
+  font-size: 15px; font-weight: 600; border-radius: 3px;
+  transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+.btn-ink { background: var(--accent); color: var(--accent-ink); border: 1px solid var(--accent); }
+.btn-ink:hover { background: var(--accent-2); border-color: var(--accent-2); color: var(--accent-ink); }
+.btn-line { border: 1px solid var(--line-2); color: var(--ink); }
+.btn-line:hover { border-color: var(--ink); color: var(--ink); }
+
+/* ---------- Hero (home page 1) ---------- */
+.hero { padding: 88px 0 72px; border-bottom: 1px solid var(--line); }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 64px; align-items: end; }
+.hero h1 {
+  margin: 22px 0 0;
+  font-family: var(--font-serif);
+  font-weight: 900;
+  font-size: clamp(48px, 7.4vw, 92px);
+  line-height: 1.04;
+  letter-spacing: -.01em;
+  color: var(--ink);
+  border: 0;
+}
+.formula {
+  margin: 22px 0 0;
+  font-family: "Fraunces", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(26px, 3.2vw, 36px);
+  color: var(--accent);
+  letter-spacing: .01em;
+}
+.formula .op { font-style: normal; color: var(--muted); margin: 0 .18em; }
+.formula sup { font-size: .5em; color: var(--gold); font-style: normal; font-family: var(--font-mono); margin-left: .08em; }
+.hero-intro { max-width: 34em; margin: 18px 0 0; color: var(--ink-2); font-size: 16.5px; line-height: 1.9; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+
+/* Arsenal panel */
+.arsenal {
+  background: var(--paper-2);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  box-shadow: var(--shadow);
+  padding: 22px 24px 18px;
+}
+.arsenal-head { display: flex; justify-content: space-between; align-items: baseline; }
+.arsenal-head span:last-child { font-family: var(--font-mono); font-size: 11px; color: var(--muted); letter-spacing: .1em; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); margin: 16px 0 6px; border-top: 1px dashed var(--line-2); border-bottom: 1px dashed var(--line-2); }
+.stat { padding: 14px 0 12px; }
+.stat + .stat { padding-left: 16px; border-left: 1px dashed var(--line-2); }
+.stat b { display: block; font-family: var(--font-serif); font-size: 30px; font-weight: 700; line-height: 1.1; color: var(--ink); }
+.stat b.small { font-size: 17px; line-height: 1.9; font-family: var(--font-mono); font-weight: 500; }
+.stat span { font-size: 12px; color: var(--muted); }
+.inventory { list-style: none; margin: 8px 0 0; padding: 0; }
+.inventory li a {
+  display: grid; grid-template-columns: 22px 1fr auto; align-items: center; gap: 10px;
+  padding: 8px 0; color: var(--ink); border-bottom: 1px solid var(--line);
+}
+.inventory li:last-child a { border-bottom: 0; }
+.inventory .idx { font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+.inventory .name { font-size: 14.5px; }
+.inventory .bar { display: block; height: 3px; margin-top: 5px; background: var(--paper-3); border-radius: 2px; overflow: hidden; }
+.inventory .bar i { display: block; height: 100%; background: var(--accent); opacity: .75; }
+.inventory .num { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+.inventory li a:hover .name { color: var(--accent); }
+
+/* ---------- Section heading ---------- */
+.sec { padding: 64px 0 24px; }
+.sec-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--ink); }
+.sec-head h2 { margin: 10px 0 0; font-family: var(--font-serif); font-size: clamp(28px, 3.6vw, 40px); font-weight: 800; line-height: 1.2; border: 0; color: var(--ink); }
+.text-link { font-size: 14px; color: var(--ink-2); border-bottom: 1px solid var(--line-2); padding-bottom: 2px; white-space: nowrap; }
+.text-link:hover { color: var(--accent); border-color: var(--accent); }
+
+/* ---------- Archive (year-grouped rows) ---------- */
+.yg { display: grid; grid-template-columns: 160px minmax(0, 1fr); border-bottom: 1px solid var(--line); }
+.yg-year {
+  margin: 0; padding: 26px 0;
+  font-family: "Fraunces", var(--font-serif);
+  font-size: 44px; font-weight: 300; line-height: 1;
+  color: var(--line-2);
+  border: 0;
+}
+.yg-year.pinned { font-family: var(--font-serif); font-size: 22px; font-weight: 700; color: var(--gold); padding-top: 32px; }
+.yg-year span { position: sticky; top: 84px; display: block; }
+.rows { list-style: none; margin: 0; padding: 0; }
+.row + .row { border-top: 1px solid var(--line); }
+.row a {
+  display: grid; grid-template-columns: 64px minmax(0, 1fr) auto; gap: 4px 20px; align-items: baseline;
+  padding: 22px 0; color: var(--ink);
+}
+.row-date { font-family: var(--font-mono); font-size: 12.5px; color: var(--muted); letter-spacing: .04em; }
+.row-main { min-width: 0; }
+.row-title {
+  display: block;
+  font-family: var(--font-serif); font-weight: 700; font-size: 19px; line-height: 1.45;
+  transition: color .15s ease;
+}
+.row-desc {
+  display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical; overflow: hidden;
+  margin-top: 4px; font-size: 14px; color: var(--muted);
+}
+.row-tags { display: flex; gap: 10px; align-items: center; white-space: nowrap; font-family: var(--font-mono); font-size: 11.5px; color: var(--muted); letter-spacing: .06em; }
+.row-tags .tag::before { content: "#"; color: var(--line-2); margin-right: 1px; }
+.row-tags .arrow { color: var(--accent); opacity: 0; transform: translateX(-6px); transition: opacity .15s ease, transform .15s ease; }
+.row a:hover .row-title { color: var(--accent); }
+.row a:hover .arrow { opacity: 1; transform: none; }
+
+/* ---------- Pagination ---------- */
+.pager { display: flex; justify-content: space-between; align-items: center; padding: 28px 0 8px; font-family: var(--font-mono); font-size: 13px; }
+.pager a { color: var(--ink); border-bottom: 1px solid var(--line-2); padding-bottom: 2px; }
+.pager a:hover { color: var(--accent); border-color: var(--accent); }
+.pager .off { color: var(--line-2); }
+
+/* ---------- Post page ---------- */
+.post { max-width: 760px; margin: 0 auto; padding: 56px 32px 24px; }
+.back { font-family: var(--font-mono); font-size: 12px; letter-spacing: .1em; color: var(--muted); }
+.back:hover { color: var(--accent); }
+.post-kicker { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.post-kicker a { color: var(--accent); }
+.post-title {
+  margin: 14px 0 0;
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 4.6vw, 46px);
+  font-weight: 900;
+  line-height: 1.22;
+  color: var(--ink);
+  border: 0;
+}
+.post-meta {
+  display: flex; flex-wrap: wrap; gap: 6px 18px;
+  margin: 20px 0 40px; padding-bottom: 22px;
+  border-bottom: 1px solid var(--ink);
+  font-family: var(--font-mono); font-size: 12px; color: var(--muted);
+}
+.post-meta a { color: var(--muted); border-bottom: 1px dotted var(--line-2); }
+.post-meta a:hover { color: var(--accent); }
+
+.markdown-body { font-family: var(--font-sans); font-size: 16.5px; line-height: 1.9; color: var(--ink); background: transparent; }
+.markdown-body h1, .markdown-body h2, .markdown-body h3, .markdown-body h4 {
+  font-family: var(--font-serif); font-weight: 800; color: var(--ink); line-height: 1.35; border-bottom: 0;
+}
+.markdown-body h1 { font-size: 1.75em; margin-top: 2em; }
+.markdown-body h2 { font-size: 1.45em; margin-top: 2em; padding-bottom: .3em; border-bottom: 1px solid var(--line); }
+.markdown-body h3 { font-size: 1.2em; margin-top: 1.8em; }
+.markdown-body a { color: var(--accent); text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--accent) 35%, transparent); text-underline-offset: 3px; }
+.markdown-body a:hover { text-decoration-color: var(--accent); }
+.markdown-body blockquote { color: var(--ink-2); border-left: 3px solid var(--accent); background: var(--paper-2); padding: .8em 1.2em; border-radius: 0 3px 3px 0; }
+.markdown-body code, .markdown-body tt { background: var(--paper-3); border-radius: 3px; font-family: var(--font-mono); font-size: .86em; }
+.markdown-body pre, .markdown-body .highlight pre { background: var(--paper-2); border: 1px solid var(--line); border-radius: 4px; }
+.markdown-body pre code { background: transparent; }
+.markdown-body img { border-radius: 4px; background: transparent; }
+.markdown-body hr { height: 1px; background: var(--line); border: 0; margin: 2.4em 0; }
+.markdown-body table tr { background: transparent; border-top-color: var(--line); }
+.markdown-body table tr:nth-child(2n) { background: var(--paper-2); }
+.markdown-body table th, .markdown-body table td { border-color: var(--line); }
+.markdown-body strong { color: var(--ink); }
+.markdown-body mark { background: var(--marker); color: inherit; }
+#postBody { padding-bottom: 40px; border-bottom: 1px solid var(--line); }
+.post-bottom { font-size: 13px; color: var(--muted); margin-top: 10px; text-align: right; }
+#busuanzi_container_page_pv { font-family: var(--font-mono); font-size: 12px !important; color: var(--muted); }
+#cmButton {
+  display: block; width: 100%; height: 52px; margin-top: 48px;
+  background: transparent; color: var(--ink); border: 1px solid var(--line-2); border-radius: 3px;
+  font-size: 15px; cursor: pointer; box-shadow: none;
+}
+#cmButton:hover { border-color: var(--accent); color: var(--accent); }
+#cmButton .Counter { background: var(--paper-3); color: var(--ink-2); margin-left: 6px; }
+#comments { margin-top: 48px; }
+
+/* ---------- Tag / search page ---------- */
+.tag-top { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; flex-wrap: wrap; }
+.tagTitle { display: block; margin: 10px 0 0; font-family: var(--font-serif); font-size: clamp(28px, 4vw, 44px); font-weight: 900; line-height: 1.2; color: var(--ink); }
+.search-box { display: flex; align-items: center; gap: 0; border: 1px solid var(--line-2); border-radius: 3px; background: var(--paper-2); }
+.search-box svg { width: 16px; height: 16px; margin-left: 12px; fill: none; stroke: var(--muted); stroke-width: 1.6; }
+.search-box input {
+  width: 220px; height: 42px; padding: 0 10px; border: 0; outline: 0;
+  background: transparent; color: var(--ink); font-size: 15px;
+}
+.search-box button { height: 42px; padding: 0 16px; border: 0; border-left: 1px solid var(--line-2); background: transparent; color: var(--ink); cursor: pointer; font-size: 14px; }
+.search-box button:hover { color: var(--accent); }
+.search-box:focus-within { border-color: var(--accent); }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+.chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  height: 32px; padding: 0 12px;
+  border: 1px solid var(--line-2); border-radius: 999px; background: transparent;
+  font-size: 13.5px; color: var(--ink-2); cursor: pointer;
+}
+.chip em { font-style: normal; font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+.chip:hover { border-color: var(--ink); color: var(--ink); }
+.chip.on { background: var(--ink); border-color: var(--ink); color: var(--paper); }
+.chip.on em { color: var(--paper-3); }
+.tag-list .rows { border-bottom: 1px solid var(--line); }
+.notFind { padding: 48px 0; font-family: var(--font-serif); font-size: 20px; color: var(--muted); }
+
+/* ---------- Footer ---------- */
+.site-foot { margin-top: 72px; border-top: 1px solid var(--line); }
+.site-foot .wrap { display: flex; justify-content: space-between; align-items: flex-start; gap: 24px; flex-wrap: wrap; padding-top: 32px; padding-bottom: 40px; }
+.foot-brand b { display: block; font-family: var(--font-serif); font-size: 20px; color: var(--ink); }
+.foot-brand span { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+.foot-meta { text-align: right; font-family: var(--font-mono); font-size: 12px; color: var(--muted); line-height: 2; }
+.foot-meta a { color: var(--ink-2); }
+.foot-meta a:hover { color: var(--accent); }
+.foot-meta #busuanzi_container_site_pv { display: inline !important; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .hero .wrap { grid-template-columns: 1fr; gap: 44px; }
+  .yg { grid-template-columns: 1fr; }
+  .yg-year { padding: 28px 0 4px; font-size: 34px; }
+  .yg-year.pinned { padding-top: 28px; font-size: 18px; }
+  .yg-year span { position: static; }
+}
+@media (max-width: 640px) {
+  .wrap { padding: 0 16px; }
+  .site-bar .wrap { height: 56px; gap: 12px; }
+  .brand-sub, .site-nav .nav-text { display: none; }
+  .site-nav a, .site-nav button { padding: 0 8px; }
+  .site-nav .icon-btn { width: 32px; padding: 0; }
+  .hero { padding: 48px 0 48px; }
+  .hero-intro { font-size: 15.5px; }
+  .sec { padding-top: 44px; }
+  .sec-head { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .row a { grid-template-columns: 1fr; gap: 6px; padding: 18px 0; }
+  .row-date { order: -1; }
+  .row-desc { -webkit-line-clamp: 2; }
+  .row-tags .arrow { display: none; }
+  .post { padding: 32px 16px 16px; }
+  .markdown-body { font-size: 16px; }
+  .search-box { width: 100%; }
+  .search-box input { width: 100%; flex: 1; }
+  .foot-meta { text-align: left; }
+}
+
+/* tag page rows show the full date */
+.tag-list .row a { grid-template-columns: 92px minmax(0, 1fr) auto; }
+@media (max-width: 640px) { .tag-list .row a { grid-template-columns: 1fr; } }
+
+/* Posts that are a whole embedded HTML page (Gmeek-html apps) get a wider canvas */
+.post--wide { max-width: 1160px; }
+.post--wide #postBody { border-bottom: 0; }
+
+/* 《机场》练习页：让双栏能收缩、词汇卡不溢出、侧栏停在顶栏下方 */
+.post--wide #postBody .airport-main { grid-template-columns: minmax(0, 1fr) 300px; }
+.post--wide #postBody .vocab-grid { grid-template-columns: minmax(0, 1fr); }
+.post--wide #postBody .vocab-container { top: 84px; }
+@media (max-width: 768px) {
+  .post--wide #postBody .airport-main { grid-template-columns: minmax(0, 1fr); padding: 0; }
+  .post--wide #postBody .airport-app { padding: 12px; }
+  .post--wide #postBody .practice-controls { flex-wrap: wrap; }
+}
+
+/* ---------- Featured / core topics (home) ---------- */
+.feat { padding-bottom: 8px; }
+.feat-card {
+  display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 40px;
+  margin-top: 24px; padding: 32px 34px;
+  background: var(--paper-2); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 4px;
+  color: var(--ink); box-shadow: var(--shadow);
+  transition: border-color .15s ease, transform .15s ease;
+}
+.feat-card + .feat-card { margin-top: 16px; }
+.feat-card:hover { color: var(--ink); border-color: var(--accent); transform: translateY(-2px); }
+.feat-no { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .12em; color: var(--gold); }
+.feat-title { margin: 10px 0 0; font-family: var(--font-serif); font-size: clamp(24px, 3vw, 32px); font-weight: 900; line-height: 1.25; border: 0; }
+.feat-desc { margin: 14px 0 0; color: var(--ink-2); line-height: 1.85; }
+.feat-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
+.feat-meta span { height: 26px; line-height: 24px; padding: 0 10px; border: 1px solid var(--line-2); border-radius: 999px; font-size: 12.5px; color: var(--ink-2); }
+.feat-cta { display: inline-flex; gap: 6px; margin-top: 22px; font-weight: 700; color: var(--accent); border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
+.feat-chapters { list-style: none; margin: 0; padding: 0; align-self: center; }
+.feat-chapters li { display: grid; grid-template-columns: 34px 1fr; align-items: baseline; padding: 12px 0; border-bottom: 1px dashed var(--line-2); font-size: 15px; }
+.feat-chapters li:last-child { border-bottom: 0; }
+.feat-ch-no { font-family: var(--font-serif); font-weight: 900; font-size: 18px; color: var(--accent); }
+@media (max-width: 900px) {
+  .feat-card { grid-template-columns: 1fr; gap: 18px; padding: 24px 20px; }
+}
+
+
+/* ===================== grammar feature page ===================== */
+html[data-color-mode][data-light-theme] {
+  --g-n: #2f6b55; --g-n-bg: #dfeae3;
+  --g-a: #96701c; --g-a-bg: #f3e8c8;
+  --g-d: #3b5b84; --g-d-bg: #dde6f1;
+  --g-v: #a4482b; --g-v-bg: #f4e0d7;
+}
+html[data-color-mode="dark"][data-dark-theme] {
+  --g-n: #8cc4ad; --g-n-bg: #1d3029;
+  --g-a: #dcb862; --g-a-bg: #352b18;
+  --g-d: #9fbbe0; --g-d-bg: #1d2836;
+  --g-v: #e59a80; --g-v-bg: #3a241c;
+}
+@media (prefers-color-scheme: dark) {
+  html[data-color-mode="auto"][data-dark-theme] {
+    --g-n: #8cc4ad; --g-n-bg: #1d3029;
+    --g-a: #dcb862; --g-a-bg: #352b18;
+    --g-d: #9fbbe0; --g-d-bg: #1d2836;
+    --g-v: #e59a80; --g-v-bg: #3a241c;
+  }
+}
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+.gm-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0; background: var(--accent); z-index: 40; }
+
+.gm-hero { border-bottom: 1px solid var(--line); }
+.gm-hero .wrap { max-width: 1240px; padding-top: 64px; padding-bottom: 44px; }
+.gm-hero h1 { margin: 16px 0 0; font-family: var(--font-serif); font-weight: 900; font-size: clamp(34px, 5.6vw, 64px); line-height: 1.12; color: var(--ink); max-width: 15em; }
+.gm-hero h1 .mark { padding: 0 .04em; }
+.gm-hero-meta { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 22px; font-family: var(--font-mono); font-size: 12.5px; color: var(--muted); }
+.gm-legend { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.gm-legend span { display: inline-flex; align-items: center; gap: 6px; height: 28px; padding: 0 12px; border-radius: 999px; font-size: 13px; border: 1px solid; }
+.lg-n { color: var(--g-n); background: var(--g-n-bg); border-color: var(--g-n); }
+.lg-a { color: var(--g-a); background: var(--g-a-bg); border-color: var(--g-a); }
+.lg-d { color: var(--g-d); background: var(--g-d-bg); border-color: var(--g-d); }
+.lg-v { color: var(--g-v); background: var(--g-v-bg); border-color: var(--g-v); }
+
+.gm-shell { max-width: 1240px; margin: 0 auto; padding: 40px 32px 0; display: grid; grid-template-columns: 270px minmax(0, 1fr); gap: 56px; }
+.gm-side { position: sticky; top: 84px; align-self: start; max-height: calc(100vh - 100px); overflow: auto; padding-bottom: 24px; scrollbar-width: thin; }
+.gm-side-title { font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 22px 0 10px; }
+.gm-search { display: flex; align-items: center; border: 1px solid var(--line-2); border-radius: 4px; background: var(--paper-2); }
+.gm-search:focus-within { border-color: var(--accent); }
+.gm-search svg { width: 15px; height: 15px; margin-left: 10px; flex: none; fill: none; stroke: var(--muted); stroke-width: 1.6; }
+.gm-search input { flex: 1; min-width: 0; height: 40px; padding: 0 8px; border: 0; outline: 0; background: transparent; color: var(--ink); font-size: 14.5px; }
+.gm-search-bar { display: none; align-items: center; justify-content: space-between; margin-top: 8px; font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+.gm-search-bar.on { display: flex; }
+.gm-search-bar button { height: 26px; min-width: 30px; padding: 0 8px; border: 1px solid var(--line-2); border-radius: 3px; background: transparent; color: var(--ink); cursor: pointer; }
+.gm-search-bar button:hover { border-color: var(--accent); color: var(--accent); }
+.gm-results { list-style: none; margin: 8px 0 0; padding: 0; max-height: 260px; overflow: auto; border-top: 1px solid var(--line); }
+.gm-results li button { display: block; width: 100%; text-align: left; padding: 8px 2px; border: 0; border-bottom: 1px solid var(--line); background: transparent; color: var(--ink-2); font-size: 13px; line-height: 1.5; cursor: pointer; }
+.gm-results li button small { display: block; font-family: var(--font-mono); font-size: 10.5px; color: var(--muted); letter-spacing: .04em; }
+.gm-results li button:hover { color: var(--accent); }
+.gm-results mark { background: var(--marker); color: inherit; padding: 0 1px; }
+.gm-kws { display: flex; flex-wrap: wrap; gap: 6px; }
+.gm-kw { height: 28px; padding: 0 10px; border: 1px solid var(--line-2); border-radius: 999px; background: transparent; color: var(--ink-2); font-size: 12.5px; cursor: pointer; }
+.gm-kw:hover, .gm-kw.on { border-color: var(--accent); color: var(--accent); }
+.gm-toc { list-style: none; margin: 0; padding: 0; border-left: 1px solid var(--line); }
+.gm-toc a { display: block; padding: 4px 0 4px 14px; margin-left: -1px; border-left: 2px solid transparent; color: var(--ink-2); font-size: 13.5px; line-height: 1.45; }
+.gm-toc .lv1 a { margin-top: 10px; font-family: var(--font-serif); font-weight: 700; font-size: 14.5px; color: var(--ink); }
+.gm-toc .lv3 { display: none; }
+.gm-toc .lv3 a { padding-left: 28px; font-size: 12.5px; color: var(--muted); }
+.gm-toc .lv3.show { display: block; }
+.gm-toc a:hover { color: var(--accent); }
+.gm-toc a.active { color: var(--accent); border-left-color: var(--accent); }
+
+.gm-article { min-width: 0; max-width: 760px; font-size: 16.5px; line-height: 1.9; color: var(--ink); }
+.gm-article h1, .gm-article h2, .gm-article h3 { font-family: var(--font-serif); color: var(--ink); line-height: 1.35; scroll-margin-top: 84px; }
+.gm-article h1 { font-size: 32px; font-weight: 900; margin: 2.4em 0 .6em; padding-top: .8em; border-top: 1px solid var(--ink); }
+.gm-article h2 { font-size: 24px; font-weight: 800; margin: 2em 0 .6em; padding-bottom: .3em; border-bottom: 1px solid var(--line); }
+.gm-article h3 { font-size: 19px; font-weight: 700; margin: 1.8em 0 .5em; }
+.gm-article p { margin: .8em 0; }
+.gm-article ul, .gm-article ol { padding-left: 1.5em; margin: .7em 0; }
+.gm-article li { margin: .25em 0; }
+.gm-article li > ul, .gm-article li > ol { margin: .2em 0; }
+.gm-article strong { color: var(--ink); }
+.gm-article em { color: var(--accent); font-style: normal; border-bottom: 1px dotted color-mix(in srgb, var(--accent) 50%, transparent); }
+.gm-article blockquote { margin: 1.2em 0; padding: .8em 1.2em; border-left: 3px solid var(--accent); background: var(--paper-2); color: var(--ink-2); border-radius: 0 4px 4px 0; }
+.gm-article blockquote p { margin: .3em 0; }
+.gm-article hr { border: 0; height: 1px; background: var(--line); margin: 3em 0; }
+.gm-article code { font-family: var(--font-mono); font-size: .86em; background: var(--paper-3); padding: .1em .35em; border-radius: 3px; }
+.gm-table { overflow-x: auto; margin: 1.2em 0; border: 1px solid var(--line); border-radius: 4px; }
+.gm-article table { width: 100%; border-collapse: collapse; font-size: 14.5px; line-height: 1.6; }
+.gm-article th, .gm-article td { padding: 9px 12px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+.gm-article th { background: var(--paper-3); font-weight: 700; white-space: nowrap; }
+.gm-article tr:last-child td { border-bottom: 0; }
+.gm-article tbody tr:nth-child(2n) { background: var(--paper-2); }
+mark.gm-hit { background: var(--marker); color: inherit; border-radius: 2px; }
+mark.gm-hit.cur { background: var(--gold); color: var(--paper); }
+
+/* figures */
+.gm-fig { margin: 2em 0; padding: 18px 18px 12px; background: var(--paper-2); border: 1px solid var(--line); border-radius: 6px; }
+.gm-fig-scroll { overflow-x: auto; }
+.gm-fig svg { display: block; width: 100%; height: auto; min-width: 540px; }
+.gm-fig figcaption { margin-top: 12px; font-size: 13px; color: var(--muted); }
+.gm-fig figcaption span { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .1em; color: var(--accent); margin-right: 10px; }
+.gm-fig text { font-family: var(--font-sans); font-size: 15px; fill: var(--ink); }
+.gm-fig .ten { font-family: "Fraunces", Georgia, "Times New Roman", serif; }
+.gm-fig .tb { font-weight: 700; }
+.gm-fig .ts { font-size: 12.5px; fill: var(--muted); }
+.gm-fig .tsm { fill: var(--ink-2); }
+.gm-fig .tk { font-family: var(--font-mono); font-size: 12px; letter-spacing: .08em; fill: var(--accent); }
+.gm-fig .tcode { font-family: var(--font-mono); font-size: 16px; font-weight: 700; fill: var(--ink); }
+.gm-fig .tbig { font-size: 26px; fill: var(--muted); }
+.gm-fig .box { stroke-width: 1.4; }
+.gm-fig .n { fill: var(--g-n-bg); stroke: var(--g-n); } .gm-fig .tn { fill: var(--g-n); }
+.gm-fig .a { fill: var(--g-a-bg); stroke: var(--g-a); } .gm-fig .ta { fill: var(--g-a); }
+.gm-fig .d { fill: var(--g-d-bg); stroke: var(--g-d); } .gm-fig .td { fill: var(--g-d); }
+.gm-fig .v { fill: var(--g-v-bg); stroke: var(--g-v); } .gm-fig .tv { fill: var(--g-v); }
+.gm-fig .neu { fill: var(--paper); stroke: var(--line-2); } .gm-fig .tneu, .gm-fig .tink { fill: var(--ink); }
+.gm-fig .hl { fill: var(--paper); stroke: var(--accent); stroke-width: 2; } .gm-fig .thl, .gm-fig .tacc { fill: var(--accent); }
+.gm-fig .hdr { fill: var(--accent); } .gm-fig .thdr { fill: var(--accent-ink); }
+.gm-fig .ln { fill: none; stroke: var(--muted); stroke-width: 1.4; }
+.gm-fig .dash { stroke-dasharray: 4 4; stroke: var(--accent); }
+.gm-fig .ahead { fill: var(--muted); }
+.gm-fig .sep { stroke: var(--line); stroke-width: 1; }
+
+/* ask AI */
+.gm-ask-fab { position: fixed; right: 24px; bottom: 24px; z-index: 30; display: inline-flex; align-items: center; gap: 8px; height: 48px; padding: 0 20px; border: 0; border-radius: 999px; background: var(--accent); color: var(--accent-ink); font-size: 15px; font-weight: 700; box-shadow: 0 10px 28px -12px rgba(0,0,0,.45); cursor: pointer; }
+.gm-ask-fab:hover { background: var(--accent-2); }
+.gm-sel-btn { position: absolute; z-index: 35; display: none; height: 32px; padding: 0 12px; border: 0; border-radius: 4px; background: var(--ink); color: var(--paper); font-size: 13px; cursor: pointer; box-shadow: var(--shadow); }
+.gm-scrim { position: fixed; inset: 0; z-index: 45; background: rgba(0,0,0,.28); opacity: 0; pointer-events: none; transition: opacity .2s ease; }
+.gm-scrim.on { opacity: 1; pointer-events: auto; }
+.gm-drawer { position: fixed; top: 0; bottom: 0; z-index: 50; width: min(420px, 100vw); background: var(--paper); border-color: var(--line); box-shadow: var(--shadow); transition: transform .25s ease; overflow: auto; }
+.gm-ask { right: 0; border-left: 1px solid var(--line); transform: translateX(105%); }
+.gm-ask.on { transform: none; }
+.gm-drawer-head { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; background: var(--paper); border-bottom: 1px solid var(--line); }
+.gm-drawer-head b { font-family: var(--font-serif); font-size: 19px; }
+.gm-x { width: 34px; height: 34px; border: 0; border-radius: 50%; background: transparent; color: var(--ink-2); font-size: 20px; cursor: pointer; }
+.gm-x:hover { background: var(--paper-3); }
+.gm-ask-body { padding: 18px 20px 28px; }
+.gm-ask-ctx { padding: 12px 14px; background: var(--paper-2); border: 1px solid var(--line); border-radius: 4px; font-size: 13px; color: var(--ink-2); }
+.gm-ask-ctx .lbl { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: .12em; color: var(--muted); text-transform: uppercase; }
+.gm-ask-ctx .val { margin-top: 4px; font-weight: 700; color: var(--ink); }
+.gm-ask-ctx .quote { margin-top: 6px; max-height: 84px; overflow: hidden; color: var(--muted); font-size: 12.5px; line-height: 1.6; }
+.gm-ask-ctx label { display: flex; align-items: center; gap: 6px; margin-top: 8px; font-size: 12.5px; color: var(--muted); cursor: pointer; }
+.gm-quick { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 10px; }
+.gm-quick button { height: 30px; padding: 0 11px; border: 1px solid var(--line-2); border-radius: 999px; background: transparent; color: var(--ink-2); font-size: 12.5px; cursor: pointer; }
+.gm-quick button:hover { border-color: var(--accent); color: var(--accent); }
+.gm-ask textarea { width: 100%; min-height: 110px; padding: 12px; border: 1px solid var(--line-2); border-radius: 4px; background: var(--paper-2); color: var(--ink); font: inherit; font-size: 15px; line-height: 1.6; resize: vertical; outline: 0; }
+.gm-ask textarea:focus { border-color: var(--accent); }
+.gm-prov { display: grid; gap: 8px; margin-top: 14px; }
+.gm-prov button { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2px 10px; padding: 12px 14px; border: 1px solid var(--line-2); border-radius: 4px; background: var(--paper); color: var(--ink); text-align: left; cursor: pointer; }
+.gm-prov button b { font-size: 15px; }
+.gm-prov button small { grid-column: 1 / -1; font-size: 12px; color: var(--muted); line-height: 1.5; }
+.gm-prov button em { font-style: normal; font-family: var(--font-mono); font-size: 10.5px; color: var(--accent); border: 1px solid var(--accent); border-radius: 999px; padding: 1px 8px; }
+.gm-prov button:hover { border-color: var(--accent); }
+.gm-prov button.primary { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 8%, var(--paper)); }
+.gm-ask-note { margin-top: 14px; font-size: 12px; line-height: 1.7; color: var(--muted); }
+.gm-ask details { margin-top: 12px; font-size: 12.5px; color: var(--muted); }
+.gm-ask details pre { white-space: pre-wrap; max-height: 220px; overflow: auto; padding: 10px; background: var(--paper-2); border: 1px solid var(--line); border-radius: 4px; font-family: var(--font-mono); font-size: 11.5px; color: var(--ink-2); }
+.gm-toast { position: fixed; left: 50%; bottom: 90px; z-index: 60; transform: translate(-50%, 20px); opacity: 0; padding: 10px 16px; border-radius: 4px; background: var(--ink); color: var(--paper); font-size: 14px; transition: all .2s ease; pointer-events: none; max-width: calc(100vw - 32px); }
+.gm-toast.on { opacity: 1; transform: translate(-50%, 0); }
+
+.gm-mbar { display: none; }
+
+@media (max-width: 1000px) {
+  .gm-shell { grid-template-columns: minmax(0, 1fr); padding: 24px 16px 0; gap: 0; }
+  .gm-hero .wrap { padding-top: 40px; padding-bottom: 32px; }
+  .gm-side { position: fixed; top: 0; bottom: 0; left: 0; z-index: 50; width: min(340px, 88vw); max-height: none; padding: 16px 18px 90px; background: var(--paper); border-right: 1px solid var(--line); box-shadow: var(--shadow); transform: translateX(-105%); transition: transform .25s ease; }
+  .gm-side.on { transform: none; }
+  .gm-ask-fab { display: none; }
+  .gm-mbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; display: grid; grid-template-columns: repeat(3, 1fr); background: var(--paper); border-top: 1px solid var(--line); padding-bottom: env(safe-area-inset-bottom); }
+  .gm-mbar button { height: 54px; border: 0; background: transparent; color: var(--ink); font-size: 14px; cursor: pointer; }
+  .gm-mbar button.ai { color: var(--accent); font-weight: 700; }
+  .site-foot { padding-bottom: 60px; }
+  .gm-article { font-size: 16px; }
+  .gm-article h1 { font-size: 26px; }
+  .gm-article h2 { font-size: 21px; }
+  .gm-fig { padding: 12px 10px 10px; margin-left: -4px; margin-right: -4px; }
+}
+@media (min-width: 1001px) { .gm-side-close { display: none; } }
+</style>
+</head>
+<body>
+<div class="gm-progress" id="gmProgress"></div>
+<header class="site-bar">
+  <div class="wrap">
+    <a class="brand" href="../">
+      <img src="https://s21.ax1x.com/2025/02/15/pEK09q1.jpg" alt="avatar">
+      <span class="brand-text"><span class="brand-name">磊磊的秘密武器</span><span class="brand-sub">Value+Grow^247</span></span>
+    </a>
+    <nav class="site-nav">
+      <a href="../"><span class="nav-text">首页</span></a>
+      <a href="../tag.html#All"><span class="nav-text">标签</span></a>
+      <button class="icon-btn" type="button" id="themeBtn" title="切换主题" aria-label="切换主题">
+        <svg viewBox="0 0 16 16" class="stroke"><g id="themeIcon"></g></svg>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<section class="gm-hero">
+  <div class="wrap">
+    <div class="kicker">核心专题 · English Grammar System</div>
+    <h1>半个月，搭建你的英语语法体系</h1>
+    <div class="gm-hero-meta"><span>约 4.8 万字 · 4 章 17 节 · 14 张图解</span><span>选中任意文字即可问 AI</span></div>
+    <div class="gm-legend" aria-label="图解配色">
+      <span class="lg-n">名词性</span><span class="lg-a">形容词性</span><span class="lg-d">副词性</span><span class="lg-v">动词 / 连接</span>
+    </div>
+  </div>
+</section>
+
+<div class="gm-shell">
+  <aside class="gm-side" id="gmSide" aria-label="目录与搜索">
+    <div class="gm-drawer-head gm-side-close" style="padding:0 0 12px;margin-bottom:4px;"><b>目录 · 搜索</b><button class="gm-x" type="button" data-close="side" aria-label="关闭">×</button></div>
+    <form class="gm-search" id="gmSearchForm" role="search">
+      <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="M10.4 10.4 14 14"/></svg>
+      <input id="gmQ" type="search" placeholder="搜索全文：定语从句、whose…" autocomplete="off" aria-label="搜索全文">
+    </form>
+    <div class="gm-search-bar" id="gmBar"><span id="gmCount"></span><span><button type="button" id="gmPrev" aria-label="上一个">↑</button> <button type="button" id="gmNext" aria-label="下一个">↓</button> <button type="button" id="gmClear">清除</button></span></div>
+    <ul class="gm-results" id="gmResults"></ul>
+    <div class="gm-side-title">关键词条</div>
+    <div class="gm-kws" id="gmKws"><button type="button" class="gm-kw">名词性成分</button><button type="button" class="gm-kw">形容词性成分</button><button type="button" class="gm-kw">副词性成分</button><button type="button" class="gm-kw">修饰关系</button><button type="button" class="gm-kw">介词短语</button><button type="button" class="gm-kw">主谓宾定状补</button><button type="button" class="gm-kw">补语</button><button type="button" class="gm-kw">系动词</button><button type="button" class="gm-kw">五种基本句型</button><button type="button" class="gm-kw">连词</button><button type="button" class="gm-kw">名词性从句</button><button type="button" class="gm-kw">同位语从句</button><button type="button" class="gm-kw">形式主语</button><button type="button" class="gm-kw">先行词</button><button type="button" class="gm-kw">关系代词</button><button type="button" class="gm-kw">关系副词</button><button type="button" class="gm-kw">whose</button><button type="button" class="gm-kw">限制性</button><button type="button" class="gm-kw">非限制性</button><button type="button" class="gm-kw">状语从句</button><button type="button" class="gm-kw">让步</button><button type="button" class="gm-kw">不定式</button><button type="button" class="gm-kw">动名词</button><button type="button" class="gm-kw">分词</button><button type="button" class="gm-kw">逻辑主语</button><button type="button" class="gm-kw">悬垂分词</button><button type="button" class="gm-kw">独立主格</button><button type="button" class="gm-kw">句末重心</button><button type="button" class="gm-kw">非谓语动词</button></div>
+    <div class="gm-side-title">目录</div>
+    <ul class="gm-toc" id="gmToc">
+<li class="lv1"><a href="#一换一种方式理解词性" data-id="一换一种方式理解词性">一、换一种方式理解词性</a></li>
+<li class="lv2"><a href="#11-名词形容词副词这就是一切" data-id="11-名词形容词副词这就是一切">1.1 名词、形容词、副词，这就是一切！</a></li>
+<li class="lv2"><a href="#12-词性之间的修饰关系" data-id="12-词性之间的修饰关系">1.2 词性之间的修饰关系</a></li>
+<li class="lv2"><a href="#13-介词-形容词-or-副词" data-id="13-介词-形容词-or-副词">1.3 介词 = 形容词 or 副词</a></li>
+<li class="lv1"><a href="#二理解了简单句你就理解了一切" data-id="二理解了简单句你就理解了一切">二、理解了简单句，你就理解了一切</a></li>
+<li class="lv2"><a href="#21-主谓宾定状补" data-id="21-主谓宾定状补">2.1 主谓宾定状补</a></li>
+<li class="lv2"><a href="#22-简单句的构成" data-id="22-简单句的构成">2.2 简单句的构成</a></li>
+<li class="lv2"><a href="#23-语法分析实践1" data-id="23-语法分析实践1">2.3 语法分析实践（1）</a></li>
+<li class="lv1"><a href="#三从句-连词-简单句" data-id="三从句-连词-简单句">三、从句 = 连词 + 简单句</a></li>
+<li class="lv2"><a href="#31-简单句-简单句必须有连词" data-id="31-简单句-简单句必须有连词">3.1 简单句 + 简单句，必须有连词</a></li>
+<li class="lv2"><a href="#32-名词性从句" data-id="32-名词性从句">3.2 名词性从句</a></li>
+<li class="lv2"><a href="#33-名词性从句补充" data-id="33-名词性从句补充">3.3 名词性从句（补充）</a></li>
+<li class="lv3"><a href="#同位语以及同位语从句" data-id="同位语以及同位语从句">同位语，以及同位语从句</a></li>
+<li class="lv3"><a href="#疑问词作主语则无需变更语序" data-id="疑问词作主语则无需变更语序">疑问词作主语，则无需变更语序</a></li>
+<li class="lv3"><a href="#形式主语问题endweight-句末重心头轻尾重" data-id="形式主语问题endweight-句末重心头轻尾重">形式主语问题（ENDWEIGHT 句末重心，头轻尾重）</a></li>
+<li class="lv3"><a href="#形式宾语问题" data-id="形式宾语问题">形式宾语问题</a></li>
+<li class="lv3"><a href="#that-的省略问题" data-id="that-的省略问题">that 的省略问题</a></li>
+<li class="lv3"><a href="#whether-和-if-能否互换的问题" data-id="whether-和-if-能否互换的问题">whether 和 if 能否互换的问题</a></li>
+<li class="lv2"><a href="#34-形容词性从句上关系词与主宾语关系代词" data-id="34-形容词性从句上关系词与主宾语关系代词">3.4 形容词性从句（上）：关系词与主/宾语关系代词</a></li>
+<li class="lv3"><a href="#主语关系代词" data-id="主语关系代词">主语关系代词</a></li>
+<li class="lv3"><a href="#宾语关系代词动词宾语" data-id="宾语关系代词动词宾语">宾语关系代词（动词宾语）</a></li>
+<li class="lv3"><a href="#宾语关系代词介词宾语与介词前置后置" data-id="宾语关系代词介词宾语与介词前置后置">宾语关系代词（介词宾语）与介词前置/后置</a></li>
+<li class="lv2"><a href="#35-形容词性从句中状语关系副词与定语关系限定词" data-id="35-形容词性从句中状语关系副词与定语关系限定词">3.5 形容词性从句（中）：状语关系副词与定语关系限定词</a></li>
+<li class="lv3"><a href="#状语关系副词" data-id="状语关系副词">状语关系副词</a></li>
+<li class="lv3"><a href="#定语关系限定词whose-of-which" data-id="定语关系限定词whose-of-which">定语关系限定词：whose ↔ of which</a></li>
+<li class="lv3"><a href="#补语关系代词whichthat" data-id="补语关系代词whichthat">补语关系代词：which、that</a></li>
+<li class="lv3"><a href="#形容词性从句的难点填空综合练习" data-id="形容词性从句的难点填空综合练习">形容词性从句的难点（填空综合练习）</a></li>
+<li class="lv2"><a href="#36-形容词性从句下限制性-vs-非限制性" data-id="36-形容词性从句下限制性-vs-非限制性">3.6 形容词性从句（下）：限制性 VS 非限制性</a></li>
+<li class="lv2"><a href="#37-副词性从句" data-id="37-副词性从句">3.7 副词性从句</a></li>
+<li class="lv3"><a href="#时间状语从句" data-id="时间状语从句">时间状语从句</a></li>
+<li class="lv3"><a href="#地点状语从句where" data-id="地点状语从句where">地点状语从句：where</a></li>
+<li class="lv3"><a href="#原因状语从句becauseforassince" data-id="原因状语从句becauseforassince">原因状语从句：because、for、as、since</a></li>
+<li class="lv3"><a href="#目的状语从句" data-id="目的状语从句">目的状语从句</a></li>
+<li class="lv3"><a href="#结果状语从句-vs-目的状语从句" data-id="结果状语从句-vs-目的状语从句">结果状语从句 VS 目的状语从句</a></li>
+<li class="lv3"><a href="#条件状语从句" data-id="条件状语从句">条件状语从句</a></li>
+<li class="lv3"><a href="#让步状语从句" data-id="让步状语从句">让步状语从句</a></li>
+<li class="lv3"><a href="#比较状语从句" data-id="比较状语从句">比较状语从句</a></li>
+<li class="lv1"><a href="#四非谓语动词和从句是一回事" data-id="四非谓语动词和从句是一回事">四、非谓语动词和从句是一回事</a></li>
+<li class="lv2"><a href="#41-不定式" data-id="41-不定式">4.1 不定式</a></li>
+<li class="lv3"><a href="#非谓语动词的本质" data-id="非谓语动词的本质">非谓语动词的本质</a></li>
+<li class="lv3"><a href="#不定式的形式" data-id="不定式的形式">不定式的形式</a></li>
+<li class="lv3"><a href="#名词属性的不定式主语表语宾语" data-id="名词属性的不定式主语表语宾语">名词属性的不定式：主语、表语、宾语</a></li>
+<li class="lv3"><a href="#名词属性的不定式宾语补语同位语" data-id="名词属性的不定式宾语补语同位语">名词属性的不定式：宾语补语、同位语</a></li>
+<li class="lv3"><a href="#形容词属性的不定式后置定语" data-id="形容词属性的不定式后置定语">形容词属性的不定式：后置定语</a></li>
+<li class="lv3"><a href="#副词属性的不定式状语与插入语" data-id="副词属性的不定式状语与插入语">副词属性的不定式：状语与插入语</a></li>
+<li class="lv3"><a href="#不定式的逻辑主语逻辑宾语" data-id="不定式的逻辑主语逻辑宾语">不定式的逻辑主语、逻辑宾语</a></li>
+<li class="lv3"><a href="#不定式的时态语态" data-id="不定式的时态语态">不定式的时态、语态</a></li>
+<li class="lv2"><a href="#42-动名词" data-id="42-动名词">4.2 动名词</a></li>
+<li class="lv3"><a href="#动名词作主语位于句首" data-id="动名词作主语位于句首">动名词作主语：位于句首</a></li>
+<li class="lv3"><a href="#形式主语-it-的问题句末重心" data-id="形式主语-it-的问题句末重心">形式主语 it 的问题（句末重心）</a></li>
+<li class="lv3"><a href="#动名词作主语位于句末的特殊句型" data-id="动名词作主语位于句末的特殊句型">动名词作主语：位于句末的特殊句型</a></li>
+<li class="lv3"><a href="#动名词作宾语" data-id="动名词作宾语">动名词作宾语</a></li>
+<li class="lv3"><a href="#动名词作表语" data-id="动名词作表语">动名词作表语</a></li>
+<li class="lv3"><a href="#动名词作定语动名词-vs-分词" data-id="动名词作定语动名词-vs-分词">动名词作定语：动名词 VS 分词</a></li>
+<li class="lv3"><a href="#动名词的逻辑主语" data-id="动名词的逻辑主语">动名词的逻辑主语</a></li>
+<li class="lv3"><a href="#动名词的时态语态" data-id="动名词的时态语态">动名词的时态、语态</a></li>
+<li class="lv3"><a href="#动名词与不定式的区别" data-id="动名词与不定式的区别">动名词与不定式的区别</a></li>
+<li class="lv2"><a href="#43-分词" data-id="43-分词">4.3 分词</a></li>
+<li class="lv3"><a href="#分词的意义" data-id="分词的意义">分词的意义</a></li>
+<li class="lv3"><a href="#分词作状语逻辑主语问题" data-id="分词作状语逻辑主语问题">分词作状语：逻辑主语问题</a></li>
+<li class="lv3"><a href="#分词作表语" data-id="分词作表语">分词作表语</a></li>
+<li class="lv3"><a href="#分词作定语" data-id="分词作定语">分词作定语</a></li>
+<li class="lv3"><a href="#分词作补足语" data-id="分词作补足语">分词作补足语</a></li>
+<li class="lv3"><a href="#使用分词的注意事项" data-id="使用分词的注意事项">使用分词的注意事项</a></li>
+<li class="lv2"><a href="#44-非谓语动词和从句的相互转换" data-id="44-非谓语动词和从句的相互转换">4.4 非谓语动词和从句的相互转换</a></li>
+<li class="lv3"><a href="#名词性从句-名词动名词不定式" data-id="名词性从句-名词动名词不定式">名词性从句 → 名词、动名词、不定式</a></li>
+<li class="lv3"><a href="#形容词性从句-形容词不定式介词短语分词" data-id="形容词性从句-形容词不定式介词短语分词">形容词性从句 → 形容词、不定式、介词短语、分词</a></li>
+<li class="lv3"><a href="#副词性从句-不定式介词短语分词" data-id="副词性从句-不定式介词短语分词">副词性从句 → 不定式、介词短语、分词</a></li>
+<li class="lv3"><a href="#非谓语动词更简练但却不是万能的" data-id="非谓语动词更简练但却不是万能的">非谓语动词更简练，但却不是万能的</a></li>
+<li class="lv2"><a href="#全书知识框架总结" data-id="全书知识框架总结">全书知识框架总结</a></li>
+    </ul>
+  </aside>
+
+  <article class="gm-article" id="gmArticle">
+<blockquote>
+<p>本文整理自 Larry 的语法课全套课件。核心方法论：<strong>一切英语成分只有名词性、形容词性、副词性（外加动词）四大类</strong>；简单句是积木，从句 = 连词 + 简单句，非谓语动词和从句是一回事。</p>
+</blockquote>
+<h2 id="课程目录">课程目录</h2>
+<ul>
+<li><strong>一、换一种方式理解词性</strong></li>
+<li>1.1 名词、形容词、副词，这就是一切！</li>
+<li>1.2 词性之间的修饰关系</li>
+<li>1.3 介词其实很简单</li>
+<li><strong>二、理解了简单句，你就理解了一切</strong></li>
+<li>2.1 主谓宾定状补</li>
+<li>2.2 简单句的构成</li>
+<li>2.3 语法分析实践（1）</li>
+<li><strong>三、从句 = 连词 + 简单句</strong></li>
+<li>3.1 简单句 + 简单句，必须有连词</li>
+<li>3.2 名词性从句</li>
+<li>3.3 名词性从句（补充）</li>
+<li>3.4 形容词性从句（上）</li>
+<li>3.5 形容词性从句（中）</li>
+<li>3.6 形容词性从句（下）</li>
+<li>3.7 副词性从句</li>
+<li><strong>四、非谓语动词和从句是一回事</strong></li>
+<li>4.1 不定式</li>
+<li>4.2 动名词</li>
+<li>4.3 分词</li>
+<li>4.4 非谓语动词和从句的相互转换</li>
+</ul>
+<hr />
+<h1 id="一换一种方式理解词性">一、换一种方式理解词性</h1>
+<h2 id="11-名词形容词副词这就是一切">1.1 名词、形容词、副词，这就是一切！</h2>
+<p>抛开传统词性划分，一切句子成分只分四类：</p>
+<div class="gm-table"><table>
+<thead>
+<tr>
+<th>成分类别</th>
+<th>包含内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>名词性成分</strong></td>
+<td>名词、名词性从句、不定式、动名词……</td>
+</tr>
+<tr>
+<td><strong>形容词性成分</strong></td>
+<td>形容词、形容词性从句、不定式、分词、介词短语……</td>
+</tr>
+<tr>
+<td><strong>副词性成分</strong></td>
+<td>副词、副词性从句、不定式、介词短语……</td>
+</tr>
+<tr>
+<td><strong>动词成分</strong></td>
+<td>谓语动词</td>
+</tr>
+</tbody>
+</table></div>
+<p>修饰关系只有两条：</p>
+<ol>
+<li><strong>形容词修饰名词</strong>；</li>
+<li><strong>副词修饰形容词、动词、其他副词</strong>。</li>
+</ol>
+<figure class="gm-fig" id="fig-1"><div class="gm-fig-scroll"><svg viewBox="0 0 680 378" role="img" aria-label="四类成分与两条修饰关系" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ahead"/></marker></defs><text x="40.0" y="44.0" class="tk" text-anchor="start">① 形容词性成分 修饰 名词性成分</text><rect x="40.0" y="60.0" width="240.0" height="76.0" rx="10" class="box a"/><text x="160.0" y="95.0" class="tb ta" text-anchor="middle">形容词性成分</text><text x="160.0" y="115.0" class="ts" text-anchor="middle">形容词·定语从句·分词·介词短语</text><path d="M286.0,98.0 L394.0,98.0" class="ln" marker-end="url(#ah)"/><text x="340.0" y="88.0" class="ts" text-anchor="middle">修饰</text><rect x="400.0" y="60.0" width="240.0" height="76.0" rx="10" class="box n"/><text x="520.0" y="95.0" class="tb tn" text-anchor="middle">名词性成分</text><text x="520.0" y="115.0" class="ts" text-anchor="middle">名词·代词·名词性从句·不定式·动名词</text><text x="40.0" y="186.0" class="tk" text-anchor="start">② 副词性成分 修饰 动词、形容词、其他副词</text><rect x="40.0" y="202.0" width="240.0" height="76.0" rx="10" class="box d"/><text x="160.0" y="237.0" class="tb td" text-anchor="middle">副词性成分</text><text x="160.0" y="257.0" class="ts" text-anchor="middle">副词·状语从句·不定式·介词短语</text><rect x="400.0" y="196.0" width="240.0" height="36.0" rx="10" class="box v"/><text x="520.0" y="219.0" class="tb tv" text-anchor="middle">动词（谓语）</text><path d="M286.0,240.0 Q340.0,214.0 394.0,214.0" class="ln" marker-end="url(#ah)"/><rect x="400.0" y="242.0" width="240.0" height="36.0" rx="10" class="box a"/><text x="520.0" y="265.0" class="tb ta" text-anchor="middle">形容词性成分</text><path d="M286.0,240.0 Q340.0,240.0 394.0,260.0" class="ln" marker-end="url(#ah)"/><rect x="400.0" y="288.0" width="240.0" height="36.0" rx="10" class="box d"/><text x="520.0" y="311.0" class="tb td" text-anchor="middle">其他副词性成分</text><path d="M286.0,240.0 Q340.0,306.0 394.0,306.0" class="ln" marker-end="url(#ah)"/><text x="340.0" y="362.0" class="ts" text-anchor="middle">其余一切——从句、非谓语动词——都只是这几类成分的变形</text></svg></div><figcaption><span>图 1</span>四类成分与两条修饰关系</figcaption></figure>
+
+<p>复杂的从句结构、非谓语动词，归根结底都是这三类成分的变形。学好语法 = 学会搭积木：<strong>简单句是基础，从句是简单句的组合，非谓语动词是从句的简化</strong>。</p>
+<p><strong>课程示例语料</strong>（后文反复使用，出自《新概念英语》美洲狮一篇）：</p>
+<blockquote>
+<p>The hunt for the puma began in a small village where a woman picking blackberries saw 'a large cat' only five yards away from her. It immediately ran away when she saw it, and experts confirmed that a puma will not attack a human being unless it is cornered. The search proved difficult, for the puma was often observed at one place in the morning and at another place twenty miles away in the evening. Wherever it went, it left behind it a trail of dead deer and small animals like rabbits. Paw prints were seen in a number of places and puma fur was found clinging to bushes. Several people complained of 'cat-like noises' at night and a businessman on a fishing trip saw the puma up a tree. The experts were now fully convinced that the animal was a puma, but where had it come from? As no pumas had been reported missing from any zoo in the country, this one must have been in the possession of a private collector and somehow managed to escape. The hunt went on for several weeks, but the puma was not caught. It is disturbing to think that a dangerous wild animal is still at large in the quiet countryside.</p>
+</blockquote>
+<p>用"名词性 / 形容词性 / 副词性 / 动词"四类成分，可以完整分析上面任何一句话。</p>
+<h2 id="12-词性之间的修饰关系">1.2 词性之间的修饰关系</h2>
+<p><strong>英语中常见的 11 种词性：</strong></p>
+<ol>
+<li>名词 (Noun)</li>
+<li>动词 (Verb)</li>
+<li>形容词 (Adjective)</li>
+<li>副词 (Adverb)</li>
+<li>代词 (Pronoun)</li>
+<li>介词 (Preposition)</li>
+<li>连词 (Conjunction)</li>
+<li>感叹词 (Interjection)</li>
+<li>冠词 (Article)</li>
+<li>数词 (Numeral)</li>
+<li>限定词 (Determiner)</li>
+</ol>
+<p><strong>重新归类：</strong> 名词、代词、数词、冠词等 → 名词性成分；形容词、限定词等 → 形容词性成分；副词等 → 副词性成分。</p>
+<p><strong>修饰关系的完整展开：</strong></p>
+<ul>
+<li>形容词性成分修饰名词性成分：</li>
+<li>The <em>beautiful flowers</em> have a sweet fragrance. 【形容词】</li>
+<li>The <em>flowers which are stolen from Michael</em> have a sweet fragrance. 【形容词性从句】</li>
+<li>The <em>flowers stolen from Michael</em> have a sweet fragrance. 【分词】</li>
+<li>副词性成分修饰形容词性成分：</li>
+<li>Her performance was <em>surprisingly good</em>. 【副词】</li>
+<li>Her performance was <em>good when her mom is around</em>. 【副词性从句】</li>
+<li>副词性成分修饰动词：</li>
+<li>He <em>runs slowly</em>. 【副词】</li>
+<li>He <em>runs if he is followed</em>. 【副词性从句】</li>
+<li>副词性成分修饰其他副词性成分：</li>
+<li>She <em>speaks very softly</em>. 【副词修饰副词】</li>
+<li>She <em>speaks like a gun</em>. 【副词性介词短语】</li>
+</ul>
+<h2 id="13-介词-形容词-or-副词">1.3 介词 = 形容词 or 副词</h2>
+<p><strong>介词只有一种用法：介词 + 名词性成分 = 介词短语。</strong></p>
+<figure class="gm-fig" id="fig-2"><div class="gm-fig-scroll"><svg viewBox="0 0 680 244" role="img" aria-label="介词短语的两种属性" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ahead"/></marker></defs><rect x="20.0" y="30.0" width="150.0" height="66.0" rx="10" class="box neu"/><text x="95.0" y="60.0" class="tb tink" text-anchor="middle">介词</text><text x="95.0" y="80.0" class="ts" text-anchor="middle">at · on · with · for …</text><text x="186.0" y="70.0" class="tbig" text-anchor="middle">+</text><rect x="202.0" y="30.0" width="200.0" height="66.0" rx="10" class="box n"/><text x="302.0" y="60.0" class="tb tn" text-anchor="middle">名词性成分</text><text x="302.0" y="80.0" class="ts" text-anchor="middle">名词 · 动名词 · 名词性从句</text><text x="418.0" y="70.0" class="tbig" text-anchor="middle">=</text><rect x="434.0" y="30.0" width="226.0" height="66.0" rx="10" class="box hl"/><text x="547.0" y="60.0" class="tb tacc" text-anchor="middle">介词短语</text><text x="547.0" y="80.0" class="ts" text-anchor="middle">整体当作一个成分来用</text><path d="M547.0,96.0 Q470.0,150.0 205.0,160.0" class="ln" marker-end="url(#ah)"/><path d="M547.0,96.0 L515.0,160.0" class="ln" marker-end="url(#ah)"/><rect x="40.0" y="160.0" width="330.0" height="70.0" rx="10" class="box a"/><text x="205.0" y="192.0" class="tb ta" text-anchor="middle">形容词属性 → 后置定语</text><text x="205.0" y="212.0" class="ts" text-anchor="middle">The book on the shelf is great.</text><rect x="390.0" y="160.0" width="270.0" height="70.0" rx="10" class="box d"/><text x="525.0" y="192.0" class="tb td" text-anchor="middle">副词属性 → 状语</text><text x="525.0" y="212.0" class="ts" text-anchor="middle">We went to a movie after dinner.</text></svg></div><figcaption><span>图 2</span>介词短语：要么当形容词用，要么当副词用</figcaption></figure>
+
+<p>同一个词，跟名词就是介词，单独使用则可能是副词或形容词：</p>
+<ul>
+<li>The puma is <em>up</em> a tree. 【介词】</li>
+<li>He looked <em>up</em>. 【副词】</li>
+<li>Prices are <em>up</em>. 【形容词】</li>
+<li>It depends <em>on</em> what they do. 【介词】</li>
+<li>The car stopped and then drove <em>on</em>. 【副词】</li>
+<li>The TV is <em>on</em>. 【形容词】</li>
+</ul>
+<p><strong>介词后面的"名词性成分"可以是多种形式：</strong></p>
+<ul>
+<li>The cat <em>on the table</em> is named Floppy. 【名词短语】</li>
+<li>He walked <em>through the park</em>. 【名词短语】</li>
+<li>She apologized <em>for arriving late to the meeting</em>. 【动名词短语】</li>
+<li>She's not certain <em>about whether she'll go to the party or not</em>. 【名词性从句】</li>
+<li>The scientists are studying the effects <em>of climate change on the ecosystem</em>. 【名词短语】</li>
+<li>I'm worried about <em>the fact that I haven't heard from him in a while</em>. 【内含名词性从句的名词短语】</li>
+</ul>
+<p><strong>形容词属性的介词短语</strong>：一般用作后置定语，修饰名词。</p>
+<ul>
+<li>The book <em>on the shelf</em> is great.（后置定语）</li>
+<li>I hate the hot summers <em>in Changsha</em>.（后置定语）</li>
+</ul>
+<p><strong>副词属性的介词短语</strong>：修饰动词、形容词、其他副词。</p>
+<ul>
+<li>修饰动词：We went to a movie <em>after dinner</em>. / They have classes <em>at our local school</em>.</li>
+<li>修饰形容词：I am ready <em>for dinner</em>. / Sally is happy <em>with her new teacher</em>.</li>
+<li>修饰其他副词：We got there late <em>in the evening</em>. / Our team scored early <em>in the first quarter</em>.</li>
+</ul>
+<p><strong>这些也算介词：</strong></p>
+<ul>
+<li><strong>简单介词</strong>：as, at, by, during, with……</li>
+<li><strong>分词介词</strong>：considering, including, given, granted……</li>
+<li><strong>短语介词</strong>：ahead of, next to, because of, owing to, along with, as well as, in case of, in charge of, in common with, as a result of, in the absence of, to the best of, with an eye to……</li>
+</ul>
+<hr />
+<h1 id="二理解了简单句你就理解了一切">二、理解了简单句，你就理解了一切</h1>
+<h2 id="21-主谓宾定状补">2.1 主谓宾定状补</h2>
+<div class="gm-table"><table>
+<thead>
+<tr>
+<th>句子成分</th>
+<th>定义</th>
+<th>词性属性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主语 (Subject)</td>
+<td>句子的主体话题 or 动作的发出者</td>
+<td>名词属性</td>
+</tr>
+<tr>
+<td>谓语 (Predicate)</td>
+<td>谓语即动词</td>
+<td>动词</td>
+</tr>
+<tr>
+<td>宾语 (Object)</td>
+<td>谓语动词的执行对象</td>
+<td>名词属性</td>
+</tr>
+<tr>
+<td>定语 (Attributive)</td>
+<td>修饰名词性成分的成分</td>
+<td>形容词属性</td>
+</tr>
+<tr>
+<td>状语 (Adverbial)</td>
+<td>修饰动词、形容词、其他副词的成分</td>
+<td>副词属性</td>
+</tr>
+<tr>
+<td>补语 (Complement)</td>
+<td>补充说明的额外成分</td>
+<td>名词/形容词属性</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="gm-fig" id="fig-3"><div class="gm-fig-scroll"><svg viewBox="0 0 680 300" role="img" aria-label="句子成分与词性属性的对应" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ahead"/></marker></defs><text x="50.0" y="24.0" class="tk" text-anchor="start">例 1 · 主谓宾 + 层层叠加的状语</text><rect x="50.0" y="40.0" width="30.4" height="32.0" rx="7" class="box n"/><text x="65.2" y="61.0" class="ten" text-anchor="middle" style="font-size:15px">I</text><text x="65.2" y="90.0" class="tb tn" text-anchor="middle" style="font-size:13px">主语</text><text x="65.2" y="106.0" class="ts" text-anchor="middle" style="font-size:12px">名词性</text><rect x="88.4" y="40.0" width="97.6" height="32.0" rx="7" class="box v"/><text x="137.2" y="61.0" class="ten" text-anchor="middle" style="font-size:15px">will meet</text><text x="137.2" y="90.0" class="tb tv" text-anchor="middle" style="font-size:13px">谓语</text><text x="137.2" y="106.0" class="ts" text-anchor="middle" style="font-size:12px">动词</text><rect x="194.0" y="40.0" width="47.2" height="32.0" rx="7" class="box n"/><text x="217.6" y="61.0" class="ten" text-anchor="middle" style="font-size:15px">you</text><text x="217.6" y="90.0" class="tb tn" text-anchor="middle" style="font-size:13px">宾语</text><text x="217.6" y="106.0" class="ts" text-anchor="middle" style="font-size:12px">名词性</text><rect x="249.2" y="40.0" width="114.4" height="32.0" rx="7" class="box d"/><text x="306.4" y="61.0" class="ten" text-anchor="middle" style="font-size:15px">at the park</text><text x="306.4" y="90.0" class="tb td" text-anchor="middle" style="font-size:13px">状语</text><text x="306.4" y="106.0" class="ts" text-anchor="middle" style="font-size:12px">副词性</text><rect x="371.6" y="40.0" width="89.2" height="32.0" rx="7" class="box d"/><text x="416.2" y="61.0" class="ten" text-anchor="middle" style="font-size:15px">tomorrow</text><text x="416.2" y="90.0" class="tb td" text-anchor="middle" style="font-size:13px">状语</text><text x="416.2" y="106.0" class="ts" text-anchor="middle" style="font-size:12px">副词性</text><rect x="468.8" y="40.0" width="173.2" height="32.0" rx="7" class="box d"/><text x="555.4" y="61.0" class="ten" text-anchor="middle" style="font-size:15px">if it doesn&#x27;t rain</text><text x="555.4" y="90.0" class="tb td" text-anchor="middle" style="font-size:13px">状语</text><text x="555.4" y="106.0" class="ts" text-anchor="middle" style="font-size:12px">副词性从句</text><path d="M249.2,124 v8 h392.8 v-8 M445.6,132 v8" class="ln"/><text x="445.6" y="158.0" class="ts" text-anchor="middle">三个副词性成分，都在修饰谓语 will meet</text><text x="50.0" y="196.0" class="tk" text-anchor="start">例 2 · 补语：宾语和补语之间藏着「A is B」</text><rect x="50.0" y="236.0" width="38.8" height="32.0" rx="7" class="box n"/><text x="69.4" y="257.0" class="ten" text-anchor="middle" style="font-size:15px">We</text><text x="69.4" y="286.0" class="tb tn" text-anchor="middle" style="font-size:13px">主语</text><rect x="96.8" y="236.0" width="89.2" height="32.0" rx="7" class="box v"/><text x="141.4" y="257.0" class="ten" text-anchor="middle" style="font-size:15px">consider</text><text x="141.4" y="286.0" class="tb tv" text-anchor="middle" style="font-size:13px">谓语</text><rect x="194.0" y="236.0" width="47.2" height="32.0" rx="7" class="box n"/><text x="217.6" y="257.0" class="ten" text-anchor="middle" style="font-size:15px">him</text><text x="217.6" y="286.0" class="tb tn" text-anchor="middle" style="font-size:13px">宾语</text><rect x="249.2" y="236.0" width="72.4" height="32.0" rx="7" class="box a"/><text x="285.4" y="257.0" class="ten" text-anchor="middle" style="font-size:15px">a fool</text><text x="285.4" y="286.0" class="tb ta" text-anchor="middle" style="font-size:13px">宾语补语</text><path d="M217.6,234 C217.6,206 285.4,206 285.4,234" class="ln dash"/><text x="251.5" y="214.0" class="tb tacc" text-anchor="middle">=</text><text x="372.0" y="250.0" class="ten tacc" text-anchor="start">还原：he is a fool</text><text x="372.0" y="274.0" class="ts" text-anchor="start">能还原出系动词关系的，就是补语</text></svg></div><figcaption><span>图 3</span>句子成分 = 词性属性的具体落位</figcaption></figure>
+
+<p><strong>主语：</strong></p>
+<ul>
+<li><em>Boys</em> play football.</li>
+<li><em>Running every morning</em> helps me stay fit.</li>
+<li><em>To learn a new language</em> takes time and dedication.</li>
+<li><em>That boys play football</em> is great.</li>
+</ul>
+<p><strong>谓语：</strong></p>
+<ul>
+<li>She <em>sings</em> beautifully.</li>
+<li>He <em>has been studying</em> all night.</li>
+<li>I <em>ate</em> breakfast this morning.</li>
+<li>The flowers <em>bloomed</em> in the garden.</li>
+<li>That soup <em>smells</em> delicious.</li>
+<li>You <em>should brush</em> your teeth twice a day.</li>
+</ul>
+<p><strong>宾语：</strong></p>
+<ul>
+<li>She ate <em>sushi</em>.</li>
+<li>He gave <em>his sister a birthday gift</em>.</li>
+<li>I enjoy <em>reading books</em>.</li>
+<li>I want <em>to learn English</em>.</li>
+<li>She believes <em>that she will come to the party</em>.</li>
+</ul>
+<p><strong>定语：</strong></p>
+<ul>
+<li><em>The red car</em> is mine.</li>
+<li>The book <em>that I borrowed from the library</em> was really interesting.</li>
+<li>The man <em>with the hat</em> is my uncle.</li>
+<li><em>The running</em> water is very soothing.</li>
+<li>The best way <em>to learn a language</em> is to practice speaking it.</li>
+<li><em>The broken</em> vase on the table needs to be fixed.</li>
+</ul>
+<p><strong>状语：</strong></p>
+<ul>
+<li>I will meet you <em>tomorrow</em>.</li>
+<li>I will meet you <em>at the park</em>.</li>
+<li>I will meet you <em>at the park tomorrow</em>.</li>
+<li>I will meet you <em>at the park tomorrow if it doesn't rain</em>.</li>
+<li>I will meet you <em>at the park tomorrow to get the computer fixed if it doesn't rain</em>.</li>
+</ul>
+<p><strong>补语（宾语补语 / 主语补语）：</strong></p>
+<ul>
+<li>She painted the room <em>blue</em>.</li>
+<li>We consider him <em>a fool</em>.</li>
+<li>I found the movie <em>to be very interesting</em>.</li>
+<li>You should leave the door <em>open</em>.</li>
+<li>He is walking around <em>naked</em>.</li>
+<li>I asked him <em>to buy something for me</em>.</li>
+</ul>
+<p><strong>补语的判断标准：主语/宾语 + 补语之间可以还原出"系动词"关系【A is B】</strong></p>
+<ul>
+<li>She painted the room blue. →【room was blue】</li>
+<li>We consider him a fool. →【he is a fool】</li>
+<li>I found the movie to be very interesting. →【movie was interesting】</li>
+<li>You should leave the door open. →【door is open】</li>
+<li>He is walking around naked. →【he was naked】</li>
+<li>I asked him to buy something for me. →【he was to buy something for me】</li>
+</ul>
+<h2 id="22-简单句的构成">2.2 简单句的构成</h2>
+<p><strong>主语 + 谓语 = 句子（简单句）</strong>。简单句只有五种基本句型：</p>
+<div class="gm-table"><table>
+<thead>
+<tr>
+<th>句型</th>
+<th>名称</th>
+<th>结构</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SV</td>
+<td>主谓</td>
+<td>主语 + 谓语动词</td>
+</tr>
+<tr>
+<td>SVP</td>
+<td>主系表</td>
+<td>主语 + 系动词 + 表语</td>
+</tr>
+<tr>
+<td>SVO</td>
+<td>主谓宾</td>
+<td>主语 + 谓语动词 + 宾语</td>
+</tr>
+<tr>
+<td>SVOO</td>
+<td>主谓双宾</td>
+<td>主语 + 谓语动词 + 间接宾语 + 直接宾语</td>
+</tr>
+<tr>
+<td>SVOC</td>
+<td>主谓宾补</td>
+<td>主语 + 谓语动词 + 宾语 + 宾语补语</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="gm-fig" id="fig-4"><div class="gm-fig-scroll"><svg viewBox="0 0 680 352" role="img" aria-label="简单句的五种基本句型" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ahead"/></marker></defs><text x="24.0" y="38.0" class="tcode" text-anchor="start">SV</text><text x="24.0" y="58.0" class="ts" text-anchor="start">主谓</text><rect x="130.0" y="18.0" width="38.8" height="32.0" rx="7" class="box n"/><text x="149.4" y="39.0" class="ten" text-anchor="middle" style="font-size:15px">He</text><text x="149.4" y="68.0" class="tb tn" text-anchor="middle" style="font-size:13px">主语</text><rect x="178.8" y="18.0" width="55.6" height="32.0" rx="7" class="box v"/><text x="206.6" y="39.0" class="ten" text-anchor="middle" style="font-size:15px">came</text><text x="206.6" y="68.0" class="tb tv" text-anchor="middle" style="font-size:13px">谓语</text><text x="24.0" y="104.0" class="tcode" text-anchor="start">SVP</text><text x="24.0" y="124.0" class="ts" text-anchor="start">主系表</text><rect x="130.0" y="84.0" width="47.2" height="32.0" rx="7" class="box n"/><text x="153.6" y="105.0" class="ten" text-anchor="middle" style="font-size:15px">She</text><text x="153.6" y="134.0" class="tb tn" text-anchor="middle" style="font-size:13px">主语</text><rect x="187.2" y="84.0" width="38.8" height="32.0" rx="7" class="box v"/><text x="206.6" y="105.0" class="ten" text-anchor="middle" style="font-size:15px">is</text><text x="206.6" y="134.0" class="tb tv" text-anchor="middle" style="font-size:13px">系动词</text><rect x="236.0" y="84.0" width="64.0" height="32.0" rx="7" class="box a"/><text x="268.0" y="105.0" class="ten" text-anchor="middle" style="font-size:15px">happy</text><text x="268.0" y="134.0" class="tb ta" text-anchor="middle" style="font-size:13px">表语</text><line x1="24" y1="76" x2="656" y2="76" class="sep"/><text x="24.0" y="170.0" class="tcode" text-anchor="start">SVO</text><text x="24.0" y="190.0" class="ts" text-anchor="start">主谓宾</text><rect x="130.0" y="150.0" width="38.8" height="32.0" rx="7" class="box n"/><text x="149.4" y="171.0" class="ten" text-anchor="middle" style="font-size:15px">We</text><text x="149.4" y="200.0" class="tb tn" text-anchor="middle" style="font-size:13px">主语</text><rect x="178.8" y="150.0" width="64.0" height="32.0" rx="7" class="box v"/><text x="210.8" y="171.0" class="ten" text-anchor="middle" style="font-size:15px">learn</text><text x="210.8" y="200.0" class="tb tv" text-anchor="middle" style="font-size:13px">谓语</text><rect x="252.8" y="150.0" width="80.8" height="32.0" rx="7" class="box n"/><text x="293.2" y="171.0" class="ten" text-anchor="middle" style="font-size:15px">English</text><text x="293.2" y="200.0" class="tb tn" text-anchor="middle" style="font-size:13px">宾语</text><line x1="24" y1="142" x2="656" y2="142" class="sep"/><text x="24.0" y="236.0" class="tcode" text-anchor="start">SVOO</text><text x="24.0" y="256.0" class="ts" text-anchor="start">主谓双宾</text><rect x="130.0" y="216.0" width="30.4" height="32.0" rx="7" class="box n"/><text x="145.2" y="237.0" class="ten" text-anchor="middle" style="font-size:15px">I</text><text x="145.2" y="266.0" class="tb tn" text-anchor="middle" style="font-size:13px">主语</text><rect x="170.4" y="216.0" width="55.6" height="32.0" rx="7" class="box v"/><text x="198.2" y="237.0" class="ten" text-anchor="middle" style="font-size:15px">gave</text><text x="198.2" y="266.0" class="tb tv" text-anchor="middle" style="font-size:13px">谓语</text><rect x="236.0" y="216.0" width="47.2" height="32.0" rx="7" class="box n"/><text x="259.6" y="237.0" class="ten" text-anchor="middle" style="font-size:15px">him</text><text x="259.6" y="266.0" class="tb tn" text-anchor="middle" style="font-size:13px">间接宾语</text><rect x="293.2" y="216.0" width="72.4" height="32.0" rx="7" class="box n"/><text x="329.4" y="237.0" class="ten" text-anchor="middle" style="font-size:15px">a book</text><text x="329.4" y="266.0" class="tb tn" text-anchor="middle" style="font-size:13px">直接宾语</text><line x1="24" y1="208" x2="656" y2="208" class="sep"/><text x="24.0" y="302.0" class="tcode" text-anchor="start">SVOC</text><text x="24.0" y="322.0" class="ts" text-anchor="start">主谓宾补</text><rect x="130.0" y="282.0" width="30.4" height="32.0" rx="7" class="box n"/><text x="145.2" y="303.0" class="ten" text-anchor="middle" style="font-size:15px">I</text><text x="145.2" y="332.0" class="tb tn" text-anchor="middle" style="font-size:13px">主语</text><rect x="170.4" y="282.0" width="80.8" height="32.0" rx="7" class="box v"/><text x="210.8" y="303.0" class="ten" text-anchor="middle" style="font-size:15px">painted</text><text x="210.8" y="332.0" class="tb tv" text-anchor="middle" style="font-size:13px">谓语</text><rect x="261.2" y="282.0" width="122.8" height="32.0" rx="7" class="box n"/><text x="322.6" y="303.0" class="ten" text-anchor="middle" style="font-size:15px">the old wall</text><text x="322.6" y="332.0" class="tb tn" text-anchor="middle" style="font-size:13px">宾语</text><rect x="394.0" y="282.0" width="64.0" height="32.0" rx="7" class="box a"/><text x="426.0" y="303.0" class="ten" text-anchor="middle" style="font-size:15px">black</text><text x="426.0" y="332.0" class="tb ta" text-anchor="middle" style="font-size:13px">宾语补语</text><line x1="24" y1="274" x2="656" y2="274" class="sep"/></svg></div><figcaption><span>图 4</span>简单句的五种基本句型（颜色 = 词性属性）</figcaption></figure>
+
+<p><strong>SV（主谓）：主语 + 不及物动词</strong></p>
+<ul>
+<li>He <em>came</em>.</li>
+<li>The girl with a black bag on her back <em>smiled</em>.</li>
+<li>The airplane that starts from Hong Kong at noon <em>is arriving</em> here at 4 p.m.</li>
+</ul>
+<p><strong>SVP（主系表）：主语 + 系动词 + 表语</strong></p>
+<ul>
+<li>She <em>is</em> happy.</li>
+<li>He <em>became</em> a teacher when he was 21 years old.</li>
+<li>Jimmy's parents <em>felt</em> really angry when knowing that he had failed his test.</li>
+</ul>
+<p><strong>表语到底是个啥？表语可以是任何"名词性 / 形容词性"成分：</strong></p>
+<ul>
+<li>名词：He is <em>a good man</em>. / He died <em>a martyr</em>.</li>
+<li>不定式：The only way to have a friend is <em>to be one</em>. / To live is <em>to eat</em>.</li>
+<li>动名词：My biggest headache is <em>doing chores</em>. / Their only worry is <em>our relying on ChatGPT too much</em>.</li>
+<li>形容词（化）：Sally's dream has <em>come true</em>. / Medicine <em>tastes</em> bitter. / Flowers <em>appear</em> more charming after the rain.</li>
+<li>过去分词：The problem <em>remained unsettled</em>.</li>
+<li>副词：Michael was <em>home</em>. / Problems are still <em>there</em>.</li>
+<li>介词短语：Everything is <em>in order</em>. / Are you <em>of age</em>?</li>
+</ul>
+<p><strong>系动词的语义：be 动词就是"="，其他系动词就是"≈"</strong></p>
+<ul>
+<li>She <em>is</em> intelligent. → She = intelligent</li>
+<li>He <em>seems</em> tired. → He ≈ tired</li>
+<li>The flowers <em>smell</em> lovely. → The flowers ≈ lovely</li>
+<li>The movie <em>sounds</em> exciting. → The movie ≈ exciting</li>
+<li>The situation <em>turned</em> complicated. → The situation ≈ complicated</li>
+<li>The room <em>appears</em> spacious. → The room ≈ spacious</li>
+</ul>
+<p><strong>SVO（主谓宾）：主语 + 及物动词 + 宾语</strong></p>
+<ul>
+<li>We <em>learn</em> English.</li>
+<li>Turning to the right, you <em>will find</em> the hospital.</li>
+<li>Do they <em>speak</em> English?</li>
+</ul>
+<p><strong>SVOO（主谓双宾）：直接宾语通常是物，间接宾语通常是人</strong></p>
+<ul>
+<li>I <em>gave</em> him a book.</li>
+<li>The man who came here yesterday <em>asked</em> me the way to the station.</li>
+</ul>
+<p>双宾语结构可以用介词 for / to 改写：</p>
+<ul>
+<li>I gave him a book. = I gave a book <em>to</em> him.</li>
+<li>Sally bought me a gift. = Sally bought a gift <em>for</em> me.</li>
+</ul>
+<p><strong>SVOC（主谓宾补）：主语 + 及物动词 + 宾语 + 宾语补语</strong></p>
+<ul>
+<li>They <em>elected</em> Biden President.</li>
+<li>I <em>painted</em> the old wall black.</li>
+<li>Those students who scored below 60 <em>made</em> their parents really angry.</li>
+</ul>
+<h2 id="23-语法分析实践1">2.3 语法分析实践（1）</h2>
+<blockquote>
+<p>方法：先找谓语动词定主句，再把其余成分逐个归入"名词性 / 形容词性 / 副词性"成分。</p>
+</blockquote>
+<p><strong>例句一</strong></p>
+<blockquote>
+<p>Despite the relentless downpour, with raindrops cascading from the darkened sky, the weary traveler trudged on, his clothes soaked and his spirits dampened, determined to reach his destination before nightfall, where warmth and shelter awaited him, providing solace from the tempestuous elements that assailed him along the treacherous path.</p>
+</blockquote>
+<p>分析：</p>
+<ul>
+<li>Despite the relentless downpour【介词短语，adv】</li>
+<li>with raindrops cascading from the darkened sky【非谓语动词结构，adv】</li>
+<li>the weary <em>traveler trudged</em> on【主句：SV】</li>
+<li>his clothes soaked and his spirits dampened【非谓语动词结构（独立主格），adv】</li>
+<li>determined to reach his destination before nightfall【主语补语，adj】</li>
+<li>where warmth and shelter awaited him【非限制性定语从句，adj，修饰对象是 destination】</li>
+<li>providing solace from the tempestuous elements that assailed him along the treacherous path【非谓语动词结构，adv】</li>
+</ul>
+<p><strong>例句二</strong></p>
+<blockquote>
+<p>As the sun began its descent, casting a golden hue across the horizon, a sense of tranquility enveloped the meadow, while an orchestra of chirping birds, buzzing insects, and rustling leaves orchestrated a symphony of nature, creating a serene ambiance that transported the weary soul to a realm of blissful respite.</p>
+</blockquote>
+<p>分析：</p>
+<ul>
+<li>As the sun began its descent【副词性从句，adv】</li>
+<li>casting a golden hue across the horizon【非谓语动词，adv】</li>
+<li>a <em>sense</em> of tranquility <em>enveloped</em> the <em>meadow</em>【主句：SVO】</li>
+<li>while an orchestra of chirping birds, buzzing insects, and rustling leaves orchestrated a symphony of nature【副词性从句，adv】</li>
+<li>creating a serene ambiance that transported the weary soul to a realm of blissful respite【非谓语动词，adv】</li>
+</ul>
+<p><strong>例句三</strong></p>
+<blockquote>
+<p>As twilight descended upon the bustling metropolis, a labyrinth of shimmering lights emerged, casting an ethereal glow upon the cityscape, where towering skyscrapers reached for the heavens, their illuminated windows bearing witness to the dreams, ambitions, and stories of countless individuals, intertwining in a symphony of human endeavor that echoed through the urban expanse.</p>
+</blockquote>
+<p>分析：</p>
+<ul>
+<li>As twilight descended upon the bustling metropolis【副词性从句，adv】</li>
+<li>a <em>labyrinth</em> of shimmering lights <em>emerged</em>【主句：SV】</li>
+<li>casting an ethereal glow upon the cityscape【非谓语动词，adv】</li>
+<li>where towering skyscrapers reached for the heavens【非限制性定语从句，adj，修饰对象是 cityscape】</li>
+<li>their illuminated windows bearing witness to the dreams, ambitions, and stories of countless individuals【非谓语动词结构（独立主格），adv】</li>
+<li>intertwining in a symphony of human endeavor that echoed through the urban expanse【非谓语动词，adv】</li>
+</ul>
+<hr />
+<h1 id="三从句-连词-简单句">三、从句 = 连词 + 简单句</h1>
+<h2 id="31-简单句-简单句必须有连词">3.1 简单句 + 简单句，必须有连词</h2>
+<p><strong>Run-on Sentence（连缀句）与 Comma Splice（逗号粘连）都是错误：</strong></p>
+<ul>
+<li>I love you. You love me.（两个独立简单句，正确）</li>
+<li>I love you you love me.（Run-on，×）</li>
+<li>I love you, you love me.（Comma splice，×）</li>
+</ul>
+<p><strong>正确写法：必须有连词。</strong></p>
+<ul>
+<li>I love you, <em>and</em> you love me.</li>
+<li>Tommy loves fish, <em>but</em> Floppy loves meat.</li>
+<li>Michael is a boy, <em>and</em> Sally is a girl.</li>
+</ul>
+<p><strong>连词 + 简单句 = 并列结构 or 主从结构</strong></p>
+<figure class="gm-fig" id="fig-5"><div class="gm-fig-scroll"><svg viewBox="0 0 680 268" role="img" aria-label="两个简单句必须用连词连接" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ahead"/></marker></defs><text x="24.0" y="32.0" class="tb tv" text-anchor="start">✗</text><text x="48.0" y="32.0" class="ten" text-anchor="start">I love you you love me.</text><text x="360.0" y="32.0" class="ts" text-anchor="start">Run-on 连缀句</text><text x="24.0" y="62.0" class="tb tv" text-anchor="start">✗</text><text x="48.0" y="62.0" class="ten" text-anchor="start">I love you, you love me.</text><text x="360.0" y="62.0" class="ts" text-anchor="start">Comma splice 逗号粘连</text><line x1="24" y1="84" x2="656" y2="84" class="sep"/><text x="24.0" y="140.0" class="tb tink" text-anchor="start">并列</text><rect x="100.0" y="118.0" width="190.0" height="32.0" rx="7" class="box neu"/><text x="195.0" y="139.0" class="ten" text-anchor="middle" style="font-size:15px">She enjoys painting,</text><rect x="298.0" y="118.0" width="47.2" height="32.0" rx="7" class="box v"/><text x="321.6" y="139.0" class="ten" text-anchor="middle" style="font-size:15px">and</text><rect x="353.2" y="118.0" width="248.8" height="32.0" rx="7" class="box neu"/><text x="477.6" y="139.0" class="ten" text-anchor="middle" style="font-size:15px">he loves playing the guitar</text><text x="24.0" y="202.0" class="tb tink" text-anchor="start">主从</text><rect x="100.0" y="180.0" width="114.4" height="32.0" rx="7" class="box neu"/><text x="157.2" y="201.0" class="ten" text-anchor="middle" style="font-size:15px">He believes</text><rect x="222.4" y="180.0" width="55.6" height="32.0" rx="7" class="box v"/><text x="250.2" y="201.0" class="ten" text-anchor="middle" style="font-size:15px">that</text><rect x="286.0" y="180.0" width="240.4" height="32.0" rx="7" class="box neu"/><text x="406.2" y="201.0" class="ten" text-anchor="middle" style="font-size:15px">honesty is the best policy</text><path d="M222.4,218 v8 h304.0 v-8 M374.4,226 v8" class="ln"/><text x="374.4" y="254.0" class="ts" text-anchor="middle">从句 = 连词 + 简单句（这里整体作宾语）</text></svg></div><figcaption><span>图 5</span>简单句 + 简单句，中间必须有连词</figcaption></figure>
+
+<p>并列结构（用并列连词 and / but / or 等）：</p>
+<ul>
+<li>She enjoys painting, <em>and</em> he loves playing the guitar.</li>
+<li>The sun was shining brightly, <em>but</em> dark clouds were gathering on the horizon.</li>
+</ul>
+<p>主从结构（用从属连词 that / whether / 疑问词 / 关系词等）：</p>
+<ul>
+<li><em>What</em> she said about the incident surprised everyone.</li>
+<li>He believes <em>that</em> honesty is the best policy.</li>
+<li>The important thing is <em>that</em> we tried our best.</li>
+<li>The fact <em>that</em> she won the competition delighted her family.</li>
+<li>The book <em>that</em> I borrowed from the library was very interesting.</li>
+<li>The person <em>who</em> called you earlier is my best friend.</li>
+<li><em>After</em> she finished her homework, she went for a walk.</li>
+<li><em>Although</em> it was raining, they decided to go for a picnic.</li>
+<li><em>When</em> you're ready, we can start the meeting.</li>
+</ul>
+<p><strong>疑问词的词性（决定它在从句中作什么成分）：</strong></p>
+<div class="gm-table"><table>
+<thead>
+<tr>
+<th>疑问词</th>
+<th>词性</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>who (whom)</td>
+<td>名词性</td>
+</tr>
+<tr>
+<td>whose</td>
+<td>形容词性</td>
+</tr>
+<tr>
+<td>what</td>
+<td>名词性 / 形容词性</td>
+</tr>
+<tr>
+<td>which</td>
+<td>名词性 / 形容词性</td>
+</tr>
+<tr>
+<td>where</td>
+<td>副词性</td>
+</tr>
+<tr>
+<td>when</td>
+<td>副词性</td>
+</tr>
+<tr>
+<td>why</td>
+<td>副词性</td>
+</tr>
+<tr>
+<td>how</td>
+<td>副词性</td>
+</tr>
+<tr>
+<td>that</td>
+<td>无 / 名词性</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="32-名词性从句">3.2 名词性从句</h2>
+<p><strong>从句是为了表达简单句难于表达的想法：</strong></p>
+<ul>
+<li>I don't know <em>where Michael lives.</em>（无法用一个简单名词说清）</li>
+<li>I don't know <em>Michael's address.</em></li>
+<li>I don't know <em>where Michael put it.</em></li>
+<li>I don't know <em>the whereabouts of the item placed by Michael.</em></li>
+</ul>
+<p><strong>名词性从句的本质 = 用句子代替简单句中的名词短语。</strong> 陈述句、一般疑问句、特殊疑问句，都可以变成从句，充当主语、宾语、表语、同位语。</p>
+<p><strong>如何学好（名词性）从句：</strong></p>
+<ol>
+<li>把从句部分看作一个简单句。</li>
+<li>作为简单句的从句，要对应到简单句五种基本句型中的一种。</li>
+<li>从句的主谓宾定状补，都要清楚地找出来。</li>
+<li>判断关系词（连词）在从句中担任何种成分：如果从句的主谓宾俱全，关系词不可能担任主语、宾语等成分，只能充当副词性成分；反之，关系词则可能充当主语、宾语类型的名词性成分。</li>
+<li>判断关系词（连词）是否可能充当从句中修饰主语的形容词性成分（限定词成分）。</li>
+<li>按照简单句的陈述语序，重新理顺从句部分的语序。</li>
+</ol>
+<p><strong>独立句子变从句的三步：</strong></p>
+<ul>
+<li>步骤一：调语序。存在倒装语序的，必须调整为陈述语序。</li>
+<li>步骤二：加连词。陈述句用 that，一般疑问句用 whether，特殊疑问句用原本的疑问词作为连词。</li>
+<li>步骤三：把连词置于从句的句首。</li>
+</ul>
+<figure class="gm-fig" id="fig-6"><div class="gm-fig-scroll"><svg viewBox="0 0 680 240" role="img" aria-label="独立句子变名词性从句的三步" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ahead"/></marker></defs><rect x="20.0" y="36.0" width="150.0" height="64.0" rx="10" class="box neu"/><text x="95.0" y="65.0" class="tb ten tink" text-anchor="middle">Is he a doctor?</text><text x="95.0" y="85.0" class="ts" text-anchor="middle">一般疑问句</text><path d="M172.0,68.0 L236.0,68.0" class="ln" marker-end="url(#ah)"/><text x="204.0" y="56.0" class="ts" text-anchor="middle">① 调语序</text><rect x="240.0" y="36.0" width="150.0" height="64.0" rx="10" class="box neu"/><text x="315.0" y="65.0" class="tb ten tink" text-anchor="middle">he is a doctor</text><text x="315.0" y="85.0" class="ts" text-anchor="middle">陈述语序</text><path d="M392.0,68.0 L456.0,68.0" class="ln" marker-end="url(#ah)"/><text x="424.0" y="56.0" class="ts" text-anchor="middle">② 加连词</text><rect x="460.0" y="36.0" width="200.0" height="64.0" rx="10" class="box n"/><text x="560.0" y="65.0" class="tb ten tink" text-anchor="middle">whether he is a doctor</text><text x="560.0" y="85.0" class="ts" text-anchor="middle">连词放句首</text><path d="M560.0,102.0 L560.0,146.0" class="ln" marker-end="url(#ah)"/><text x="552.0" y="130.0" class="ts" text-anchor="end">③ 放进主句</text><rect x="250.0" y="150.0" width="410.0" height="52.0" rx="10" class="box hl"/><text x="455.0" y="181.0" class="tb ten tacc" text-anchor="middle">Whether he is a doctor doesn&#x27;t matter.</text><text x="24.0" y="166.0" class="tb tink" text-anchor="start" style="font-size:13px">选哪个连词？</text><text x="24.0" y="188.0" class="ts" text-anchor="start">陈述句 → that</text><text x="24.0" y="206.0" class="ts" text-anchor="start">一般疑问句 → whether</text><text x="24.0" y="224.0" class="ts" text-anchor="start">特殊疑问句 → 原疑问词</text></svg></div><figcaption><span>图 6</span>独立句子变名词性从句：调语序 → 加连词 → 放进主句</figcaption></figure>
+
+<p><strong>推导示例</strong>（以 It doesn't matter. 为主句，让【】中的句子填入主语位置）：</p>
+<ul>
+<li>【He is a doctor.】→ That he is a doctor doesn't matter.（× 直接放入、× 保留疑问语序都不行，必须加连词 + 陈述语序）</li>
+<li>【Is he a doctor?】→ Whether he is a doctor doesn't matter.</li>
+<li>【What is he?】→ What he is doesn't matter.</li>
+</ul>
+<p><strong>名词性从句 → 主语从句、宾语从句、表语从句：</strong></p>
+<div class="gm-table"><table>
+<thead>
+<tr>
+<th>句型来源</th>
+<th>主语从句</th>
+<th>宾语从句</th>
+<th>表语从句</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>陈述句（that）</td>
+<td>That he is a doctor doesn't matter.</td>
+<td>I don't know that he is a doctor.</td>
+<td>The problem is that he is a doctor.</td>
+</tr>
+<tr>
+<td>一般疑问句（whether）</td>
+<td>Whether he is a doctor doesn't matter.</td>
+<td>I don't know whether he is a doctor.</td>
+<td>The problem is whether he is a doctor.</td>
+</tr>
+<tr>
+<td>特殊疑问句（疑问词）</td>
+<td>What he is doesn't matter.</td>
+<td>I don't know what he is.</td>
+<td>The problem is what he is.</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>更多例句（尝试把从句部分还原成独立句子）：</strong></p>
+<p>主语从句：</p>
+<ul>
+<li><strong>What you decide</strong> will greatly impact our future. ← [What do you decide?]</li>
+<li><strong>Whether he is guilty or innocent</strong> remains to be seen. ← [Is he guilty or innocent?]</li>
+<li><strong>How we handle this situation</strong> is crucial for our success. ← [How do we handle this situation?]</li>
+</ul>
+<p>宾语从句：</p>
+<ul>
+<li>She believes <strong>that education is the key to a better world</strong>. ← [Education is the key to a better world.]</li>
+<li>I wonder <strong>why he didn't show up at the meeting</strong>. ← [Why didn't he show up at the meeting?]</li>
+<li>Can you explain <strong>how this machine works</strong>? ← [How does this machine work?]</li>
+</ul>
+<p>表语从句：</p>
+<ul>
+<li>His dream is <strong>that he becomes a successful entrepreneur</strong>. ← [He becomes a successful entrepreneur.]</li>
+<li>The problem seems to be <strong>that we lack proper communication</strong>. ← [We lack proper communication.]</li>
+<li>The truth is <strong>that we all make mistakes</strong>. ← [We all make mistakes.]</li>
+</ul>
+<h2 id="33-名词性从句补充">3.3 名词性从句（补充）</h2>
+<h3 id="同位语以及同位语从句">同位语，以及同位语从句</h3>
+<p><strong>同位语 = 针对抽象名词的名词性解释说明。</strong></p>
+<ul>
+<li>Michael, <strong>my friend</strong>, is a good guy.</li>
+<li>My favorite <strong>subject</strong>, <strong>mathematics</strong>, requires logical thinking.</li>
+<li>Her <strong>goal</strong>, <strong>becoming a doctor</strong>, requires years of study and dedication.</li>
+<li>The <strong>news</strong>, <strong>that</strong> they won the <strong>championship</strong>, spread quickly.</li>
+<li>The <strong>fact</strong>, <strong>that</strong> she <strong>lied</strong>, disappointed everyone.</li>
+<li>I have no <strong>idea</strong> <strong>what</strong> has happened to him.</li>
+<li>My original <strong>doubt</strong>, <strong>why</strong> she <strong>did</strong> <strong>that</strong>, has not been answered.</li>
+<li>The last <strong>question</strong>, <strong>what</strong> measures should be <strong>taken</strong>, was fully discussed.</li>
+</ul>
+<h3 id="疑问词作主语则无需变更语序">疑问词作主语，则无需变更语序</h3>
+<ul>
+<li>What's your name? → I don't know what your name is.</li>
+<li>Why are you laughing? → I don't know why you are laughing.</li>
+<li>Where does Sally live? → I don't know where Sally lives.</li>
+<li>When did Sally leave? → I don't know when Sally left.</li>
+<li>When will Sally leave? → I don't know when Sally will leave.</li>
+<li>What happened yesterday? → I don't know what happened yesterday.（what 本身作主语，语序不变）</li>
+<li>Who is in the classroom? → I don't know who is in the classroom.（who 本身作主语，语序不变）</li>
+</ul>
+<h3 id="形式主语问题endweight-句末重心头轻尾重">形式主语问题（ENDWEIGHT 句末重心，头轻尾重）</h3>
+<ul>
+<li>That Sally is beautiful is true. (√)</li>
+<li><strong>It's true that Sally is beautiful.</strong> (√√√)</li>
+<li>Whether Sally is beautiful doesn't matter. (√)</li>
+<li><strong>It doesn't matter whether Sally is beautiful.</strong> (√√√)</li>
+<li>Why Sally is beautiful doesn't matter. (√)</li>
+<li><strong>It doesn't matter why Sally is beautiful.</strong> (√√√)</li>
+</ul>
+<h3 id="形式宾语问题">形式宾语问题</h3>
+<p>当宾语从句本身带有补语时，要使用 it 作形式宾语，而将真正的宾语从句后置——这同样是因为英语有 ENDWEIGHT（句末重心）的需求。</p>
+<ul>
+<li>I find <strong>it</strong> unbelievable that Sally is beautiful. (√)</li>
+<li>I find that Sally is beautiful unreasonable. (×)</li>
+<li>Our teacher made <strong>it</strong> a rule that we have to speak English in class. (√)</li>
+<li>Our teacher made that we have to speak English in class a rule. (×)</li>
+</ul>
+<h3 id="that-的省略问题">that 的省略问题</h3>
+<ul>
+<li>That he is a doctor doesn't matter. ×（主语从句的 that 不能省）</li>
+<li>I don't know that he is a doctor. √（宾语从句的 that 常可省）</li>
+<li>The problem is that he is a doctor. √（表语从句的 that 一般不省）</li>
+</ul>
+<p>whether 和疑问词引导的从句，不存在省略问题。</p>
+<h3 id="whether-和-if-能否互换的问题">whether 和 if 能否互换的问题</h3>
+<p>介词后、不定式前、or not 紧随其后的场合，只能用 whether：</p>
+<ul>
+<li>I am unsure about <em>whether</em> we should go to the party. √（介词后不用 if）</li>
+<li>I am unsure about <em>if</em> we should go to the party. ?</li>
+<li>She couldn't decide <em>whether</em> to go to the movie or not. √（不定式前不用 if）</li>
+<li>She couldn't decide <em>if</em> to go to the movie or not. ?</li>
+<li>You must decide <em>whether</em> you want to study abroad or stay at home. √</li>
+<li>You must decide <em>if</em> you want to study abroad or stay at home. ?</li>
+</ul>
+<h2 id="34-形容词性从句上关系词与主宾语关系代词">3.4 形容词性从句（上）：关系词与主/宾语关系代词</h2>
+<p><strong>形容词性从句的各种关系词（核心框架，逐个击破）：</strong></p>
+<ul>
+<li>主语关系代词：who、which、that</li>
+<li>宾语关系代词（动词宾语）：who、whom、which、that</li>
+<li>宾语关系代词（介词宾语）：who、whom、which</li>
+<li>状语关系副词：when、where、why</li>
+<li>定语关系限定词：whose、which</li>
+<li>补语关系代词：which、that</li>
+</ul>
+<figure class="gm-fig" id="fig-7"><div class="gm-fig-scroll"><svg viewBox="0 0 680 306" role="img" aria-label="形容词性从句的关系词框架" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ahead"/></marker></defs><rect x="20.0" y="128.0" width="170.0" height="56.0" rx="10" class="box hl"/><text x="105.0" y="153.0" class="tb tacc" text-anchor="middle">关系词</text><text x="105.0" y="173.0" class="ts" text-anchor="middle">在从句里充当什么成分？</text><path d="M190,156 C215,156 215,33 240,33" class="ln"/><rect x="240.0" y="14.0" width="420.0" height="38.0" rx="8" class="box n"/><text x="256.0" y="38.0" class="tb tn" text-anchor="start" style="font-size:14px">主语关系代词</text><text x="646.0" y="38.0" class="ten" text-anchor="end" style="font-size:14px">who · which · that</text><path d="M190,156 C215,156 215,81 240,81" class="ln"/><rect x="240.0" y="62.0" width="420.0" height="38.0" rx="8" class="box n"/><text x="256.0" y="86.0" class="tb tn" text-anchor="start" style="font-size:14px">宾语关系代词（动词宾语）</text><text x="646.0" y="86.0" class="ten" text-anchor="end" style="font-size:14px">who · whom · which · that</text><path d="M190,156 C215,156 215,129 240,129" class="ln"/><rect x="240.0" y="110.0" width="420.0" height="38.0" rx="8" class="box n"/><text x="256.0" y="134.0" class="tb tn" text-anchor="start" style="font-size:14px">宾语关系代词（介词宾语）</text><text x="646.0" y="134.0" class="ten" text-anchor="end" style="font-size:14px">who · whom · which</text><path d="M190,156 C215,156 215,177 240,177" class="ln"/><rect x="240.0" y="158.0" width="420.0" height="38.0" rx="8" class="box d"/><text x="256.0" y="182.0" class="tb td" text-anchor="start" style="font-size:14px">状语关系副词</text><text x="646.0" y="182.0" class="ten" text-anchor="end" style="font-size:14px">when · where · why</text><path d="M190,156 C215,156 215,225 240,225" class="ln"/><rect x="240.0" y="206.0" width="420.0" height="38.0" rx="8" class="box a"/><text x="256.0" y="230.0" class="tb ta" text-anchor="start" style="font-size:14px">定语关系限定词</text><text x="646.0" y="230.0" class="ten" text-anchor="end" style="font-size:14px">whose · which</text><path d="M190,156 C215,156 215,273 240,273" class="ln"/><rect x="240.0" y="254.0" width="420.0" height="38.0" rx="8" class="box a"/><text x="256.0" y="278.0" class="tb ta" text-anchor="start" style="font-size:14px">补语关系代词</text><text x="646.0" y="278.0" class="ten" text-anchor="end" style="font-size:14px">which · that</text></svg></div><figcaption><span>图 7</span>形容词性从句的关系词框架</figcaption></figure>
+
+<p><strong>汉语 VS 英语：定语的使用方式对比</strong></p>
+<ul>
+<li>我们需要一名老师。→ We need a teacher.</li>
+<li>我们需要一名热心的老师。→ We need a warm-hearted teacher.</li>
+<li>我们需要一名既热心、又勤奋、又擅长快速学习的老师。→ We need a teacher <strong>who is</strong> warm-hearted, hardworking, and quick in learning.</li>
+</ul>
+<p>英语中的定语（形容词、分词、介词短语、定语从句）：</p>
+<ul>
+<li>This is <strong>my</strong> car.</li>
+<li>Sally is a <strong>beautiful</strong> girl.</li>
+<li>That <strong>barking</strong> dog really scared us.</li>
+<li>The book <strong>on the shelf</strong> belongs to Michael.</li>
+<li>They live in a house <strong>surrounded by trees</strong>.</li>
+<li>I bought a book <strong>written by my favorite author</strong>.</li>
+<li>The woman <strong>who lives next door</strong> is a doctor.</li>
+</ul>
+<p><strong>学好形容词性从句的关键：</strong></p>
+<ol>
+<li>掌握好简单句的五个基本句型，这是一切的基础。</li>
+<li>学习定语从句 ≠ 学习关系词，针对从句部分的语法分析才是重点。</li>
+<li>深入理解"先行词"、"关系词"这两个概念。</li>
+</ol>
+<p><strong>形容词从句的特殊性</strong>（对比三种从句）：</p>
+<ul>
+<li>名词性从句：I don't know <em>that</em> Sally is warm-hearted, hardworking, and quick in learning.</li>
+<li>副词性从句：<em>Although</em> Sally is warm-hearted, hardworking, and quick in learning, few students like her.</li>
+<li>形容词性从句：We need a <em>teacher</em> <em>who</em> is warm-hearted, hardworking, and quick in learning.（关系词指代前面的名词"先行词"，从句跟着先行词走）</li>
+</ul>
+<p><strong>关系词的两大作用：</strong></p>
+<ol>
+<li>重复指代先行词；</li>
+<li>起连词作用，连接两个有独立主谓结构的简单句。</li>
+</ol>
+<p>Sally is a teacher. Sally is warm-hearted. (×) → 两个简单句必须有连词：
+Sally is a teacher, and Sally is warm-hearted. (√)
+Sally is a teacher who is warm-hearted. (√)（who 既指代 teacher 又起连词作用）</p>
+<figure class="gm-fig" id="fig-8"><div class="gm-fig-scroll"><svg viewBox="0 0 680 264" role="img" aria-label="关系词的两大作用" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ahead"/></marker></defs><text x="24.0" y="30.0" class="ts" text-anchor="start">两个简单句，缺连词：</text><rect x="24.0" y="42.0" width="181.6" height="32.0" rx="7" class="box neu"/><text x="114.8" y="63.0" class="ten" text-anchor="middle" style="font-size:15px">Sally is a teacher.</text><rect x="217.6" y="42.0" width="206.8" height="32.0" rx="7" class="box neu"/><text x="321.0" y="63.0" class="ten" text-anchor="middle" style="font-size:15px">Sally is warm-hearted.</text><text x="438.4" y="63.0" class="tb tv" text-anchor="start" style="font-size:13px">✗ 不能直接拼在一起</text><line x1="24" y1="98" x2="656" y2="98" class="sep"/><rect x="24.0" y="160.0" width="106.0" height="32.0" rx="7" class="box neu"/><text x="77.0" y="181.0" class="ten" text-anchor="middle" style="font-size:15px">Sally is a</text><rect x="138.0" y="160.0" width="80.8" height="32.0" rx="7" class="box n"/><text x="178.4" y="181.0" class="ten" text-anchor="middle" style="font-size:15px">teacher</text><rect x="226.8" y="160.0" width="47.2" height="32.0" rx="7" class="box v"/><text x="250.4" y="181.0" class="ten" text-anchor="middle" style="font-size:15px">who</text><rect x="282.0" y="160.0" width="156.4" height="32.0" rx="7" class="box neu"/><text x="360.2" y="181.0" class="ten" text-anchor="middle" style="font-size:15px">is warm-hearted.</text><path d="M250.4,158 C250.4,124 178.4,124 178.4,160" class="ln" marker-end="url(#ah)"/><text x="214.4" y="126.0" class="tb tn" text-anchor="middle" style="font-size:13px">① 指代先行词 teacher</text><text x="250.4" y="212.0" class="tb tv" text-anchor="middle" style="font-size:13px">② 充当连词</text><path d="M226.8,222 v8 h211.6 v-8" class="ln"/><text x="452.4" y="186.0" class="tb tn" text-anchor="start">✓</text><text x="332.6" y="250.0" class="ts" text-anchor="middle">形容词性从句 · 跟在先行词后面修饰它</text></svg></div><figcaption><span>图 8</span>关系词的两大作用：指代先行词 + 充当连词</figcaption></figure>
+
+<h3 id="主语关系代词">主语关系代词</h3>
+<p>who（指代人）、which（指代物）、that（人/物）都可以作定语从句的主语。习惯：指代人时 who 比 that 常用；指代物时 that 比 which 常用。</p>
+<ul>
+<li>He is reading a book <strong>that</strong> is about human history.</li>
+<li>A rich person is not one <strong>who</strong> has the most, but is one <strong>who</strong> needs the least.</li>
+<li>I like music <strong>that</strong> can make me happy.</li>
+</ul>
+<p><strong>使用主语关系代词的注意事项（改错）：</strong></p>
+<ul>
+<li>I like friends who ~~they~~ <strong>are</strong> passionate fans of Kobe Bryant.（用了关系代词后，从句中原本被指代的主语必须删掉）</li>
+<li>Music that ~~have~~ <strong>has</strong> great lyrics is my favorite.</li>
+<li>Michael loves friends who ~~is~~ <strong>are</strong> always ready to help.</li>
+</ul>
+<p>两条规则：</p>
+<ol>
+<li>使用关系代词后，从句中原本被关系代词指代的部分（主语）必须删掉。</li>
+<li>先行词的性质 = 关系词的性质，二者必须在单复数、主格宾格等各方面保持统一（关系词在从句中作主语时，从句谓语动词与先行词保持单复数一致）。</li>
+</ol>
+<h3 id="宾语关系代词动词宾语">宾语关系代词（动词宾语）</h3>
+<p>who、whom、which、that 都可以作定语从句中动词的宾语，且可以省略。</p>
+<ul>
+<li>I want to have a friend <strong>who/whom/that/（不填）</strong> I can fully trust.</li>
+<li>Michael likes every piece of music <strong>that/which/（不填）</strong> I recommend.</li>
+<li>This is the book <strong>that/which/（不填）</strong> I bought yesterday.</li>
+</ul>
+<p><strong>改错：</strong></p>
+<ul>
+<li>I want to have a friend that I can fully trust ~~him~~.（关系代词已代替宾语，him 必须删掉）</li>
+<li>There exist certain traditions in Fujian that people accustomed to Northern ways of thinking find ~~them~~ weird.</li>
+</ul>
+<p>第二个句子的结构拆解：</p>
+<ul>
+<li>简单句 A：There exist certain traditions in Fujian.</li>
+<li>简单句 B：People accustomed to Northern ways of thinking find such traditions weird.（SVOC：People find traditions weird）</li>
+<li>合并后：...that people accustomed to Northern ways of thinking find (such) traditions weird.</li>
+</ul>
+<p><strong>使用宾语关系代词的注意事项：</strong></p>
+<ol>
+<li>使用了关系代词后，从句中原本被关系代词指代的部分（宾语）必须删掉。</li>
+<li>关系代词与从句谓语动词距离较远时，要分辨清楚句子结构，找到真正的谓语动词，把从句作为一个简单句来分析，对应到五种基本句型之一——尤其当存在双宾语、宾语补语等结构时，要仔细分析这个"简单句"。</li>
+</ol>
+<p><strong>宾语关系词的省略问题：</strong></p>
+<ol>
+<li>定语从句中大多数作宾语的关系代词可以省略。</li>
+<li>如果定语从句的主语是比较长的名词短语，或者先行词与定语从句被其他成分隔开（距离较远）时，尽量不要省略关系代词。简而言之：不会引发歧义的，就可以省略；容易引发歧义的，则不省略。</li>
+</ol>
+<h3 id="宾语关系代词介词宾语与介词前置后置">宾语关系代词（介词宾语）与介词前置/后置</h3>
+<p>who、whom、which、that 都可以作定语从句中介词的宾语（省略规则同动词宾语）。但介词还存在"后置 / 前置"两种摆法：</p>
+<p><strong>介词后置（关系代词留在从句末）——四种形式都可以：</strong></p>
+<ul>
+<li>The little girl <strong>who</strong> a lot of people are interested <strong>in</strong> is named Lucy. (√)</li>
+<li>The little girl <strong>whom</strong> a lot of people are interested <strong>in</strong> is named Lucy. (√)</li>
+<li>The little girl <strong>that</strong> a lot of people are interested <strong>in</strong> is named Lucy. (√)</li>
+<li>The little girl <strong>（不填）</strong> a lot of people are interested <strong>in</strong> is named Lucy. (√)</li>
+</ul>
+<p><strong>介词前置（介词提到从句句首）——只能 prep + whom / prep + which：</strong></p>
+<ul>
+<li>The little girl <strong>in who</strong> a lot of people are interested is named Lucy. (×)</li>
+<li>The little girl <strong>in whom</strong> a lot of people are interested is named Lucy. (√)</li>
+<li>The little girl <strong>in that</strong> a lot of people are interested is named Lucy. (×)</li>
+<li>The little girl <strong>（不填）</strong> a lot of people are interested is named Lucy. (×)</li>
+<li>The conference room <strong>in which</strong> the meeting will take place is equipped with state-of-the-art technology. (√)</li>
+<li>The scholarship <strong>for which</strong> she applied covers tuition fees and living expenses. (√)</li>
+<li>The job opportunity <strong>for which</strong> only experienced candidates are eligible requires strong leadership skills. (√)</li>
+<li>The software <strong>with which</strong> the team developed the project significantly improved productivity. (√)</li>
+</ul>
+<p><strong>判断正误：</strong></p>
+<ul>
+<li>The old house <strong>about which</strong> a lot of people care will be repaired. (√)</li>
+<li>The old house <strong>about that</strong> a lot of people care will be repaired. (×)</li>
+<li>The old house <strong>（只留 about）</strong> a lot of people care will be repaired. (×)</li>
+</ul>
+<p><strong>短语动词中包含的介词，一般不前置：</strong></p>
+<ul>
+<li>This is the very bag <strong>that</strong> I've been looking <strong>for</strong>. (√)</li>
+<li>This is the very bag <strong>which</strong> I've been looking <strong>for</strong>. (√)</li>
+<li>This is the very bag <strong>（不填）</strong> I've been looking <strong>for</strong>. (√)</li>
+<li>This is the very bag <strong>for which</strong> I've been looking. (×)</li>
+<li>The little girl <strong>who</strong> a lot of people are interested <strong>in</strong> is named Lucy. (√)</li>
+<li>The old house <strong>which</strong> a lot of people care <strong>about</strong> will be repaired. (√)</li>
+</ul>
+<p><strong>小结（宾语关系代词）：</strong></p>
+<ol>
+<li>定语从句中大多数作宾语的关系代词可以省略。</li>
+<li>从句主语较长、或先行词与从句被隔开时，不要省略关系代词；容易造成歧义时，不要省略。</li>
+<li>介词后置时，用法和动词宾语相同；介词前置时，只能用 prep + whom / prep + which，不能用 prep + that。</li>
+<li>短语动词中的介词，一般不前置。</li>
+</ol>
+<h2 id="35-形容词性从句中状语关系副词与定语关系限定词">3.5 形容词性从句（中）：状语关系副词与定语关系限定词</h2>
+<h3 id="状语关系副词">状语关系副词</h3>
+<div class="gm-table"><table>
+<thead>
+<tr>
+<th>关系副词</th>
+<th>先行词类型</th>
+<th>在定语从句中担当的成分</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>where</td>
+<td>地点名词</td>
+<td>地点状语</td>
+</tr>
+<tr>
+<td>when</td>
+<td>时间名词</td>
+<td>时间状语</td>
+</tr>
+<tr>
+<td>why</td>
+<td>原因名词</td>
+<td>原因状语</td>
+</tr>
+</tbody>
+</table></div>
+<p>where、when、why 是关系副词——既是副词，也是连词。</p>
+<p><strong>where ↔ in which（推导三步法）：</strong></p>
+<ul>
+<li>简单句 1：This is <em>the town</em>.</li>
+<li>简单句 2：I grew up <em>in this town</em>.</li>
+<li>一、两个句子之间存在交叉关系：<em>the town</em> ↔ <em>in this town</em></li>
+<li>二、使用关系词替换：<em>in [this town]</em> → <em>in [which]</em></li>
+<li>三、成品：This is the town <strong>in which</strong> I grew up. = This is the town <strong>where</strong> I grew up.</li>
+</ul>
+<p>四种说法对比：</p>
+<ul>
+<li>This is the town <strong>where</strong> I grew up. (√√√ 最自然)</li>
+<li>This is the town <strong>in which</strong> I grew up. (√√)</li>
+<li>This is the town <strong>which</strong> I grew up in. (√ 但没人这么用)</li>
+<li>This is the town <strong>that</strong> I grew up in. (√ 但没人这么用)</li>
+</ul>
+<p><strong>when ↔ on which：</strong></p>
+<ul>
+<li>简单句 1：I'll never forget <em>the day</em>.</li>
+<li>简单句 2：I met you <em>on that day</em>.</li>
+<li>交叉：<em>the day</em> ↔ <em>on that day</em> → <em>on [which]</em></li>
+<li>成品：I'll never forget the day <strong>on which</strong> I met you. = I'll never forget the day <strong>when</strong> I met you.</li>
+</ul>
+<p>各种形式正误对比：</p>
+<ul>
+<li>I'll never forget the day <strong>when</strong> I met you. (√)</li>
+<li>I'll never forget the day <strong>on which</strong> I met you. (√)</li>
+<li>I'll never forget the day <strong>which</strong> I met you on. (?)</li>
+<li>I'll never forget the day <strong>that</strong> I met you on. (?)</li>
+<li>I'll never forget the day <strong>which</strong> I met you. (?)</li>
+<li>I'll never forget the day <strong>that</strong> I met you. (√)（that 在此充当关系副词的替身）</li>
+<li>I'll never forget the day <strong>（不填）</strong> I met you. (√)</li>
+</ul>
+<p><strong>why ↔ for which：</strong></p>
+<ul>
+<li>简单句 1：That is <em>the reason</em>.</li>
+<li>简单句 2：Sally hates her friend Mary <em>for that reason</em>.</li>
+<li>交叉：<em>reason</em> ↔ <em>for that reason</em> → <em>for [which]</em></li>
+<li>
+<p>成品：That is the reason <strong>for which</strong> Sally hates her friend Mary. = That is the reason <strong>why</strong> Sally hates her friend Mary.</p>
+</li>
+<li>
+<p>That's the reason <strong>why</strong> Sally hates her friend Mary. (√)</p>
+</li>
+<li>That's the reason <strong>for which</strong> Sally hates her friend Mary. (√)</li>
+<li>That's the reason <strong>which</strong> Sally hates her friend Mary for. (×)</li>
+<li>That's the reason <strong>that</strong> Sally hates her friend Mary for. (×)</li>
+<li>That's the reason <strong>that</strong> Sally hates her friend Mary. (?)</li>
+<li>That's the reason <strong>（不填）</strong> Sally hates her friend Mary. (?)</li>
+</ul>
+<p><strong>同一连词，三种从句（判断练习）：</strong></p>
+<p>where：</p>
+<ul>
+<li>This is <em>where I plant the trees</em>.（名词性从句，作表语；还原：This is the place. SVP）</li>
+<li>I plant the trees in a place <em>where there's a lot of sunshine</em>.（形容词性从句，修饰 place）</li>
+<li>I plant trees <em>where there's a lot of sunshine</em>.（副词性从句，作地点状语；还原：I plant the trees on the playground. SVOA）</li>
+</ul>
+<p>when：</p>
+<ul>
+<li><em>When I met Sally</em> doesn't matter.（名词性从句，作主语；SV）</li>
+<li>September 15, 2018 is <em>when I met Sally</em>.（名词性从句，作表语；SVP）</li>
+<li>September 15, 2018 is the day <em>when I met Sally</em>.（形容词性从句，修饰 the day；SVP）</li>
+<li>I was only a little kid <em>when I met Sally</em>.（副词性从句，作时间状语；SVP）</li>
+</ul>
+<p>why：</p>
+<ul>
+<li>Nobody really knows <em>why Sally left for China</em>.（名词性从句，作宾语）</li>
+<li>Nobody really knows the reason <em>why Sally left for China</em>.（形容词性从句，修饰 reason）</li>
+</ul>
+<h3 id="定语关系限定词whose-of-which">定语关系限定词：whose ↔ of which</h3>
+<ul>
+<li>简单句 1：Michael lives in a house.</li>
+<li>简单句 2：The roof of the house is leaking.</li>
+<li>交叉：the roof of [the house] → the roof of [which]</li>
+<li>替换：the roof of which is leaking</li>
+<li>关系词提前：Michael lives in a house <strong>of which</strong> the roof is leaking. = Michael lives in a house <strong>whose</strong> roof is leaking.</li>
+</ul>
+<p>whose 表示所有格，构成【whose + 名词】结构（常用）；which 起指示作用，构成【which + 名词】结构（偶见）：</p>
+<ul>
+<li>That guy <strong>whose dad is a billionaire</strong> wasted a lot of money.</li>
+<li>That guy whose dad is a billionaire wasted a lot of money, <strong>which fact</strong> is hard to believe.</li>
+</ul>
+<p>whose 既可作【人】的所有格，也可作【物】的所有格：</p>
+<ul>
+<li>I know a doctor <strong>whose</strong> three sons are all doctors.【人】</li>
+<li>Sally studies in a school <strong>whose</strong> students study like machines.【物】</li>
+</ul>
+<p>不用 whose 的改写：</p>
+<ul>
+<li>Sally studies in a school <strong>where</strong> the students study like machines.</li>
+<li>Sally studies in a school <strong>in which</strong> the students study like machines.</li>
+</ul>
+<h3 id="补语关系代词whichthat">补语关系代词：which、that</h3>
+<p>判断关系词在从句中承担的成分：</p>
+<ul>
+<li>Sally is a smart person, <strong>which</strong> I am not.（which 指代 a smart person，在从句中作表语：I am not <em>a smart person</em> like Sally.）</li>
+<li>The nickname stupid-ass <strong>that</strong> those classmates named Michael doesn't sound friendly.（that 指代 stupid-ass，在从句中作宾语补语：Those classmates named Michael <em>stupid-ass</em>.）</li>
+</ul>
+<h3 id="形容词性从句的难点填空综合练习">形容词性从句的难点（填空综合练习）</h3>
+<ul>
+<li>I know a lot of people <strong>among whom</strong> most of them are having a hard life.</li>
+<li>Sally's not a hard-working student <strong>that / which</strong> she used to be.</li>
+<li>I'll never forget the day <strong>when / on which / that /（不填）</strong> I met you.</li>
+<li>Michael's family live in a house <strong>of which</strong> the roof always leaks.</li>
+</ul>
+<p>分析方法：把从句部分当作一个简单句，认真分析该简单句的结构，对应到五种基本句型中的一种。</p>
+<h2 id="36-形容词性从句下限制性-vs-非限制性">3.6 形容词性从句（下）：限制性 VS 非限制性</h2>
+<p><strong>一个逗号，天壤之别：</strong></p>
+<ul>
+<li>I don't wear clothes <strong>which</strong> make me different from other people.（我不穿那些让我看起来和别人不同的衣服。）</li>
+<li>I don't wear clothes, <strong>which</strong> makes me different from other people.（我不穿衣服，这让我与众不同。）</li>
+</ul>
+<figure class="gm-fig" id="fig-9"><div class="gm-fig-scroll"><svg viewBox="0 0 680 284" role="img" aria-label="限制性与非限制性定语从句" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ahead"/></marker></defs><text x="24.0" y="22.0" class="tk" text-anchor="start">限制性 · 没有逗号</text><rect x="24.0" y="66.0" width="122.8" height="32.0" rx="7" class="box neu"/><text x="85.4" y="87.0" class="ten" text-anchor="middle" style="font-size:15px">I don&#x27;t wear</text><rect x="154.8" y="66.0" width="80.8" height="32.0" rx="7" class="box n"/><text x="195.2" y="87.0" class="ten" text-anchor="middle" style="font-size:15px">clothes</text><rect x="243.6" y="66.0" width="374.8" height="32.0" rx="7" class="box a"/><text x="431.0" y="87.0" class="ten" text-anchor="middle" style="font-size:15px">which make me different from other people.</text><path d="M283.6,64 C283.6,40 195.2,40 195.2,64" class="ln" marker-end="url(#ah)"/><text x="295.6" y="48.0" class="tb ta" text-anchor="start" style="font-size:13px">只修饰 clothes：某一类衣服</text><text x="24.0" y="124.0" class="ts" text-anchor="start">我不穿那些让我看起来和别人不同的衣服。</text><line x1="24" y1="142" x2="656" y2="142" class="sep"/><text x="24.0" y="166.0" class="tk" text-anchor="start">非限制性 · 有逗号</text><rect x="24.0" y="210.0" width="190.0" height="32.0" rx="7" class="box hl"/><text x="119.0" y="231.0" class="ten" text-anchor="middle" style="font-size:15px">I don&#x27;t wear clothes</text><rect x="222.0" y="210.0" width="400.0" height="32.0" rx="7" class="box a"/><text x="422.0" y="231.0" class="ten" text-anchor="middle" style="font-size:15px">, which makes me different from other people.</text><path d="M272.0,208 C272.0,184 119.0,184 119.0,208" class="ln" marker-end="url(#ah)"/><text x="284.0" y="192.0" class="tb tacc" text-anchor="start" style="font-size:13px">指代整个主句：「不穿衣服」这件事</text><text x="24.0" y="268.0" class="ts" text-anchor="start">我不穿衣服，这让我与众不同。</text></svg></div><figcaption><span>图 9</span>一个逗号，天壤之别</figcaption></figure>
+
+<p><strong>非限制性定语从句的简单判断：</strong></p>
+<ol>
+<li>有逗号；</li>
+<li>关系词只能用 which（极少用 that）、who（极少用 that）、where、when。</li>
+</ol>
+<ul>
+<li>I don't wear clothes, <strong>which</strong> makes me different from other people.</li>
+<li>Michael knows a doctor, <strong>who</strong> has three sons working in the hospital.</li>
+<li>This is the school, <strong>where</strong> we made lifelong friendships.</li>
+<li>I still remember the summer, <strong>when</strong> we had an unforgettable road trip.</li>
+</ul>
+<p>限制性 / 非限制性对比：</p>
+<ul>
+<li>I don't wear clothes, which makes me different from other people.（指"不穿衣服"这件事）</li>
+<li>I don't wear clothes which make me different from other people.（指"某种特别的衣服"）</li>
+<li>Michael knows a doctor, who has three sons working in the hospital.（这位医生恰有三个儿子）</li>
+<li>Michael knows a doctor who has three sons working in the hospital.（他认识的是"有仨儿子的那位医生"）</li>
+<li>This is the school, where we made lifelong friendships.（这所学校，顺便说一句，我们在那结下一生友谊）</li>
+<li>This is the school where we made lifelong friendships.（我们结下一生友谊的正是这所学校）</li>
+<li>I still remember the summer, when we had an unforgettable road trip.</li>
+<li>I still remember the summer when we had an unforgettable road trip.</li>
+</ul>
+<p><strong>非限制性定语从句的先行词更加多样化</strong>——可以是名词短语、主句中包含的从句、主句的整体谓语部分、整体宾语部分、或者整个主句：</p>
+<ul>
+<li>Beijing, <strong>which</strong> is a great city, attracts visitors from around the world.（先行词：名词）</li>
+<li>Beijing attracts visitors from around the world, <strong>which</strong> is great.（先行词：整个主句）</li>
+<li>They said that I took the books, <strong>which</strong> was just not true.（先行词：主句中的从句内容）</li>
+<li>Michael plays basketball, <strong>which</strong> I don't.（先行词：谓语部分）</li>
+<li>Michael likes playing basketball, <strong>which</strong> is a good sport.（先行词：宾语部分）</li>
+</ul>
+<p>三条结论：</p>
+<ol>
+<li>非限制性定语从句的先行词十分多样化，而限制性定语从句的先行词往往是单纯的名词短语。</li>
+<li>即便先行词相同（皆为名词短语），限制性、非限制性定语从句的意思也并不相同。</li>
+<li>某些先行词只能使用非限制性定语从句，不能使用限制性定语从句。</li>
+</ol>
+<p><strong>专有名词做先行词：地点</strong></p>
+<ul>
+<li>非限制性：Beijing, which is the capital of China, is a great city.（世界上只有一个北京，无需"限制"）</li>
+<li>限制性：The Beijing which used to be the capital of old China is liked by nobody.（言下之意存在"两个北京"：老北京和新北京）</li>
+<li>Beijing which is the capital of China is a great city. ×</li>
+</ul>
+<p><strong>专有名词做先行词：人物</strong></p>
+<ul>
+<li>非限制性：Einstein, who was a great scientist, created the theory of relativity.</li>
+<li>限制性：The Einstein who was played by 王俊凯 in that movie looks funny.（电影里可以有各种"爱因斯坦"）</li>
+<li>非限制性：张三, who teaches us English, is a cool guy.（这个小群体里只有一个张三）</li>
+<li>限制性：The 张三 who teaches us English is the most handsome guy in China.（中国有很多个张三）</li>
+<li>张三 who teaches us English is a cool guy. ×</li>
+</ul>
+<p><strong>My grandmother 的两种情况：</strong></p>
+<ul>
+<li>My grandmother, who is 70 years old, loves programming.（我只有一个奶奶 → 非限制性）</li>
+<li>My grandmother who loves programming is 70 years old. (?)（言下之意：我有好几个奶奶，"爱编程的那个"七十岁了）</li>
+<li>My grandmother who is 70 years old loves programming. (?)</li>
+</ul>
+<p><strong>要看清先行词到底是哪一个：</strong></p>
+<ul>
+<li>I went to Xiamen, which is one of the most beautiful cities in China. (√)（先行词是 Xiamen 这个专有名词 → 非限制性）</li>
+<li>Xiamen is a city which is known for its great landscape.（先行词是 a city，中国有很多城市，Xiamen 是其中之一 → 限制性）</li>
+</ul>
+<p><strong>普通名词也可能变成"专有名词"</strong>（对说话人而言独一无二的东西）：</p>
+<ul>
+<li>This is my hometown, which a lot of people know. √ / This is my hometown which a lot of people know. (×)</li>
+<li>My high school, which has sent a lot of students to Tsinghua University and Peking University, is a good one. √ / 去掉逗号 (×)</li>
+</ul>
+<p><strong>限制 VS 非限制的意义差别：</strong></p>
+<ul>
+<li><strong>My uncle, who always drinks a lot, is liked by nobody.</strong>（我叔叔这人吧，没人喜欢他——对了，他总是喝很多酒。）</li>
+<li><strong>My uncle who always drinks a lot is liked by nobody.</strong>（我爱喝酒的那个叔叔没人喜欢。）</li>
+<li><strong>The town, which is known for its street food, enjoys great fame.</strong>（这座小镇名气很大——对了，这里的小吃十分有名。）</li>
+<li><strong>The town which is known for its street food enjoys great fame.</strong>（这座以小吃而闻名的小镇十分有名。）</li>
+<li><strong>The park, where we used to play, is now a shopping center.</strong>（那个公园如今已经是购物中心了——对了，我们以前总去那溜达。）</li>
+<li><strong>The park where we used to play is now a shopping center.</strong>（我们经常去溜达的那个公园如今已经是购物中心了。）</li>
+<li><strong>This is the time, when we need to come together.</strong>（时不我待，我们应该联合起来。）</li>
+<li><strong>This is the time when we need to come together.</strong>（此时此刻就是我们应该联合起来的时候。）</li>
+</ul>
+<p><strong>总结：限制性 = 筛选，非限制性 = 顺便提一嘴</strong></p>
+<ul>
+<li>I have a friend <strong>who never washes his face.</strong>
+  译文：我有一个从不洗脸的朋友。含义：我的朋友或许有不少；其中一个朋友从不洗脸；其他朋友（大概率）都是洗脸的。</li>
+<li>I have a friend, <strong>who never washes his face.</strong>
+  译文：我有个朋友——对了，他从不洗脸。含义：朋友或许不少；刚提到的这个不洗脸；其他朋友洗不洗脸没提。</li>
+<li>I have only one friend <strong>who never washes his face.</strong>
+  译文：不洗脸的朋友我只有一个。含义：朋友或许不少；不洗脸的就这么一个；其他朋友都洗脸。</li>
+<li>I have only one friend, <strong>who never washes his face.</strong>
+  译文：我只有一个朋友，他还不洗脸。含义：朋友只有一个；就这么一个，他还不洗脸。</li>
+</ul>
+<h2 id="37-副词性从句">3.7 副词性从句</h2>
+<p><strong>副词性从句（状语从句）的本质</strong>：包含完整主谓结构的句子，作为副词性成分对主句进行修饰，修饰对象一般是主句的谓语动词、表语形容词等。</p>
+<ul>
+<li>Sally runs really fast. → Sally runs <strong>as if she is flying</strong>.</li>
+<li>Michael never gets up early on Sundays. → Michael never gets up early <strong>when he doesn't go to school on Sundays</strong>.</li>
+<li>Sally was happy in Beijing. → Sally was happy <strong>when she could play with her friends in Beijing</strong>.</li>
+</ul>
+<p><strong>副词性从句的九大分类：</strong></p>
+<div class="gm-table"><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>时间</td>
+<td><strong>When</strong> I opened the window, the cat jumped out.</td>
+</tr>
+<tr>
+<td>地点</td>
+<td>People plant trees <strong>where</strong> there is a lot of sunshine.</td>
+</tr>
+<tr>
+<td>原因</td>
+<td>I didn't go to school yesterday <strong>because</strong> I was having a cold.</td>
+</tr>
+<tr>
+<td>目的</td>
+<td>I opened the window <strong>so that</strong> the cat could jump out.</td>
+</tr>
+<tr>
+<td>结果</td>
+<td>I opened the window, <strong>so that</strong> the cat jumped out.</td>
+</tr>
+<tr>
+<td>条件</td>
+<td><strong>If</strong> you want the cat to get out, open the window.</td>
+</tr>
+<tr>
+<td>让步</td>
+<td><strong>Though</strong> I opened the window, the cat didn't jump out.</td>
+</tr>
+<tr>
+<td>比较</td>
+<td>The mountain peak is even higher <strong>than</strong> I expected.</td>
+</tr>
+<tr>
+<td>方式</td>
+<td>The cat jumped out <strong>as</strong> a tiger jumped at prey.</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="gm-fig" id="fig-10"><div class="gm-fig-scroll"><svg viewBox="0 0 680 310" role="img" aria-label="副词性从句的九大分类" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ahead"/></marker></defs><rect x="170.0" y="14.0" width="340.0" height="58.0" rx="10" class="box hl"/><text x="340.0" y="40.0" class="tb tacc" text-anchor="middle">主句（谓语 / 表语）</text><text x="340.0" y="60.0" class="ts" text-anchor="middle">副词性从句 = 一个副词性成分，修饰主句</text><rect x="20.0" y="112.0" width="208.0" height="52.0" rx="8" class="box d"/><text x="34.0" y="134.0" class="tb td" text-anchor="start" style="font-size:14px">时间</text><text x="34.0" y="154.0" class="ten tsm" text-anchor="start" style="font-size:12.5px">when · while · before · until</text><rect x="236.0" y="112.0" width="208.0" height="52.0" rx="8" class="box d"/><text x="250.0" y="134.0" class="tb td" text-anchor="start" style="font-size:14px">地点</text><text x="250.0" y="154.0" class="ten tsm" text-anchor="start" style="font-size:12.5px">where · wherever</text><rect x="452.0" y="112.0" width="208.0" height="52.0" rx="8" class="box d"/><text x="466.0" y="134.0" class="tb td" text-anchor="start" style="font-size:14px">原因</text><text x="466.0" y="154.0" class="ten tsm" text-anchor="start" style="font-size:12.5px">because · for · as · since</text><rect x="20.0" y="174.0" width="208.0" height="52.0" rx="8" class="box d"/><text x="34.0" y="196.0" class="tb td" text-anchor="start" style="font-size:14px">目的</text><text x="34.0" y="216.0" class="ten tsm" text-anchor="start" style="font-size:12.5px">so that · in case</text><rect x="236.0" y="174.0" width="208.0" height="52.0" rx="8" class="box d"/><text x="250.0" y="196.0" class="tb td" text-anchor="start" style="font-size:14px">结果</text><text x="250.0" y="216.0" class="ten tsm" text-anchor="start" style="font-size:12.5px">so … that · such … that</text><rect x="452.0" y="174.0" width="208.0" height="52.0" rx="8" class="box d"/><text x="466.0" y="196.0" class="tb td" text-anchor="start" style="font-size:14px">条件</text><text x="466.0" y="216.0" class="ten tsm" text-anchor="start" style="font-size:12.5px">if · unless</text><rect x="20.0" y="236.0" width="208.0" height="52.0" rx="8" class="box d"/><text x="34.0" y="258.0" class="tb td" text-anchor="start" style="font-size:14px">让步</text><text x="34.0" y="278.0" class="ten tsm" text-anchor="start" style="font-size:12.5px">though · although · as</text><rect x="236.0" y="236.0" width="208.0" height="52.0" rx="8" class="box d"/><text x="250.0" y="258.0" class="tb td" text-anchor="start" style="font-size:14px">比较</text><text x="250.0" y="278.0" class="ten tsm" text-anchor="start" style="font-size:12.5px">than · as … as</text><rect x="452.0" y="236.0" width="208.0" height="52.0" rx="8" class="box d"/><text x="466.0" y="258.0" class="tb td" text-anchor="start" style="font-size:14px">方式</text><text x="466.0" y="278.0" class="ten tsm" text-anchor="start" style="font-size:12.5px">as · as if</text><path d="M340.0,108.0 L340.0,76.0" class="ln" marker-end="url(#ah)"/></svg></div><figcaption><span>图 10</span>副词性从句的九大分类</figcaption></figure>
+
+<p><strong>学习方法：</strong></p>
+<ol>
+<li>明确副词性从句的本质：作为副词性成分修饰主句中的元素。</li>
+<li>记牢各种关系词。</li>
+<li>副词性从句是真正意义上的"体力活"——连词多，需要逐个熟练。</li>
+</ol>
+<h3 id="时间状语从句">时间状语从句</h3>
+<p>常用连词：when (whenever)、while、as、before、after、since、until、"一……就……"。</p>
+<p><strong>when = 时间段 or 时间点：</strong></p>
+<ul>
+<li>I worked hard <strong>when</strong> I was at school.（时间段）</li>
+<li>He became surprised <strong>when</strong> he saw me.（时间点）</li>
+<li><strong>When</strong> I arrived, Sally left.（我一到，Sally 就走了。）</li>
+<li><strong>When</strong> I arrived, Sally had left.（我到的时候，Sally 已经走了。）</li>
+<li>I was telephoning Michael <strong>when</strong> Sally arrived.（Sally 到的时候我正在给 Michael 打电话。）</li>
+<li>I telephoned Michael <strong>when</strong> Sally arrived.（Sally 一到，我就给 Michael 打了电话。）</li>
+<li>Sally telephoned me <strong>when</strong> I was doing my homework.（Sally 给我打电话的时候，我正在做作业。）</li>
+<li>I was doing my homework <strong>when</strong> Sally telephoned me.（我正做作业呢，Sally 给我打了电话。）</li>
+</ul>
+<p><strong>while = 时间段</strong>（不能用于时间点）：</p>
+<ul>
+<li>Sally telephoned me <strong>while</strong> I was doing my homework. (√)</li>
+<li>Sally telephoned me <strong>when</strong> I was doing my homework. (√)</li>
+<li>I was walking on the road <strong>when</strong> suddenly someone stopped me. (√)</li>
+<li>I was walking on the road <strong>while</strong> suddenly someone stopped me. (✕)</li>
+</ul>
+<p><strong>as = 随着 / 正当 / 一边……一边</strong>：</p>
+<ul>
+<li>You grow smarter <strong>as</strong> you grow older. √（随着）</li>
+<li>You grow smarter when you grow older. ?</li>
+<li>You grow smarter while you grow older. ?</li>
+<li><strong>As</strong> China becomes richer, Chinese people spend more. √</li>
+<li>When China becomes richer, Chinese people spend more. ?</li>
+<li>While China becomes richer, Chinese people spend more. ✕</li>
+</ul>
+<p><strong>before、after、since：</strong></p>
+<ul>
+<li>I handed in my homework <strong>before</strong> I was asked to.</li>
+<li>I arrived <strong>after</strong> he had left.</li>
+<li>Sally and I haven't met each other <strong>since</strong> I became a middle school student.</li>
+</ul>
+<p><strong>until 的核心：【保持某种状态】until【某个时间点】</strong></p>
+<p>主句用持续性动词肯定式，或短暂性动词否定式：</p>
+<ul>
+<li>He was waiting for me at my home <strong>until</strong> I came back.</li>
+<li>He didn't leave <strong>until</strong> I came back.</li>
+<li>We had to stay here <strong>until</strong> it stopped raining.</li>
+<li>We didn't go out <strong>until</strong> it stopped raining.</li>
+<li>I was playing video games <strong>until</strong> 12 o'clock last night.</li>
+<li>I didn't go to bed <strong>until</strong> 12 o'clock last night.</li>
+</ul>
+<p><strong>not... until... 的四种句式：</strong></p>
+<ul>
+<li>We didn't go out <strong>until</strong> it stopped raining.（常规）</li>
+<li><strong>Until</strong> it stopped raining, we didn't go out.（until 前置）</li>
+<li><strong>Not until</strong> it stopped raining <strong>did we go out</strong>.（部分倒装）</li>
+<li><strong>It was not until</strong> it stopped raining <strong>that</strong> we went out.（强调句）</li>
+</ul>
+<p><strong>"一……就……"的表达：</strong></p>
+<ul>
+<li>It began to rain <strong>as soon as</strong> we arrived home.</li>
+<li>It began to rain <strong>immediately</strong> we arrived home.</li>
+<li>It began to rain <strong>the moment / the minute / the second</strong> we arrived home.</li>
+<li><strong>No sooner</strong> had we arrived home <strong>than</strong> it began to rain.</li>
+<li><strong>Hardly</strong> had we arrived home <strong>when</strong> it began to rain.</li>
+<li><strong>Scarcely</strong> had we arrived home <strong>when</strong> it began to rain.</li>
+</ul>
+<h3 id="地点状语从句where">地点状语从句：where</h3>
+<ul>
+<li>I plant trees <strong>where</strong> there is a lot of sunshine.</li>
+<li>Stay <strong>where</strong> you are.</li>
+<li>A driver must slow down <strong>where</strong> there are schools.</li>
+<li><strong>Where</strong> there is a will, there is a way.</li>
+<li><strong>Where</strong> there is love, there is also wealth and success.</li>
+</ul>
+<h3 id="原因状语从句becauseforassince">原因状语从句：because、for、as、since</h3>
+<ul>
+<li>We didn't go to the party <strong>because</strong> it was raining.（直接原因，语气最强）</li>
+<li>We didn't go to the party, <strong>for</strong> it was raining.（并列连词，补充说明的推断理由，前有逗号）</li>
+<li><strong>Since</strong> you're a middle school student, you should know how to study.（既然——已知信息）</li>
+<li><strong>As</strong> you're a middle school student, you should know how to study.（由于——语气最弱）</li>
+<li>We didn't go to the party <strong>because of</strong> the rain.（because of + 名词）</li>
+</ul>
+<p><strong>because 的否定转移问题</strong>（not 否定的往往是 because 从句）：</p>
+<ul>
+<li>I <strong>didn't</strong> marry her <strong>because</strong> she was beautiful.
+  ≠ 我没和她结婚，因为她太漂亮了。
+  = 我并不是因为她漂亮才和她结婚的。✓</li>
+<li>Sally <strong>doesn't</strong> play the piano <strong>because</strong> she likes to.
+  = Sally 并不是因为喜欢才去弹钢琴的。✓</li>
+<li>I don't study English because it's too hard for me.（我学英语并非因为它太难。）</li>
+<li>I don't study English because I need to pass Gaokao.（我学英语并非为了高考。）</li>
+</ul>
+<h3 id="目的状语从句">目的状语从句</h3>
+<ul>
+<li>I spoke slowly <strong>so that</strong> the students could understand me better.</li>
+<li>I spoke slowly <strong>in order that</strong> the students could understand me better.</li>
+<li>Sally opened the window <strong>(so) that</strong> she could breathe some fresh air.</li>
+<li><strong>In order that</strong> the students could understand me better, I spoke slowly.</li>
+</ul>
+<p><strong>if VS in case：</strong></p>
+<ul>
+<li>Take an umbrella <strong>if</strong> it rains.（要是下雨了，就带把伞。还没带呢，因为还没下雨。）</li>
+<li>Take an umbrella <strong>in case</strong> it rains.（带把伞，免得下雨。伞已带。）</li>
+</ul>
+<h3 id="结果状语从句-vs-目的状语从句">结果状语从句 VS 目的状语从句</h3>
+<p>目的从句用 could 等情态动词表"未然"，结果从句用一般时态表"已然"：</p>
+<ul>
+<li>I spoke slowly so that the students <strong>could</strong> understand me better.【目的】</li>
+<li>I spoke slowly so that the students <strong>understood</strong> me better.【结果】</li>
+<li>Sally opened the window so that she <strong>could</strong> breathe some fresh air.【目的】</li>
+<li>Sally opened the window so that she <strong>breathed</strong> some fresh air.【结果】</li>
+</ul>
+<p><strong>so... that... 结果状语从句（so 修饰形容词/副词/分词）：</strong></p>
+<ul>
+<li>修饰形容词：Sally is <strong>so smart that</strong> she always tops our school.</li>
+<li>修饰副词：Sally runs <strong>so fast that</strong> nobody can beat her in the 100m sprint.</li>
+<li>修饰分词：Sally is <strong>so used to</strong> the Chinese culture <strong>that</strong> you won't notice she's actually an American.</li>
+</ul>
+<p><strong>so... that... VS such... that...：</strong></p>
+<ul>
+<li>Sally is <strong>so</strong> smart that she always tops our school.</li>
+<li>Sally is <strong>such a</strong> smart girl that she always tops our school.</li>
+<li>Sally is <strong>such</strong> that she always tops our school.</li>
+<li>The weather is <strong>so</strong> hot that it's even hard to breathe.</li>
+<li>It's <strong>such</strong> hot weather that it's even hard to breathe.</li>
+<li>The weather is <strong>such</strong> that it's even hard to breathe.</li>
+</ul>
+<h3 id="条件状语从句">条件状语从句</h3>
+<ul>
+<li><strong>If</strong> you work hard, you will succeed.</li>
+<li><strong>Unless</strong> you work hard, you won't succeed.（= If you don't work hard）</li>
+<li>Please let me know <strong>in case</strong> you need anything.</li>
+<li><strong>Once</strong> you have learned English, you will find it interesting.</li>
+<li>You may leave <strong>as / so long as</strong> you come back on time.</li>
+<li><strong>So far as</strong> the weather remains okay, we shall start tomorrow.</li>
+</ul>
+<h3 id="让步状语从句">让步状语从句</h3>
+<ul>
+<li><strong>Though / although</strong> he tried hard, (yet / still) he failed.（不能与 but 连用）</li>
+<li>He failed, <strong>even if</strong> he tried hard.</li>
+<li><strong>While</strong> he tried, he (still) failed.（while 也可表让步）</li>
+<li><strong>No matter</strong> how hard-working he was, he (still) failed.</li>
+<li><strong>However</strong> hard-working he was, he (still) failed.</li>
+<li><strong>Despite</strong> his hard work, he (still) failed.（despite + 名词）</li>
+<li><strong>Despite</strong> the fact that he tried hard, he (still) failed.</li>
+<li><strong>In spite of</strong> his hard work, he (still) failed.</li>
+<li><strong>In spite of</strong> the fact that he tried hard, he (still) failed.</li>
+</ul>
+<p><strong>as 引导的让步倒装结构（形容词/副词/动词提句首）：</strong></p>
+<ul>
+<li>Difficult <strong>as</strong> it is to believe, there are fish that can live without water.</li>
+<li>Much <strong>as</strong> I respect him, I can't agree with him.</li>
+<li>Wounded <strong>as</strong> he was, he finished the basketball game.</li>
+<li>Fail <strong>as</strong> he did, he would never give up.</li>
+</ul>
+<h3 id="比较状语从句">比较状语从句</h3>
+<ul>
+<li>This work is not <strong>as difficult as</strong> you think.（这项工作没有你想象的那么难。）</li>
+<li>Sally is <strong>as hard-working as</strong> I (am).（Sally 和我一样勤奋。）</li>
+<li>Sally runs <strong>as fast as</strong> I (do).（Sally 跑得和我一样快。）</li>
+<li>Sally is as beautiful <strong>as</strong> smart. / Sally is as beautiful as she is smart.（Sally 既美丽又聪明。）</li>
+<li>Michael learns as quickly as (he does) efficiently.（Michael 学起东西来既快速又高效。）</li>
+<li>Sally is <strong>no more hard-working than</strong> her sister.（Sally 并不比她姐姐更勤奋——两人都不勤奋。）</li>
+<li>Sally is <strong>no less hard-working than</strong> her sister.（Sally 和她姐姐一样勤奋。）</li>
+<li>Nothing is more valuable than time.（时光无价。）</li>
+<li>Reading is to the mind <strong>what / as</strong> exercise is to the body.（阅读之于思维，就如同锻炼之于身体。）</li>
+<li>Reading does for the mind <strong>what</strong> exercise does for the body.（同上）</li>
+</ul>
+<hr />
+<h1 id="四非谓语动词和从句是一回事">四、非谓语动词和从句是一回事</h1>
+<h2 id="41-不定式">4.1 不定式</h2>
+<h3 id="非谓语动词的本质">非谓语动词的本质</h3>
+<div class="gm-table"><table>
+<thead>
+<tr>
+<th>非谓语动词</th>
+<th>是动词么？</th>
+<th>是谓语动词么？</th>
+<th>是什么词性？</th>
+<th>与普通名词、形容词、副词有何不同？</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>不定式</td>
+<td>×</td>
+<td>×</td>
+<td>名词 / 形容词 / 副词</td>
+<td>保留了动词的特点，可以有时态变化，且可以携带自己的宾语（vt）、状语等</td>
+</tr>
+<tr>
+<td>动名词</td>
+<td>×</td>
+<td>×</td>
+<td>名词</td>
+<td>同上</td>
+</tr>
+<tr>
+<td>分词</td>
+<td>×</td>
+<td>×</td>
+<td>形容词 / 副词</td>
+<td>同上</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="gm-fig" id="fig-11"><div class="gm-fig-scroll"><svg viewBox="0 0 680 286" role="img" aria-label="非谓语动词对应的词性" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ahead"/></marker></defs><rect x="40.0" y="16.0" width="190.0" height="54.0" rx="10" class="box v"/><text x="135.0" y="40.0" class="tb tv" text-anchor="middle">不定式</text><text x="135.0" y="60.0" class="ts" text-anchor="middle">to do</text><rect x="40.0" y="86.0" width="190.0" height="54.0" rx="10" class="box v"/><text x="135.0" y="110.0" class="tb tv" text-anchor="middle">动名词</text><text x="135.0" y="130.0" class="ts" text-anchor="middle">doing</text><rect x="40.0" y="156.0" width="190.0" height="54.0" rx="10" class="box v"/><text x="135.0" y="180.0" class="tb tv" text-anchor="middle">分词</text><text x="135.0" y="200.0" class="ts" text-anchor="middle">doing / done</text><rect x="450.0" y="16.0" width="200.0" height="54.0" rx="10" class="box n"/><text x="550.0" y="40.0" class="tb tn" text-anchor="middle">名词性</text><text x="550.0" y="60.0" class="ts" text-anchor="middle">主语 · 宾语 · 表语 · 补语</text><rect x="450.0" y="86.0" width="200.0" height="54.0" rx="10" class="box a"/><text x="550.0" y="110.0" class="tb ta" text-anchor="middle">形容词性</text><text x="550.0" y="130.0" class="ts" text-anchor="middle">定语 · 表语 · 补语</text><rect x="450.0" y="156.0" width="200.0" height="54.0" rx="10" class="box d"/><text x="550.0" y="180.0" class="tb td" text-anchor="middle">副词性</text><text x="550.0" y="200.0" class="ts" text-anchor="middle">状语</text><path d="M232.0,43.0 Q340.0,43.0 446.0,43.0" class="ln" marker-end="url(#ah)"/><path d="M232.0,43.0 Q340.0,86.0 446.0,113.0" class="ln" marker-end="url(#ah)"/><path d="M232.0,43.0 Q340.0,121.0 446.0,183.0" class="ln" marker-end="url(#ah)"/><path d="M232.0,113.0 Q340.0,86.0 446.0,43.0" class="ln" marker-end="url(#ah)"/><path d="M232.0,183.0 Q340.0,156.0 446.0,113.0" class="ln" marker-end="url(#ah)"/><path d="M232.0,183.0 Q340.0,183.0 446.0,183.0" class="ln" marker-end="url(#ah)"/><rect x="40.0" y="232.0" width="610.0" height="40.0" rx="8" class="box neu"/><text x="345.0" y="257.0" class="tb tink" text-anchor="middle" style="font-size:14px">铁律：一句话只有一个谓语动词，其余动词一律用非谓语形式</text></svg></div><figcaption><span>图 11</span>非谓语动词 = 失去谓语身份、保留动词特征的名词 / 形容词 / 副词</figcaption></figure>
+
+<p>非谓语动词在句子中已失去动词词性，要当作名词（主、宾、表）、形容词（定、表、补）、副词（状）来对待，但本身保留动词特征：可有时态、语态变化，可携带自己的宾语、状语。</p>
+<p><strong>谓语动词 VS 非谓语动词的三条铁律：</strong></p>
+<ol>
+<li>一个句子（以句号为单位）只能有一个谓语动词。</li>
+<li>除谓语动词之外的其他动词，必须使用非谓语动词形式：不定式、动名词、分词。</li>
+<li>不定式、动名词、分词 = 名词性成分（主语、宾语、补语、表语）or 形容词性成分（定语、表语、补语）or 副词性成分（状语）。</li>
+</ol>
+<p><strong>分析示例一：</strong></p>
+<blockquote>
+<p><strong>Having finished</strong> her dinner, she <strong>decided</strong> to go for a walk to clear her mind, <strong>anticipating</strong> to meet her friends and <strong>discussing</strong> their upcoming travel plans.</p>
+</blockquote>
+<ul>
+<li>Having finished her dinner：时间状语（非谓语）</li>
+<li>she <strong>decided</strong> to go for a walk：句子整体结构 SVO（decided 为全句唯一谓语动词）</li>
+<li>to clear her mind：修饰 go 的目的状语</li>
+<li>anticipating to meet her friends and discussing their upcoming travel plans：伴随状语（非谓语）</li>
+</ul>
+<p><strong>分析示例二：</strong></p>
+<blockquote>
+<p>With a <em>beaming smile</em>, she eagerly <strong>stepped</strong> onto the stage <em>to receive her award</em>, <em>determined to pursue her dreams and inspire others to do the same</em>.</p>
+</blockquote>
+<ul>
+<li>With a beaming smile：状语</li>
+<li>she eagerly <strong>stepped</strong>：整体结构 SV</li>
+<li>onto the stage to receive her award：状语</li>
+<li>determined to pursue her dreams and inspire others to do the same：主语补语</li>
+</ul>
+<p><strong>核心结论：动词能干什么，非谓语动词也能干什么。唯一的区别在于，非谓语动词不能作为整个句子的谓语动词来使用，其功能必须相当于名词 or 形容词 or 副词。</strong></p>
+<h3 id="不定式的形式">不定式的形式</h3>
+<div class="gm-table"><table>
+<thead>
+<tr>
+<th>时态</th>
+<th>主动</th>
+<th>被动</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一般式</td>
+<td>to write</td>
+<td>to be written</td>
+</tr>
+<tr>
+<td>进行式</td>
+<td>to be writing</td>
+<td>没有</td>
+</tr>
+<tr>
+<td>完成式</td>
+<td>to have written</td>
+<td>to have been written</td>
+</tr>
+<tr>
+<td>完成进行式</td>
+<td>to have been writing</td>
+<td>没有</td>
+</tr>
+</tbody>
+</table></div>
+<p>不定式不一定是什么词性——它同时具备名词、形容词、副词三种属性，可在句中作主语、宾语、补语、表语、定语、状语：</p>
+<ul>
+<li>It is foolish <strong>to lie</strong>.（主语）</li>
+<li>Our plan is <strong>to finish the work in two weeks</strong>.（表语/补语）</li>
+<li>Sally doesn't like <strong>to be praised</strong>.（宾语）</li>
+<li>The question <strong>to be discussed</strong> is important.（定语）</li>
+<li>We eat <strong>to live</strong>.（状语）</li>
+</ul>
+<h3 id="名词属性的不定式主语表语宾语">名词属性的不定式：主语、表语、宾语</h3>
+<p>作主语（注意形式主语 it 的句末重心调整）：</p>
+<ul>
+<li><strong>To make you understand me</strong> is impossible.</li>
+<li><strong>It</strong> is impossible <strong>to make you understand me</strong>.</li>
+</ul>
+<p>作表语（主语补语）：</p>
+<ul>
+<li>To know everything is <strong>to know nothing</strong>.</li>
+<li>The problem is <strong>where to find a guide</strong>.</li>
+<li>He was seen <strong>to enter</strong> the laboratory.</li>
+</ul>
+<p>作宾语：</p>
+<ul>
+<li>I will try <strong>to forget you</strong>.</li>
+<li>He decided <strong>to return after receiving a letter from Michael</strong>.</li>
+<li>He forgot <strong>which way to take</strong>.</li>
+</ul>
+<p><strong>句末中心原则无处不在：形式宾语 or 宾语前置</strong></p>
+<ul>
+<li>She found <em>to leave here</em> impossible. ×</li>
+<li>She found <strong>it</strong> impossible <em>to leave here</em>. √</li>
+<li>I took <em>to have been invited to the meeting</em> as an honor. ×</li>
+<li>I took <strong>it</strong> as an honor <em>to have been invited to the meeting</em>. √</li>
+<li>It would be a pity to <strong>let</strong> such an opportunity <strong>slip</strong>. ?</li>
+<li>It would be a pity to let <strong>slip</strong> such an opportunity. √</li>
+</ul>
+<h3 id="名词属性的不定式宾语补语同位语">名词属性的不定式：宾语补语、同位语</h3>
+<ul>
+<li>He asked me <strong>to smile</strong>.</li>
+<li>He asked me <strong>to finish my job before noon</strong>.</li>
+</ul>
+<p>使役动词、感官动词后接的不定式需省略 to：</p>
+<ul>
+<li>He <strong>made</strong> me <strong>stay for the night</strong>.</li>
+<li>She <strong>watched</strong> Michael <strong>enter the room</strong>.</li>
+</ul>
+<p>作同位语：</p>
+<ul>
+<li>Is this your purpose, <strong>to avoid being punished</strong>?</li>
+<li>My mother's last request <strong>for me to study hard</strong> was never met.</li>
+</ul>
+<h3 id="形容词属性的不定式后置定语">形容词属性的不定式：后置定语</h3>
+<ul>
+<li>The letter <strong>from Michael</strong> shocked everyone.</li>
+<li>We expressed our desire <strong>to join their team</strong>.</li>
+</ul>
+<p>句末中心原则的体现：</p>
+<ul>
+<li>At the meeting a decision <strong>to transfer a part of the students to another school</strong> was made. ?</li>
+<li>At the meeting a decision was made <strong>to transfer a part of the students to another school</strong>. √</li>
+</ul>
+<h3 id="副词属性的不定式状语与插入语">副词属性的不定式：状语与插入语</h3>
+<p>不定式作状语，一般可看作状语从句的缩写：</p>
+<ul>
+<li><strong>To improve my English</strong>, I went to America.（目的状语）</li>
+<li>He went abroad, <strong>never to return</strong>.（结果状语）</li>
+<li>She wept <strong>to hear the news</strong>.（原因状语）</li>
+<li><strong>To hear him sing</strong>, you might take him for a girl.（条件状语）</li>
+<li>The old man walked slowly, hunched over, <strong>as if to carry the weight of the world on his shoulders</strong>.（方式状语）</li>
+<li><strong>To do his best</strong>, he could not fulfil his task in time.（让步状语）</li>
+</ul>
+<p>作插入语（固定搭配）：</p>
+<ul>
+<li><strong>To be frank</strong>, I hate parties.</li>
+<li><strong>To be fair</strong>, he has worked hard these days.</li>
+<li>其他常见：to begin with, to conclude, to be honest, to tell the truth, so to speak, to say the least of...</li>
+</ul>
+<h3 id="不定式的逻辑主语逻辑宾语">不定式的逻辑主语、逻辑宾语</h3>
+<p><strong>逻辑主语问题</strong>（不定式动词必须有明确的逻辑主语，默认指向句子主语；如需指向其他对象，用 for / of / with 带出）：</p>
+<ul>
+<li>Sally will be proud to <em>win the competition</em>.（逻辑主语 = Sally）</li>
+<li>Sally will be proud <strong>for her sister</strong> to <em>win the competition</em>.（逻辑主语 = her sister）</li>
+<li>It's very wise <em>not to argue with the teacher</em>. → It's very wise <strong>of us</strong> not to argue with the teacher.（我们不跟老师争论，这很明智。）</li>
+<li>It's very wise <strong>of Michael</strong> not to argue with the teacher.（Michael 不跟老师争论，这很明智。）</li>
+</ul>
+<p><strong>逻辑宾语问题</strong>（及物动词作非谓语时必须有逻辑宾语，找不到合适的逻辑宾语就会出语病）：</p>
+<ul>
+<li>I need a pen <strong>to write</strong>. × → I need a pen <strong>to write with</strong>. √（write with a pen）</li>
+<li>I need a bed <strong>to sleep</strong>. × → I need a bed <strong>to sleep in</strong>. √（sleep in a bed）</li>
+<li>Michael is the best person <strong>to consult about the matter</strong>. [consult about the matter Michael ×] → ...<strong>to consult about the matter with</strong>. √ [consult about the matter with Michael √]</li>
+</ul>
+<p>四条总结：</p>
+<ol>
+<li>不定式虽被当作名词、形容词、副词使用，但依旧保留动词特性：及物动词带宾语、动词带状语等。</li>
+<li>不定式中的动词必须有明确的逻辑主语，默认指向句子主语；如需指向其他对象，用介词 for、of、with 带出。</li>
+<li>不定式中的及物动词必须有逻辑宾语，默认指向句子的名词性成分（主语、宾语、补语）。</li>
+<li>逻辑主语、逻辑宾语并非不定式特有的要求——所有非谓语动词都有这种要求。</li>
+</ol>
+<h3 id="不定式的时态语态">不定式的时态、语态</h3>
+<ul>
+<li>一般式（to do）：不定式动作与谓语动词动作同时或在其后。</li>
+<li>完成式（to have done）：不定式动作在谓语动词动作之前。</li>
+<li>进行式（to be doing）：谓语动词动作发生时，不定式动作正在进行。</li>
+<li>被动式（to be done）：不定式的逻辑主语是不定式动作的对象或承受者。</li>
+</ul>
+<p>例句对照：</p>
+<ul>
+<li>Scientists try <strong>to apply</strong> this new theory into practice.（同时发生）</li>
+<li>I hope <strong>to visit</strong> Beijing someday.（在谓语动作之后）</li>
+<li>I'm sorry <strong>to have troubled</strong> you so much.（在谓语动作之前）</li>
+<li>The energy of coal is found <strong>to have come</strong> from the sun.（在谓语动作之前）</li>
+<li>I'd like <strong>to have seen</strong> the film.（在谓语动作之前，"本想看而没看成"）</li>
+<li>They were said <strong>to be making</strong> a new experiment.（与谓语动作同步进行）</li>
+<li>The problem remains <strong>to be further discussed</strong>.（逻辑主语 problem 是 discuss 的承受者 → 被动）</li>
+<li>It is an honor for me <strong>to have been invited</strong> to the meeting.（被动 + 完成式）</li>
+</ul>
+<p><strong>完成式的对话场景：</strong></p>
+<ul>
+<li>Sally: My grandmother died.</li>
+<li>Michael: I'm sorry <strong>to hear</strong> that.</li>
+<li>Michael: I'm sorry <strong>to have heard</strong> about your grandmother's death, but you should cheer up.</li>
+</ul>
+<p>谓语动词动作与不定式动作的时间先后决定用 to do 还是 to have done：谓语在前、不定式在后 → to do；不定式在前、谓语在后 → to have done。</p>
+<p>体会区别：</p>
+<ul>
+<li>I'm sorry <strong>to keep</strong> you waiting.（正在让你等）</li>
+<li>I'm sorry <strong>to have kept</strong> you waiting.（已经让你等了）</li>
+<li>Sally is happy <strong>to visit</strong> Beijing.（要去）</li>
+<li>Sally is happy <strong>to have visited</strong> Beijing.（去过了）</li>
+</ul>
+<p><strong>被动式：</strong></p>
+<ul>
+<li>He wants <strong>to take some photos</strong>.（他想拍几张照片。）</li>
+<li>He wants Sally <strong>to take some photos</strong>.（他想让 Sally 拍几张照片。）</li>
+<li>He wants some photos <strong>to be taken</strong>.（他想找人把照片拍出来。）</li>
+</ul>
+<p>比较：</p>
+<ul>
+<li>I have a lot of clothes <strong>to wash</strong>.（衣服由"我"洗，逻辑主语明确）</li>
+<li>I have a lot of clothes <strong>to be washed</strong>.（衣服需要"被洗"，动作执行者泛化）</li>
+<li>I want <strong>to do</strong> this job!（我要亲自做这份工作）</li>
+<li>I want this job <strong>to be done</strong>!（我要这事被办成）</li>
+</ul>
+<p><strong>进行式：</strong></p>
+<ul>
+<li>He pretended <strong>to sleep</strong> when Sally came in. = He pretended that he <strong>was (going) to sleep</strong>...（Sally 进来时，他假装准备睡觉。）</li>
+<li>He pretended <strong>to have fallen asleep</strong> when Sally came in. = He pretended that he <strong>had fallen asleep</strong>...（Sally 进来时，他假装已经睡着了。）</li>
+<li>He pretended <strong>to be sleeping</strong> when Sally came in. = He pretended that he <strong>was sleeping</strong>...（Sally 进来时，他假装正在睡觉。）</li>
+</ul>
+<h2 id="42-动名词">4.2 动名词</h2>
+<p><strong>动名词是最简单的非谓语动词：</strong></p>
+<ol>
+<li>构成非常简单：<strong>V + ing</strong>；</li>
+<li>语法层面，<strong>动名词 = 名词</strong>；</li>
+<li>但保留了动词的一些特征：存在逻辑主语、逻辑宾语及其他修饰语，并且可以变换形式（主动式、被动式、完成式等）。</li>
+</ol>
+<p>六大主题：作主语 → 作宾语 → 作表语 → 作定语 → 逻辑主语 → 时态语气。</p>
+<h3 id="动名词作主语位于句首">动名词作主语：位于句首</h3>
+<ul>
+<li><em>Learning</em> is easy.</li>
+<li><em>Learning English</em> is easy.</li>
+<li><em>Talking</em> is nice.</li>
+<li><em>Talking to him</em> is nice.</li>
+<li><em>Walking</em> is my only exercise.</li>
+<li><em>Walking around the school</em> is my only exercise.</li>
+<li><em>Smoking</em> is bad.</li>
+<li><em>Always smoking in public</em> is bad.</li>
+<li><em>Using a language</em> is not easy. (= It's not easy using a language.)</li>
+<li><em>Really using a language in the real country where it is spoken</em> is not easy.</li>
+</ul>
+<h3 id="形式主语-it-的问题句末重心">形式主语 it 的问题（句末重心）</h3>
+<ul>
+<li><em>Talking to him</em> is nice. (√) = <em>It's nice talking to him.</em> (√)</li>
+<li><em>Using a language</em> is not easy. (√) = <em>It's not easy using a language.</em> (√)</li>
+<li><em>Really using a language in the real country where it is spoken</em> is not easy. (√) = <em>It's not easy really using a language in the real country where it is spoken.</em> (√)</li>
+</ul>
+<h3 id="动名词作主语位于句末的特殊句型">动名词作主语：位于句末的特殊句型</h3>
+<p>句型 1：It is no good / no use / a waste of time doing sth.（干某事没用）</p>
+<ul>
+<li>It's no use <em>talking to him</em>.</li>
+<li>It's not much use <em>buying a car</em>.</li>
+<li>It's a waste of time <em>trying to explain</em>.</li>
+<li>Is it any good <em>trying to explain</em>?</li>
+</ul>
+<p>句型 2：There is no point / use / good (in) doing sth.（干某事没意义）</p>
+<ul>
+<li>There is no use <em>arguing with him</em>.</li>
+<li>There is no point in <em>doing that</em>.</li>
+</ul>
+<p>句型 3：There is no doing sth.（不可能做到某事）</p>
+<ul>
+<li>There is no <em>telling what will happen tomorrow</em>.</li>
+<li>There's no <em>knowing the future</em>.</li>
+</ul>
+<h3 id="动名词作宾语">动名词作宾语</h3>
+<p><strong>动词宾语</strong>（以下动词习惯上接动名词作宾语）：</p>
+<ul>
+<li>Larry suggests <em>playing basketball</em>.</li>
+<li>Sally admitted <em>taking the money</em>.</li>
+<li>You should avoid <em>eating too much</em>.</li>
+<li>I like <em>traveling</em> very much.</li>
+<li>I hate <em>lying</em> and <em>cheating</em>.</li>
+</ul>
+<p>常接动名词的动词/词组：admit, advise, avoid, consider, deny, like, dislike, enjoy, feel like, finish, forgive, give up, can't help, imagine, involve, mention, mind, miss, permit, prohibit, resist, risk, suggest...</p>
+<p><strong>介词宾语</strong>（介词后面必须接名词性成分，动名词正是最常见的选择）：</p>
+<ul>
+<li>She insisted on <em>paying for it</em>.</li>
+<li>Sally couldn't keep from <em>laughing</em>.</li>
+<li>Michael thought of <em>writing to me</em>.</li>
+<li>Have you ever dreamed of <em>becoming an astronaut</em>?</li>
+<li>I don't feel like <em>going out today</em>.</li>
+<li>I look forward to <em>leaving this town</em> and <em>starting a new life</em>.</li>
+<li><em>From</em> having parties <em>to</em> chatting online, I just love knowing new people.</li>
+<li>I am not <em>used to</em> driving fast.（used to 的对比：I <em>used to</em> drive fast. 我过去常开快车）</li>
+</ul>
+<p><strong>特殊句型：</strong></p>
+<ul>
+<li>Have difficulty / trouble / problems / a hard time (in) doing sth.（做某事遇到困难）</li>
+<li>I once had a hard time <em>getting used to living in Beijing</em>.</li>
+<li>can't help / resist doing, can't keep from doing...（情不自禁做某事）</li>
+<li>I can't help <em>reading this book</em>. It's so much fun.</li>
+<li>No one can help <em>liking Tom</em>; he is such a cute boy.</li>
+<li>This book is worth <em>reading</em>.</li>
+</ul>
+<h3 id="动名词作表语">动名词作表语</h3>
+<ul>
+<li>Talking to him is <em>talking to a wall</em>.</li>
+<li>Sally's hobby is <em>painting</em>.</li>
+<li>Their pastime is <em>going to movies</em>.</li>
+<li>Her favorite sport is <em>skiing</em>.</li>
+<li>Michael's job is <em>taking care of the sheep on the farm</em>.</li>
+<li>Seeing is <em>believing</em>.</li>
+</ul>
+<h3 id="动名词作定语动名词-vs-分词">动名词作定语：动名词 VS 分词</h3>
+<p>动名词 = 名词性（表用途）；分词 = 形容词性（表主谓关系）：</p>
+<ul>
+<li>a sleeping bed【动名词】= a bed <strong>for sleeping</strong> = 睡觉用的床 √</li>
+<li>a sleeping bed【分词】= a bed <strong>that is sleeping</strong> = 正在睡觉的床 ✕</li>
+<li>reading materials【动名词】= materials for reading = 阅读材料 √（≠ 正在阅读的材料）</li>
+<li>a flying jacket【动名词】= a jacket for flying = 飞行夹克（飞行员穿的夹克）√</li>
+<li>a flying jacket【分词】= a jacket that is flying = 会飞的夹克 ✕</li>
+</ul>
+<h3 id="动名词的逻辑主语">动名词的逻辑主语</h3>
+<p>默认指向句子主语，也可以用所有格/普通格明确带出：</p>
+<ul>
+<li>Sally insisted on <em>reading the letter</em>.（逻辑主语默认 = Sally：Sally 坚持要看信。）</li>
+<li>Sally insisted on <em>my reading the letter</em>.（逻辑主语 = I：Sally 坚持要我看信。）</li>
+<li>There is no chance of <em>his winning the competition</em>.</li>
+<li><em>Your coming to help</em> is really great.</li>
+<li><em>Her going off in such a hurry</em> is strange.</li>
+<li>I'm not surprised at <em>your misunderstanding me</em>.</li>
+<li>I have not been well since <em>coming to Beijing</em>.（默认逻辑主语 = I）</li>
+<li>I have not been well since <em>Michael's coming to Beijing</em>.（明确逻辑主语 = Michael）</li>
+</ul>
+<p><strong>所有格还是普通格？</strong></p>
+<ul>
+<li><em>Her/Sally's going off in such a hurry</em> is strange.（作主语：用所有格）</li>
+<li>I'm not happy about <em>Sally('s) going off in such a hurry</em>.（作宾语：二者皆可）</li>
+<li>I'm not happy about <em>someone going off in such a hurry</em>.（不定代词：用普通格）</li>
+<li>I've always had a dream of <em>my father, mother, and I living together</em>.（逻辑主语太长：用普通格）</li>
+</ul>
+<h3 id="动名词的时态语态">动名词的时态、语态</h3>
+<div class="gm-table"><table>
+<thead>
+<tr>
+<th>时态</th>
+<th>主动</th>
+<th>被动</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一般式</td>
+<td>writing</td>
+<td>being written</td>
+</tr>
+<tr>
+<td>完成式</td>
+<td>having written</td>
+<td>having been written</td>
+</tr>
+<tr>
+<td>进行式</td>
+<td>没有</td>
+<td>没有</td>
+</tr>
+<tr>
+<td>完成进行式</td>
+<td>没有</td>
+<td>没有</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>被动式</strong>（逻辑主语是动作的承受者）：</p>
+<ul>
+<li>I remember <em>being taken to Beijing when I was a little kid</em>.</li>
+<li>Sally hates <em>being called "a beauty"</em>.</li>
+<li>I'm not used to <em>being treated like that</em>.</li>
+</ul>
+<p><strong>完成式</strong>（强调动名词动作发生在谓语动词之前）：</p>
+<ul>
+<li>He denied <em>having been there</em>.</li>
+<li>I could not remember <em>having heard anyone say that before</em>.</li>
+<li>She admits <em>having seen us</em>.</li>
+</ul>
+<p><strong>完成被动式</strong>：</p>
+<ul>
+<li>I appreciate <em>having been given</em> the chance to study abroad.</li>
+</ul>
+<p><strong>主动形式表被动意思</strong>（deserve, need, require, want, won't bear 等之后的动名词；以及形容词 worth、介词 past, beyond 之后）：</p>
+<ul>
+<li>The garden <em>needs watering</em>.（花园需要浇水了。）</li>
+<li>He <em>deserved praising</em>.（他值得被表扬。）</li>
+<li>Your hair <em>wants cutting</em>.（你的头发该剪了。）</li>
+<li>The garden wants <em>weeding</em>.</li>
+<li>The truck needs <em>repairing</em>.</li>
+<li>This book is worth <em>reading</em>.</li>
+<li>The bad style requires <em>getting rid of</em>.</li>
+</ul>
+<p>对比（动宾关系 → 被动义；主谓关系 → 主动义）：</p>
+<ul>
+<li>He <em>deserves shooting first</em>. shoot(vt) + him(主语 he) = 动宾关系 → 他应该第一个被枪毙。</li>
+<li>He <em>deserves to shoot first</em>. he(主语) + shoot(vi) = 主谓关系 → 他应该第一个开枪。</li>
+</ul>
+<h3 id="动名词与不定式的区别">动名词与不定式的区别</h3>
+<ol>
+<li><strong>语义侧重</strong>：不定式强调具体的、一次性的、待实现的动作，一般与某个特殊的动作执行者联系在一起；动名词表示一般性事实，意义更抽象，一般不与特定的动作执行者联系在一起。
+   - I like <em>playing basketball</em>.（泛泛的爱好）
+   - I like <em>to play basketball</em>.（具体某次的打算）</li>
+<li><strong>逻辑主语范围</strong>：动名词的逻辑主语范围更大，可以泛指所有人；不定式的逻辑主语通常仅仅是句子主语。
+   - He hates <em>drinking</em>.（讨厌所有人喝酒）
+   - He hates <em>to drink</em>.（讨厌自己（下一次）喝酒的动作）</li>
+<li><strong>时间性</strong>：动名词作主语通常表示已经实现的行为，或不受时间限制的行为；不定式作主语表示将要实现、但仍未实现的行为。
+   - <em>Being invited to the party</em> made Michael happy.（已经被邀请了）
+   - It would make Michael happy <em>to be invited to the party</em>.（还没被邀请）
+   - What he always wishes is <em>angling for compliments</em>.（不受时间限制）
+   - What he wishes now is <em>to angle for compliments</em>.（表示将来的行为）</li>
+<li><strong>有些动词只能后接动名词</strong>：avoid, admit 等——既然已经"避免"了，就不存在下一次动作，to do 不合适；"承认"的必然是已发生的事。
+   - She decided to avoid <strong>eating</strong> sugary foods.
+   - Michael admitted <strong>stealing</strong> the money.</li>
+<li><strong>有些动词只能后接不定式</strong>：afford, choose 等——必然有后续动作。
+   - We can't afford <strong>to buy</strong> such an expensive house.
+   - They chose <strong>to pay</strong> a visit to America.</li>
+<li><strong>有时候意思相仿</strong>：
+   - Prices continue <strong>to rise</strong>. / Prices continue <strong>rising</strong>.
+   - Sally started <strong>to cry</strong>. / Sally started <strong>crying</strong>.</li>
+<li><strong>有时候意思区别很大</strong>：
+   - Sally stopped <strong>crying</strong>.（停止哭泣）
+   - Sally stopped <strong>to cry</strong>.（停下来，开始哭）
+   - Remember <strong>to mail this letter</strong> tomorrow.（记得明天寄信）
+   - I don't remember <strong>mailing the letter</strong>.（不记得寄过信）
+   - I hate <strong>to trouble you</strong>.（抱歉要麻烦你了）
+   - I hate <strong>troubling you</strong>.（讨厌老是麻烦你这件事）
+   - I cannot help <strong>to repair the car</strong>.（不能帮忙修车）
+   - I cannot help <strong>laughing</strong>.（忍不住笑）</li>
+</ol>
+<h2 id="43-分词">4.3 分词</h2>
+<p><strong>什么是分词？</strong></p>
+<ol>
+<li>分词保留了动词的很多特征：可以带自己的宾语、状语、表语、补语等。</li>
+<li>在句子中，分词被视为<strong>形容词性成分 or 副词性成分</strong>，即定语、状语、补足语（表语）。</li>
+</ol>
+<p><strong>动名词 VS 分词（判断标准：名词性表用途 or 形容词性表主谓关系）：</strong></p>
+<ul>
+<li>a flying jacket = a jacket <strong>for flying</strong>（飞行夹克，仅表用途）✔ / = a jacket that is flying ✘</li>
+<li>a flying bird = a bird <strong>that is flying</strong>（正在飞的鸟，主谓关系）✔ / = a bird for flying ✘</li>
+<li>a swimming pool = a pool <strong>for swimming</strong>（游泳池）✔ / = a pool that is swimming ✘</li>
+<li>a swimming duck = a duck <strong>that is swimming</strong>（正在游泳的鸭子）✔ / = a duck for swimming ✘</li>
+</ul>
+<h3 id="分词的意义">分词的意义</h3>
+<p><strong>现在分词意义 ①：主动的、正在进行的动作</strong></p>
+<ul>
+<li>a <em>sinking</em> ship = a ship that is sinking</li>
+<li><em>falling</em> leaves = leaves that are falling</li>
+<li>the <em>rising</em> sun = the sun that is rising</li>
+<li>a <em>sleeping</em> dog = a dog that is sleeping</li>
+<li>The girl <em>standing at the door</em> is my classmate Sally.</li>
+<li>The little girl <em>smiling at me</em> is really lovable.</li>
+</ul>
+<p><strong>现在分词意义 ②：主动的、一般性的动作（此时更接近"特质"）</strong></p>
+<ul>
+<li>a <em>puzzling</em> problem = a problem that puzzles people (√)（≠ a problem that is puzzling people）</li>
+<li>an <em>understanding</em> man = a man who understands people (√)（≠ a man who is understanding people）</li>
+</ul>
+<p><strong>过去分词意义 ①（及物动词）：被动的、一般的动作</strong></p>
+<ul>
+<li>a <em>broken</em> cup = a cup that has been broken</li>
+<li>a <em>respected</em> writer = a writer who is respected</li>
+<li>a <em>trained</em> dog = a dog that has been trained</li>
+</ul>
+<p><strong>过去分词意义 ②（不及物动词）：主动的、完成的动作（不表被动）</strong></p>
+<ul>
+<li>a <em>sunken</em> ship = a ship that has sunken</li>
+<li><em>fallen</em> leaves = leaves that have fallen</li>
+<li>a <em>married</em> man = a man who has married</li>
+<li><em>returned</em> students = students who have returned</li>
+</ul>
+<figure class="gm-fig" id="fig-12"><div class="gm-fig-scroll"><svg viewBox="0 0 680 256" role="img" aria-label="分词的四种意义" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ahead"/></marker></defs><rect x="20.0" y="14.0" width="315.0" height="40.0" rx="10" class="box v"/><text x="177.5" y="39.0" class="tb tv" text-anchor="middle">现在分词 doing</text><rect x="345.0" y="14.0" width="315.0" height="40.0" rx="10" class="box v"/><text x="502.5" y="39.0" class="tb tv" text-anchor="middle">过去分词 done</text><rect x="20.0" y="64.0" width="315.0" height="84.0" rx="8" class="box a"/><text x="36.0" y="90.0" class="tb ta" text-anchor="start" style="font-size:14px">主动 · 正在进行</text><text x="36.0" y="116.0" class="ten tb" text-anchor="start">a sinking ship</text><text x="36.0" y="136.0" class="ten tsm" text-anchor="start" style="font-size:13px">= a ship that is sinking</text><rect x="20.0" y="158.0" width="315.0" height="84.0" rx="8" class="box a"/><text x="36.0" y="184.0" class="tb ta" text-anchor="start" style="font-size:14px">主动 · 一般特质</text><text x="36.0" y="210.0" class="ten tb" text-anchor="start">a puzzling problem</text><text x="36.0" y="230.0" class="ten tsm" text-anchor="start" style="font-size:13px">= a problem that puzzles people</text><rect x="345.0" y="64.0" width="315.0" height="84.0" rx="8" class="box a"/><text x="361.0" y="90.0" class="tb ta" text-anchor="start" style="font-size:14px">及物动词：被动</text><text x="361.0" y="116.0" class="ten tb" text-anchor="start">a broken cup</text><text x="361.0" y="136.0" class="ten tsm" text-anchor="start" style="font-size:13px">= a cup that has been broken</text><rect x="345.0" y="158.0" width="315.0" height="84.0" rx="8" class="box a"/><text x="361.0" y="184.0" class="tb ta" text-anchor="start" style="font-size:14px">不及物动词：主动 · 已完成</text><text x="361.0" y="210.0" class="ten tb" text-anchor="start">fallen leaves</text><text x="361.0" y="230.0" class="ten tsm" text-anchor="start" style="font-size:13px">= leaves that have fallen</text></svg></div><figcaption><span>图 12</span>分词的四种意义</figcaption></figure>
+
+<h3 id="分词作状语逻辑主语问题">分词作状语：逻辑主语问题</h3>
+<p>分词作状语必须有合理的逻辑主语（默认 = 句子主语），<strong>一定要避免悬垂分词 (dangling participle)</strong>：</p>
+<ul>
+<li><em>Waiting for a bus</em>, a little cat walked to me. (×)（逻辑主语 a little cat → a little cat waited for the bus？不成立）</li>
+<li>After <em>doing my homework</em>, the room was cleaned. (×)（the room did my homework？不成立）</li>
+<li>When <em>using the computer</em>, the password must be remembered. (×)（the password uses the computer？不成立）</li>
+</ul>
+<p>改正（让句子主语成为分词的逻辑主语）：</p>
+<ul>
+<li><em>Waiting for a bus</em>, <strong>I</strong> saw a little cat walk to me. (√)</li>
+<li>After <em>doing my homework</em>, <strong>I</strong> cleaned the room. (√)</li>
+<li>When <em>using the computer</em>, <strong>we</strong> have to remember the password. (√)</li>
+</ul>
+<p><strong>独立分词结构（分词自带逻辑主语）：</strong></p>
+<p>【名词 + 分词】结构：</p>
+<ul>
+<li><em>Nobody having any more to say</em>, the meeting was closed.</li>
+<li><em>All the money spent</em>, we started looking for work.</li>
+<li><em>Weather permitting</em>, we'll go fishing tomorrow.</li>
+</ul>
+<p>【with + 名词 + 分词】结构：</p>
+<ul>
+<li>The old man often takes a walk after dinner <em>with his dog following him</em>.</li>
+<li>A car drove by, <em>with smoke pouring from its behind</em>.</li>
+</ul>
+<p><strong>固定结构（约定俗成，属于"合理的悬垂分词"，不考虑逻辑主语）：</strong></p>
+<ul>
+<li><em>Generally speaking</em>, men are stronger than women.</li>
+<li><em>Strictly speaking</em>, girls are smarter than boys.</li>
+<li><em>Judging from what he has done</em>, he is a lazy student.</li>
+<li><em>Talking of English</em>, she is the best student.</li>
+<li><em>Considering she has no experience</em>, she has done a good job.</li>
+<li><em>Granting that he has made a mistake</em>, he is not to blame.</li>
+</ul>
+<p><strong>分词作状语的各种意义（皆可还原为状语从句）：</strong></p>
+<p>条件：</p>
+<ul>
+<li><em>Given more time</em>, we could have done better. = <em>If we had been given more time</em>, ...</li>
+<li><em>Weather permitting</em>, we'll go fishing tomorrow. = <em>If weather permits</em>, ...</li>
+</ul>
+<p>时间：</p>
+<ul>
+<li><em>Once installed</em>, this machine operates automatically. = <em>Once it is installed</em>, ...</li>
+<li><em>Locking the door</em>, he went home. = <em>After he locked the door</em>, ...</li>
+<li><em>Hearing the joke</em>, he started laughing. = <em>After he heard the joke</em>, ...</li>
+</ul>
+<p>原因：</p>
+<ul>
+<li><em>Being busy</em>, he will not come today. = <em>Because he is busy</em>, ...</li>
+<li><em>Not knowing what to do next</em>, I need your advice. = <em>Because I don't know what to do</em>, ...</li>
+</ul>
+<p>让步：</p>
+<ul>
+<li><em>Having been abroad for years</em>, he still can't speak English. = <em>Though he has been abroad for years</em>, ...</li>
+<li><em>Although understanding no Chinese</em>, he was able to communicate. = <em>Although he understood no Chinese</em>, ...</li>
+</ul>
+<p>结果（注意：表结果的分词不置于句首，要放在句末）：</p>
+<ul>
+<li>Her husband died, <em>leaving her with two children</em>. = ... <em>so that he left her with two children</em>.</li>
+<li>He fired, <em>killing an enemy</em>. = He fired, <em>so that he killed an enemy</em>.</li>
+<li>对比：<em>Finding the door locked</em>, I went home.（原因：因为门锁了，我只好回家）≠ I went home, <em>finding the door locked</em>.（我回了家，发现门是锁着的——结果/伴随）</li>
+</ul>
+<p>方式：</p>
+<ul>
+<li>He earns a living <em>driving a car</em>. = He earns a living <em>as he drives a car</em>.</li>
+<li>Sally came <em>running hurriedly</em>. = Sally came <em>as if she was running hurriedly</em>.</li>
+</ul>
+<p><strong>分词作状语时，可保留连词</strong>（相当于简化后的状语从句）：</p>
+<ul>
+<li><strong>When</strong> waiting for the bus, I saw a little cat walk to me. = When I was waiting for the bus, ...</li>
+<li><strong>Although</strong> living in America, Sally knows a lot about China. = Although she lives in America, ...</li>
+<li><strong>If</strong> seen from far away, the sheep looks like a dog. = If it is seen from far away, ...</li>
+<li><strong>After</strong> having done her homework, Sally went home. = After she did her homework, ...</li>
+</ul>
+<h3 id="分词作表语">分词作表语</h3>
+<p>现在分词：</p>
+<ul>
+<li>This is <em>humiliating</em>.</li>
+<li>What he says sounds more <em>convincing</em>.</li>
+</ul>
+<p>过去分词：</p>
+<ul>
+<li>Things are always <em>complicated</em>.</li>
+<li>She is deeply <em>read</em> in literature.</li>
+</ul>
+<p>作为表语的分词，很大程度上已经形容词化：可以被副词修饰，也可以有比较级；必然跟在系动词之后。</p>
+<h3 id="分词作定语">分词作定语</h3>
+<p><strong>复习：动名词 VS 分词做定语</strong>（用途 vs 主谓关系）——见上文 a flying jacket / a flying bird / a swimming pool / a swimming duck。</p>
+<p><strong>现在分词作定语</strong>（所修饰名词是分词动作的发出者，构成主谓关系，兼有正在进行之意）：</p>
+<ul>
+<li><em>singing</em> birds, <em>buzzing</em> bees</li>
+<li><em>dancing</em> flames, <em>flowing</em> river</li>
+<li><em>barking</em> dogs, <em>developing</em> countries</li>
+</ul>
+<p>单个现在分词作定语一般前置；放名词后则视为强调：</p>
+<ul>
+<li>on the <em>following</em> day → on the day <em>following</em></li>
+<li>She has no <em>living</em> parents. → She has no <em>parents living</em>.</li>
+</ul>
+<p><strong>过去分词作定语：</strong></p>
+<ul>
+<li>及物动词的过去分词：所修饰名词是分词行为的承受者，构成动宾关系，表示被动。</li>
+<li><em>published</em> writings, a <em>charmed</em> girl, a <em>moved</em> object, <em>boiled</em> water</li>
+<li>不及物动词的过去分词：不表被动，仅表示完成。</li>
+<li><em>faded</em> roses, a <em>sunken</em> boat, <em>fallen</em> leaves, the <em>frozen</em> lake</li>
+</ul>
+<p>过去分词作定语一般前置；放名词后则视为强调：</p>
+<ul>
+<li>A penny <em>saved</em> is a penny <em>gained</em>. (√√√)</li>
+<li>A <em>saved</em> penny is a <em>gained</em> penny. (√)</li>
+</ul>
+<p><strong>句末重心原则</strong>：单个分词作定语一般前置；分词短语作定语一般后置。</p>
+<ul>
+<li>The <em>arriving</em> train is from Beijing.</li>
+<li>The train <em>arriving by eight</em> is from Beijing.</li>
+<li>The <em>stolen</em> car was found abandoned in a nearby alley.</li>
+<li>The car <em>stolen from the factory</em> was found abandoned in a nearby alley.</li>
+</ul>
+<p><strong>三种被动结构对比：</strong></p>
+<ul>
+<li><em>The built house</em> is beautiful. = The house <strong>that has been built</strong> is beautiful.（已经建成——过去分词：完成/被动）</li>
+<li><em>The house being built</em> is beautiful. = The house <strong>that is being built</strong> is beautiful.（正在建——现在分词被动式）</li>
+<li><em>The house to be built</em> will be beautiful. = The house <strong>that will be built</strong> will be beautiful.（将要建——不定式被动式）</li>
+</ul>
+<h3 id="分词作补足语">分词作补足语</h3>
+<p>分词补足语一般后置，一般仅限于感官动词（see, hear, smell, watch...）之后：</p>
+<ul>
+<li>I heard <em>Sally singing last night</em>. = I heard Sally, and Sally was singing. (√)（≠ I heard a singing Sally）</li>
+<li>We saw <em>the sun rising from behind the trees</em>. = We saw the sun, and the sun was rising. (√)</li>
+<li>I can smell <em>something burning</em>. = I can smell something, and it is burning. (√)</li>
+</ul>
+<p><strong>补足语：不定式与分词的区别</strong>：</p>
+<ul>
+<li>不定式作补语：强调一般性动作，或自始至终的全过程。</li>
+<li>
+<p>分词作补语：强调正在进行。</p>
+</li>
+<li>
+<p>I saw Michael <em>climb up the tree</em>.（我看到 Michael 爬到了树顶——全过程）</p>
+</li>
+<li>I saw Michael <em>climbing up the tree</em>.（我看到 Michael 正在爬树——进行中）</li>
+</ul>
+<h3 id="使用分词的注意事项">使用分词的注意事项</h3>
+<p><strong>一般式 VS 完成式：</strong></p>
+<ul>
+<li><em>Having sung a song</em>, he sat down.（唱完了一首歌，他坐了下来——动作已完成）</li>
+<li><em>Singing a song</em>, he sat down.（他一边唱着歌一边坐了下来——同时进行）</li>
+<li><em>Having eaten the hamburger</em>, he went out.（吃掉那个汉堡，他出了门）</li>
+<li><em>Eating the hamburger</em>, he went out.（他一边吃着汉堡一边出了门）</li>
+</ul>
+<p><strong>动词的用法问题</strong>（grow up 是不及物动词短语，过去分词 grown 不表被动，作定语要用 raised）：</p>
+<ul>
+<li><em>Chinese children grown in the US</em> speak good English. (×)</li>
+<li><em>Chinese children raised in the US</em> speak good English. (√)</li>
+<li><em>Chinese children who grow up in the US</em> speak good English. (√)</li>
+</ul>
+<h2 id="44-非谓语动词和从句的相互转换">4.4 非谓语动词和从句的相互转换</h2>
+<p>总纲：</p>
+<ul>
+<li>名词性从句 → 名词、动名词、不定式……</li>
+<li>形容词性从句 → 形容词、不定式、介词短语、分词……</li>
+<li>副词性从句 → 不定式、介词短语、分词……</li>
+</ul>
+<figure class="gm-fig" id="fig-13"><div class="gm-fig-scroll"><svg viewBox="0 0 680 276" role="img" aria-label="从句与非谓语动词的相互转换" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ahead"/></marker></defs><rect x="20.0" y="14.0" width="132.0" height="56.0" rx="10" class="box n"/><text x="86.0" y="47.0" class="tb tn" text-anchor="middle">名词性从句</text><path d="M154.0,42.0 L186.0,42.0" class="ln" marker-end="url(#ah)"/><rect x="190.0" y="14.0" width="210.0" height="56.0" rx="10" class="box neu"/><text x="295.0" y="47.0" class="tb tink" text-anchor="middle">名词 · 动名词 · 不定式</text><text x="420.0" y="38.0" class="ten tsm" text-anchor="start" style="font-size:13px">What you decide will…</text><text x="420.0" y="60.0" class="ten tb tn" text-anchor="start" style="font-size:13px">→ Your decision will…</text><rect x="20.0" y="92.0" width="132.0" height="56.0" rx="10" class="box a"/><text x="86.0" y="125.0" class="tb ta" text-anchor="middle">形容词性从句</text><path d="M154.0,120.0 L186.0,120.0" class="ln" marker-end="url(#ah)"/><rect x="190.0" y="92.0" width="210.0" height="56.0" rx="10" class="box neu"/><text x="295.0" y="125.0" class="tb tink" text-anchor="middle">形容词 · 介词短语 · 分词</text><text x="420.0" y="116.0" class="ten tsm" text-anchor="start" style="font-size:13px">the flowers that are on the table</text><text x="420.0" y="138.0" class="ten tb ta" text-anchor="start" style="font-size:13px">→ the flowers on the table</text><rect x="20.0" y="170.0" width="132.0" height="56.0" rx="10" class="box d"/><text x="86.0" y="203.0" class="tb td" text-anchor="middle">副词性从句</text><path d="M154.0,198.0 L186.0,198.0" class="ln" marker-end="url(#ah)"/><rect x="190.0" y="170.0" width="210.0" height="56.0" rx="10" class="box neu"/><text x="295.0" y="203.0" class="tb tink" text-anchor="middle">不定式 · 介词短语 · 分词</text><text x="420.0" y="194.0" class="ten tsm" text-anchor="start" style="font-size:13px">If you heat water, you can…</text><text x="420.0" y="216.0" class="ten tb td" text-anchor="start" style="font-size:13px">→ Heating water, you can…</text><text x="340.0" y="262.0" class="ts" text-anchor="middle">非谓语更简练，但表意要靠上下文「脑补」——混用才是王道</text></svg></div><figcaption><span>图 13</span>从句 ⇄ 非谓语动词</figcaption></figure>
+
+<h3 id="名词性从句-名词动名词不定式">名词性从句 → 名词、动名词、不定式</h3>
+<ul>
+<li>I don't know <em>that</em> he is a doctor. → I don't know <strong>his being a doctor</strong>.</li>
+<li><em>Whether</em> he is a doctor or not doesn't matter. → <strong>His being a doctor or not</strong> doesn't matter.</li>
+<li>The problem is <em>what</em> he is. → The problem is <strong>his identity</strong>.</li>
+<li><em>What</em> you decide will greatly impact our future. → <strong>Your decision</strong> will greatly impact our future.</li>
+<li>His dream is <em>that</em> he becomes a successful entrepreneur. → His dream is <strong>to become a successful entrepreneur</strong>.</li>
+</ul>
+<h3 id="形容词性从句-形容词不定式介词短语分词">形容词性从句 → 形容词、不定式、介词短语、分词</h3>
+<ul>
+<li>We need a teacher <em>who is warm-hearted, hardworking, and quick in learning</em>. → We need a <strong>warm-hearted, hard-working, and fast-learning</strong> teacher.（少见但成立）</li>
+<li>Michael likes friends <em>who are always ready to help</em>. → Michael likes <strong>ready-to-help</strong> friends.</li>
+<li>I like the flowers <em>that are on the table</em>. → I like the flowers <strong>on the table</strong>.</li>
+<li>In Fujian there exist certain traditions <em>that people accustomed to Northern ways of thinking find strange</em>. → In Fujian there exist certain traditions <strong>not to be easily understood by</strong> people accustomed to Northern ways of thinking.</li>
+</ul>
+<h3 id="副词性从句-不定式介词短语分词">副词性从句 → 不定式、介词短语、分词</h3>
+<p>时间：</p>
+<ul>
+<li><em>When I opened the window</em>, the cat jumped out. → <strong>With my opening the window</strong>, the cat jumped out.</li>
+</ul>
+<p>地点：</p>
+<ul>
+<li>People plant trees <em>where there is a lot of sunshine</em>. → People plant trees <strong>in sunlit places</strong>.</li>
+</ul>
+<p>结果：</p>
+<ul>
+<li>I opened the window <em>so that the cat jumped out</em>. → I opened the window, <strong>the cat jumping out</strong>.</li>
+</ul>
+<p>目的：</p>
+<ul>
+<li>I opened the window <em>so that the cat could jump out</em>. → I opened the window, <strong>the cat being able to jump out</strong>.</li>
+</ul>
+<p>条件：</p>
+<ul>
+<li><em>If you heat water</em>, you can change it into steam. → <strong>Heating water</strong>, you can change it into steam.</li>
+</ul>
+<p>让步：</p>
+<ul>
+<li><em>Though I opened the window</em>, the cat didn't jump out. → <strong>Despite my opening the window</strong>, the cat didn't jump out.</li>
+</ul>
+<p>方式：</p>
+<ul>
+<li>He raised his head <em>as though he was going to command silence</em>. → He raised his head <strong>as though to command silence</strong>.</li>
+</ul>
+<h3 id="非谓语动词更简练但却不是万能的">非谓语动词更简练，但却不是万能的</h3>
+<p><strong>其一：表意准确性靠"脑补"。</strong> 非谓语动词的动词意味需要读者根据上下文"脑补"，表意准确性比从句差：</p>
+<ul>
+<li>To hear him sing, you might take him for a girl. √</li>
+<li>If you hear him sing, you might take him for a girl.【条件，明确 √】</li>
+<li>When you hear him sing, you might take him for a girl.【时间，明确 √】</li>
+<li>The hunting police are/were looking for the hurrying killer. √ —— 但究竟是 Police <strong>that are</strong> hunting... 还是 Police <strong>that were</strong> hunting...？非谓语在时态表达上先天受制约，远不如从句有效，运用不当易产生歧义。</li>
+</ul>
+<p><strong>其二：位置不同，意义不同。</strong> 具体含义要根据非谓语动词在句中的位置以及上下文共同确定：</p>
+<ul>
+<li><em>Finding the door locked</em>, I went home. = Because I found the door locked, I went home.（因为门锁住了，我只好回家。）</li>
+<li>I went home, <em>finding the door locked</em>. = I went home, and I found the door locked.（我回了家，发现门是锁着的。）</li>
+</ul>
+<p><strong>结论：非谓语动词和从句，混用才是王道</strong>（真实语料示范）：</p>
+<ul>
+<li>Walking through the crowded marketplace, the <strong>scent</strong> of freshly baked bread and the <strong>sound</strong> of vendors calling out their goods <strong>filled</strong> the <strong>air</strong>, creating a lively atmosphere <em>that made me feel like I was part of a vibrant community</em>.</li>
+<li>After having finished her presentation, <strong>she felt relieved</strong> <em>that all her hard work had paid off and that she had effectively conveyed her message to the audience</em>.</li>
+<li>Despite the doctor's advice to rest, <strong>she insisted</strong> on going to work, fearing <em>that her absence would create a backlog of tasks that needed her attention</em>.</li>
+<li>After years of practicing martial arts, <strong>he had developed</strong> a strong <strong>sense</strong> of discipline and self-control, <em>which benefited him not only in physical combat but also in other aspects of life</em>.</li>
+<li>Despite having studied diligently for the exam, <strong>she couldn't shake off</strong> the <strong>feeling</strong> of anxiety, wondering <em>if she had prepared enough to achieve a good score</em>.</li>
+</ul>
+<hr />
+<h2 id="全书知识框架总结">全书知识框架总结</h2>
+<figure class="gm-fig" id="fig-14"><div class="gm-fig-scroll"><svg viewBox="0 0 680 296" role="img" aria-label="全书知识框架" xmlns="http://www.w3.org/2000/svg"><defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="ahead"/></marker></defs><rect x="12.0" y="12.0" width="150.0" height="214.0" rx="10" class="box neu"/><path d="M12,22 a10,10 0 0 1 10,-10 h130 a10,10 0 0 1 10,10 v22 h-150 z" class="hdr"/><text x="87.0" y="36.0" class="tb thdr" text-anchor="middle" style="font-size:14px">① 词性即成分</text><text x="87.0" y="72.0" class="tsm" text-anchor="middle" style="font-size:13.5px">名词性成分</text><text x="87.0" y="104.0" class="tsm" text-anchor="middle" style="font-size:13.5px">形容词性成分</text><text x="87.0" y="136.0" class="tsm" text-anchor="middle" style="font-size:13.5px">副词性成分</text><text x="87.0" y="168.0" class="tsm" text-anchor="middle" style="font-size:13.5px">动词（谓语）</text><text x="87.0" y="200.0" class="tsm" text-anchor="middle" style="font-size:13.5px">两条修饰关系</text><path d="M164.0,119.0 L178.0,119.0" class="ln" marker-end="url(#ah)"/><rect x="180.0" y="12.0" width="150.0" height="214.0" rx="10" class="box neu"/><path d="M180,22 a10,10 0 0 1 10,-10 h130 a10,10 0 0 1 10,10 v22 h-150 z" class="hdr"/><text x="255.0" y="36.0" class="tb thdr" text-anchor="middle" style="font-size:14px">② 简单句</text><text x="255.0" y="72.0" class="tsm" text-anchor="middle" style="font-size:13.5px">SV 主谓</text><text x="255.0" y="104.0" class="tsm" text-anchor="middle" style="font-size:13.5px">SVP 主系表</text><text x="255.0" y="136.0" class="tsm" text-anchor="middle" style="font-size:13.5px">SVO 主谓宾</text><text x="255.0" y="168.0" class="tsm" text-anchor="middle" style="font-size:13.5px">SVOO 双宾</text><text x="255.0" y="200.0" class="tsm" text-anchor="middle" style="font-size:13.5px">SVOC 宾补</text><path d="M332.0,119.0 L346.0,119.0" class="ln" marker-end="url(#ah)"/><rect x="348.0" y="12.0" width="150.0" height="214.0" rx="10" class="box neu"/><path d="M348,22 a10,10 0 0 1 10,-10 h130 a10,10 0 0 1 10,10 v22 h-150 z" class="hdr"/><text x="423.0" y="36.0" class="tb thdr" text-anchor="middle" style="font-size:14px">③ 从句</text><text x="423.0" y="72.0" class="tsm" text-anchor="middle" style="font-size:13.5px">连词 + 简单句</text><text x="423.0" y="104.0" class="tsm" text-anchor="middle" style="font-size:13.5px">名词性从句</text><text x="423.0" y="136.0" class="tsm" text-anchor="middle" style="font-size:13.5px">形容词性从句</text><text x="423.0" y="168.0" class="tsm" text-anchor="middle" style="font-size:13.5px">副词性从句</text><text x="423.0" y="200.0" class="tsm" text-anchor="middle" style="font-size:13.5px">限制 / 非限制</text><path d="M500.0,119.0 L514.0,119.0" class="ln" marker-end="url(#ah)"/><rect x="516.0" y="12.0" width="150.0" height="214.0" rx="10" class="box neu"/><path d="M516,22 a10,10 0 0 1 10,-10 h130 a10,10 0 0 1 10,10 v22 h-150 z" class="hdr"/><text x="591.0" y="36.0" class="tb thdr" text-anchor="middle" style="font-size:14px">④ 非谓语动词</text><text x="591.0" y="72.0" class="tsm" text-anchor="middle" style="font-size:13.5px">= 从句的简化</text><text x="591.0" y="104.0" class="tsm" text-anchor="middle" style="font-size:13.5px">不定式 名/形/副</text><text x="591.0" y="136.0" class="tsm" text-anchor="middle" style="font-size:13.5px">动名词 名</text><text x="591.0" y="168.0" class="tsm" text-anchor="middle" style="font-size:13.5px">分词 形/副</text><text x="591.0" y="200.0" class="tsm" text-anchor="middle" style="font-size:13.5px">与从句互换</text><rect x="12.0" y="242.0" width="654.0" height="40.0" rx="8" class="box hl"/><text x="339.0" y="267.0" class="tb tacc" text-anchor="middle" style="font-size:14px">两条铁律：一句只有一个谓语动词 · 其余动词必须用非谓语形式</text></svg></div><figcaption><span>图 14</span>全书知识框架一览</figcaption></figure>
+
+<ol>
+<li><strong>词性即成分</strong>：名词性、形容词性、副词性 + 动词，四类涵盖一切。</li>
+<li><strong>修饰关系两条</strong>：形容词修饰名词；副词修饰形容词、动词、副词。</li>
+<li><strong>简单句五种句型</strong>：SV / SVP / SVO / SVOO / SVOC，是一切分析的基础。</li>
+<li><strong>从句 = 连词 + 简单句</strong>：简单句 + 简单句必须有连词；名词性从句（主/宾/表/同位语）、形容词性从句（限制/非限制）、副词性从句（九类状语）。</li>
+<li><strong>非谓语动词 = 从句的简化</strong>：不定式（名词/形容词/副词性）、动名词（名词性）、分词（形容词/副词性）；都保留动词特征——逻辑主语、逻辑宾语、时态语态。</li>
+<li><strong>两条铁律</strong>：一句只有一个谓语动词；除了谓语动词之外的所有动词必须用非谓语形式。</li>
+<li><strong>一个原则贯穿始终</strong>：ENDWEIGHT 句末重心——头轻尾重，决定 it 形式主语/宾语、后置定语、状语后置等诸多语序现象。</li>
+</ol>
+  </article>
+</div>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-brand"><b>磊磊的秘密武器</b><span>Value+Grow^247</span></div>
+    <div class="foot-meta"><div><a href="../">← 返回首页</a> · <a href="#">回到顶部 ↑</a></div><div>核心专题 · 英语语法体系</div></div>
+  </div>
+</footer>
+
+<button class="gm-ask-fab" type="button" id="gmFab"><span aria-hidden="true">✦</span> 问 AI</button>
+<button class="gm-sel-btn" type="button" id="gmSelBtn">✦ 问 AI 这段</button>
+<div class="gm-mbar"><button type="button" data-open="side">☰ 目录</button><button type="button" data-open="search">⌕ 搜索</button><button type="button" class="ai" data-open="ask">✦ 问 AI</button></div>
+<div class="gm-scrim" id="gmScrim"></div>
+
+<aside class="gm-drawer gm-ask" id="gmAsk" aria-label="问 AI">
+  <div class="gm-drawer-head"><b>问 AI · 不懂就问</b><button class="gm-x" type="button" data-close="ask" aria-label="关闭">×</button></div>
+  <div class="gm-ask-body">
+    <div class="gm-ask-ctx">
+      <div class="lbl" id="gmCtxLbl">当前章节</div>
+      <div class="val" id="gmCtxVal">—</div>
+      <div class="quote" id="gmCtxQuote" hidden></div>
+      <label><input type="checkbox" id="gmCtxOn" checked> 把这部分内容一起发给 AI 作背景</label>
+    </div>
+    <div class="gm-quick" id="gmQuick">
+      <button type="button" data-q="用大白话给我讲一遍这部分，再用一个比喻帮我记住。">大白话讲一遍</button>
+      <button type="button" data-q="针对这部分出 5 道练习题（选择或改错），最后再给出答案和解析。">出 5 道练习题</button>
+      <button type="button" data-q="再给我 5 个地道例句，并按「名词性 / 形容词性 / 副词性成分」逐句分析。">再来 5 个例句</button>
+      <button type="button" data-q="中国学生在这部分最容易犯哪些错误？各举一个错句并改正。">常见错误</button>
+    </div>
+    <textarea id="gmQuestion" placeholder="写下你的问题，例如：which 和 that 到底什么时候不能互换？"></textarea>
+    <div class="gm-prov">
+      <button type="button" class="primary" data-ai="gemini"><b>Gemini</b><em>推荐</em><small>登录 Google 账号即可免费用。问题会自动复制，打开后按 Ctrl/⌘ + V 粘贴发送。</small></button>
+      <button type="button" data-ai="aimode"><b>Google AI 模式</b><em>自动带入</em><small>由 Gemini 驱动的 Google 搜索 AI 模式，问题会直接填好。</small></button>
+      <button type="button" data-ai="deepseek"><b>DeepSeek</b><em>国内直连</em><small>免费，国内网络可直接打开。问题已复制，粘贴即可。</small></button>
+    </div>
+    <details><summary>查看 / 复制将要发送的完整提示词</summary><pre id="gmPromptPreview"></pre><button type="button" class="btn-line" id="gmCopyPrompt" style="height:34px;font-size:13px;margin-top:6px;">复制提示词</button></details>
+    <p class="gm-ask-note">提示：Gemini 与 Google AI 模式需要能访问 Google；DeepSeek 在国内可直接使用。本页不会收集你的问题，所有内容只在你的浏览器里生成。</p>
+  </div>
+</aside>
+<div class="gm-toast" id="gmToast" role="status"></div>
+
+<script>
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var article = $("gmArticle");
+  var TITLE = document.querySelector(".gm-hero h1").textContent;
+
+  /* ---------- theme (shares the blog's meek_theme setting) ---------- */
+  var ICONS = {
+    light: '<circle cx="8" cy="8" r="3"/><path d="M8 1.5v1.6M8 12.9v1.6M1.5 8h1.6M12.9 8h1.6M3.4 3.4l1.1 1.1M11.5 11.5l1.1 1.1M3.4 12.6l1.1-1.1M11.5 4.5l1.1-1.1"/>',
+    dark: '<path d="M13.5 9.6A5.6 5.6 0 0 1 6.4 2.5a5.6 5.6 0 1 0 7.1 7.1z"/>',
+    auto: '<circle cx="8" cy="8" r="5.5"/><path d="M8 2.5v11" /><path d="M8 2.5a5.5 5.5 0 0 1 0 11z" fill="currentColor"/>'
+  };
+  function setTheme(m) {
+    document.documentElement.setAttribute("data-color-mode", m);
+    $("themeIcon").innerHTML = ICONS[m] || ICONS.light;
+  }
+  setTheme(document.documentElement.getAttribute("data-color-mode"));
+  $("themeBtn").addEventListener("click", function () {
+    var cur = document.documentElement.getAttribute("data-color-mode");
+    var next = cur === "light" ? "dark" : cur === "dark" ? "auto" : "light";
+    try { localStorage.setItem("meek_theme", next); } catch (e) {}
+    setTheme(next);
+  });
+
+  /* ---------- drawers ---------- */
+  var side = $("gmSide"), ask = $("gmAsk"), scrim = $("gmScrim");
+  function closeAll() { side.classList.remove("on"); ask.classList.remove("on"); scrim.classList.remove("on"); }
+  function open(which) {
+    closeAll();
+    if (which === "ask") { openAsk(); return; }
+    side.classList.add("on"); scrim.classList.add("on");
+    if (which === "search") setTimeout(function () { $("gmQ").focus(); }, 260);
+  }
+  document.querySelectorAll("[data-open]").forEach(function (b) { b.addEventListener("click", function () { open(b.dataset.open); }); });
+  document.querySelectorAll("[data-close]").forEach(function (b) { b.addEventListener("click", closeAll); });
+  scrim.addEventListener("click", closeAll);
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeAll(); });
+  var isMobile = function () { return window.matchMedia("(max-width: 1000px)").matches; };
+  $("gmToc").addEventListener("click", function (e) { if (e.target.closest("a") && isMobile()) closeAll(); });
+
+  /* ---------- TOC scrollspy + progress ---------- */
+  var heads = Array.prototype.slice.call(article.querySelectorAll("h1[id], h2[id], h3[id]"));
+  var tocLinks = {};
+  document.querySelectorAll("#gmToc a").forEach(function (a) { tocLinks[a.dataset.id] = a; });
+  var current = { h2: null, h1: null };
+  function onScroll() {
+    var y = window.scrollY + 100, active = null, h2 = null, h1 = null;
+    for (var i = 0; i < heads.length; i++) {
+      if (heads[i].offsetTop > y) break;
+      active = heads[i];
+      if (heads[i].tagName === "H2") h2 = heads[i];
+      if (heads[i].tagName === "H1") { h1 = heads[i]; h2 = null; }
+    }
+    current.h2 = h2; current.h1 = h1;
+    document.querySelectorAll("#gmToc a.active").forEach(function (a) { a.classList.remove("active"); });
+    document.querySelectorAll("#gmToc .lv3.show").forEach(function (li) { li.classList.remove("show"); });
+    if (active && tocLinks[active.id]) {
+      tocLinks[active.id].classList.add("active");
+      var sec = h2 || active;
+      var li = tocLinks[sec.id] && tocLinks[sec.id].parentElement;
+      for (var n = li && li.nextElementSibling; n && n.classList.contains("lv3"); n = n.nextElementSibling) n.classList.add("show");
+    }
+    var doc = document.documentElement;
+    var p = window.scrollY / Math.max(1, doc.scrollHeight - window.innerHeight);
+    $("gmProgress").style.width = (Math.min(1, p) * 100).toFixed(2) + "%";
+  }
+  var ticking = false;
+  window.addEventListener("scroll", function () { if (!ticking) { ticking = true; requestAnimationFrame(function () { ticking = false; onScroll(); }); } }, { passive: true });
+  onScroll();
+
+  /* ---------- search ---------- */
+  var hits = [], cur = -1;
+  function sectionOf(node) {
+    var name = "";
+    for (var i = 0; i < heads.length; i++) {
+      if (heads[i].compareDocumentPosition(node) & Node.DOCUMENT_POSITION_FOLLOWING) { if (heads[i].tagName !== "H3") name = heads[i].textContent; }
+      else break;
+    }
+    return name;
+  }
+  function clearHits() {
+    article.querySelectorAll("mark.gm-hit").forEach(function (m) {
+      var p = m.parentNode; p.replaceChild(document.createTextNode(m.textContent), m); p.normalize();
+    });
+    hits = []; cur = -1;
+    $("gmResults").innerHTML = ""; $("gmBar").classList.remove("on");
+    document.querySelectorAll(".gm-kw.on").forEach(function (k) { k.classList.remove("on"); });
+  }
+  function esc(s) { return s.replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  function search(q) {
+    clearHits();
+    q = q.trim();
+    if (!q) return;
+    var lower = q.toLowerCase();
+    var walker = document.createTreeWalker(article, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) { return n.parentNode.closest("svg") ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT; }
+    });
+    var nodes = []; while (walker.nextNode()) nodes.push(walker.currentNode);
+    nodes.forEach(function (node) {
+      var text = node.nodeValue, low = text.toLowerCase(), idx = low.indexOf(lower);
+      if (idx < 0) return;
+      var frag = document.createDocumentFragment(), last = 0;
+      while (idx >= 0) {
+        frag.appendChild(document.createTextNode(text.slice(last, idx)));
+        var m = document.createElement("mark"); m.className = "gm-hit"; m.textContent = text.slice(idx, idx + q.length);
+        frag.appendChild(m); hits.push(m);
+        last = idx + q.length; idx = low.indexOf(lower, last);
+      }
+      frag.appendChild(document.createTextNode(text.slice(last)));
+      node.parentNode.replaceChild(frag, node);
+    });
+    $("gmBar").classList.add("on");
+    if (!hits.length) { $("gmCount").textContent = "没有找到「" + q + "」"; return; }
+    var list = $("gmResults"), html = "";
+    hits.slice(0, 60).forEach(function (m, i) {
+      var block = m.closest("p, li, td, th, h1, h2, h3, blockquote, figcaption") || m.parentNode;
+      var t = block.textContent, at = t.toLowerCase().indexOf(lower);
+      var s = Math.max(0, at - 18), snip = (s ? "…" : "") + esc(t.slice(s, at)) + "<mark>" + esc(t.slice(at, at + q.length)) + "</mark>" + esc(t.slice(at + q.length, at + q.length + 30)) + "…";
+      html += '<li><button type="button" data-i="' + i + '"><small>' + esc(sectionOf(m)) + "</small>" + snip + "</button></li>";
+    });
+    list.innerHTML = html;
+    go(0);
+  }
+  function go(i) {
+    if (!hits.length) return;
+    if (cur >= 0) hits[cur].classList.remove("cur");
+    cur = (i + hits.length) % hits.length;
+    hits[cur].classList.add("cur");
+    $("gmCount").textContent = "共 " + hits.length + " 处 · 第 " + (cur + 1) + " 处";
+    hits[cur].scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+  var timer;
+  $("gmQ").addEventListener("input", function () { clearTimeout(timer); var v = this.value; timer = setTimeout(function () { search(v); }, 250); });
+  $("gmSearchForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    if (hits.length) go(cur + 1); else search($("gmQ").value);
+    if (isMobile()) closeAll();
+  });
+  $("gmNext").addEventListener("click", function () { go(cur + 1); });
+  $("gmPrev").addEventListener("click", function () { go(cur - 1); });
+  $("gmClear").addEventListener("click", function () { $("gmQ").value = ""; clearHits(); });
+  $("gmResults").addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (!b) return; go(+b.dataset.i); if (isMobile()) closeAll();
+  });
+  $("gmKws").addEventListener("click", function (e) {
+    var b = e.target.closest(".gm-kw"); if (!b) return;
+    $("gmQ").value = b.textContent; search(b.textContent); b.classList.add("on");
+  });
+
+  /* ---------- ask AI ---------- */
+  var selected = "", frozen = null;
+  function sectionText(h) {
+    if (!h) return "";
+    var out = [], n = h.nextElementSibling;
+    while (n && !/^H[12]$/.test(n.tagName)) { if (!n.matches("figure")) out.push(n.innerText); n = n.nextElementSibling; }
+    return out.join("\n").replace(/\n{3,}/g, "\n\n").trim();
+  }
+  function ctx() {
+    var h = current.h2 || current.h1;
+    var name = h ? h.textContent.trim() : "全文概览";
+    if (selected) return { label: "你选中的内容", name: name, text: selected };
+    var t = h ? sectionText(h) : (article.querySelector("blockquote") || article).innerText;
+    return { label: "当前章节", name: name, text: t };
+  }
+  function buildPrompt(limit) {
+    var c = frozen || ctx(), q = $("gmQuestion").value.trim() || "请讲解这部分内容，并帮我理清其中的重点和难点。";
+    var parts = ["你是一位耐心的英语语法老师。我正在学习《" + TITLE + "》，它的核心方法是：一切英语成分只分名词性、形容词性、副词性（外加动词）四类；简单句是积木，从句 = 连词 + 简单句，非谓语动词和从句是一回事。"];
+    parts.push("【所在章节】" + c.name);
+    if ($("gmCtxOn").checked && c.text) {
+      var t = c.text.length > limit ? c.text.slice(0, limit) + "……（节选）" : c.text;
+      parts.push("【" + (selected ? "我选中的原文" : "本节原文") + "】\n" + t);
+    }
+    parts.push("【我的问题】\n" + q);
+    parts.push("请用中文讲解，英文例句保留英文，并尽量沿用上面「名词性 / 形容词性 / 副词性成分」的分析框架。");
+    return parts.join("\n\n");
+  }
+  function refreshCtx() {
+    var c = frozen || ctx();
+    $("gmCtxLbl").textContent = c.label;
+    $("gmCtxVal").textContent = c.name;
+    var qd = $("gmCtxQuote");
+    if (selected) { qd.hidden = false; qd.textContent = "“" + selected + "”"; } else { qd.hidden = true; }
+    $("gmPromptPreview").textContent = buildPrompt(1800);
+  }
+  function openAsk() {
+    closeAll();
+    frozen = null; frozen = ctx();
+    refreshCtx();
+    ask.classList.add("on"); scrim.classList.add("on");
+    setTimeout(function () { $("gmQuestion").focus(); }, 260);
+  }
+  $("gmFab").addEventListener("click", function () { selected = ""; openAsk(); });
+  $("gmQuestion").addEventListener("input", function () { $("gmPromptPreview").textContent = buildPrompt(1800); });
+  $("gmCtxOn").addEventListener("change", refreshCtx);
+  $("gmQuick").addEventListener("click", function (e) {
+    var b = e.target.closest("button"); if (!b) return;
+    $("gmQuestion").value = b.dataset.q; refreshCtx(); $("gmQuestion").focus();
+  });
+
+  function toast(msg) {
+    var t = $("gmToast"); t.textContent = msg; t.classList.add("on");
+    clearTimeout(t._h); t._h = setTimeout(function () { t.classList.remove("on"); }, 3200);
+  }
+  function copy(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text).then(function () { return true; }, function () { return fallback(); });
+    }
+    return Promise.resolve(fallback());
+    function fallback() {
+      var ta = document.createElement("textarea"); ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta); ta.select(); var ok = false;
+      try { ok = document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta); return ok;
+    }
+  }
+  var PROVIDERS = {
+    gemini: { url: function () { return "https://gemini.google.com/app"; }, copy: true, name: "Gemini" },
+    aimode: { url: function () { return "https://www.google.com/search?udm=50&q=" + encodeURIComponent(buildPrompt(700)); }, copy: true, name: "Google AI 模式" },
+    deepseek: { url: function () { return "https://chat.deepseek.com/"; }, copy: true, name: "DeepSeek" }
+  };
+  document.querySelectorAll("[data-ai]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var p = PROVIDERS[b.dataset.ai], prompt = buildPrompt(1800);
+      var win = window.open(p.url(), "_blank", "noopener");
+      copy(prompt).then(function (ok) {
+        if (b.dataset.ai === "aimode") toast(ok ? "已打开 Google AI 模式（完整问题也已复制）" : "已打开 Google AI 模式");
+        else toast(ok ? "问题已复制 ✓ 在 " + p.name + " 里按 Ctrl/⌘ + V 粘贴发送" : "复制失败，请展开下方「完整提示词」手动复制");
+      });
+      if (!win) toast("浏览器拦截了新窗口，请允许弹出窗口后重试");
+    });
+  });
+  $("gmCopyPrompt").addEventListener("click", function () {
+    copy(buildPrompt(1800)).then(function (ok) { toast(ok ? "提示词已复制 ✓" : "复制失败，请手动选择文本复制"); });
+  });
+
+  /* selection → ask */
+  var selBtn = $("gmSelBtn");
+  function hideSel() { selBtn.style.display = "none"; }
+  document.addEventListener("selectionchange", function () {
+    var s = window.getSelection();
+    if (!s || s.isCollapsed || !article.contains(s.anchorNode)) { setTimeout(function () { if (window.getSelection().isCollapsed) hideSel(); }, 150); return; }
+  });
+  article.addEventListener("mouseup", showSel);
+  article.addEventListener("touchend", function () { setTimeout(showSel, 300); });
+  function showSel() {
+    var s = window.getSelection(), text = s ? s.toString().trim() : "";
+    if (!text || text.length < 2 || !article.contains(s.anchorNode)) { hideSel(); return; }
+    var r = s.getRangeAt(0).getBoundingClientRect();
+    selBtn.style.display = "block";
+    var left = Math.min(window.scrollX + r.left + r.width / 2 - selBtn.offsetWidth / 2, window.scrollX + document.documentElement.clientWidth - selBtn.offsetWidth - 8);
+    selBtn.style.left = Math.max(8, left) + "px";
+    selBtn.style.top = (window.scrollY + r.top - 42) + "px";
+    selBtn.dataset.text = text.slice(0, 1500);
+  }
+  selBtn.addEventListener("mousedown", function (e) { e.preventDefault(); });
+  selBtn.addEventListener("click", function () {
+    selected = selBtn.dataset.text || ""; hideSel();
+    $("gmQuestion").value = "";
+    openAsk();
+  });
+})();
+</script>
+</body>
+</html>

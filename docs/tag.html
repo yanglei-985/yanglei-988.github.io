@@ -404,6 +404,31 @@ a:hover { color: var(--accent-2); text-decoration: none; }
   .post--wide #postBody .airport-app { padding: 12px; }
   .post--wide #postBody .practice-controls { flex-wrap: wrap; }
 }
+
+/* ---------- Featured / core topics (home) ---------- */
+.feat { padding-bottom: 8px; }
+.feat-card {
+  display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 40px;
+  margin-top: 24px; padding: 32px 34px;
+  background: var(--paper-2); border: 1px solid var(--line); border-left: 4px solid var(--accent); border-radius: 4px;
+  color: var(--ink); box-shadow: var(--shadow);
+  transition: border-color .15s ease, transform .15s ease;
+}
+.feat-card + .feat-card { margin-top: 16px; }
+.feat-card:hover { color: var(--ink); border-color: var(--accent); transform: translateY(-2px); }
+.feat-no { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .12em; color: var(--gold); }
+.feat-title { margin: 10px 0 0; font-family: var(--font-serif); font-size: clamp(24px, 3vw, 32px); font-weight: 900; line-height: 1.25; border: 0; }
+.feat-desc { margin: 14px 0 0; color: var(--ink-2); line-height: 1.85; }
+.feat-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 18px; }
+.feat-meta span { height: 26px; line-height: 24px; padding: 0 10px; border: 1px solid var(--line-2); border-radius: 999px; font-size: 12.5px; color: var(--ink-2); }
+.feat-cta { display: inline-flex; gap: 6px; margin-top: 22px; font-weight: 700; color: var(--accent); border-bottom: 1px solid var(--accent); padding-bottom: 2px; }
+.feat-chapters { list-style: none; margin: 0; padding: 0; align-self: center; }
+.feat-chapters li { display: grid; grid-template-columns: 34px 1fr; align-items: baseline; padding: 12px 0; border-bottom: 1px dashed var(--line-2); font-size: 15px; }
+.feat-chapters li:last-child { border-bottom: 0; }
+.feat-ch-no { font-family: var(--font-serif); font-weight: 900; font-size: 18px; color: var(--accent); }
+@media (max-width: 900px) {
+  .feat-card { grid-template-columns: 1fr; gap: 18px; padding: 24px 20px; }
+}
     </style>
     <script src='https://blog.meekdai.com/Gmeek/plugins/GmeekBSZ.js'></script>
     <link rel="icon" href="https://s21.ax1x.com/2025/02/15/pEK09q1.jpg">
@@ -430,6 +455,7 @@ a:hover { color: var(--accent-2); text-decoration: none; }
             <nav class="site-nav">
                 <a href="https://yanglei-985.github.io/yanglei-988.github.io"><span class="nav-text">首页</span></a>
                 <a href="https://yanglei-985.github.io/yanglei-988.github.io/tag.html#All"><span class="nav-text">标签</span></a>
+                <a href="https://yanglei-985.github.io/yanglei-988.github.io/grammar/"><span class="nav-text">语法体系</span></a>
                 
                 
                 <a class="icon-btn" href="https://yanglei-985.github.io/yanglei-988.github.io/tag.html" title="搜索" aria-label="搜索">
