@@ -459,6 +459,7 @@ html[data-color-mode="dark"][data-dark-theme] {
   }
 }
 html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+.site-nav a.on .nav-text { color: var(--accent); }
 .gm-progress { position: fixed; top: 0; left: 0; height: 3px; width: 0; background: var(--accent); z-index: 40; }
 
 .gm-hero { border-bottom: 1px solid var(--line); }
@@ -620,6 +621,8 @@ mark.gm-hit.cur { background: var(--gold); color: var(--paper); }
     <nav class="site-nav">
       <a href="../"><span class="nav-text">首页</span></a>
       <a href="../tag.html#All"><span class="nav-text">标签</span></a>
+      <a href="./" class="on"><span class="nav-text">语法体系</span></a>
+      <a href="../prompts/"><span class="nav-text">常用 Prompt</span></a>
       <button class="icon-btn" type="button" id="themeBtn" title="切换主题" aria-label="切换主题">
         <svg viewBox="0 0 16 16" class="stroke"><g id="themeIcon"></g></svg>
       </button>
