@@ -138,6 +138,54 @@ ART = {
 <path class="g o" d="M134 76l16 16-8 8-16-16z"/>
 <path class="k" d="M52 40l10 6M50 60h12M176 36l-6 10"/>
 """,
+    "loop": """
+<path class="o" d="M72 76a48 34 0 0 1 96 0" fill="none"/>
+<path class="k thick" d="M168 76a48 34 0 0 1-96 0"/>
+<path class="g o" d="M160 64l10 14 10-14z"/>
+<path class="o p" d="M80 88l-10-14-10 14z"/>
+<rect class="o p" x="98" y="58" width="44" height="36" rx="5"/>
+<path class="k" d="M106 68h28M106 76h20M106 84h24"/>
+<text class="t" x="66" y="40" text-anchor="middle">v1</text>
+<text class="t" x="174" y="122" text-anchor="middle">v2</text>
+""",
+    "flask": """
+<path class="o p" d="M104 30h32M110 30v30l-30 52c-3 6 1 12 8 12h64c7 0 11-6 8-12l-30-52V30"/>
+<path class="c" d="M92 96h56l11 18c2 4 0 6-4 6H85c-4 0-6-2-4-6z"/>
+<circle class="g o" cx="120" cy="104" r="6"/>
+<path class="k dash" d="M120 62v30"/>
+<circle class="dot" cx="104" cy="44" r="3"/><circle class="dot" cx="140" cy="40" r="3"/>
+<text class="t" x="62" y="60" text-anchor="middle">形</text>
+<text class="t" x="182" y="60" text-anchor="middle">神</text>
+<text class="t" x="120" y="136" text-anchor="middle">法</text>
+""",
+    "idcard": """
+<rect class="o p" x="48" y="36" width="144" height="88" rx="10"/>
+<rect class="c o" x="60" y="52" width="40" height="48" rx="6"/>
+<circle class="o p" cx="80" cy="70" r="9"/>
+<path class="o" d="M66 96c2-10 26-10 28 0"/>
+<path class="k" d="M112 58h66M112 72h52M112 86h60M112 100h38"/>
+<rect class="g o" x="150" y="28" width="30" height="16" rx="3"/>
+<text class="t" x="165" y="40" text-anchor="middle">.md</text>
+""",
+    "notebook": """
+<rect class="o p" x="66" y="28" width="104" height="98" rx="6"/>
+<path class="o" d="M80 28v98"/>
+<path class="o" d="M58 42h16M58 62h16M58 82h16M58 102h16"/>
+<path class="g o" d="M92 50l6 6 12-12"/>
+<path class="g o" d="M92 74l6 6 12-12"/>
+<path class="k" d="M116 52h40M116 76h32"/>
+<rect class="c" x="92" y="94" width="64" height="10" rx="2"/>
+<path class="o" d="M92 114h44"/>
+<path class="o thick" d="M186 60l-14 40"/>
+""",
+    "roundtable": """
+<ellipse class="c o" cx="120" cy="86" rx="52" ry="22"/>
+<circle class="o p" cx="64" cy="58" r="11"/><circle class="o p" cx="176" cy="58" r="11"/>
+<circle class="o p" cx="98" cy="38" r="11"/><circle class="g o" cx="142" cy="38" r="11"/>
+<path class="o" d="M60 120c0-10 8-16 18-16M180 120c0-10-8-16-18-16"/>
+<path class="k" d="M150 26c8-8 20-8 26 0"/>
+<text class="t" x="168" y="18">?!</text>
+""",
     "scale": """
 <path class="o" d="M120 32v84M90 124h60M66 48h108"/>
 <circle class="g o" cx="120" cy="40" r="7"/>

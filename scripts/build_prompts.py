@@ -27,7 +27,7 @@ THEME = ROOT / "templates" / "theme.css"
 CONFIG = ROOT / "config.json"
 
 # Category -> colour class (colours are defined in the page CSS).
-CATS = [("学习", "n"), ("调研", "d"), ("英语", "a"), ("法语", "v"), ("写作", "a"), ("效率", "e")]
+CATS = [("学习", "n"), ("调研", "d"), ("英语", "a"), ("法语", "v"), ("写作", "a"), ("效率", "e"), ("元方法", "m")]
 CAT_CLASS = dict(CATS)
 
 
@@ -41,7 +41,14 @@ def parse(text):
         for ln in lines[1:]:
             k, _, v = ln.partition(":")
             item[k.strip()] = v.strip()
-        item["prompt"] = body.strip()
+        parts = re.split(r"^\+\+\+ (why|v1)[ \t]*$", body, flags=re.M)
+        item["prompt"] = parts[0].strip()
+        item["why"], item["v1"] = [], ""
+        for k in range(1, len(parts), 2):
+            if parts[k] == "why":
+                item["why"] = [ln.strip() for ln in parts[k + 1].strip().splitlines() if ln.strip()]
+            else:
+                item["v1"] = parts[k + 1].strip()
         for key in ("title", "cat", "desc", "art"):
             if not item.get(key):
                 raise SystemExit("prompt %s is missing '%s'" % (item["id"], key))
@@ -61,11 +68,13 @@ def build():
         cards.append(
             '<button type="button" class="pb-card c-%s" data-id="%s" data-cat="%s" data-search="%s">'
             '<span class="pb-media">%s</span>'
-            '<span class="pb-body"><span class="pb-no">%02d · %s</span><span class="pb-title">%s</span></span>'
+            '<span class="pb-body"><span class="pb-no">%02d · %s%s</span><span class="pb-title">%s</span></span>'
             '</button>' % (
                 CAT_CLASS[it["cat"]], html.escape(it["id"]), html.escape(it["cat"]),
                 html.escape((it["title"] + " " + it["desc"] + " " + it["cat"] + " " + it["prompt"]).lower()),
-                art(it["art"]), i, html.escape(it["cat"]), html.escape(it["title"])))
+                art(it["art"]), i, html.escape(it["cat"]),
+                '<span class="pb-v2">v2</span>' if it["v1"] else ('<span class="pb-v2">新</span>' if it["why"] else ""),
+                html.escape(it["title"])))
 
     used = [c for c, _ in CATS if any(it["cat"] == c for it in items)]
     chips = ['<button type="button" class="pb-chip on" data-cat="">全部 <i>%d</i></button>' % len(items)]
@@ -74,7 +83,7 @@ def build():
                      % (html.escape(c), html.escape(c), sum(1 for it in items if it["cat"] == c)))
 
     data = [{"id": it["id"], "title": it["title"], "cat": it["cat"], "cls": CAT_CLASS[it["cat"]],
-             "desc": it["desc"], "prompt": it["prompt"]} for it in items]
+             "desc": it["desc"], "prompt": it["prompt"], "why": it["why"], "v1": it["v1"]} for it in items]
 
     page = (TEMPLATE
             .replace("%%SITE%%", html.escape(config.get("title", "")))
@@ -83,6 +92,7 @@ def build():
             .replace("%%THEME_CSS%%", theme_css)
             .replace("%%COUNT%%", str(len(items)))
             .replace("%%CATCOUNT%%", str(len(used)))
+            .replace("%%EVOLVED%%", str(sum(1 for it in items if it["v1"])))
             .replace("%%CHIPS%%", "".join(chips))
             .replace("%%CARDS%%", "\n".join(cards))
             .replace("%%DATA%%", json.dumps(data, ensure_ascii=False).replace("</", "<\\/")))
@@ -117,6 +127,7 @@ html[data-color-mode][data-light-theme] {
   --g-d: #3b5b84; --g-d-bg: #dde6f1;
   --g-v: #a4482b; --g-v-bg: #f4e0d7;
   --g-e: #5b5f57; --g-e-bg: #e6e3da;
+  --g-m: #6b4f8f; --g-m-bg: #e9e1f1;
 }
 html[data-color-mode="dark"][data-dark-theme] {
   --g-n: #8cc4ad; --g-n-bg: #1d3029;
@@ -124,6 +135,7 @@ html[data-color-mode="dark"][data-dark-theme] {
   --g-d: #9fbbe0; --g-d-bg: #1d2836;
   --g-v: #e59a80; --g-v-bg: #3a241c;
   --g-e: #b9bcb2; --g-e-bg: #262b27;
+  --g-m: #c3a8e6; --g-m-bg: #2c2338;
 }
 @media (prefers-color-scheme: dark) {
   html[data-color-mode="auto"][data-dark-theme] {
@@ -132,6 +144,7 @@ html[data-color-mode="dark"][data-dark-theme] {
     --g-d: #9fbbe0; --g-d-bg: #1d2836;
     --g-v: #e59a80; --g-v-bg: #3a241c;
     --g-e: #b9bcb2; --g-e-bg: #262b27;
+    --g-m: #c3a8e6; --g-m-bg: #2c2338;
   }
 }
 .site-nav a.on .nav-text { color: var(--accent); }
@@ -181,6 +194,36 @@ html[data-color-mode="dark"][data-dark-theme] {
 .c-d { --cc: var(--g-d); --cbg: var(--g-d-bg); }
 .c-v { --cc: var(--g-v); --cbg: var(--g-v-bg); }
 .c-e { --cc: var(--g-e); --cbg: var(--g-e-bg); }
+.c-m { --cc: var(--g-m); --cbg: var(--g-m-bg); }
+.pb-v2 { display: inline-block; margin-left: 6px; padding: 0 5px; border: 1px solid currentColor; border-radius: 3px; font-size: 9.5px; letter-spacing: .06em; vertical-align: 1px; }
+
+/* method section (how these prompts are written) */
+.pb-method { max-width: 1240px; margin: 0 auto; padding: 30px 32px 10px; }
+.pb-method-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; padding-bottom: 14px; border-bottom: 1.5px solid var(--ink); }
+.pb-method-head h2 { margin: 0; border: 0; padding: 0; font-family: var(--font-serif); font-weight: 900; font-size: 24px; color: var(--ink); }
+.pb-method-head p { margin: 0; color: var(--muted); font-size: 14px; }
+.pb-rules { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin-top: 20px; }
+.pb-rule { border: 1.5px solid var(--ink); border-radius: 12px; padding: 16px 16px 18px; background: var(--paper); }
+.pb-rule b { display: block; font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; color: var(--accent); font-weight: 500; }
+.pb-rule h3 { margin: 6px 0 8px; border: 0; padding: 0; font-family: var(--font-serif); font-weight: 700; font-size: 17px; line-height: 1.35; color: var(--ink); }
+.pb-rule p { margin: 0; font-size: 13.5px; line-height: 1.75; color: var(--ink-2); }
+.pb-rule p + p { margin-top: 8px; }
+.pb-rule small { display: block; margin-top: 10px; font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+.pb-loop { margin-top: 20px; padding: 14px 18px; border: 1px dashed var(--line-2); border-radius: 10px; background: var(--paper-2); font-size: 14px; line-height: 1.8; color: var(--ink-2); }
+.pb-loop strong { color: var(--ink); }
+.pb-loop a { color: var(--accent); }
+
+/* evolution notes in the dialog */
+.pb-evo { margin-top: 14px; border: 1px solid var(--line); border-radius: 10px; }
+.pb-evo summary { cursor: pointer; padding: 10px 14px; font-size: 13.5px; font-weight: 700; color: var(--ink); list-style: none; }
+.pb-evo summary::-webkit-details-marker { display: none; }
+.pb-evo summary::before { content: "▸ "; color: var(--cc, var(--accent)); }
+.pb-evo[open] summary::before { content: "▾ "; }
+.pb-evo summary span { font-weight: 400; color: var(--muted); font-size: 12.5px; margin-left: 6px; }
+.pb-evo ul { margin: 0; padding: 0 16px 12px 16px; list-style: none; }
+.pb-evo li { padding: 5px 0; font-size: 13.5px; line-height: 1.75; color: var(--ink-2); border-top: 1px dotted var(--line); }
+.pb-evo li i { font-style: normal; font-family: var(--font-mono); font-size: 11px; padding: 1px 6px; margin-right: 8px; border-radius: 3px; background: var(--cbg, var(--paper-2)); color: var(--cc, var(--accent)); }
+.pb-evo pre { margin: 0 14px 14px; padding: 14px 16px; border-radius: 8px; background: var(--paper-2); white-space: pre-wrap; word-break: break-word; font-family: var(--font-sans); font-size: 13.5px; line-height: 1.8; color: var(--ink-2); }
 
 /* illustration strokes */
 .pb-media .o { stroke: var(--ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
@@ -232,6 +275,7 @@ html[data-color-mode="dark"][data-dark-theme] {
 body.pb-lock { overflow: hidden; }
 
 @media (max-width: 1180px) { .pb-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (max-width: 1000px) { .pb-rules { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 920px)  { .pb-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } .pb-frame { padding: 28px 22px 32px; } .pb-how { grid-template-columns: 1fr; } }
 @media (max-width: 640px) {
   .pb-stage { padding: 32px 14px 16px; }
@@ -245,6 +289,8 @@ body.pb-lock { overflow: hidden; }
   .pb-dlg-head { grid-template-columns: 1fr auto; }
   .pb-dlg-art { display: none; }
   .pb-how { padding: 10px 16px 48px; }
+  .pb-method { padding: 24px 16px 6px; }
+  .pb-rules { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -271,8 +317,8 @@ body.pb-lock { overflow: hidden; }
   <div class="wrap">
     <div class="kicker">核心专题 · Prompt Library</div>
     <h1>常用 Prompt <span class="mark">武器库</span></h1>
-    <p class="pb-intro">每次和 AI 打交道，不用从零想开场白。学一个新东西、调研一件事、记一个单词、打磨一篇文章、排查一个报错——把好用的提示词写好一次，以后直接调用，越用越顺手。</p>
-    <div class="pb-hero-meta"><span>%%COUNT%% 个 Prompt</span><span>%%CATCOUNT%% 个场景</span><span>点卡片 · 一键复制</span><span>直达 ChatGPT / Gemini / Claude / DeepSeek</span></div>
+    <p class="pb-intro">每次和 AI 打交道，不用从零想开场白。学一个新东西、调研一件事、记一个单词、打磨一篇文章、排查一个报错——把好用的提示词写好一次，以后直接调用。这一版按 GEPA 的思路整体进化过：每张卡都补上了上下文、写明了方法、加上了护栏和自检，点开还能看到它改了什么、为什么改。</p>
+    <div class="pb-hero-meta"><span>%%COUNT%% 个 Prompt</span><span>%%CATCOUNT%% 个场景</span><span>%%EVOLVED%% 张已进化到 v2</span><span>点卡片 · 一键复制</span><span>直达 ChatGPT / Gemini / Claude / DeepSeek</span></div>
   </div>
 </section>
 
@@ -292,10 +338,18 @@ body.pb-lock { overflow: hidden; }
   </div>
 </main>
 
-<section class="pb-how">
-  <div><b>01 · 选</b>按场景筛选或直接搜索，点开卡片看完整的提示词。</div>
-  <div><b>02 · 填</b>把<em>【高亮的部分】</em>换成你自己的内容：主题、单词、原文、报错……</div>
-  <div><b>03 · 用</b>一键复制，或者直接打开常用的 AI，粘贴发送；每张卡片都有自己的链接，方便收藏。</div>
+<section class="pb-method" id="method">
+  <div class="pb-method-head">
+    <h2>这些提示词是怎么写的</h2>
+    <p>四条原则，来自《S31 对话深度解读》里的 GEPA、上下文工程和「形 · 法 · 神」</p>
+  </div>
+  <div class="pb-rules">
+    <div class="pb-rule"><b>01 · 上下文先行</b><h3>先告诉 AI 你是谁、为什么做</h3><p>没有上下文，AI 只能按「平均用户」回答。所以几乎每张卡的开头都有一行【背景】和【目的】。</p><p>把这行背景一次写好，就是「上下文卡」；每次对话结束再把新信息沉淀回去。</p><small>S31 · theme 06 上下文工程</small></div>
+    <div class="pb-rule"><b>02 · 蒸馏「法」，不止「形」</b><h3>写清楚怎么做，而不只是要什么</h3><p>只给样例，AI 学到的是口吻和排版（形）；把高手的步骤和判断标准写出来，它学到的才是方法（法）。</p><p>每一步都带一句「做到什么程度算过关」。</p><small>S31 · theme 08 形 / 法 / 神</small></div>
+    <div class="pb-rule"><b>03 · 结构就是护栏</b><h3>用固定的输出结构挡住幻觉</h3><p>「不要遗漏」「不要编造」只能靠 AI 自觉；一张覆盖核对表、一栏「来源 + 时间」、一个「非原文请标明」，结果就能检查了。</p><p>这就是 Schema 与 Harness：护栏，而不是笼子。</p><small>S31 · theme 04 Schema / Harness</small></div>
+    <div class="pb-rule"><b>04 · 反思回流</b><h3>交付前自检，交付后进化</h3><p>每张卡结尾都有一步「交付前自检」，很多还会让 AI 说出「哪里不得不猜」。</p><p>用得不顺手，就把提示词和它的输出一起交给「提示词进化器」，进化出下一版。</p><small>S31 · GEPA 反思式提示词进化</small></div>
+  </div>
+  <div class="pb-loop"><strong>进化循环：</strong>用一张卡 → 记下不满意的地方 → 连同输出交给 <a href="#gepa-evolve">提示词进化器</a> → 新版本替换旧版本，改动写进「进化记录」。点开任何一张卡，底部都能看到它从 v1 到 v2 改了什么、为什么。</div>
 </section>
 
 <footer class="site-foot">
@@ -319,6 +373,8 @@ body.pb-lock { overflow: hidden; }
   <div class="pb-dlg-body">
     <p class="pb-hint" id="pbHint">使用前把 <mark>【高亮部分】</mark> 换成你自己的内容。</p>
     <pre class="pb-prompt" id="pbPrompt"></pre>
+    <details class="pb-evo" id="pbWhy"><summary>进化记录<span>改了什么、为什么</span></summary><ul id="pbWhyList"></ul></details>
+    <details class="pb-evo" id="pbV1"><summary>v1 原版<span>进化前的写法，方便对照</span></summary><pre id="pbV1Text"></pre></details>
   </div>
   <div class="pb-dlg-foot">
     <button class="pb-btn main" type="button" id="pbCopy">复制 Prompt</button>
@@ -388,6 +444,13 @@ body.pb-lock { overflow: hidden; }
     $("pbDlgDesc").textContent = d.desc;
     $("pbPrompt").innerHTML = esc(d.prompt).replace(/【[^】\n]*】/g, function (m) { return "<mark>" + m + "</mark>"; });
     $("pbHint").hidden = d.prompt.indexOf("【") === -1;
+    $("pbWhy").hidden = !d.why.length; $("pbWhy").open = false;
+    $("pbWhyList").innerHTML = d.why.map(function (w) {
+      var m = w.match(/^(诊断|改动|新增|设计|护栏|用法|提示|示例)：(.*)$/);
+      return "<li>" + (m ? "<i>" + m[1] + "</i>" + esc(m[2]) : esc(w)) + "</li>";
+    }).join("");
+    $("pbV1").hidden = !d.v1; $("pbV1").open = false;
+    $("pbV1Text").textContent = d.v1;
     $("pbPrompt").parentNode.scrollTop = 0;
     scrim.classList.add("on"); document.body.classList.add("pb-lock");
     if (push !== false && location.hash !== "#" + id) history.replaceState(null, "", "#" + id);
@@ -416,6 +479,7 @@ body.pb-lock { overflow: hidden; }
     else if (e.key === "ArrowLeft" && e.target.tagName !== "INPUT") step(-1);
   });
   if (location.hash && byId[location.hash.slice(1)]) open(location.hash.slice(1), false);
+  window.addEventListener("hashchange", function () { var h = location.hash.slice(1); if (byId[h]) open(h, false); });
 
   /* ---------- copy + open AI ---------- */
   function toast(msg) {

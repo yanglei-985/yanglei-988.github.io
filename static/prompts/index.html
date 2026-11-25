@@ -444,6 +444,7 @@ html[data-color-mode][data-light-theme] {
   --g-d: #3b5b84; --g-d-bg: #dde6f1;
   --g-v: #a4482b; --g-v-bg: #f4e0d7;
   --g-e: #5b5f57; --g-e-bg: #e6e3da;
+  --g-m: #6b4f8f; --g-m-bg: #e9e1f1;
 }
 html[data-color-mode="dark"][data-dark-theme] {
   --g-n: #8cc4ad; --g-n-bg: #1d3029;
@@ -451,6 +452,7 @@ html[data-color-mode="dark"][data-dark-theme] {
   --g-d: #9fbbe0; --g-d-bg: #1d2836;
   --g-v: #e59a80; --g-v-bg: #3a241c;
   --g-e: #b9bcb2; --g-e-bg: #262b27;
+  --g-m: #c3a8e6; --g-m-bg: #2c2338;
 }
 @media (prefers-color-scheme: dark) {
   html[data-color-mode="auto"][data-dark-theme] {
@@ -459,6 +461,7 @@ html[data-color-mode="dark"][data-dark-theme] {
     --g-d: #9fbbe0; --g-d-bg: #1d2836;
     --g-v: #e59a80; --g-v-bg: #3a241c;
     --g-e: #b9bcb2; --g-e-bg: #262b27;
+    --g-m: #c3a8e6; --g-m-bg: #2c2338;
   }
 }
 .site-nav a.on .nav-text { color: var(--accent); }
@@ -508,6 +511,36 @@ html[data-color-mode="dark"][data-dark-theme] {
 .c-d { --cc: var(--g-d); --cbg: var(--g-d-bg); }
 .c-v { --cc: var(--g-v); --cbg: var(--g-v-bg); }
 .c-e { --cc: var(--g-e); --cbg: var(--g-e-bg); }
+.c-m { --cc: var(--g-m); --cbg: var(--g-m-bg); }
+.pb-v2 { display: inline-block; margin-left: 6px; padding: 0 5px; border: 1px solid currentColor; border-radius: 3px; font-size: 9.5px; letter-spacing: .06em; vertical-align: 1px; }
+
+/* method section (how these prompts are written) */
+.pb-method { max-width: 1240px; margin: 0 auto; padding: 30px 32px 10px; }
+.pb-method-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px; padding-bottom: 14px; border-bottom: 1.5px solid var(--ink); }
+.pb-method-head h2 { margin: 0; border: 0; padding: 0; font-family: var(--font-serif); font-weight: 900; font-size: 24px; color: var(--ink); }
+.pb-method-head p { margin: 0; color: var(--muted); font-size: 14px; }
+.pb-rules { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin-top: 20px; }
+.pb-rule { border: 1.5px solid var(--ink); border-radius: 12px; padding: 16px 16px 18px; background: var(--paper); }
+.pb-rule b { display: block; font-family: var(--font-mono); font-size: 11px; letter-spacing: .14em; color: var(--accent); font-weight: 500; }
+.pb-rule h3 { margin: 6px 0 8px; border: 0; padding: 0; font-family: var(--font-serif); font-weight: 700; font-size: 17px; line-height: 1.35; color: var(--ink); }
+.pb-rule p { margin: 0; font-size: 13.5px; line-height: 1.75; color: var(--ink-2); }
+.pb-rule p + p { margin-top: 8px; }
+.pb-rule small { display: block; margin-top: 10px; font-family: var(--font-mono); font-size: 11px; color: var(--muted); }
+.pb-loop { margin-top: 20px; padding: 14px 18px; border: 1px dashed var(--line-2); border-radius: 10px; background: var(--paper-2); font-size: 14px; line-height: 1.8; color: var(--ink-2); }
+.pb-loop strong { color: var(--ink); }
+.pb-loop a { color: var(--accent); }
+
+/* evolution notes in the dialog */
+.pb-evo { margin-top: 14px; border: 1px solid var(--line); border-radius: 10px; }
+.pb-evo summary { cursor: pointer; padding: 10px 14px; font-size: 13.5px; font-weight: 700; color: var(--ink); list-style: none; }
+.pb-evo summary::-webkit-details-marker { display: none; }
+.pb-evo summary::before { content: "▸ "; color: var(--cc, var(--accent)); }
+.pb-evo[open] summary::before { content: "▾ "; }
+.pb-evo summary span { font-weight: 400; color: var(--muted); font-size: 12.5px; margin-left: 6px; }
+.pb-evo ul { margin: 0; padding: 0 16px 12px 16px; list-style: none; }
+.pb-evo li { padding: 5px 0; font-size: 13.5px; line-height: 1.75; color: var(--ink-2); border-top: 1px dotted var(--line); }
+.pb-evo li i { font-style: normal; font-family: var(--font-mono); font-size: 11px; padding: 1px 6px; margin-right: 8px; border-radius: 3px; background: var(--cbg, var(--paper-2)); color: var(--cc, var(--accent)); }
+.pb-evo pre { margin: 0 14px 14px; padding: 14px 16px; border-radius: 8px; background: var(--paper-2); white-space: pre-wrap; word-break: break-word; font-family: var(--font-sans); font-size: 13.5px; line-height: 1.8; color: var(--ink-2); }
 
 /* illustration strokes */
 .pb-media .o { stroke: var(--ink); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
@@ -559,6 +592,7 @@ html[data-color-mode="dark"][data-dark-theme] {
 body.pb-lock { overflow: hidden; }
 
 @media (max-width: 1180px) { .pb-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (max-width: 1000px) { .pb-rules { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 920px)  { .pb-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } .pb-frame { padding: 28px 22px 32px; } .pb-how { grid-template-columns: 1fr; } }
 @media (max-width: 640px) {
   .pb-stage { padding: 32px 14px 16px; }
@@ -572,6 +606,8 @@ body.pb-lock { overflow: hidden; }
   .pb-dlg-head { grid-template-columns: 1fr auto; }
   .pb-dlg-art { display: none; }
   .pb-how { padding: 10px 16px 48px; }
+  .pb-method { padding: 24px 16px 6px; }
+  .pb-rules { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -598,34 +634,51 @@ body.pb-lock { overflow: hidden; }
   <div class="wrap">
     <div class="kicker">核心专题 · Prompt Library</div>
     <h1>常用 Prompt <span class="mark">武器库</span></h1>
-    <p class="pb-intro">每次和 AI 打交道，不用从零想开场白。学一个新东西、调研一件事、记一个单词、打磨一篇文章、排查一个报错——把好用的提示词写好一次，以后直接调用，越用越顺手。</p>
-    <div class="pb-hero-meta"><span>15 个 Prompt</span><span>6 个场景</span><span>点卡片 · 一键复制</span><span>直达 ChatGPT / Gemini / Claude / DeepSeek</span></div>
+    <p class="pb-intro">每次和 AI 打交道，不用从零想开场白。学一个新东西、调研一件事、记一个单词、打磨一篇文章、排查一个报错——把好用的提示词写好一次，以后直接调用。这一版按 GEPA 的思路整体进化过：每张卡都补上了上下文、写明了方法、加上了护栏和自检，点开还能看到它改了什么、为什么改。</p>
+    <div class="pb-hero-meta"><span>20 个 Prompt</span><span>7 个场景</span><span>15 张已进化到 v2</span><span>点卡片 · 一键复制</span><span>直达 ChatGPT / Gemini / Claude / DeepSeek</span></div>
   </div>
 </section>
 
 <main class="pb-stage">
   <div class="pb-frame">
     <div class="pb-head">
-      <h2>我的提示词<small>15 PROMPTS</small></h2>
+      <h2>我的提示词<small>20 PROMPTS</small></h2>
       <div class="pb-tools">
-        <div class="pb-chips" id="pbChips"><button type="button" class="pb-chip on" data-cat="">全部 <i>15</i></button><button type="button" class="pb-chip" data-cat="学习">学习 <i>3</i></button><button type="button" class="pb-chip" data-cat="调研">调研 <i>2</i></button><button type="button" class="pb-chip" data-cat="英语">英语 <i>1</i></button><button type="button" class="pb-chip" data-cat="法语">法语 <i>6</i></button><button type="button" class="pb-chip" data-cat="写作">写作 <i>1</i></button><button type="button" class="pb-chip" data-cat="效率">效率 <i>2</i></button></div>
+        <div class="pb-chips" id="pbChips"><button type="button" class="pb-chip on" data-cat="">全部 <i>20</i></button><button type="button" class="pb-chip" data-cat="学习">学习 <i>3</i></button><button type="button" class="pb-chip" data-cat="调研">调研 <i>2</i></button><button type="button" class="pb-chip" data-cat="英语">英语 <i>1</i></button><button type="button" class="pb-chip" data-cat="法语">法语 <i>6</i></button><button type="button" class="pb-chip" data-cat="写作">写作 <i>1</i></button><button type="button" class="pb-chip" data-cat="效率">效率 <i>3</i></button><button type="button" class="pb-chip" data-cat="元方法">元方法 <i>4</i></button></div>
         <label class="pb-search"><svg viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.6"/><path d="M10.4 10.4 14 14"/></svg><input id="pbQ" type="search" placeholder="搜索 Prompt…" aria-label="搜索 Prompt"></label>
       </div>
     </div>
     <div class="pb-grid" id="pbGrid">
-<button type="button" class="pb-card c-n" data-id="learn-new" data-cat="学习" data-search="快速入门一个新领域 想学一个全新的东西，先用 20% 的时间拿到 80% 的地图。 学习 我想在最短时间内入门【主题，例如：obsidian / 期权交易 / 法国文学史】。我的背景是：【你已经会什么、学这个想用来做什么】。
+<button type="button" class="pb-card c-n" data-id="learn-new" data-cat="学习" data-search="快速入门一个新领域 想学一个全新的东西，先校准目标，再拿到一张能自己检验的入门地图。 学习 背景：【我是谁、已经会什么，例如：法语专业大四，会用 obsidian，没学过编程】
+我要入门：【主题】
+学完想做到：【一个能检验的具体目标，例如：两周后能自己搭好一个 github pages 博客】
+每天能投入：【时间，例如：1 小时】
 
-请扮演这个领域里最会带新人的老师，按下面的结构帮我建立第一张「地图」：
+你是这个领域里最会带新人的老师。按下面的路径带我，每一步都有过关标准。
 
-1. 一句话定义：用大白话说清它是什么、解决什么问题。
-2. 核心概念：列出入门必须懂的 5～8 个关键概念，每个用一句话解释，并说明它们之间的关系（谁是基础、谁依赖谁）。
-3. 二八法则：这个领域里哪 20% 的知识能解决 80% 的实际问题？哪些东西新手可以先放心跳过？
-4. 常见误区：新手最容易踩的 3 个坑，以及怎么避开。
-5. 学习路径：给我一个 7 天的入门计划，每天 1 小时，写清楚每天学什么、做什么小练习、做到什么程度算过关。
-6. 最好的资源：推荐 3～5 个入门资源（书、课程、视频、网站），说明各自适合哪个阶段。
-7. 自测题：最后出 5 道题，检验我是否真的入门了，答案先不要给。
+第一步 · 校准（先别讲课）
+如果我的目标太空泛，先问我最多 3 个问题，把它变具体；信息够了就直接进入第二步。
 
-要求：少用术语，必须用术语时先解释；多举生活中的例子和类比；不确定的信息请直接说明不确定。"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><circle class="c" cx="120" cy="72" r="44"/>
+第二步 · 画地图
+1. 一句话定义：它是什么、解决什么问题，用我背景里熟悉的东西打个比方。
+2. 概念骨架：入门必须懂的 5～8 个概念，用「a → b」画出依赖关系（先懂谁才能懂谁）。
+3. 二八切分：哪 20% 直接服务我的目标；哪些可以放心先跳过，为什么。
+
+第三步 · 排路径
+按我的时间排一条最短路径。每一天写清：学什么 / 做什么小练习 / 做到什么算过关。过关标准必须是我能自己检验的动作（例如「不看教程独立做出……」），而不是「理解了……」。
+
+第四步 · 避坑与资源
+新手最常踩的 3 个坑，以及踩坑时会出现的信号；3～5 个资源，标注适合在第几天用。
+
+第五步 · 出题
+5 道由浅入深的自测题，最后一道必须是应用题。答案先不给，等我作答后再批改。
+
+护栏：
+- 术语第一次出现时用一句话解释。
+- 区分「公认事实」和「你的经验建议」；资源或数据没把握就直说，不要编造链接。
+
+交付前自检：第三步里每一天的过关标准，我都能自己检验吗？不能的改掉再输出。
+收尾：用一句话告诉我，我给的背景里还缺什么信息，让你不得不猜。"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><circle class="c" cx="120" cy="72" r="44"/>
 <circle class="o p" cx="120" cy="72" r="34"/>
 <path class="o" d="M120 32v8M120 104v8M80 72h8M152 72h8"/>
 <path class="g o" d="M120 72l9-25-9 4-9-4z" transform="rotate(35 120 72)"/>
@@ -633,250 +686,490 @@ body.pb-lock { overflow: hidden; }
 <circle class="o p" cx="120" cy="72" r="3.5"/>
 <text class="t" x="120" y="26" text-anchor="middle">N</text>
 <path class="k" d="M168 104c10-6 20-6 28 2"/>
-<path class="k" d="M44 50c8-8 18-10 26-4"/></svg></span><span class="pb-body"><span class="pb-no">01 · 学习</span><span class="pb-title">快速入门一个新领域</span></span></button>
-<button type="button" class="pb-card c-d" data-id="research" data-cat="调研" data-search="深度调研一个主题 要做决定或写东西之前，先把一件事查透、查准。 调研 请帮我对【调研对象，例如：某个工具 / 某个行业 / 某个留学项目】做一次深度调研。我调研的目的是：【用来做什么决定，或者写什么内容】。
+<path class="k" d="M44 50c8-8 18-10 26-4"/></svg></span><span class="pb-body"><span class="pb-no">01 · 学习<span class="pb-v2">v2</span></span><span class="pb-title">快速入门一个新领域</span></span></button>
+<button type="button" class="pb-card c-d" data-id="research" data-cat="调研" data-search="深度调研一个主题 做决定或写东西之前，围绕「这会怎样改变我的决定」把一件事查透。 调研 背景：【我是谁】
+调研对象：【例如：某个工具 / 某个行业 / 某个留学项目】
+调研是为了：【要做的决定，或者要写的内容】
+我已经知道的：【可留空】
+深度：【例如：今晚就要结论，够用即可 / 要写报告，越全越好】
 
-请按下面的步骤进行：
+你是一名严谨的研究员。按下面的路径工作：
 
-1. 拆问题：先把这个调研拆成 5～7 个关键子问题，告诉我为什么是这几个。
-2. 逐个回答：每个子问题都给出结论 + 依据。依据尽量来自一手来源（官网、官方文档、论文、原始数据），并标注来源和时间。
-3. 多方观点：列出支持方和反对方各自最有力的论据，不要只给一面之词。
-4. 关键数据：把重要的数字整理成一张表（指标 / 数值 / 来源 / 时间）。
-5. 风险与盲区：哪些信息目前查不到、互相矛盾或可能已经过时？
-6. 结论与建议：结合我的目的，给出明确的建议和下一步行动清单。
+1. 拆问题：把调研拆成 4～7 个子问题。每个子问题注明：它的答案会怎样改变我的决定（答案是 a 我会怎么做，是 b 又会怎么做）。和决定无关的问题删掉。
+2. 列计划：每个子问题打算查哪类来源（官网 / 官方文档 / 论文 / 原始数据 / 一线用户评价）。列完直接开始，不用等我确认。
+3. 逐个回答：每个子问题按「结论 → 依据 → 来源（名称 + 时间）→ 置信度（高 / 中 / 低）」输出。
+4. 正反对照：支持方和反对方最强的论据各写一段，并指出双方真正的分歧在哪里。
+5. 数据表：重要数字整理成表（指标 / 数值 / 来源 / 时间 / 备注）。
+6. 盲区：分别列出查不到的、互相矛盾的、可能已经过时的信息。
+7. 结论：针对我的目的给出明确建议和 3 条下一步行动；再写一句「出现什么新信息时，这个结论会被推翻」。
 
-要求：区分「事实」「推断」和「观点」；没有把握的地方直接说「不确定」，不要编造；输出用中文，专有名词保留原文。"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><rect class="o p" x="56" y="36" width="78" height="92" rx="6"/>
+护栏：
+- 关键句标明性质：【事实】【推断】【观点】。
+- 没有来源的数字不写；查不到就写「未查到」，绝不编造来源或链接。
+- 专有名词保留原文。
+
+交付前自检：回看第 7 步的建议，每一条都能从前面的证据推出来吗？推不出来的删掉，或降级为【推断】。
+收尾：用一句话指出最影响结论、但我还没交代清楚的一点。"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><rect class="o p" x="56" y="36" width="78" height="92" rx="6"/>
 <path class="k" d="M68 54h40M68 66h52M68 78h30M68 90h46M68 102h26"/>
 <circle class="c o" cx="146" cy="78" r="26"/>
 <circle class="o" cx="146" cy="78" r="18" fill="none"/>
 <path class="o thick" d="M165 97l22 22"/>
 <path class="g o" d="M181 113l8-8 9 9-8 8z"/>
-<path class="k" d="M138 70a10 10 0 0 1 10-6"/></svg></span><span class="pb-body"><span class="pb-no">02 · 调研</span><span class="pb-title">深度调研一个主题</span></span></button>
-<button type="button" class="pb-card c-d" data-id="youtube" data-cat="调研" data-search="youtube 视频转阅读版 把一个长视频改写成能直接读完的 blog 文章，不用再回看。 调研 你将把一段 youtube 视频重写成&quot;阅读版本&quot;，按内容主题分成若干小节；目标是让读者通过阅读就能完整理解视频讲了什么，就好像是在读一篇 blog 版的文章一样。
+<path class="k" d="M138 70a10 10 0 0 1 10-6"/></svg></span><span class="pb-body"><span class="pb-no">02 · 调研<span class="pb-v2">v2</span></span><span class="pb-title">深度调研一个主题</span></span></button>
+<button type="button" class="pb-card c-d" data-id="youtube" data-cat="调研" data-search="youtube 视频转阅读版 把一个长视频改写成能直接读完的 blog 文章，先切目录再逐节展开，不怕后半段缩水。 调研 你将把一段 youtube 视频重写成「阅读版本」：读者读完就能完整理解视频讲了什么，不需要再回看，就像在读一篇 blog 文章。
 
-输出要求：
+视频链接 / 字幕：【在这里粘贴；有字幕时优先给字幕】
+我看它是为了：【可选，例如：做公众号选题 / 学里面的方法】
 
-1. metadata
-- title
-- author
-- url
+工作路径：
+第一步 · 切主题：通读全部内容，在话题转换的地方切分成若干小节，列出「小节标题 + 起止时间戳（有的话）」作为目录。
+第二步 · 逐节重写：每一节都完整展开，保留讲者的论点、他举的例子和故事、推理的过程。方法 / 框架 / 流程改写成条理清晰的步骤或段落。关键数字、定义、原话如实保留核心词，并在括号里补充注释。每一节不少于 500 字。
+第三步 · 抽框架：从整支视频里抽象出可迁移的 framework 和 mindset。每个都写清：它解决什么问题 → 具体步骤 → 视频里的例子 → 我可以怎么用。每个不少于 500 字。
 
-2. overview
-用一段话点明视频的核心论题与结论。
-
-3. 按照主题来梳理
-- 每个小节都需要根据视频中的内容详细展开，让我不需要再二次查看视频了解详情，每个小节不少于 500 字。
-- 若出现方法/框架/流程，将其重写为条理清晰的步骤或段落。
-- 若有关键数字、定义、原话，请如实保留核心词，并在括号内补充注释。
-
-4. 框架 &amp; 心智模型（framework &amp; mindset）
-可以从视频中抽象出什么 framework &amp; mindset，将其重写为条理清晰的步骤或段落，每个 framework &amp; mindset 不少于 500 字。
+输出结构：
+1. metadata：title / author / url / 时长
+2. overview：用一段话点明视频的核心论题与结论
+3. 目录：第一步的结果
+4. 正文：按目录逐节展开
+5. 框架 &amp; 心智模型（framework &amp; mindset）
+6. 存疑处：听不清、讲者含糊或可能说错的地方
 
 风格与限制：
 - 永远不要高度浓缩！
-- 不新增事实；若出现含混表述，请保持原意并注明不确定性。
-- 专有名词保留原文，并在括号给出中文释义（若转录中出现或能直译）。
-- 要求类的问题不用体现出来（例如 &gt; 500 字）。
-- 避免一个段落的内容过多，可以拆解成多个逻辑段落（使用 bullet points）。
+- 不新增事实；遇到含混表述，保持原意并注明不确定。
+- 专有名词保留原文，并在括号给出中文释义。
+- 我提的要求本身不要写进正文（例如「本节不少于 500 字」）。
+- 一个段落内容太多就拆成几个逻辑段，或改用 bullet points。
 
-视频链接 / 字幕：【在这里粘贴】"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><rect class="o p" x="48" y="34" width="144" height="88" rx="10"/>
+交付前自检：对照目录逐节检查——每一节都写到了吗？有没有哪一节明显比其他节短，像是被压缩了？有就补写。"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><rect class="o p" x="48" y="34" width="144" height="88" rx="10"/>
 <rect class="c" x="56" y="42" width="128" height="62" rx="5"/>
 <path class="g o" d="M110 60v26l22-13z"/>
 <path class="o" d="M56 112h128"/>
 <circle class="o p" cx="98" cy="112" r="4"/>
 <path class="k" d="M56 112h42"/>
-<path class="o" d="M150 26l-12 8M90 26l12 8"/></svg></span><span class="pb-body"><span class="pb-no">03 · 调研</span><span class="pb-title">YouTube 视频转阅读版</span></span></button>
-<button type="button" class="pb-card c-n" data-id="reading" data-cat="学习" data-search="精读一篇文章或论文 读一篇硬文章：结构、论证、金句、可迁移的方法一次拿走。 学习 请帮我精读下面这篇【文章 / 论文 / 书的章节】，我读它是为了：【你的目的】。
+<path class="o" d="M150 26l-12 8M90 26l12 8"/></svg></span><span class="pb-body"><span class="pb-no">03 · 调研<span class="pb-v2">v2</span></span><span class="pb-title">YouTube 视频转阅读版</span></span></button>
+<button type="button" class="pb-card c-n" data-id="reading" data-cat="学习" data-search="精读一篇文章或论文 按你读它的目的来精读：结构、论证、金句、可迁移的方法一次拿走。 学习 背景：【我是谁】
+我读它是为了：【例如：写论文要引用 / 学它的写法 / 判断观点靠不靠谱】
+原文：【粘贴全文，或者给链接】
 
-请输出：
+请按下面的路径精读，并根据我的目的调整详略：目的偏写作，就多讲结构和表达；偏判断，就多讲论证。
 
-1. 一句话主旨：作者最想说服读者的是什么？
-2. 结构地图：用大纲的形式还原文章结构，标出每一部分的作用（提出问题 / 论证 / 举例 / 反驳 / 结论）。
-3. 论证检查：核心论点有哪些证据支撑？哪里证据不足、有逻辑跳跃或者隐藏的前提？
-4. 关键概念：列出文中最重要的 5 个概念或术语，并解释。
-5. 原文金句：摘出 3～5 句最值得记住的原话（保留原文，附中文翻译）。
-6. 可迁移的方法：这篇文章里有什么思路或方法，我可以直接用到自己的学习、工作或写作中？
-7. 延伸问题：提出 3 个值得继续思考或查证的问题。
+1. 一句话主旨：作者最想说服读者的是什么？先用作者的口吻写一句，再用你自己的话写一句。
+2. 结构地图：用大纲还原文章结构，每部分标注作用（提出问题 / 论证 / 举例 / 让步 / 反驳 / 结论）。
+3. 论证体检：把核心论点和证据画成「论点 ← 证据 1、证据 2」的形式；标出证据不足、逻辑跳跃和隐藏前提，并说明为什么。
+4. 关键概念：最重要的 5 个概念。注意写的是作者在文中的用法——如果和通用定义不同，要指出差别。
+5. 原文金句：3～5 句原话（保留原文，附中文翻译），每句说明为什么值得记。
+6. 可迁移的方法：至少一个我可以直接照做的思路，写成「什么场景 → 怎么做」。
+7. 三个延伸问题：一个查证类、一个反驳类、一个应用类。
 
-原文：【在这里粘贴，或者给链接】"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><path class="o p" d="M70 28h72l26 26v72H70z"/>
+护栏：引用必须是原文里真实存在的句子，不能改写后再加引号；原文没有提供的信息不要补。
+交付前自检：逐句核对第 5 步的金句确实出现在原文里。"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><path class="o p" d="M70 28h72l26 26v72H70z"/>
 <path class="o c" d="M142 28v26h26z"/>
 <path class="k" d="M84 50h40M84 64h70M84 76h70M84 88h50"/>
 <rect class="g" x="82" y="98" width="56" height="10" rx="2"/>
 <path class="o" d="M84 116h40"/>
 <path class="o thick" d="M178 70l-30 44"/>
-<path class="o p" d="M176 66l8 6-4 6-8-6z"/></svg></span><span class="pb-body"><span class="pb-no">04 · 学习</span><span class="pb-title">精读一篇文章或论文</span></span></button>
-<button type="button" class="pb-card c-n" data-id="feynman" data-cat="学习" data-search="费曼检验：我真的懂了吗 学完一样东西，讲给 ai 听，让它找出你没懂的地方。 学习 我刚学完【概念 / 知识点】，下面我会用自己的话把它讲一遍。请你扮演一个聪明但完全不懂这个领域的 12 岁学生，按费曼学习法帮我检验：
+<path class="o p" d="M176 66l8 6-4 6-8-6z"/></svg></span><span class="pb-body"><span class="pb-no">04 · 学习<span class="pb-v2">v2</span></span><span class="pb-title">精读一篇文章或论文</span></span></button>
+<button type="button" class="pb-card c-n" data-id="feynman" data-cat="学习" data-search="费曼检验：我真的懂了吗 学完一样东西讲给 ai 听，它按三类漏洞追问，再用四个维度给你打分。 学习 我刚学完【概念 / 知识点】，学它是为了【用途】。下面我会用自己的话讲一遍。
 
-1. 听完后，指出我讲得含糊、跳步或者用术语糊弄过去的地方。
-2. 针对这些地方连续追问我 3～5 个「为什么」，一次只问一个，等我回答完再问下一个。
-3. 如果我讲错了，不要直接给答案，先给提示，让我自己修正。
-4. 最后给我打分（0～10 分），列出我真正掌握的部分和还需要补的部分，并给出一个更简洁、准确的标准版讲解作对照。
+请扮演一个聪明、但完全不懂这个领域的 12 岁学生，按费曼学习法检验我：
+
+第一轮 · 找漏洞：听完后，标出我讲解里的三类问题——
+  ① 含糊：用了「就是那个」「差不多」「之类的」这种词带过去；
+  ② 跳步：从 a 直接到了 c，中间的 b 没讲；
+  ③ 术语糊弄：用一个术语去解释另一个术语。
+第二轮 · 追问：针对最严重的漏洞连续问我「为什么」，一次只问一个，等我回答完再问下一个，最多 5 个。
+第三轮 · 纠错：我讲错的时候，先给提示让我自己改；改了两次还不对，再告诉我正确的说法。
+第四轮 · 评分：按四个维度各打 0～5 分——准确、完整、能举例、能用大白话讲。列出我已经掌握的和还要补的部分，最后给一份 150 字以内的标准版讲解作对照。
+
+护栏：提问时保持 12 岁学生的口吻；评分时切换成严格老师的标准，不要因为我态度认真就放水。
 
 我的讲解：【在这里写你的理解】"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><path class="g o" d="M120 30c-22 0-36 16-36 34 0 14 8 22 14 30 4 5 4 10 4 14h36c0-4 0-9 4-14 6-8 14-16 14-30 0-18-14-34-36-34z"/>
 <path class="o" d="M106 116h28M108 124h24"/>
 <path class="o" d="M112 108c0-14 2-22 8-30 6 8 8 16 8 30"/>
 <path class="k" d="M64 46l-12-6M60 72H46M176 46l12-6M180 72h14M120 18V8"/>
-<path class="c o" d="M168 96c0-8 10-12 16-6s-2 14-8 14l-6 6v-6c-2 0-2-4-2-8z"/></svg></span><span class="pb-body"><span class="pb-no">05 · 学习</span><span class="pb-title">费曼检验：我真的懂了吗</span></span></button>
-<button type="button" class="pb-card c-a" data-id="word-en" data-cat="英语" data-search="学一个英语新单词 membean 式学词：语境、词根、测验、真人例句，一次记牢。 英语 我要彻底学会英语单词【单词】，请用 membean 的学词方法带我学：
+<path class="c o" d="M168 96c0-8 10-12 16-6s-2 14-8 14l-6 6v-6c-2 0-2-4-2-8z"/></svg></span><span class="pb-body"><span class="pb-no">05 · 学习<span class="pb-v2">v2</span></span><span class="pb-title">费曼检验：我真的懂了吗</span></span></button>
+<button type="button" class="pb-card c-a" data-id="word-en" data-cat="英语" data-search="学一个英语新单词 membean 式两轮学词：先读语境猜词、做测验，再拆词根、辨析、造句。 英语 背景：我的英语水平是【例如：专四已过，雅思 6 分左右】，学这个词是为了【阅读 / 写作 / 考试 / 口语】。
+单词：【单词】
 
-1. 语境短文：写一段 100 词左右、风趣幽默、有画面感的英文短文，让这个词自然出现 2～3 次，短时间就能读完。
-2. 英英测验：设计一道英英释义的选择题，三个选项。答案先不要给，等我下一轮回答后再公布。
-3. 词根拆解：拆出词根、词缀，用简单的英语解释每一部分的意思，并列出 3 个同词根的常见词。
-4. 核心释义：给出最常用的 1～2 个意思（英文释义 + 中文），说明它的语气和使用场合（正式 / 口语 / 书面）。
-5. 搭配与辨析：列出 5 个高频搭配；如果有容易混淆的近义词，用表格对比（含义 / 语境 / 例句）。
-6. 真人例句：推荐我去 youglish 搜索这个词时可以重点听的场景，再给 2 句来自经典文学或新闻的例句。
+用 membean 的学词顺序带我学，分两轮进行。
 
-最后用这个单词出一道造句题让我练习，我写完你来批改。"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><rect class="c o" x="70" y="40" width="112" height="76" rx="8" transform="rotate(6 126 78)"/>
+第一轮（只输出下面三项，然后停下来等我）：
+1. 语境短文：100 词左右的英文短文，风趣、有画面感，这个词自然出现 2～3 次。难度按我的水平控制，其他生词不超过 3 个。
+2. 猜词：请我先根据上下文猜这个词是什么意思。
+3. 英英测验：一道英英释义选择题，三个选项，其中一个是常见的误解。先不公布答案。
+
+第二轮（我回答之后）：
+4. 公布答案，点评我的猜测：猜对了哪部分，被哪条上下文线索误导了。
+5. 词根拆解：拆出词根词缀，用简单英语解释每一部分；再用一句话把这几部分「讲成一个画面」帮我记；列 3 个同根常用词。
+6. 核心释义：最常用的 1～2 个义项（英文释义 + 中文），以及语气和场合（正式 / 口语 / 书面）。
+7. 搭配与辨析：5 个高频搭配；易混的近义词用表格对比（含义 / 语境 / 例句）。
+8. 真人怎么说：给 2～3 个适合在 youglish 搜索的关键词组合；再给 2 句来自经典文学或新闻的例句并注明出处，没把握的写「示例句，非原文」。
+9. 造句：按我学这个词的目的出一道造句题，我写完你来批改。
+
+护栏：词源说法有争议时注明；不要编造文学原句和出处。"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><rect class="c o" x="70" y="40" width="112" height="76" rx="8" transform="rotate(6 126 78)"/>
 <rect class="o p" x="58" y="34" width="112" height="76" rx="8"/>
 <text class="tw" x="114" y="70" text-anchor="middle">word</text>
 <path class="k" d="M84 84h60"/>
 <path class="o" d="M90 96h48"/>
-<path class="g o" d="M176 30l4 10 10 1-8 6 3 10-9-6-9 6 3-10-8-6 10-1z"/></svg></span><span class="pb-body"><span class="pb-no">06 · 英语</span><span class="pb-title">学一个英语新单词</span></span></button>
-<button type="button" class="pb-card c-v" data-id="word-fr" data-cat="法语" data-search="法语单词 · membean 五步 用 membean 的方法学一个法语词，配法法测验和文学例句。 法语 使用 membean 的学词方法进行法语单词的学习。单词：【法语单词】
+<path class="g o" d="M176 30l4 10 10 1-8 6 3 10-9-6-9 6 3-10-8-6 10-1z"/></svg></span><span class="pb-body"><span class="pb-no">06 · 英语<span class="pb-v2">v2</span></span><span class="pb-title">学一个英语新单词</span></span></button>
+<button type="button" class="pb-card c-v" data-id="word-fr" data-cat="法语" data-search="法语单词 · membean 五步 用 membean 的方法分两轮学一个法语词：语境和法法测验在前，词源和文学例句在后。 法语 背景：我是法语专业大四学生，水平【例如：专四已过】。
+单词：【法语单词】
 
-① 创造一个与此单词相关，语境风趣幽默的语境且该单词在此文本中出现 2-3 次，文本长度为 100 词左右，可以在短时间读完。
-② 设计一个 quiz，对此单词进行法法解释。设计三个选项，在我们第二轮对话时，再显示答案。
-③ 结合法语数据库，把单词的词根、词干进行提取，然后用简单的法语进行解释。
-④ 在 youglish 中寻找有关此单词有趣的片段。
-⑤ 找一些涉及此单词的古往文学作品例句。"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><path class="c o" d="M72 70c0-22 26-34 52-32 30 2 46 18 44 32-2 8-18 12-48 12-30 0-48-4-48-12z"/>
+使用 membean 的学词方法学这个法语词，分两轮进行。
+
+第一轮（只输出 ①②，然后停下来等我回答）：
+① 语境：创造一个与此单词相关、风趣幽默的语境，单词在文本中出现 2～3 次，全文 100 词左右，短时间能读完；其他生词不超过 3 个。
+② quiz：用法语出一道法法释义的选择题，三个选项，其中一个是学生常见的误解。答案留到第二轮再公布。
+
+第二轮（我回答之后）：
+先公布答案并点评我的选择，然后继续：
+③ 词根词干：参照法语词源资料（如 cnrtl / tlfi），提取词根、词干，用简单的法语解释每一部分的意思，再列 2～3 个同根词。
+④ youglish：给出 2～3 个适合在 youglish（法语）里搜索的词或词组，告诉我在哪类片段里最容易听到它。
+⑤ 文学例句：2～3 句涉及此词的法国文学作品例句，注明作者和作品，附中文翻译。
+
+护栏：
+- 词源以 cnrtl 等资料为准，有争议就说明。
+- 文学例句必须是真实存在的原句；没有把握就明确写「仿写例句，非原文」，不要编造出处。"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><path class="c o" d="M72 70c0-22 26-34 52-32 30 2 46 18 44 32-2 8-18 12-48 12-30 0-48-4-48-12z"/>
 <path class="o" d="M124 38c0-6 4-10 8-10"/>
 <path class="o p" d="M80 78c14 6 66 6 82 0v8c-16 6-68 6-82 0z"/>
 <path class="k" d="M98 106h10M114 106h10M130 106h10"/>
 <rect class="o" x="98" y="100" width="44" height="14" rx="2" fill="none"/>
 <path class="g" d="M98 100h15v14H98z"/>
-<path class="c" d="M127 100h15v14h-15z"/></svg></span><span class="pb-body"><span class="pb-no">07 · 法语</span><span class="pb-title">法语单词 · Membean 五步</span></span></button>
-<button type="button" class="pb-card c-v" data-id="fr-sentence" data-cat="法语" data-search="法语长句精析 一个难句拆到底：句型、语法、词汇、动词变位全讲清。 法语 请对法语句子「【在这里粘贴法语句子】」进行详细分析，包括语法、词汇、词组以及实际意义，并用中文解释。
+<path class="c" d="M127 100h15v14h-15z"/></svg></span><span class="pb-body"><span class="pb-no">07 · 法语<span class="pb-v2">v2</span></span><span class="pb-title">法语单词 · Membean 五步</span></span></button>
+<button type="button" class="pb-card c-v" data-id="fr-sentence" data-cat="法语" data-search="法语长句精析 一个难句从整体拆到局部：句子树、动词变位、词汇、易错点，最后仿写一句。 法语 请精析下面这个法语句子，用中文解释。
+句子：「【在这里粘贴法语句子】」
+上下文：【可选：前后一两句或出处，能帮助判断语气和指代】
 
-这句话是什么句子，可能作为某个主句的宾语或补语，因此从各种句子的角度进行分析。
+按下面的路径，从整体拆到局部：
+1. 一句话意思：先给一个通顺的中文译文。
+2. 句子骨架：找出主句的主语、谓语、宾语或表语；再把从句、插入语、同位语一层层剥出来，用缩进画成一棵树。每一层标注：它是什么从句、修饰谁、在句中作什么成分（宾语 / 补语 / 状语……）。
+3. 动词逐个解析：句中每个变位动词，写出不定式、时态、语式、人称，并说明为什么这里用这个时态或语式（例如虚拟式是被什么触发的）。
+4. 词汇与词组：难词、固定搭配、介词搭配逐条解释，标注语域（书面 / 口语 / 文学）。
+5. 易错点：这句话里最容易误读的 1～2 处，以及误读后会读成什么意思。
+6. 实际意义：结合上下文，这句话真正想表达的意思、语气和作者的态度。
+7. 仿写：用同样的句型造一个新句子（附中文），把这个句型变成我自己的。
 
-动词的变位进行解析。"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><rect class="g o" x="102" y="28" width="36" height="20" rx="4"/>
+交付前自检：确认第 2 步的树里没有漏掉任何一个变位动词和从句。"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><rect class="g o" x="102" y="28" width="36" height="20" rx="4"/>
 <path class="o" d="M120 48v12M76 60h88M76 60v12M120 60v12M164 60v12"/>
 <rect class="c o" x="58" y="72" width="36" height="18" rx="4"/>
 <rect class="o p" x="102" y="72" width="36" height="18" rx="4"/>
 <rect class="c o" x="146" y="72" width="36" height="18" rx="4"/>
 <path class="o" d="M120 90v10M104 100h32M104 100v8M136 100v8"/>
 <rect class="o p" x="92" y="108" width="24" height="14" rx="3"/>
-<rect class="o p" x="124" y="108" width="24" height="14" rx="3"/></svg></span><span class="pb-body"><span class="pb-no">08 · 法语</span><span class="pb-title">法语长句精析</span></span></button>
-<button type="button" class="pb-card c-v" data-id="chunk-translate" data-cat="法语" data-search="意群切分对照翻译 按意群切句，左原文右地道译文，精读和跟读都好用。 法语 不改变任何意群的情况下，左边是句子，且把句子分成小的部分，右边是翻译，地道的翻译。做成表格的形式。
+<rect class="o p" x="124" y="108" width="24" height="14" rx="3"/></svg></span><span class="pb-body"><span class="pb-no">08 · 法语<span class="pb-v2">v2</span></span><span class="pb-title">法语长句精析</span></span></button>
+<button type="button" class="pb-card c-v" data-id="chunk-translate" data-cat="法语" data-search="意群切分对照翻译 按意群切句，左原文右地道译文，每句再串成整句，精读跟读都好用。 法语 把下面的原文做成「意群对照表」。
 
-【在这里粘贴原文】"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><rect class="o p" x="44" y="34" width="152" height="90" rx="6"/>
+原文：【在这里粘贴】
+用途：【精读 / 跟读 / 背诵】
+
+规则：
+1. 切分：按意群切。一个意群是朗读时一口气读完、意思相对完整的最小单位，通常 3～8 个词。不要拆散固定搭配、介词短语，也不要把动词和它的直接宾语分开。不改动原文的任何字和标点。
+2. 表格三列：| 序号 | 原文意群 | 地道翻译 |
+3. 翻译：每一格写的是这个意群放在整句里的地道中文，而不是孤立的逐词直译。
+4. 每句结束后加一行「整句译文」，把这一句串成通顺的中文。
+5. 遇到习语、文化背景或特殊语法，在表格下方用脚注编号说明。
+
+交付前自检：把第二列从上到下连起来，必须和原文逐字一致；不一致就重做。"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><rect class="o p" x="44" y="34" width="152" height="90" rx="6"/>
 <path class="o" d="M120 34v90"/>
 <rect class="c" x="52" y="44" width="60" height="12" rx="3"/>
 <rect class="c" x="52" y="64" width="44" height="12" rx="3"/>
 <rect class="c" x="52" y="84" width="54" height="12" rx="3"/>
 <rect class="c" x="52" y="104" width="36" height="12" rx="3"/>
 <path class="k" d="M130 50h52M130 70h40M130 90h48M130 110h30"/>
-<path class="g o" d="M114 66l8 4-8 4z"/></svg></span><span class="pb-body"><span class="pb-no">09 · 法语</span><span class="pb-title">意群切分对照翻译</span></span></button>
-<button type="button" class="pb-card c-v" data-id="classify" data-cat="法语" data-search="单词语义分类记忆 一批生词分两种方式归类，再串成有画面感的小故事。 法语 ✍ 任务：请根据语义类别对以下法语单词进行分类，以帮助记忆更稳固。
+<path class="g o" d="M114 66l8 4-8 4z"/></svg></span><span class="pb-body"><span class="pb-no">09 · 法语<span class="pb-v2">v2</span></span><span class="pb-title">意群切分对照翻译</span></span></button>
+<button type="button" class="pb-card c-v" data-id="classify" data-cat="法语" data-search="单词语义分类记忆 一批生词先清点，再用两种方式归类、串成故事，最后用核对表保证一个不漏。 法语 背景：我是法语专业大四学生，这批词来自【课文 / 阅读 / 考试词表】，我想【长期记住 / 应付考试 / 在写作里用出来】。
+单词列表：【在这里粘贴单词】
 
-📌 具体要求：
-1️⃣ 请提供两种不同的分类方式（如：基于主题 vs. 基于词性），帮助我从不同角度记忆这些词汇。
-2️⃣ 提供分类理由：告诉我你是如何选择这个分类的。
-3️⃣ 提供示例句：请自由发挥，用幽默、有趣或富有画面感的方式，将每个分类中的单词串联成小故事、对话或短文。然后用中文解释这些词汇的应用故事，并在正文中穿插使用法语词汇（以斜体显示）。
-4️⃣ 近义词对比（可选）：如有同类别的近义词，请用表格清晰对比定义、语境、例句，让区别更直观。
-5️⃣ 重点：请不要遗漏我提供的任何词汇，每个词都要用到！
-💪 加油！我会给你小费！🎉
+任务：把这批法语单词按语义归类，帮我从不同角度把它们记牢。
 
-🔄 自检 &amp; 迭代优化：
-在回答之前，请按照以下步骤自我检查并优化答案：
-1️⃣ 完整性检查：确保所有给定的单词都已被分类并使用，没有遗漏。
-2️⃣ 分类合理性：请回顾你的分类，并用一句话解释为什么这个分类方式最适合。
-3️⃣ 示例句逻辑：确保示例句语法正确、连贯、有意义，如果发现某个句子生硬或不自然，请自动优化。
-4️⃣ 近义词对比：如果有近义词，检查是否对比清晰，如有模糊之处，请补充表格优化表达。
-5️⃣ 可读性提升：请模拟一个法语学习者阅读你的回答，并思考：有没有让人困惑的地方？有没有可以表达得更生动有趣的部分？能否用更直观的方式呈现（如表格、列表、示例对比）？
+工作路径：
+1️⃣ 清点：先把所有单词编号列出，带上词性和中文意思（多义词标出这批词里最可能用到的义项）。这份清单是后面核对的依据。
+2️⃣ 两种分类：给出两种角度不同的分类方式（例如按主题场景 / 按词性或构词 / 按情感色彩），每种都说明为什么这样分有助于记忆。每个类别 3～8 个词，太大就拆。
+3️⃣ 串成故事：每个类别写一个幽默、有画面感的小故事或对话，用中文讲，把这个类别的法语词嵌进去（以斜体显示），每个词出现时都能从上下文猜出意思。
+4️⃣ 近义辨析：同类里有近义词时，用表格对比定义、语境、例句。
+5️⃣ 覆盖核对表：最后输出一张表 | 编号 | 单词 | 分类一的类别 | 分类二的类别 | 是否出现在故事里 |，任何一格空着就回去补上。
 
-单词列表：【在这里粘贴单词】"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><rect class="c o" x="46" y="80" width="46" height="40" rx="4"/>
+🔄 交付前自检：
+1. 完整性：核对表里每个词都出现在两种分类和故事里。
+2. 分类合理性：每个类别都能用一句话说清共同点吗？说不清就重分。
+3. 例句质量：法语部分语法正确、搭配自然，生硬的句子自动改写。
+4. 读者测试：假装自己是第一次见到这些词的学生，读完有没有困惑的地方？能不能用表格、对比让它更直观？"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><rect class="c o" x="46" y="80" width="46" height="40" rx="4"/>
 <rect class="o p" x="98" y="80" width="46" height="40" rx="4"/>
 <rect class="g o" x="150" y="80" width="46" height="40" rx="4"/>
 <path class="o" d="M46 92h46M98 92h46M150 92h46"/>
 <rect class="o p" x="60" y="44" width="22" height="14" rx="2" transform="rotate(-12 71 51)"/>
 <rect class="o p" x="108" y="34" width="22" height="14" rx="2" transform="rotate(8 119 41)"/>
 <rect class="o p" x="158" y="48" width="22" height="14" rx="2" transform="rotate(-6 169 55)"/>
-<path class="k dash" d="M71 60l-2 18M119 50l1 28M169 64l3 14"/></svg></span><span class="pb-body"><span class="pb-no">10 · 法语</span><span class="pb-title">单词语义分类记忆</span></span></button>
-<button type="button" class="pb-card c-v" data-id="story-word" data-cat="法语" data-search="用故事记一个词 一个词引出一个法国故事，顺带拓展出一串四级词汇。 法语 【法语单词，例如：une abeille】，给我书写一个故事去理解这个词汇，然后依照这个故事继续拓展引出专业法语四级词汇。故事可以涉及很多法国文化，以及法国历史。"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><path class="o p" d="M120 50c-18-10-40-12-62-8v76c22-4 44-2 62 8z"/>
+<path class="k dash" d="M71 60l-2 18M119 50l1 28M169 64l3 14"/></svg></span><span class="pb-body"><span class="pb-no">10 · 法语<span class="pb-v2">v2</span></span><span class="pb-title">单词语义分类记忆</span></span></button>
+<button type="button" class="pb-card c-v" data-id="story-word" data-cat="法语" data-search="用故事记一个词 一个词引出一个法国文化小故事，顺着故事拓展一张同级词汇表，再做回忆练习。 法语 背景：我是法语专业大四学生，正在准备【例如：专业四级 / 专业八级 / 日常阅读积累】。
+核心词：【法语单词，例如：une abeille】
+
+请用一个故事带我理解这个词，再顺着故事拓展词汇：
+1. 故事：写一个 250～350 词的法语小故事（附中文翻译），背景放在一个具体的法国文化或历史场景里（某个时代、地区、节日或人物）。核心词出现 3 次以上，每次用法略有不同（不同搭配或引申义）。
+2. 文化注脚：故事里的文化和历史细节，用 2～3 条中文注脚说明，并标出哪些是史实、哪些是虚构情节。
+3. 词汇拓展：从故事里挑出 8～12 个与我的考试级别相当的词，做成表格 | 词 | 词性 | 中文 | 故事里的原句 | 一个同根词或近义词 |。
+4. 核心词小结：主要义项、常见搭配，以及相关的俗语或谚语（如果有）。
+5. 回忆练习：遮住故事，出 3 道填空题，用核心词和拓展词来填，答案放在最后。
+
+护栏：不要把虚构情节写成史实；拓展词的难度贴合我给的考试级别。"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><path class="o p" d="M120 50c-18-10-40-12-62-8v76c22-4 44-2 62 8z"/>
 <path class="c o" d="M120 50c18-10 40-12 62-8v76c-22-4-44-2-62 8z"/>
 <path class="o" d="M120 50v76"/>
 <path class="k" d="M70 62c12-2 26-1 38 4M70 76c12-2 26-1 38 4M70 90c12-2 26-1 38 4"/>
 <path class="g o" d="M150 26c6 0 8 6 4 10s-12 2-12-4 4-6 8-6z"/>
 <path class="o" d="M160 30l8-4M142 26l-6-4"/>
 <circle class="o p" cx="152" cy="80" r="10"/>
-<path class="o" d="M146 92l-4 14M158 92l4 14"/></svg></span><span class="pb-body"><span class="pb-no">11 · 法语</span><span class="pb-title">用故事记一个词</span></span></button>
-<button type="button" class="pb-card c-v" data-id="professor" data-cat="法语" data-search="老教授式法法释义 像老教授上课那样，用简单法语把一个词解释透。 法语 s&#x27;attachèrent presque avidement. avidement, quand on est avide de quelque chose, ça veut dire qu&#x27;on désire très fortement quelque chose. c&#x27;est avoir un désir très fort de quelque chose.
+<path class="o" d="M146 92l-4 14M158 92l4 14"/></svg></span><span class="pb-body"><span class="pb-no">11 · 法语<span class="pb-v2">v2</span></span><span class="pb-title">用故事记一个词</span></span></button>
+<button type="button" class="pb-card c-v" data-id="professor" data-cat="法语" data-search="老教授式法法释义 把老教授讲词的五个步骤写明白，让 ai 学的是他的方法，而不只是口吻。 法语 我想让你学会我法语老教授解释单词的方法，然后用这个方法帮我解释新词。
 
-用我老教授的这个解释方法帮我解释词汇，接下来我会发给你一些单词。
+他的一个示范：
+「s&#x27;attachèrent presque avidement. avidement, quand on est avide de quelque chose, ça veut dire qu&#x27;on désire très fortement quelque chose. c&#x27;est avoir un désir très fort de quelque chose.」
 
-【在这里粘贴单词】"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><rect class="o p" x="52" y="30" width="136" height="72" rx="4"/>
+他的方法有五步，请严格照做：
+1. 回到原句：先念出这个词所在的句子，让词带着语境出场。
+2. 退回更简单的同族词：副词退回形容词、名词退回动词（avidement → avide），从学生已经认识的词出发。
+3. 放进日常框架：用「quand on est / quand on fait …, ça veut dire que …」把意思放进一个生活场景里。
+4. 换个说法再讲一遍：用「c&#x27;est …」给出一个更短、更好记的同义改述。
+5. 只用简单的法语：全程不用中文，也不用比这个词更难的词。
+
+接下来我每次发给你一个词（最好附上原句），你就按这五步、用老教授的口吻讲一段，长度和示范差不多。讲完后另起一行，用中文给一个简短释义，方便我核对。
+
+如果我没给原句，先造一个自然的例句，再开始讲。
+
+单词（和原句）：【在这里粘贴】"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><rect class="o p" x="52" y="30" width="136" height="72" rx="4"/>
 <text class="tw" x="74" y="58">avidement</text>
 <path class="k" d="M74 70h70M74 82h50"/>
 <circle class="c o" cx="96" cy="112" r="15"/>
 <circle class="c o" cx="144" cy="112" r="15"/>
 <path class="o" d="M111 110c4-4 14-4 18 0M81 108l-16-6M159 108l16-6"/>
-<path class="g" d="M170 36h12v12h-12z"/></svg></span><span class="pb-body"><span class="pb-no">12 · 法语</span><span class="pb-title">老教授式法法释义</span></span></button>
-<button type="button" class="pb-card c-a" data-id="writing" data-cat="写作" data-search="公众号文章打磨 初稿交给 ai 当编辑：标题、开头、结构、语言逐项改。 写作 你是一位资深的公众号主编。下面是我的文章初稿，目标读者是【读者是谁】，我希望读者读完后【想让读者获得什么或者做什么】。
+<path class="g" d="M170 36h12v12h-12z"/></svg></span><span class="pb-body"><span class="pb-no">12 · 法语<span class="pb-v2">v2</span></span><span class="pb-title">老教授式法法释义</span></span></button>
+<button type="button" class="pb-card c-a" data-id="writing" data-cat="写作" data-search="公众号文章打磨 初稿交给一位懂你账号的编辑：先诊断、找核心一句话，再改标题、开头、结构和语言。 写作 你是一位资深公众号主编，也是我的长期编辑。
+我的账号：【例如：ai习语map，写 ai 辅助语言学习，读者多是大学生和语言学习者】
+这篇的目标读者：【读者是谁】
+读完希望他们：【获得什么 / 做什么，例如：收藏 / 试用某个方法 / 关注】
+我的文风样本：【可选：贴一段你自己满意的旧文，让编辑抓住你的语气】
 
-请按下面的顺序帮我打磨：
+初稿：【在这里粘贴】
 
-1. 先整体诊断：这篇文章最大的 3 个问题是什么？
-2. 标题：给我 5 个不同风格的标题（好奇型 / 干货型 / 故事型 / 反常识型 / 数字型），并推荐一个。
-3. 开头：前三句能不能留住读者？给我改写一个更抓人的开头。
-4. 结构：段落顺序是否合理？哪里可以删、哪里需要补一个例子或者故事？
-5. 语言：把啰嗦、空洞、说教的句子改得更具体、口语化，保留我的个人语气，不要写成 ai 腔。
-6. 结尾：给一个有力量的结尾，并附上一句引导互动的话。
+打磨路径（按顺序，每一步都说明理由）：
+1. 诊断：先不动手改，指出这篇最大的 3 个问题，按「对目标的影响」排序。
+2. 核心一句话：如果读者只记住一句话，应该是哪句？初稿里找不到这句话的话，先告诉我。
+3. 标题：5 个不同风格的标题（好奇型 / 干货型 / 故事型 / 反常识型 / 数字型），推荐一个，并说明它最适合哪类读者。
+4. 开头：前三句能不能留住读者？给一个改写版，要在三句之内交代「这和读者有什么关系」。
+5. 结构：段落顺序是否都在为核心一句话服务？哪里可以删，哪里需要补一个例子或故事。
+6. 语言：把啰嗦、空洞、说教的句子改得具体、口语化。保留我的语气，避免 ai 腔：不用「首先、其次、最后」「在当今时代」「总而言之」这类套话，不堆排比句。
+7. 结尾：一个有力量的结尾，加一句自然的互动引导。
 
-最后输出修改后的全文，并用【改】标出主要改动的地方。
+输出：先给诊断和建议，再给修改后的全文，主要改动处用【改】标出。
 
-初稿：【在这里粘贴】"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><path class="o p" d="M52 118c40-4 70-22 92-56"/>
+交付前自检：通读修改稿，把仍然像 ai 写的句子再改一遍；确认没有加入初稿里没有的事实或数据。"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><path class="o p" d="M52 118c40-4 70-22 92-56"/>
 <path class="k" d="M52 118c24-2 42-8 56-18"/>
 <path class="c o" d="M150 36l30 30-48 48-36 6 6-36z"/>
 <path class="o" d="M102 120l20-20M150 36l30 30"/>
 <path class="g o" d="M158 28l8-8 30 30-8 8z"/>
-<circle class="o p" cx="118" cy="104" r="4"/></svg></span><span class="pb-body"><span class="pb-no">13 · 写作</span><span class="pb-title">公众号文章打磨</span></span></button>
-<button type="button" class="pb-card c-e" data-id="debug" data-cat="效率" data-search="技术折腾 · 报错排查 装软件、配环境、跑脚本卡住了，让 ai 一步一步带你排查。 效率 我在【做什么，例如：安装 codex / 配置 obsidian 插件 / 部署 github pages】时遇到了问题，我是非程序员，请一步一步带我排查。
+<circle class="o p" cx="118" cy="104" r="4"/></svg></span><span class="pb-body"><span class="pb-no">13 · 写作<span class="pb-v2">v2</span></span><span class="pb-title">公众号文章打磨</span></span></button>
+<button type="button" class="pb-card c-e" data-id="debug" data-cat="效率" data-search="技术折腾 · 报错排查 装软件、配环境卡住了，让 ai 像工程师一样列假设、一次一步地验证。 效率 我在【做什么，例如：安装 codex / 配置 obsidian 插件 / 部署 github pages】时卡住了。我不是程序员，请像一位有耐心的工程师那样，一步一步带我排查。
 
-我的环境：【系统，例如 windows 11 / macos；相关软件和版本】
-我做了什么：【按顺序写下你执行的步骤或命令】
+我的环境：【系统和版本，例如 windows 11 / macos 15；相关软件和版本】
+我做了什么：【按顺序写下执行过的步骤或命令】
 期望的结果：【本来应该发生什么】
-实际的结果：【实际发生了什么，完整粘贴报错信息】
+实际的结果：【实际发生了什么；完整粘贴报错，不要截断】
+我已经试过：【可选】
 
-请这样帮我：
+排查方法：
+1. 翻译报错：用大白话解释报错在说什么。
+2. 列假设：给出最可能的 3 个原因，按可能性排序，每个写上「如果是这个原因，我们会看到什么现象」。
+3. 一次一步：从最可能、也最安全的检查开始。每次只给一个命令或操作，说明它在验证哪个假设、在哪里运行（哪个窗口、哪个文件夹），然后等我把结果发回来。
+4. 根据结果更新：每拿到一个结果，先说它排除或证实了哪个假设，再给下一步。不要一次给一长串命令。
+5. 安全护栏：涉及删除文件、修改系统设置、管理员权限、密钥或密码的操作，先说明风险和备份、恢复的方法，等我确认后再继续。永远不要让我把密钥贴进对话。
+6. 收尾：问题解决后写一份笔记——根本原因 / 最终修复步骤 / 下次避坑清单，格式整理好，我直接存进 obsidian。
 
-1. 先用大白话解释这个报错是什么意思、最可能的 3 个原因（按可能性排序）。
-2. 从最可能的原因开始，每次只给我一个检查步骤或命令，说明它是做什么的，等我把结果发给你再继续。
-3. 涉及删除文件、修改系统设置、需要管理员权限的操作，先提醒我风险，并告诉我怎么备份、怎么恢复。
-4. 问题解决后，总结根本原因，并写一份「下次避坑清单」，我会存进笔记里。"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><path class="c o" d="M150 34a26 26 0 0 0-26 34L70 122l14 14 54-54a26 26 0 0 0 34-26l-14 14-14-4-4-14z" transform="translate(-6 -10)"/>
+信息不够判断时先问我，不要猜着给命令。"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><path class="c o" d="M150 34a26 26 0 0 0-26 34L70 122l14 14 54-54a26 26 0 0 0 34-26l-14 14-14-4-4-14z" transform="translate(-6 -10)"/>
 <circle class="o p" cx="74" cy="118" r="4" transform="translate(-6 -10)"/>
 <path class="o p" d="M150 92l26 26-10 10-26-26z"/>
 <path class="g o" d="M134 76l16 16-8 8-16-16z"/>
-<path class="k" d="M52 40l10 6M50 60h12M176 36l-6 10"/></svg></span><span class="pb-body"><span class="pb-no">14 · 效率</span><span class="pb-title">技术折腾 · 报错排查</span></span></button>
-<button type="button" class="pb-card c-e" data-id="decision" data-cat="效率" data-search="帮我做一个决定 纠结的时候，用结构化的方式把选项、代价和风险摊开。 效率 我正在纠结一个决定：【决定是什么】。
-
+<path class="k" d="M52 40l10 6M50 60h12M176 36l-6 10"/></svg></span><span class="pb-body"><span class="pb-no">14 · 效率<span class="pb-v2">v2</span></span><span class="pb-title">技术折腾 · 报错排查</span></span></button>
+<button type="button" class="pb-card c-e" data-id="decision" data-cat="效率" data-search="帮我做一个决定 纠结的时候，先复述和追问，再摊开选项、加权打分，最后专门挑战你的倾向。 效率 我在纠结：【决定是什么】
 可选方案：【方案 a / 方案 b / ……】
-我最在乎的是：【例如：时间、钱、成长、健康、家人】
-约束条件：【预算、截止时间、不能接受的事】
+我最在乎的（按重要性排序）：【例如：成长 &gt; 钱 &gt; 时间】
+约束：【预算、截止时间、绝对不能接受的事】
+我现在的倾向：【可选：我其实更想选……，因为……】
 
-请帮我：
+请按下面的路径帮我想清楚，不要一上来就给建议：
+1. 复述与追问：用三句话复述我的处境；信息不够就先问我最关键的 2～3 个问题，等我回答后再继续。
+2. 摊开选项：每个方案的收益、代价、风险，以及最好和最坏的结果；再找一找我没列出来的第三个选项。
+3. 打分表：按我在乎的维度给每个方案打 1～5 分，按我给的排序加权，做成表格并算出加权分。
+4. 三个时间尺度：10 分钟后、10 个月后、10 年后，我会怎么看这个选择？
+5. 挑战我的倾向：如果我写了倾向，分别找出支持它和反对它最有力的理由，并检查我是不是在给已经想好的答案找理由。
+6. 可逆性：哪个选项可以反悔？有没有一个低成本的小步试错，能先拿到信息再决定？
+7. 建议：给出你的建议和理由，以及「出现什么情况时应该改选另一个」。最后的决定由我来做。
 
-1. 先复述我的处境，确认你理解对了；如果信息不够，先问我最关键的 2～3 个问题。
-2. 列出每个方案的收益、代价、风险，以及最好和最坏的结果。
-3. 按我在乎的几个维度给每个方案打分（1～5 分），做成一张表。
-4. 用三种角度各分析一次：10 分钟后、10 个月后、10 年后，我会怎么看这个选择？
-5. 指出我可能忽略的第三个选项，或者能降低风险的「小步试错」做法。
-6. 给出你的建议和理由，但最后的决定由我来做。"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><path class="o" d="M120 32v84M90 124h60M66 48h108"/>
+想听几种立场互相争论？用「多视角圆桌会议」那张卡。"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><path class="o" d="M120 32v84M90 124h60M66 48h108"/>
 <circle class="g o" cx="120" cy="40" r="7"/>
 <path class="o" d="M66 48l-18 36M66 48l18 36M174 48l-18 30M174 48l18 30"/>
 <path class="c o" d="M44 84h44c0 12-10 18-22 18s-22-6-22-18z"/>
 <path class="o p" d="M152 78h44c0 12-10 18-22 18s-22-6-22-18z"/>
 <text class="t" x="66" y="76" text-anchor="middle">A</text>
-<text class="t" x="174" y="70" text-anchor="middle">B</text></svg></span><span class="pb-body"><span class="pb-no">15 · 效率</span><span class="pb-title">帮我做一个决定</span></span></button>
+<text class="t" x="174" y="70" text-anchor="middle">B</text></svg></span><span class="pb-body"><span class="pb-no">15 · 效率<span class="pb-v2">v2</span></span><span class="pb-title">帮我做一个决定</span></span></button>
+<button type="button" class="pb-card c-e" data-id="roundtable" data-cat="效率" data-search="多视角圆桌会议 请几种立场完全不同的人（外加一个专门唱反调的）围着一个问题争论一轮。 效率 我想就一个问题开一场「圆桌会议」，用几种不同的视角把它想透。
+
+议题：【例如：毕业后先工作还是先读研 / 公众号要不要转做视频】
+我的背景：【和这个议题相关的情况】
+
+请邀请 4 位与会者：
+- 3 位由你根据议题挑选，立场要真正不同（例如：投资人、刚入行的年轻人、行业老兵）。可以是某一类人，也可以借用某位公开人物的思维方式。
+- 第 4 位固定是「魔鬼代言人」，专门反对会上正在形成的共识。
+
+开会前，每位与会者用一句话写清：ta 最在乎什么、最怕什么、判断好坏的标准是什么。
+
+会议流程：
+第一轮：每人独立发表观点（150 字以内），不受其他人影响。
+第二轮：每人回应一位其他与会者，指出 ta 的盲点。
+第三轮：魔鬼代言人发言。
+最后：你作为主持人，总结共识、真正的分歧点、各方都认可的「下一步可以先做的小事」，以及还需要我补充的信息。
+
+护栏：角色是对一种思维方式的模拟，不代表真实人物的真实观点；如果借用了公开人物，请在开头注明。"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><ellipse class="c o" cx="120" cy="86" rx="52" ry="22"/>
+<circle class="o p" cx="64" cy="58" r="11"/><circle class="o p" cx="176" cy="58" r="11"/>
+<circle class="o p" cx="98" cy="38" r="11"/><circle class="g o" cx="142" cy="38" r="11"/>
+<path class="o" d="M60 120c0-10 8-16 18-16M180 120c0-10-8-16-18-16"/>
+<path class="k" d="M150 26c8-8 20-8 26 0"/>
+<text class="t" x="168" y="18">?!</text></svg></span><span class="pb-body"><span class="pb-no">16 · 效率<span class="pb-v2">新</span></span><span class="pb-title">多视角圆桌会议</span></span></button>
+<button type="button" class="pb-card c-m" data-id="gepa-evolve" data-cat="元方法" data-search="提示词进化器（gepa） 拿一个用得不满意的提示词和它跑出来的结果，反思、诊断，进化出更好的版本。 元方法 你是一名提示词优化师。请用 gepa（反思式提示词进化）的思路帮我改进一个提示词：不凭感觉改，而是看它实际跑出来的结果，反思问题出在哪里，再进化出更好的版本。
+
+【原提示词】
+（在这里粘贴）
+
+【任务目标】这个提示词用来做什么，什么样的结果算好：【……】
+
+【运行记录】我用它跑了几次（最好 2～3 次，用不同的输入）：
+- 输入 1：【……】　输出 1：【粘贴或概括】　我的评价：【哪里好，哪里不满意】
+- 输入 2：【……】　输出 2：【……】　我的评价：【……】
+
+请按下面的步骤工作：
+1. 定标准：根据任务目标，写出 4～6 条可以检验的评价标准（例如「每个词都被用到」「不编造出处」「第一轮不泄露答案」）。
+2. 逐次反思：对照标准，找出每一次运行失败的地方，并追到原因——是提示词哪一句没写、写得含糊、互相矛盾，还是缺了上下文？引用原提示词里的句子来说明。
+3. 问题归类：把问题分成三类——
+   - 缺上下文：ai 不知道我是谁、为什么做、做到什么程度；
+   - 缺方法：只说了要什么，没说怎么做、每一步做到什么程度算好；
+   - 缺护栏：没有固定的输出结构，没有防编造，没有交付前自检。
+4. 三个候选：写 3 个候选版本，每个重点解决一类问题，说明它在哪种输入下最强、可能牺牲了什么。
+5. 合并：把三个候选里各自最好的改动合成一个最终版本；删掉对结果没有影响的指令（套话、空洞的语气要求、给小费之类）。
+6. 改动记录：用表格列出 | 改动 | 解决了哪次运行的什么问题 | 预期效果 |。
+7. 下一轮测试：给我 2 个最能暴露新版本弱点的测试输入，我拿去再跑一次，把结果发回来继续进化。
+
+最终版本放在一个代码块里，方便我直接复制。"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><path class="o" d="M72 76a48 34 0 0 1 96 0" fill="none"/>
+<path class="k thick" d="M168 76a48 34 0 0 1-96 0"/>
+<path class="g o" d="M160 64l10 14 10-14z"/>
+<path class="o p" d="M80 88l-10-14-10 14z"/>
+<rect class="o p" x="98" y="58" width="44" height="36" rx="5"/>
+<path class="k" d="M106 68h28M106 76h20M106 84h24"/>
+<text class="t" x="66" y="40" text-anchor="middle">v1</text>
+<text class="t" x="174" y="122" text-anchor="middle">v2</text></svg></span><span class="pb-body"><span class="pb-no">17 · 元方法<span class="pb-v2">新</span></span><span class="pb-title">提示词进化器（GEPA）</span></span></button>
+<button type="button" class="pb-card c-m" data-id="distill-method" data-cat="元方法" data-search="蒸馏一位高手的方法 给几段高手的示范，提取他的步骤和判断标准（法），做成一个能反复调用的提示词。 元方法 我想把一位高手的「方法」提取出来，做成一个可以反复调用的提示词。我要的不是模仿他的语气和排版（那只是「形」），而是他处理问题的步骤和判断标准（「法」）。
+
+这位高手是：【例如：我的法语老教授 / 某位 up 主 / 某位作者】
+他擅长的事：【例如：用简单的法语解释难词】
+示范样本（至少 2～3 个，越多越准）：
+样本 1：【粘贴他的一段讲解、文章或回答】
+样本 2：【……】
+样本 3：【……】
+
+请这样做：
+1. 对比样本：找出每个样本里都出现的动作，按出现的顺序排好。只出现一次的动作单独列出，标为「可能是偶然」。
+2. 写出解题路径：把共同的动作写成 3～7 个步骤，每一步写清：做什么 → 为什么这样做 → 做到什么程度算到位。
+3. 找判断标准：他在什么情况下会换一种讲法？他刻意回避什么？（比如从不用比目标词更难的词。）
+4. 分清形、法、神：
+   - 形：语气、句式、排版习惯；
+   - 法：上面的步骤和判断标准；
+   - 神：他看问题的立场、他在乎的东西。
+   分别列出，并告诉我哪些才是效果的关键。
+5. 生成提示词：写一个可以直接复制使用的提示词，以「法」为主体，附一个样本作示范，用【】留出我要填的新输入。
+6. 试跑：用一个新的输入跑一遍你生成的提示词，让我对比它和真人的样本像不像。
+
+注意：样本太少或太单一时会抽偏。如果你觉得样本不够，直接告诉我还需要补哪一类。"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><path class="o p" d="M104 30h32M110 30v30l-30 52c-3 6 1 12 8 12h64c7 0 11-6 8-12l-30-52V30"/>
+<path class="c" d="M92 96h56l11 18c2 4 0 6-4 6H85c-4 0-6-2-4-6z"/>
+<circle class="g o" cx="120" cy="104" r="6"/>
+<path class="k dash" d="M120 62v30"/>
+<circle class="dot" cx="104" cy="44" r="3"/><circle class="dot" cx="140" cy="40" r="3"/>
+<text class="t" x="62" y="60" text-anchor="middle">形</text>
+<text class="t" x="182" y="60" text-anchor="middle">神</text>
+<text class="t" x="120" y="136" text-anchor="middle">法</text></svg></span><span class="pb-body"><span class="pb-no">18 · 元方法<span class="pb-v2">新</span></span><span class="pb-title">蒸馏一位高手的方法</span></span></button>
+<button type="button" class="pb-card c-m" data-id="context-card" data-cat="元方法" data-search="建立我的上下文卡 让 ai 采访你，生成一张 300 字以内的 context.md，以后每次开新对话先贴给它。 元方法 请帮我建立一张「我的上下文卡」（context.md）。以后每次开新对话，我会先把它贴给 ai，让 ai 不用从零开始了解我。
+
+请采访我：一次只问一个问题，等我回答后再问下一个，一共不超过 10 个问题。内容覆盖：
+1. 我是谁：身份、专业、现在所处的阶段
+2. 正在做的事：正在推进的 2～3 个项目或目标
+3. 我的水平：在常用领域里的程度（例如语言水平、技术水平）
+4. 常用工具：常用的软件和 ai 工具
+5. 回答偏好：喜欢什么样的回答，讨厌什么样的回答
+6. 红线：ai 绝对不要做的事
+
+采访结束后，输出一份 300 字以内的 context.md，使用 markdown，结构如下：
+
+# 我的上下文
+## 我是谁
+## 正在做
+## 水平速查
+## 常用工具
+## 回答偏好
+## 不要做
+
+要求：每一条都写成 ai 可以直接照着执行的句子（例如「解释技术问题时，假设我不会写代码」），而不是形容词（例如「我很好学」）。
+
+最后告诉我：哪几条会很快过时，建议我多久更新一次。"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><rect class="o p" x="48" y="36" width="144" height="88" rx="10"/>
+<rect class="c o" x="60" y="52" width="40" height="48" rx="6"/>
+<circle class="o p" cx="80" cy="70" r="9"/>
+<path class="o" d="M66 96c2-10 26-10 28 0"/>
+<path class="k" d="M112 58h66M112 72h52M112 86h60M112 100h38"/>
+<rect class="g o" x="150" y="28" width="30" height="16" rx="3"/>
+<text class="t" x="165" y="40" text-anchor="middle">.md</text></svg></span><span class="pb-body"><span class="pb-no">19 · 元方法<span class="pb-v2">新</span></span><span class="pb-title">建立我的上下文卡</span></span></button>
+<button type="button" class="pb-card c-m" data-id="wrap-up" data-cat="元方法" data-search="对话收尾 · 沉淀交接 一次长对话结束前，把结论、踩过的坑和做法沉淀成交接记录和执行手册。 元方法 这次对话要结束了。请把它沉淀下来，让我下次开新窗口时能直接接上，不用从头再讲一遍。
+
+请输出两份东西：
+
+一、交接记录（我会追加到 context.md 或项目笔记里）
+- 要解决的问题：一句话
+- 结论和决定：做了哪些决定，每条附一句理由
+- 已完成：
+- 还没解决 / 下一步：按优先级排
+- 踩过的坑：哪些方法试过但不行，为什么
+- 关键信息：文件名、命令、链接、参数等，原样保留
+
+二、执行手册（如果这件事以后还会再做）
+把这次摸索出来的做法写成 sop：
+- 适用场景：什么时候用
+- 准备：开始前需要准备什么
+- 步骤：编号步骤，每一步写清做什么、怎么判断做对了
+- 常见问题：出错时先检查什么
+
+要求：只写这次对话里真实发生过的内容，不要补充没有验证过的步骤；如果这件事是一次性的，就跳过第二部分并说明原因。
+
+最后单独一行：如果要把这次的做法变成一个可以复用的提示词，它应该叫什么名字，第一句应该怎么写。"><span class="pb-media"><svg viewBox="0 0 240 150" aria-hidden="true" focusable="false"><path class="gr" d="M28 128H212"/><circle class="dot" cx="36" cy="22" r="2"/><circle class="dot" cx="206" cy="30" r="2"/><circle class="dot" cx="196" cy="112" r="1.6"/><rect class="o p" x="66" y="28" width="104" height="98" rx="6"/>
+<path class="o" d="M80 28v98"/>
+<path class="o" d="M58 42h16M58 62h16M58 82h16M58 102h16"/>
+<path class="g o" d="M92 50l6 6 12-12"/>
+<path class="g o" d="M92 74l6 6 12-12"/>
+<path class="k" d="M116 52h40M116 76h32"/>
+<rect class="c" x="92" y="94" width="64" height="10" rx="2"/>
+<path class="o" d="M92 114h44"/>
+<path class="o thick" d="M186 60l-14 40"/></svg></span><span class="pb-body"><span class="pb-no">20 · 元方法<span class="pb-v2">新</span></span><span class="pb-title">对话收尾 · 沉淀交接</span></span></button>
     </div>
     <div class="pb-empty" id="pbEmpty">没有找到匹配的 Prompt，换个关键词试试。</div>
   </div>
 </main>
 
-<section class="pb-how">
-  <div><b>01 · 选</b>按场景筛选或直接搜索，点开卡片看完整的提示词。</div>
-  <div><b>02 · 填</b>把<em>【高亮的部分】</em>换成你自己的内容：主题、单词、原文、报错……</div>
-  <div><b>03 · 用</b>一键复制，或者直接打开常用的 AI，粘贴发送；每张卡片都有自己的链接，方便收藏。</div>
+<section class="pb-method" id="method">
+  <div class="pb-method-head">
+    <h2>这些提示词是怎么写的</h2>
+    <p>四条原则，来自《S31 对话深度解读》里的 GEPA、上下文工程和「形 · 法 · 神」</p>
+  </div>
+  <div class="pb-rules">
+    <div class="pb-rule"><b>01 · 上下文先行</b><h3>先告诉 AI 你是谁、为什么做</h3><p>没有上下文，AI 只能按「平均用户」回答。所以几乎每张卡的开头都有一行【背景】和【目的】。</p><p>把这行背景一次写好，就是「上下文卡」；每次对话结束再把新信息沉淀回去。</p><small>S31 · theme 06 上下文工程</small></div>
+    <div class="pb-rule"><b>02 · 蒸馏「法」，不止「形」</b><h3>写清楚怎么做，而不只是要什么</h3><p>只给样例，AI 学到的是口吻和排版（形）；把高手的步骤和判断标准写出来，它学到的才是方法（法）。</p><p>每一步都带一句「做到什么程度算过关」。</p><small>S31 · theme 08 形 / 法 / 神</small></div>
+    <div class="pb-rule"><b>03 · 结构就是护栏</b><h3>用固定的输出结构挡住幻觉</h3><p>「不要遗漏」「不要编造」只能靠 AI 自觉；一张覆盖核对表、一栏「来源 + 时间」、一个「非原文请标明」，结果就能检查了。</p><p>这就是 Schema 与 Harness：护栏，而不是笼子。</p><small>S31 · theme 04 Schema / Harness</small></div>
+    <div class="pb-rule"><b>04 · 反思回流</b><h3>交付前自检，交付后进化</h3><p>每张卡结尾都有一步「交付前自检」，很多还会让 AI 说出「哪里不得不猜」。</p><p>用得不顺手，就把提示词和它的输出一起交给「提示词进化器」，进化出下一版。</p><small>S31 · GEPA 反思式提示词进化</small></div>
+  </div>
+  <div class="pb-loop"><strong>进化循环：</strong>用一张卡 → 记下不满意的地方 → 连同输出交给 <a href="#gepa-evolve">提示词进化器</a> → 新版本替换旧版本，改动写进「进化记录」。点开任何一张卡，底部都能看到它从 v1 到 v2 改了什么、为什么。</div>
 </section>
 
 <footer class="site-foot">
@@ -900,6 +1193,8 @@ body.pb-lock { overflow: hidden; }
   <div class="pb-dlg-body">
     <p class="pb-hint" id="pbHint">使用前把 <mark>【高亮部分】</mark> 换成你自己的内容。</p>
     <pre class="pb-prompt" id="pbPrompt"></pre>
+    <details class="pb-evo" id="pbWhy"><summary>进化记录<span>改了什么、为什么</span></summary><ul id="pbWhyList"></ul></details>
+    <details class="pb-evo" id="pbV1"><summary>v1 原版<span>进化前的写法，方便对照</span></summary><pre id="pbV1Text"></pre></details>
   </div>
   <div class="pb-dlg-foot">
     <button class="pb-btn main" type="button" id="pbCopy">复制 Prompt</button>
@@ -917,7 +1212,7 @@ body.pb-lock { overflow: hidden; }
 <script>
 (function () {
   var $ = function (id) { return document.getElementById(id); };
-  var DATA = [{"id": "learn-new", "title": "快速入门一个新领域", "cat": "学习", "cls": "n", "desc": "想学一个全新的东西，先用 20% 的时间拿到 80% 的地图。", "prompt": "我想在最短时间内入门【主题，例如：Obsidian / 期权交易 / 法国文学史】。我的背景是：【你已经会什么、学这个想用来做什么】。\n\n请扮演这个领域里最会带新人的老师，按下面的结构帮我建立第一张「地图」：\n\n1. 一句话定义：用大白话说清它是什么、解决什么问题。\n2. 核心概念：列出入门必须懂的 5～8 个关键概念，每个用一句话解释，并说明它们之间的关系（谁是基础、谁依赖谁）。\n3. 二八法则：这个领域里哪 20% 的知识能解决 80% 的实际问题？哪些东西新手可以先放心跳过？\n4. 常见误区：新手最容易踩的 3 个坑，以及怎么避开。\n5. 学习路径：给我一个 7 天的入门计划，每天 1 小时，写清楚每天学什么、做什么小练习、做到什么程度算过关。\n6. 最好的资源：推荐 3～5 个入门资源（书、课程、视频、网站），说明各自适合哪个阶段。\n7. 自测题：最后出 5 道题，检验我是否真的入门了，答案先不要给。\n\n要求：少用术语，必须用术语时先解释；多举生活中的例子和类比；不确定的信息请直接说明不确定。"}, {"id": "research", "title": "深度调研一个主题", "cat": "调研", "cls": "d", "desc": "要做决定或写东西之前，先把一件事查透、查准。", "prompt": "请帮我对【调研对象，例如：某个工具 / 某个行业 / 某个留学项目】做一次深度调研。我调研的目的是：【用来做什么决定，或者写什么内容】。\n\n请按下面的步骤进行：\n\n1. 拆问题：先把这个调研拆成 5～7 个关键子问题，告诉我为什么是这几个。\n2. 逐个回答：每个子问题都给出结论 + 依据。依据尽量来自一手来源（官网、官方文档、论文、原始数据），并标注来源和时间。\n3. 多方观点：列出支持方和反对方各自最有力的论据，不要只给一面之词。\n4. 关键数据：把重要的数字整理成一张表（指标 / 数值 / 来源 / 时间）。\n5. 风险与盲区：哪些信息目前查不到、互相矛盾或可能已经过时？\n6. 结论与建议：结合我的目的，给出明确的建议和下一步行动清单。\n\n要求：区分「事实」「推断」和「观点」；没有把握的地方直接说「不确定」，不要编造；输出用中文，专有名词保留原文。"}, {"id": "youtube", "title": "YouTube 视频转阅读版", "cat": "调研", "cls": "d", "desc": "把一个长视频改写成能直接读完的 Blog 文章，不用再回看。", "prompt": "你将把一段 YouTube 视频重写成\"阅读版本\"，按内容主题分成若干小节；目标是让读者通过阅读就能完整理解视频讲了什么，就好像是在读一篇 Blog 版的文章一样。\n\n输出要求：\n\n1. Metadata\n- Title\n- Author\n- URL\n\n2. Overview\n用一段话点明视频的核心论题与结论。\n\n3. 按照主题来梳理\n- 每个小节都需要根据视频中的内容详细展开，让我不需要再二次查看视频了解详情，每个小节不少于 500 字。\n- 若出现方法/框架/流程，将其重写为条理清晰的步骤或段落。\n- 若有关键数字、定义、原话，请如实保留核心词，并在括号内补充注释。\n\n4. 框架 & 心智模型（Framework & Mindset）\n可以从视频中抽象出什么 framework & mindset，将其重写为条理清晰的步骤或段落，每个 framework & mindset 不少于 500 字。\n\n风格与限制：\n- 永远不要高度浓缩！\n- 不新增事实；若出现含混表述，请保持原意并注明不确定性。\n- 专有名词保留原文，并在括号给出中文释义（若转录中出现或能直译）。\n- 要求类的问题不用体现出来（例如 > 500 字）。\n- 避免一个段落的内容过多，可以拆解成多个逻辑段落（使用 bullet points）。\n\n视频链接 / 字幕：【在这里粘贴】"}, {"id": "reading", "title": "精读一篇文章或论文", "cat": "学习", "cls": "n", "desc": "读一篇硬文章：结构、论证、金句、可迁移的方法一次拿走。", "prompt": "请帮我精读下面这篇【文章 / 论文 / 书的章节】，我读它是为了：【你的目的】。\n\n请输出：\n\n1. 一句话主旨：作者最想说服读者的是什么？\n2. 结构地图：用大纲的形式还原文章结构，标出每一部分的作用（提出问题 / 论证 / 举例 / 反驳 / 结论）。\n3. 论证检查：核心论点有哪些证据支撑？哪里证据不足、有逻辑跳跃或者隐藏的前提？\n4. 关键概念：列出文中最重要的 5 个概念或术语，并解释。\n5. 原文金句：摘出 3～5 句最值得记住的原话（保留原文，附中文翻译）。\n6. 可迁移的方法：这篇文章里有什么思路或方法，我可以直接用到自己的学习、工作或写作中？\n7. 延伸问题：提出 3 个值得继续思考或查证的问题。\n\n原文：【在这里粘贴，或者给链接】"}, {"id": "feynman", "title": "费曼检验：我真的懂了吗", "cat": "学习", "cls": "n", "desc": "学完一样东西，讲给 AI 听，让它找出你没懂的地方。", "prompt": "我刚学完【概念 / 知识点】，下面我会用自己的话把它讲一遍。请你扮演一个聪明但完全不懂这个领域的 12 岁学生，按费曼学习法帮我检验：\n\n1. 听完后，指出我讲得含糊、跳步或者用术语糊弄过去的地方。\n2. 针对这些地方连续追问我 3～5 个「为什么」，一次只问一个，等我回答完再问下一个。\n3. 如果我讲错了，不要直接给答案，先给提示，让我自己修正。\n4. 最后给我打分（0～10 分），列出我真正掌握的部分和还需要补的部分，并给出一个更简洁、准确的标准版讲解作对照。\n\n我的讲解：【在这里写你的理解】"}, {"id": "word-en", "title": "学一个英语新单词", "cat": "英语", "cls": "a", "desc": "Membean 式学词：语境、词根、测验、真人例句，一次记牢。", "prompt": "我要彻底学会英语单词【单词】，请用 Membean 的学词方法带我学：\n\n1. 语境短文：写一段 100 词左右、风趣幽默、有画面感的英文短文，让这个词自然出现 2～3 次，短时间就能读完。\n2. 英英测验：设计一道英英释义的选择题，三个选项。答案先不要给，等我下一轮回答后再公布。\n3. 词根拆解：拆出词根、词缀，用简单的英语解释每一部分的意思，并列出 3 个同词根的常见词。\n4. 核心释义：给出最常用的 1～2 个意思（英文释义 + 中文），说明它的语气和使用场合（正式 / 口语 / 书面）。\n5. 搭配与辨析：列出 5 个高频搭配；如果有容易混淆的近义词，用表格对比（含义 / 语境 / 例句）。\n6. 真人例句：推荐我去 YouGlish 搜索这个词时可以重点听的场景，再给 2 句来自经典文学或新闻的例句。\n\n最后用这个单词出一道造句题让我练习，我写完你来批改。"}, {"id": "word-fr", "title": "法语单词 · Membean 五步", "cat": "法语", "cls": "v", "desc": "用 Membean 的方法学一个法语词，配法法测验和文学例句。", "prompt": "使用 Membean 的学词方法进行法语单词的学习。单词：【法语单词】\n\n① 创造一个与此单词相关，语境风趣幽默的语境且该单词在此文本中出现 2-3 次，文本长度为 100 词左右，可以在短时间读完。\n② 设计一个 quiz，对此单词进行法法解释。设计三个选项，在我们第二轮对话时，再显示答案。\n③ 结合法语数据库，把单词的词根、词干进行提取，然后用简单的法语进行解释。\n④ 在 YouGlish 中寻找有关此单词有趣的片段。\n⑤ 找一些涉及此单词的古往文学作品例句。"}, {"id": "fr-sentence", "title": "法语长句精析", "cat": "法语", "cls": "v", "desc": "一个难句拆到底：句型、语法、词汇、动词变位全讲清。", "prompt": "请对法语句子「【在这里粘贴法语句子】」进行详细分析，包括语法、词汇、词组以及实际意义，并用中文解释。\n\n这句话是什么句子，可能作为某个主句的宾语或补语，因此从各种句子的角度进行分析。\n\n动词的变位进行解析。"}, {"id": "chunk-translate", "title": "意群切分对照翻译", "cat": "法语", "cls": "v", "desc": "按意群切句，左原文右地道译文，精读和跟读都好用。", "prompt": "不改变任何意群的情况下，左边是句子，且把句子分成小的部分，右边是翻译，地道的翻译。做成表格的形式。\n\n【在这里粘贴原文】"}, {"id": "classify", "title": "单词语义分类记忆", "cat": "法语", "cls": "v", "desc": "一批生词分两种方式归类，再串成有画面感的小故事。", "prompt": "✍ 任务：请根据语义类别对以下法语单词进行分类，以帮助记忆更稳固。\n\n📌 具体要求：\n1️⃣ 请提供两种不同的分类方式（如：基于主题 vs. 基于词性），帮助我从不同角度记忆这些词汇。\n2️⃣ 提供分类理由：告诉我你是如何选择这个分类的。\n3️⃣ 提供示例句：请自由发挥，用幽默、有趣或富有画面感的方式，将每个分类中的单词串联成小故事、对话或短文。然后用中文解释这些词汇的应用故事，并在正文中穿插使用法语词汇（以斜体显示）。\n4️⃣ 近义词对比（可选）：如有同类别的近义词，请用表格清晰对比定义、语境、例句，让区别更直观。\n5️⃣ 重点：请不要遗漏我提供的任何词汇，每个词都要用到！\n💪 加油！我会给你小费！🎉\n\n🔄 自检 & 迭代优化：\n在回答之前，请按照以下步骤自我检查并优化答案：\n1️⃣ 完整性检查：确保所有给定的单词都已被分类并使用，没有遗漏。\n2️⃣ 分类合理性：请回顾你的分类，并用一句话解释为什么这个分类方式最适合。\n3️⃣ 示例句逻辑：确保示例句语法正确、连贯、有意义，如果发现某个句子生硬或不自然，请自动优化。\n4️⃣ 近义词对比：如果有近义词，检查是否对比清晰，如有模糊之处，请补充表格优化表达。\n5️⃣ 可读性提升：请模拟一个法语学习者阅读你的回答，并思考：有没有让人困惑的地方？有没有可以表达得更生动有趣的部分？能否用更直观的方式呈现（如表格、列表、示例对比）？\n\n单词列表：【在这里粘贴单词】"}, {"id": "story-word", "title": "用故事记一个词", "cat": "法语", "cls": "v", "desc": "一个词引出一个法国故事，顺带拓展出一串四级词汇。", "prompt": "【法语单词，例如：une abeille】，给我书写一个故事去理解这个词汇，然后依照这个故事继续拓展引出专业法语四级词汇。故事可以涉及很多法国文化，以及法国历史。"}, {"id": "professor", "title": "老教授式法法释义", "cat": "法语", "cls": "v", "desc": "像老教授上课那样，用简单法语把一个词解释透。", "prompt": "S'attachèrent presque avidement. Avidement, quand on est avide de quelque chose, ça veut dire qu'on désire très fortement quelque chose. C'est avoir un désir très fort de quelque chose.\n\n用我老教授的这个解释方法帮我解释词汇，接下来我会发给你一些单词。\n\n【在这里粘贴单词】"}, {"id": "writing", "title": "公众号文章打磨", "cat": "写作", "cls": "a", "desc": "初稿交给 AI 当编辑：标题、开头、结构、语言逐项改。", "prompt": "你是一位资深的公众号主编。下面是我的文章初稿，目标读者是【读者是谁】，我希望读者读完后【想让读者获得什么或者做什么】。\n\n请按下面的顺序帮我打磨：\n\n1. 先整体诊断：这篇文章最大的 3 个问题是什么？\n2. 标题：给我 5 个不同风格的标题（好奇型 / 干货型 / 故事型 / 反常识型 / 数字型），并推荐一个。\n3. 开头：前三句能不能留住读者？给我改写一个更抓人的开头。\n4. 结构：段落顺序是否合理？哪里可以删、哪里需要补一个例子或者故事？\n5. 语言：把啰嗦、空洞、说教的句子改得更具体、口语化，保留我的个人语气，不要写成 AI 腔。\n6. 结尾：给一个有力量的结尾，并附上一句引导互动的话。\n\n最后输出修改后的全文，并用【改】标出主要改动的地方。\n\n初稿：【在这里粘贴】"}, {"id": "debug", "title": "技术折腾 · 报错排查", "cat": "效率", "cls": "e", "desc": "装软件、配环境、跑脚本卡住了，让 AI 一步一步带你排查。", "prompt": "我在【做什么，例如：安装 Codex / 配置 Obsidian 插件 / 部署 GitHub Pages】时遇到了问题，我是非程序员，请一步一步带我排查。\n\n我的环境：【系统，例如 Windows 11 / macOS；相关软件和版本】\n我做了什么：【按顺序写下你执行的步骤或命令】\n期望的结果：【本来应该发生什么】\n实际的结果：【实际发生了什么，完整粘贴报错信息】\n\n请这样帮我：\n\n1. 先用大白话解释这个报错是什么意思、最可能的 3 个原因（按可能性排序）。\n2. 从最可能的原因开始，每次只给我一个检查步骤或命令，说明它是做什么的，等我把结果发给你再继续。\n3. 涉及删除文件、修改系统设置、需要管理员权限的操作，先提醒我风险，并告诉我怎么备份、怎么恢复。\n4. 问题解决后，总结根本原因，并写一份「下次避坑清单」，我会存进笔记里。"}, {"id": "decision", "title": "帮我做一个决定", "cat": "效率", "cls": "e", "desc": "纠结的时候，用结构化的方式把选项、代价和风险摊开。", "prompt": "我正在纠结一个决定：【决定是什么】。\n\n可选方案：【方案 A / 方案 B / ……】\n我最在乎的是：【例如：时间、钱、成长、健康、家人】\n约束条件：【预算、截止时间、不能接受的事】\n\n请帮我：\n\n1. 先复述我的处境，确认你理解对了；如果信息不够，先问我最关键的 2～3 个问题。\n2. 列出每个方案的收益、代价、风险，以及最好和最坏的结果。\n3. 按我在乎的几个维度给每个方案打分（1～5 分），做成一张表。\n4. 用三种角度各分析一次：10 分钟后、10 个月后、10 年后，我会怎么看这个选择？\n5. 指出我可能忽略的第三个选项，或者能降低风险的「小步试错」做法。\n6. 给出你的建议和理由，但最后的决定由我来做。"}];
+  var DATA = [{"id": "learn-new", "title": "快速入门一个新领域", "cat": "学习", "cls": "n", "desc": "想学一个全新的东西，先校准目标，再拿到一张能自己检验的入门地图。", "prompt": "背景：【我是谁、已经会什么，例如：法语专业大四，会用 Obsidian，没学过编程】\n我要入门：【主题】\n学完想做到：【一个能检验的具体目标，例如：两周后能自己搭好一个 GitHub Pages 博客】\n每天能投入：【时间，例如：1 小时】\n\n你是这个领域里最会带新人的老师。按下面的路径带我，每一步都有过关标准。\n\n第一步 · 校准（先别讲课）\n如果我的目标太空泛，先问我最多 3 个问题，把它变具体；信息够了就直接进入第二步。\n\n第二步 · 画地图\n1. 一句话定义：它是什么、解决什么问题，用我背景里熟悉的东西打个比方。\n2. 概念骨架：入门必须懂的 5～8 个概念，用「A → B」画出依赖关系（先懂谁才能懂谁）。\n3. 二八切分：哪 20% 直接服务我的目标；哪些可以放心先跳过，为什么。\n\n第三步 · 排路径\n按我的时间排一条最短路径。每一天写清：学什么 / 做什么小练习 / 做到什么算过关。过关标准必须是我能自己检验的动作（例如「不看教程独立做出……」），而不是「理解了……」。\n\n第四步 · 避坑与资源\n新手最常踩的 3 个坑，以及踩坑时会出现的信号；3～5 个资源，标注适合在第几天用。\n\n第五步 · 出题\n5 道由浅入深的自测题，最后一道必须是应用题。答案先不给，等我作答后再批改。\n\n护栏：\n- 术语第一次出现时用一句话解释。\n- 区分「公认事实」和「你的经验建议」；资源或数据没把握就直说，不要编造链接。\n\n交付前自检：第三步里每一天的过关标准，我都能自己检验吗？不能的改掉再输出。\n收尾：用一句话告诉我，我给的背景里还缺什么信息，让你不得不猜。", "why": ["诊断：v1 一上来就讲课，不管目标清不清楚；「7 天、每天 1 小时」写死了，换个人就不合身。", "改动：加「校准」一步，目标和时间改成填空——先补上下文，再干活。", "改动：过关标准必须能自己检验。这是 GEPA 的关键：没有可检验的标准，就没法判断这次输出好不好，也就没法进化。", "改动：收尾让 AI 报告「哪里不得不猜」，缺的信息补进你的上下文卡，下次就不用猜了。"], "v1": "我想在最短时间内入门【主题，例如：Obsidian / 期权交易 / 法国文学史】。我的背景是：【你已经会什么、学这个想用来做什么】。\n\n请扮演这个领域里最会带新人的老师，按下面的结构帮我建立第一张「地图」：\n\n1. 一句话定义：用大白话说清它是什么、解决什么问题。\n2. 核心概念：列出入门必须懂的 5～8 个关键概念，每个用一句话解释，并说明它们之间的关系（谁是基础、谁依赖谁）。\n3. 二八法则：这个领域里哪 20% 的知识能解决 80% 的实际问题？哪些东西新手可以先放心跳过？\n4. 常见误区：新手最容易踩的 3 个坑，以及怎么避开。\n5. 学习路径：给我一个 7 天的入门计划，每天 1 小时，写清楚每天学什么、做什么小练习、做到什么程度算过关。\n6. 最好的资源：推荐 3～5 个入门资源（书、课程、视频、网站），说明各自适合哪个阶段。\n7. 自测题：最后出 5 道题，检验我是否真的入门了，答案先不要给。\n\n要求：少用术语，必须用术语时先解释；多举生活中的例子和类比；不确定的信息请直接说明不确定。"}, {"id": "research", "title": "深度调研一个主题", "cat": "调研", "cls": "d", "desc": "做决定或写东西之前，围绕「这会怎样改变我的决定」把一件事查透。", "prompt": "背景：【我是谁】\n调研对象：【例如：某个工具 / 某个行业 / 某个留学项目】\n调研是为了：【要做的决定，或者要写的内容】\n我已经知道的：【可留空】\n深度：【例如：今晚就要结论，够用即可 / 要写报告，越全越好】\n\n你是一名严谨的研究员。按下面的路径工作：\n\n1. 拆问题：把调研拆成 4～7 个子问题。每个子问题注明：它的答案会怎样改变我的决定（答案是 A 我会怎么做，是 B 又会怎么做）。和决定无关的问题删掉。\n2. 列计划：每个子问题打算查哪类来源（官网 / 官方文档 / 论文 / 原始数据 / 一线用户评价）。列完直接开始，不用等我确认。\n3. 逐个回答：每个子问题按「结论 → 依据 → 来源（名称 + 时间）→ 置信度（高 / 中 / 低）」输出。\n4. 正反对照：支持方和反对方最强的论据各写一段，并指出双方真正的分歧在哪里。\n5. 数据表：重要数字整理成表（指标 / 数值 / 来源 / 时间 / 备注）。\n6. 盲区：分别列出查不到的、互相矛盾的、可能已经过时的信息。\n7. 结论：针对我的目的给出明确建议和 3 条下一步行动；再写一句「出现什么新信息时，这个结论会被推翻」。\n\n护栏：\n- 关键句标明性质：【事实】【推断】【观点】。\n- 没有来源的数字不写；查不到就写「未查到」，绝不编造来源或链接。\n- 专有名词保留原文。\n\n交付前自检：回看第 7 步的建议，每一条都能从前面的证据推出来吗？推不出来的删掉，或降级为【推断】。\n收尾：用一句话指出最影响结论、但我还没交代清楚的一点。", "why": ["诊断：v1 的子问题是「为了全面」拆的，查出来一大堆，和要做的决定关系不大。", "改动：每个子问题都要说明它会怎样改变决定（目标驱动的拆解），不相关的直接删。", "改动：每条结论带置信度，最后写「什么情况会推翻结论」，比单纯的「风险」更好用。", "改动：交付前倒查：建议是否都有证据支撑——这是挡住幻觉的护栏。"], "v1": "请帮我对【调研对象，例如：某个工具 / 某个行业 / 某个留学项目】做一次深度调研。我调研的目的是：【用来做什么决定，或者写什么内容】。\n\n请按下面的步骤进行：\n\n1. 拆问题：先把这个调研拆成 5～7 个关键子问题，告诉我为什么是这几个。\n2. 逐个回答：每个子问题都给出结论 + 依据。依据尽量来自一手来源（官网、官方文档、论文、原始数据），并标注来源和时间。\n3. 多方观点：列出支持方和反对方各自最有力的论据，不要只给一面之词。\n4. 关键数据：把重要的数字整理成一张表（指标 / 数值 / 来源 / 时间）。\n5. 风险与盲区：哪些信息目前查不到、互相矛盾或可能已经过时？\n6. 结论与建议：结合我的目的，给出明确的建议和下一步行动清单。\n\n要求：区分「事实」「推断」和「观点」；没有把握的地方直接说「不确定」，不要编造；输出用中文，专有名词保留原文。"}, {"id": "youtube", "title": "YouTube 视频转阅读版", "cat": "调研", "cls": "d", "desc": "把一个长视频改写成能直接读完的 Blog 文章，先切目录再逐节展开，不怕后半段缩水。", "prompt": "你将把一段 YouTube 视频重写成「阅读版本」：读者读完就能完整理解视频讲了什么，不需要再回看，就像在读一篇 Blog 文章。\n\n视频链接 / 字幕：【在这里粘贴；有字幕时优先给字幕】\n我看它是为了：【可选，例如：做公众号选题 / 学里面的方法】\n\n工作路径：\n第一步 · 切主题：通读全部内容，在话题转换的地方切分成若干小节，列出「小节标题 + 起止时间戳（有的话）」作为目录。\n第二步 · 逐节重写：每一节都完整展开，保留讲者的论点、他举的例子和故事、推理的过程。方法 / 框架 / 流程改写成条理清晰的步骤或段落。关键数字、定义、原话如实保留核心词，并在括号里补充注释。每一节不少于 500 字。\n第三步 · 抽框架：从整支视频里抽象出可迁移的 framework 和 mindset。每个都写清：它解决什么问题 → 具体步骤 → 视频里的例子 → 我可以怎么用。每个不少于 500 字。\n\n输出结构：\n1. Metadata：Title / Author / URL / 时长\n2. Overview：用一段话点明视频的核心论题与结论\n3. 目录：第一步的结果\n4. 正文：按目录逐节展开\n5. 框架 & 心智模型（Framework & Mindset）\n6. 存疑处：听不清、讲者含糊或可能说错的地方\n\n风格与限制：\n- 永远不要高度浓缩！\n- 不新增事实；遇到含混表述，保持原意并注明不确定。\n- 专有名词保留原文，并在括号给出中文释义。\n- 我提的要求本身不要写进正文（例如「本节不少于 500 字」）。\n- 一个段落内容太多就拆成几个逻辑段，或改用 bullet points。\n\n交付前自检：对照目录逐节检查——每一节都写到了吗？有没有哪一节明显比其他节短，像是被压缩了？有就补写。", "why": ["诊断：v1 的要求本身很好，但没有工作顺序。长视频跑下来常见的失败是后半段越写越短，最后几节被一句话带过。", "改动：先切目录、再逐节写，最后拿目录对照自检——用一个可检查的结构，代替「永远不要浓缩」这句只能靠自觉的话。", "改动：加「存疑处」，把转录听错、讲者口误的地方单独放出来，不混进正文。", "改动：框架部分给出固定的四段式（问题 → 步骤 → 例子 → 我怎么用），抽出来的东西才能直接拿来用。"], "v1": "你将把一段 YouTube 视频重写成\"阅读版本\"，按内容主题分成若干小节；目标是让读者通过阅读就能完整理解视频讲了什么，就好像是在读一篇 Blog 版的文章一样。\n\n输出要求：\n\n1. Metadata\n- Title\n- Author\n- URL\n\n2. Overview\n用一段话点明视频的核心论题与结论。\n\n3. 按照主题来梳理\n- 每个小节都需要根据视频中的内容详细展开，让我不需要再二次查看视频了解详情，每个小节不少于 500 字。\n- 若出现方法/框架/流程，将其重写为条理清晰的步骤或段落。\n- 若有关键数字、定义、原话，请如实保留核心词，并在括号内补充注释。\n\n4. 框架 & 心智模型（Framework & Mindset）\n可以从视频中抽象出什么 framework & mindset，将其重写为条理清晰的步骤或段落，每个 framework & mindset 不少于 500 字。\n\n风格与限制：\n- 永远不要高度浓缩！\n- 不新增事实；若出现含混表述，请保持原意并注明不确定性。\n- 专有名词保留原文，并在括号给出中文释义（若转录中出现或能直译）。\n- 要求类的问题不用体现出来（例如 > 500 字）。\n- 避免一个段落的内容过多，可以拆解成多个逻辑段落（使用 bullet points）。\n\n视频链接 / 字幕：【在这里粘贴】"}, {"id": "reading", "title": "精读一篇文章或论文", "cat": "学习", "cls": "n", "desc": "按你读它的目的来精读：结构、论证、金句、可迁移的方法一次拿走。", "prompt": "背景：【我是谁】\n我读它是为了：【例如：写论文要引用 / 学它的写法 / 判断观点靠不靠谱】\n原文：【粘贴全文，或者给链接】\n\n请按下面的路径精读，并根据我的目的调整详略：目的偏写作，就多讲结构和表达；偏判断，就多讲论证。\n\n1. 一句话主旨：作者最想说服读者的是什么？先用作者的口吻写一句，再用你自己的话写一句。\n2. 结构地图：用大纲还原文章结构，每部分标注作用（提出问题 / 论证 / 举例 / 让步 / 反驳 / 结论）。\n3. 论证体检：把核心论点和证据画成「论点 ← 证据 1、证据 2」的形式；标出证据不足、逻辑跳跃和隐藏前提，并说明为什么。\n4. 关键概念：最重要的 5 个概念。注意写的是作者在文中的用法——如果和通用定义不同，要指出差别。\n5. 原文金句：3～5 句原话（保留原文，附中文翻译），每句说明为什么值得记。\n6. 可迁移的方法：至少一个我可以直接照做的思路，写成「什么场景 → 怎么做」。\n7. 三个延伸问题：一个查证类、一个反驳类、一个应用类。\n\n护栏：引用必须是原文里真实存在的句子，不能改写后再加引号；原文没有提供的信息不要补。\n交付前自检：逐句核对第 5 步的金句确实出现在原文里。", "why": ["诊断：v1 不管你为什么读，七个部分平均用力，读写作范文和读争议观点得到的是同一份东西。", "改动：开头交代阅读目的，并让 AI 按目的调整详略（上下文决定方法）。", "改动：论证体检改成「论点 ← 证据」的图式，概念强调「作者的用法」，延伸问题分成查证 / 反驳 / 应用三类——都是更具体的方法。", "改动：金句是 AI 最容易编造的地方，所以加了逐句核对原文的护栏。"], "v1": "请帮我精读下面这篇【文章 / 论文 / 书的章节】，我读它是为了：【你的目的】。\n\n请输出：\n\n1. 一句话主旨：作者最想说服读者的是什么？\n2. 结构地图：用大纲的形式还原文章结构，标出每一部分的作用（提出问题 / 论证 / 举例 / 反驳 / 结论）。\n3. 论证检查：核心论点有哪些证据支撑？哪里证据不足、有逻辑跳跃或者隐藏的前提？\n4. 关键概念：列出文中最重要的 5 个概念或术语，并解释。\n5. 原文金句：摘出 3～5 句最值得记住的原话（保留原文，附中文翻译）。\n6. 可迁移的方法：这篇文章里有什么思路或方法，我可以直接用到自己的学习、工作或写作中？\n7. 延伸问题：提出 3 个值得继续思考或查证的问题。\n\n原文：【在这里粘贴，或者给链接】"}, {"id": "feynman", "title": "费曼检验：我真的懂了吗", "cat": "学习", "cls": "n", "desc": "学完一样东西讲给 AI 听，它按三类漏洞追问，再用四个维度给你打分。", "prompt": "我刚学完【概念 / 知识点】，学它是为了【用途】。下面我会用自己的话讲一遍。\n\n请扮演一个聪明、但完全不懂这个领域的 12 岁学生，按费曼学习法检验我：\n\n第一轮 · 找漏洞：听完后，标出我讲解里的三类问题——\n  ① 含糊：用了「就是那个」「差不多」「之类的」这种词带过去；\n  ② 跳步：从 A 直接到了 C，中间的 B 没讲；\n  ③ 术语糊弄：用一个术语去解释另一个术语。\n第二轮 · 追问：针对最严重的漏洞连续问我「为什么」，一次只问一个，等我回答完再问下一个，最多 5 个。\n第三轮 · 纠错：我讲错的时候，先给提示让我自己改；改了两次还不对，再告诉我正确的说法。\n第四轮 · 评分：按四个维度各打 0～5 分——准确、完整、能举例、能用大白话讲。列出我已经掌握的和还要补的部分，最后给一份 150 字以内的标准版讲解作对照。\n\n护栏：提问时保持 12 岁学生的口吻；评分时切换成严格老师的标准，不要因为我态度认真就放水。\n\n我的讲解：【在这里写你的理解】", "why": ["诊断：v1 让 AI「指出含糊的地方」，但什么算含糊没说清，AI 往往客气地夸几句就过去了。", "改动：把「没懂」拆成三类可识别的信号（含糊 / 跳步 / 术语糊弄）——把判断标准写出来，就是蒸馏费曼法的「法」。", "改动：一个总分改成四个维度，知道具体补哪里；再加「不放水」的护栏，防止 AI 讨好你。"], "v1": "我刚学完【概念 / 知识点】，下面我会用自己的话把它讲一遍。请你扮演一个聪明但完全不懂这个领域的 12 岁学生，按费曼学习法帮我检验：\n\n1. 听完后，指出我讲得含糊、跳步或者用术语糊弄过去的地方。\n2. 针对这些地方连续追问我 3～5 个「为什么」，一次只问一个，等我回答完再问下一个。\n3. 如果我讲错了，不要直接给答案，先给提示，让我自己修正。\n4. 最后给我打分（0～10 分），列出我真正掌握的部分和还需要补的部分，并给出一个更简洁、准确的标准版讲解作对照。\n\n我的讲解：【在这里写你的理解】"}, {"id": "word-en", "title": "学一个英语新单词", "cat": "英语", "cls": "a", "desc": "Membean 式两轮学词：先读语境猜词、做测验，再拆词根、辨析、造句。", "prompt": "背景：我的英语水平是【例如：专四已过，雅思 6 分左右】，学这个词是为了【阅读 / 写作 / 考试 / 口语】。\n单词：【单词】\n\n用 Membean 的学词顺序带我学，分两轮进行。\n\n第一轮（只输出下面三项，然后停下来等我）：\n1. 语境短文：100 词左右的英文短文，风趣、有画面感，这个词自然出现 2～3 次。难度按我的水平控制，其他生词不超过 3 个。\n2. 猜词：请我先根据上下文猜这个词是什么意思。\n3. 英英测验：一道英英释义选择题，三个选项，其中一个是常见的误解。先不公布答案。\n\n第二轮（我回答之后）：\n4. 公布答案，点评我的猜测：猜对了哪部分，被哪条上下文线索误导了。\n5. 词根拆解：拆出词根词缀，用简单英语解释每一部分；再用一句话把这几部分「讲成一个画面」帮我记；列 3 个同根常用词。\n6. 核心释义：最常用的 1～2 个义项（英文释义 + 中文），以及语气和场合（正式 / 口语 / 书面）。\n7. 搭配与辨析：5 个高频搭配；易混的近义词用表格对比（含义 / 语境 / 例句）。\n8. 真人怎么说：给 2～3 个适合在 YouGlish 搜索的关键词组合；再给 2 句来自经典文学或新闻的例句并注明出处，没把握的写「示例句，非原文」。\n9. 造句：按我学这个词的目的出一道造句题，我写完你来批改。\n\n护栏：词源说法有争议时注明；不要编造文学原句和出处。", "why": ["诊断：v1 把测验和讲解放在同一条回复里，答案就在眼前，测验形同虚设；「推荐 YouGlish 场景」AI 实际上搜不了。", "改动：明确拆成两轮，第一轮只给语境、猜词和测验——先回忆再讲解，这正是 Membean 方法的核心（「法」）。", "改动：把做不到的动作改成做得到的（给搜索关键词），文学例句加防编造护栏。", "改动：开头补上水平和用途，短文难度、造句题才能贴合你。"], "v1": "我要彻底学会英语单词【单词】，请用 Membean 的学词方法带我学：\n\n1. 语境短文：写一段 100 词左右、风趣幽默、有画面感的英文短文，让这个词自然出现 2～3 次，短时间就能读完。\n2. 英英测验：设计一道英英释义的选择题，三个选项。答案先不要给，等我下一轮回答后再公布。\n3. 词根拆解：拆出词根、词缀，用简单的英语解释每一部分的意思，并列出 3 个同词根的常见词。\n4. 核心释义：给出最常用的 1～2 个意思（英文释义 + 中文），说明它的语气和使用场合（正式 / 口语 / 书面）。\n5. 搭配与辨析：列出 5 个高频搭配；如果有容易混淆的近义词，用表格对比（含义 / 语境 / 例句）。\n6. 真人例句：推荐我去 YouGlish 搜索这个词时可以重点听的场景，再给 2 句来自经典文学或新闻的例句。\n\n最后用这个单词出一道造句题让我练习，我写完你来批改。"}, {"id": "word-fr", "title": "法语单词 · Membean 五步", "cat": "法语", "cls": "v", "desc": "用 Membean 的方法分两轮学一个法语词：语境和法法测验在前，词源和文学例句在后。", "prompt": "背景：我是法语专业大四学生，水平【例如：专四已过】。\n单词：【法语单词】\n\n使用 Membean 的学词方法学这个法语词，分两轮进行。\n\n第一轮（只输出 ①②，然后停下来等我回答）：\n① 语境：创造一个与此单词相关、风趣幽默的语境，单词在文本中出现 2～3 次，全文 100 词左右，短时间能读完；其他生词不超过 3 个。\n② Quiz：用法语出一道法法释义的选择题，三个选项，其中一个是学生常见的误解。答案留到第二轮再公布。\n\n第二轮（我回答之后）：\n先公布答案并点评我的选择，然后继续：\n③ 词根词干：参照法语词源资料（如 CNRTL / TLFi），提取词根、词干，用简单的法语解释每一部分的意思，再列 2～3 个同根词。\n④ YouGlish：给出 2～3 个适合在 YouGlish（法语）里搜索的词或词组，告诉我在哪类片段里最容易听到它。\n⑤ 文学例句：2～3 句涉及此词的法国文学作品例句，注明作者和作品，附中文翻译。\n\n护栏：\n- 词源以 CNRTL 等资料为准，有争议就说明。\n- 文学例句必须是真实存在的原句；没有把握就明确写「仿写例句，非原文」，不要编造出处。", "why": ["诊断：v1 的五步顺序很好，但「第二轮再显示答案」只写在第 ② 步里，AI 常常一口气把五步都输出，答案也一起露了。", "改动：把两轮写成显式的结构，第一轮明确「停下来等我」。", "诊断：④⑤ 是 AI 做不到或容易编的动作——它不能真的去 YouGlish 搜索，文学例句很容易张冠李戴。", "改动：④ 改成给搜索关键词；⑤ 加「非原文就标明」的护栏；「法语数据库」落到具体的 CNRTL / TLFi。"], "v1": "使用 Membean 的学词方法进行法语单词的学习。单词：【法语单词】\n\n① 创造一个与此单词相关，语境风趣幽默的语境且该单词在此文本中出现 2-3 次，文本长度为 100 词左右，可以在短时间读完。\n② 设计一个 quiz，对此单词进行法法解释。设计三个选项，在我们第二轮对话时，再显示答案。\n③ 结合法语数据库，把单词的词根、词干进行提取，然后用简单的法语进行解释。\n④ 在 YouGlish 中寻找有关此单词有趣的片段。\n⑤ 找一些涉及此单词的古往文学作品例句。"}, {"id": "fr-sentence", "title": "法语长句精析", "cat": "法语", "cls": "v", "desc": "一个难句从整体拆到局部：句子树、动词变位、词汇、易错点，最后仿写一句。", "prompt": "请精析下面这个法语句子，用中文解释。\n句子：「【在这里粘贴法语句子】」\n上下文：【可选：前后一两句或出处，能帮助判断语气和指代】\n\n按下面的路径，从整体拆到局部：\n1. 一句话意思：先给一个通顺的中文译文。\n2. 句子骨架：找出主句的主语、谓语、宾语或表语；再把从句、插入语、同位语一层层剥出来，用缩进画成一棵树。每一层标注：它是什么从句、修饰谁、在句中作什么成分（宾语 / 补语 / 状语……）。\n3. 动词逐个解析：句中每个变位动词，写出不定式、时态、语式、人称，并说明为什么这里用这个时态或语式（例如虚拟式是被什么触发的）。\n4. 词汇与词组：难词、固定搭配、介词搭配逐条解释，标注语域（书面 / 口语 / 文学）。\n5. 易错点：这句话里最容易误读的 1～2 处，以及误读后会读成什么意思。\n6. 实际意义：结合上下文，这句话真正想表达的意思、语气和作者的态度。\n7. 仿写：用同样的句型造一个新句子（附中文），把这个句型变成我自己的。\n\n交付前自检：确认第 2 步的树里没有漏掉任何一个变位动词和从句。", "why": ["诊断：v1 的方向都对（句子类型、从句在句中的角色、动词变位），但没有顺序，AI 常把语法点平铺成一长串，看不出句子的骨架。", "改动：固定成「整体 → 骨架树 → 动词 → 词汇 → 易错点 → 意义 → 仿写」的解题路径，这就是精析一个长句的「法」。", "改动：加上下文输入和仿写——前者让分析更准，后者把「看懂」变成「会用」。"], "v1": "请对法语句子「【在这里粘贴法语句子】」进行详细分析，包括语法、词汇、词组以及实际意义，并用中文解释。\n\n这句话是什么句子，可能作为某个主句的宾语或补语，因此从各种句子的角度进行分析。\n\n动词的变位进行解析。"}, {"id": "chunk-translate", "title": "意群切分对照翻译", "cat": "法语", "cls": "v", "desc": "按意群切句，左原文右地道译文，每句再串成整句，精读跟读都好用。", "prompt": "把下面的原文做成「意群对照表」。\n\n原文：【在这里粘贴】\n用途：【精读 / 跟读 / 背诵】\n\n规则：\n1. 切分：按意群切。一个意群是朗读时一口气读完、意思相对完整的最小单位，通常 3～8 个词。不要拆散固定搭配、介词短语，也不要把动词和它的直接宾语分开。不改动原文的任何字和标点。\n2. 表格三列：| 序号 | 原文意群 | 地道翻译 |\n3. 翻译：每一格写的是这个意群放在整句里的地道中文，而不是孤立的逐词直译。\n4. 每句结束后加一行「整句译文」，把这一句串成通顺的中文。\n5. 遇到习语、文化背景或特殊语法，在表格下方用脚注编号说明。\n\n交付前自检：把第二列从上到下连起来，必须和原文逐字一致；不一致就重做。", "why": ["诊断：v1 没有定义什么是「意群」，AI 切出来忽长忽短，有时把固定搭配拆开了。", "改动：给出意群的定义和不能拆的边界——把你脑子里的标准写成 AI 能执行的规则。", "改动：加「整句译文」，避免只看到一格格碎片；加「逐字一致」的自检，保证原文一个字没动。"], "v1": "不改变任何意群的情况下，左边是句子，且把句子分成小的部分，右边是翻译，地道的翻译。做成表格的形式。\n\n【在这里粘贴原文】"}, {"id": "classify", "title": "单词语义分类记忆", "cat": "法语", "cls": "v", "desc": "一批生词先清点，再用两种方式归类、串成故事，最后用核对表保证一个不漏。", "prompt": "背景：我是法语专业大四学生，这批词来自【课文 / 阅读 / 考试词表】，我想【长期记住 / 应付考试 / 在写作里用出来】。\n单词列表：【在这里粘贴单词】\n\n任务：把这批法语单词按语义归类，帮我从不同角度把它们记牢。\n\n工作路径：\n1️⃣ 清点：先把所有单词编号列出，带上词性和中文意思（多义词标出这批词里最可能用到的义项）。这份清单是后面核对的依据。\n2️⃣ 两种分类：给出两种角度不同的分类方式（例如按主题场景 / 按词性或构词 / 按情感色彩），每种都说明为什么这样分有助于记忆。每个类别 3～8 个词，太大就拆。\n3️⃣ 串成故事：每个类别写一个幽默、有画面感的小故事或对话，用中文讲，把这个类别的法语词嵌进去（以斜体显示），每个词出现时都能从上下文猜出意思。\n4️⃣ 近义辨析：同类里有近义词时，用表格对比定义、语境、例句。\n5️⃣ 覆盖核对表：最后输出一张表 | 编号 | 单词 | 分类一的类别 | 分类二的类别 | 是否出现在故事里 |，任何一格空着就回去补上。\n\n🔄 交付前自检：\n1. 完整性：核对表里每个词都出现在两种分类和故事里。\n2. 分类合理性：每个类别都能用一句话说清共同点吗？说不清就重分。\n3. 例句质量：法语部分语法正确、搭配自然，生硬的句子自动改写。\n4. 读者测试：假装自己是第一次见到这些词的学生，读完有没有困惑的地方？能不能用表格、对比让它更直观？", "why": ["诊断：v1 的自检部分已经很接近 GEPA 的「反思」，是这批 prompt 里写得最好的一个。", "诊断：但「不要遗漏任何词汇」只能靠 AI 自觉，词一多就会漏，而且你很难一眼看出漏了哪个。", "改动：开头加「清点」，结尾加「覆盖核对表」，把「不遗漏」变成一张可以检查的表——这就是 Schema：结构对了，遗漏就藏不住。", "改动：去掉「我会给你小费」。这类话对现在的模型基本没用，换成交代这批词的来源和用途（上下文）效果更实在。"], "v1": "✍ 任务：请根据语义类别对以下法语单词进行分类，以帮助记忆更稳固。\n\n📌 具体要求：\n1️⃣ 请提供两种不同的分类方式（如：基于主题 vs. 基于词性），帮助我从不同角度记忆这些词汇。\n2️⃣ 提供分类理由：告诉我你是如何选择这个分类的。\n3️⃣ 提供示例句：请自由发挥，用幽默、有趣或富有画面感的方式，将每个分类中的单词串联成小故事、对话或短文。然后用中文解释这些词汇的应用故事，并在正文中穿插使用法语词汇（以斜体显示）。\n4️⃣ 近义词对比（可选）：如有同类别的近义词，请用表格清晰对比定义、语境、例句，让区别更直观。\n5️⃣ 重点：请不要遗漏我提供的任何词汇，每个词都要用到！\n💪 加油！我会给你小费！🎉\n\n🔄 自检 & 迭代优化：\n在回答之前，请按照以下步骤自我检查并优化答案：\n1️⃣ 完整性检查：确保所有给定的单词都已被分类并使用，没有遗漏。\n2️⃣ 分类合理性：请回顾你的分类，并用一句话解释为什么这个分类方式最适合。\n3️⃣ 示例句逻辑：确保示例句语法正确、连贯、有意义，如果发现某个句子生硬或不自然，请自动优化。\n4️⃣ 近义词对比：如果有近义词，检查是否对比清晰，如有模糊之处，请补充表格优化表达。\n5️⃣ 可读性提升：请模拟一个法语学习者阅读你的回答，并思考：有没有让人困惑的地方？有没有可以表达得更生动有趣的部分？能否用更直观的方式呈现（如表格、列表、示例对比）？\n\n单词列表：【在这里粘贴单词】"}, {"id": "story-word", "title": "用故事记一个词", "cat": "法语", "cls": "v", "desc": "一个词引出一个法国文化小故事，顺着故事拓展一张同级词汇表，再做回忆练习。", "prompt": "背景：我是法语专业大四学生，正在准备【例如：专业四级 / 专业八级 / 日常阅读积累】。\n核心词：【法语单词，例如：une abeille】\n\n请用一个故事带我理解这个词，再顺着故事拓展词汇：\n1. 故事：写一个 250～350 词的法语小故事（附中文翻译），背景放在一个具体的法国文化或历史场景里（某个时代、地区、节日或人物）。核心词出现 3 次以上，每次用法略有不同（不同搭配或引申义）。\n2. 文化注脚：故事里的文化和历史细节，用 2～3 条中文注脚说明，并标出哪些是史实、哪些是虚构情节。\n3. 词汇拓展：从故事里挑出 8～12 个与我的考试级别相当的词，做成表格 | 词 | 词性 | 中文 | 故事里的原句 | 一个同根词或近义词 |。\n4. 核心词小结：主要义项、常见搭配，以及相关的俗语或谚语（如果有）。\n5. 回忆练习：遮住故事，出 3 道填空题，用核心词和拓展词来填，答案放在最后。\n\n护栏：不要把虚构情节写成史实；拓展词的难度贴合我给的考试级别。", "why": ["诊断：v1 只有一句话的方向，篇幅、难度、拓展词的形式都靠 AI 猜，每次跑出来差别很大。", "改动：定下篇幅、出现次数和词汇表的列（Schema），每次的结果就稳定、可比较了。", "改动：要求分清史实和虚构——AI 讲法国历史时很容易把编的情节当真事讲。", "改动：加回忆练习，让这个故事从「读完了」变成「测过了」。"], "v1": "【法语单词，例如：une abeille】，给我书写一个故事去理解这个词汇，然后依照这个故事继续拓展引出专业法语四级词汇。故事可以涉及很多法国文化，以及法国历史。"}, {"id": "professor", "title": "老教授式法法释义", "cat": "法语", "cls": "v", "desc": "把老教授讲词的五个步骤写明白，让 AI 学的是他的方法，而不只是口吻。", "prompt": "我想让你学会我法语老教授解释单词的方法，然后用这个方法帮我解释新词。\n\n他的一个示范：\n「S'attachèrent presque avidement. Avidement, quand on est avide de quelque chose, ça veut dire qu'on désire très fortement quelque chose. C'est avoir un désir très fort de quelque chose.」\n\n他的方法有五步，请严格照做：\n1. 回到原句：先念出这个词所在的句子，让词带着语境出场。\n2. 退回更简单的同族词：副词退回形容词、名词退回动词（avidement → avide），从学生已经认识的词出发。\n3. 放进日常框架：用「quand on est / quand on fait …, ça veut dire que …」把意思放进一个生活场景里。\n4. 换个说法再讲一遍：用「C'est …」给出一个更短、更好记的同义改述。\n5. 只用简单的法语：全程不用中文，也不用比这个词更难的词。\n\n接下来我每次发给你一个词（最好附上原句），你就按这五步、用老教授的口吻讲一段，长度和示范差不多。讲完后另起一行，用中文给一个简短释义，方便我核对。\n\n如果我没给原句，先造一个自然的例句，再开始讲。\n\n单词（和原句）：【在这里粘贴】", "why": ["诊断：v1 只给了一个样例让 AI 模仿，AI 能学到的只有「形」（口吻和长度）。遇到没有同族词的词、或者你没给原句时，它就不知道怎么办。", "改动：把老教授的解题步骤显式写成五步——这就是 S31 第 08 节说的「蒸馏法，而不是蒸馏形」。", "改动：补上「没给原句」的处理方式，再加一行中文核对，防止法法释义讲偏了你也看不出来。", "提示：想用同样的办法提取别的老师或作者的方法，用「蒸馏一位高手的方法」这张卡。"], "v1": "S'attachèrent presque avidement. Avidement, quand on est avide de quelque chose, ça veut dire qu'on désire très fortement quelque chose. C'est avoir un désir très fort de quelque chose.\n\n用我老教授的这个解释方法帮我解释词汇，接下来我会发给你一些单词。\n\n【在这里粘贴单词】"}, {"id": "writing", "title": "公众号文章打磨", "cat": "写作", "cls": "a", "desc": "初稿交给一位懂你账号的编辑：先诊断、找核心一句话，再改标题、开头、结构和语言。", "prompt": "你是一位资深公众号主编，也是我的长期编辑。\n我的账号：【例如：AI习语map，写 AI 辅助语言学习，读者多是大学生和语言学习者】\n这篇的目标读者：【读者是谁】\n读完希望他们：【获得什么 / 做什么，例如：收藏 / 试用某个方法 / 关注】\n我的文风样本：【可选：贴一段你自己满意的旧文，让编辑抓住你的语气】\n\n初稿：【在这里粘贴】\n\n打磨路径（按顺序，每一步都说明理由）：\n1. 诊断：先不动手改，指出这篇最大的 3 个问题，按「对目标的影响」排序。\n2. 核心一句话：如果读者只记住一句话，应该是哪句？初稿里找不到这句话的话，先告诉我。\n3. 标题：5 个不同风格的标题（好奇型 / 干货型 / 故事型 / 反常识型 / 数字型），推荐一个，并说明它最适合哪类读者。\n4. 开头：前三句能不能留住读者？给一个改写版，要在三句之内交代「这和读者有什么关系」。\n5. 结构：段落顺序是否都在为核心一句话服务？哪里可以删，哪里需要补一个例子或故事。\n6. 语言：把啰嗦、空洞、说教的句子改得具体、口语化。保留我的语气，避免 AI 腔：不用「首先、其次、最后」「在当今时代」「总而言之」这类套话，不堆排比句。\n7. 结尾：一个有力量的结尾，加一句自然的互动引导。\n\n输出：先给诊断和建议，再给修改后的全文，主要改动处用【改】标出。\n\n交付前自检：通读修改稿，把仍然像 AI 写的句子再改一遍；确认没有加入初稿里没有的事实或数据。", "why": ["诊断：v1 的步骤齐全，但「保留我的个人语气」很难做到——AI 没见过你的文字，不知道你的语气是什么样。", "改动：加账号定位和文风样本这两项上下文，编辑才有参照。", "改动：加「核心一句话」这一步，后面的标题、结构、结尾都围绕它来改，不再各改各的。", "改动：把「不要 AI 腔」写成具体的禁用清单，再加一遍交付前自检——模糊的要求换成能检查的标准。"], "v1": "你是一位资深的公众号主编。下面是我的文章初稿，目标读者是【读者是谁】，我希望读者读完后【想让读者获得什么或者做什么】。\n\n请按下面的顺序帮我打磨：\n\n1. 先整体诊断：这篇文章最大的 3 个问题是什么？\n2. 标题：给我 5 个不同风格的标题（好奇型 / 干货型 / 故事型 / 反常识型 / 数字型），并推荐一个。\n3. 开头：前三句能不能留住读者？给我改写一个更抓人的开头。\n4. 结构：段落顺序是否合理？哪里可以删、哪里需要补一个例子或者故事？\n5. 语言：把啰嗦、空洞、说教的句子改得更具体、口语化，保留我的个人语气，不要写成 AI 腔。\n6. 结尾：给一个有力量的结尾，并附上一句引导互动的话。\n\n最后输出修改后的全文，并用【改】标出主要改动的地方。\n\n初稿：【在这里粘贴】"}, {"id": "debug", "title": "技术折腾 · 报错排查", "cat": "效率", "cls": "e", "desc": "装软件、配环境卡住了，让 AI 像工程师一样列假设、一次一步地验证。", "prompt": "我在【做什么，例如：安装 Codex / 配置 Obsidian 插件 / 部署 GitHub Pages】时卡住了。我不是程序员，请像一位有耐心的工程师那样，一步一步带我排查。\n\n我的环境：【系统和版本，例如 Windows 11 / macOS 15；相关软件和版本】\n我做了什么：【按顺序写下执行过的步骤或命令】\n期望的结果：【本来应该发生什么】\n实际的结果：【实际发生了什么；完整粘贴报错，不要截断】\n我已经试过：【可选】\n\n排查方法：\n1. 翻译报错：用大白话解释报错在说什么。\n2. 列假设：给出最可能的 3 个原因，按可能性排序，每个写上「如果是这个原因，我们会看到什么现象」。\n3. 一次一步：从最可能、也最安全的检查开始。每次只给一个命令或操作，说明它在验证哪个假设、在哪里运行（哪个窗口、哪个文件夹），然后等我把结果发回来。\n4. 根据结果更新：每拿到一个结果，先说它排除或证实了哪个假设，再给下一步。不要一次给一长串命令。\n5. 安全护栏：涉及删除文件、修改系统设置、管理员权限、密钥或密码的操作，先说明风险和备份、恢复的方法，等我确认后再继续。永远不要让我把密钥贴进对话。\n6. 收尾：问题解决后写一份笔记——根本原因 / 最终修复步骤 / 下次避坑清单，格式整理好，我直接存进 Obsidian。\n\n信息不够判断时先问我，不要猜着给命令。", "why": ["诊断：v1 已经做到了「一次一步」，但每一步检查的是什么、为什么查它，AI 不说，你也看不出排查走到了哪儿。", "改动：先列假设，再让每一步都对应一个假设，每次结果回来都更新哪个假设被排除——排查过程有了状态，不会原地打转。", "改动：补上「密钥不进对话」和「信息不够先问」两道护栏。"], "v1": "我在【做什么，例如：安装 Codex / 配置 Obsidian 插件 / 部署 GitHub Pages】时遇到了问题，我是非程序员，请一步一步带我排查。\n\n我的环境：【系统，例如 Windows 11 / macOS；相关软件和版本】\n我做了什么：【按顺序写下你执行的步骤或命令】\n期望的结果：【本来应该发生什么】\n实际的结果：【实际发生了什么，完整粘贴报错信息】\n\n请这样帮我：\n\n1. 先用大白话解释这个报错是什么意思、最可能的 3 个原因（按可能性排序）。\n2. 从最可能的原因开始，每次只给我一个检查步骤或命令，说明它是做什么的，等我把结果发给你再继续。\n3. 涉及删除文件、修改系统设置、需要管理员权限的操作，先提醒我风险，并告诉我怎么备份、怎么恢复。\n4. 问题解决后，总结根本原因，并写一份「下次避坑清单」，我会存进笔记里。"}, {"id": "decision", "title": "帮我做一个决定", "cat": "效率", "cls": "e", "desc": "纠结的时候，先复述和追问，再摊开选项、加权打分，最后专门挑战你的倾向。", "prompt": "我在纠结：【决定是什么】\n可选方案：【方案 A / 方案 B / ……】\n我最在乎的（按重要性排序）：【例如：成长 > 钱 > 时间】\n约束：【预算、截止时间、绝对不能接受的事】\n我现在的倾向：【可选：我其实更想选……，因为……】\n\n请按下面的路径帮我想清楚，不要一上来就给建议：\n1. 复述与追问：用三句话复述我的处境；信息不够就先问我最关键的 2～3 个问题，等我回答后再继续。\n2. 摊开选项：每个方案的收益、代价、风险，以及最好和最坏的结果；再找一找我没列出来的第三个选项。\n3. 打分表：按我在乎的维度给每个方案打 1～5 分，按我给的排序加权，做成表格并算出加权分。\n4. 三个时间尺度：10 分钟后、10 个月后、10 年后，我会怎么看这个选择？\n5. 挑战我的倾向：如果我写了倾向，分别找出支持它和反对它最有力的理由，并检查我是不是在给已经想好的答案找理由。\n6. 可逆性：哪个选项可以反悔？有没有一个低成本的小步试错，能先拿到信息再决定？\n7. 建议：给出你的建议和理由，以及「出现什么情况时应该改选另一个」。最后的决定由我来做。\n\n想听几种立场互相争论？用「多视角圆桌会议」那张卡。", "why": ["诊断：v1 的分析很完整，但最常见的情况被漏掉了：人往往心里已经有倾向，只是在找支持自己的理由。", "改动：加「我现在的倾向」一栏和「挑战我的倾向」一步，专门防确认偏误。", "改动：在乎的东西按重要性排序，打分表改成加权；加「可逆性」，因为能反悔的决定可以做得快一点。"], "v1": "我正在纠结一个决定：【决定是什么】。\n\n可选方案：【方案 A / 方案 B / ……】\n我最在乎的是：【例如：时间、钱、成长、健康、家人】\n约束条件：【预算、截止时间、不能接受的事】\n\n请帮我：\n\n1. 先复述我的处境，确认你理解对了；如果信息不够，先问我最关键的 2～3 个问题。\n2. 列出每个方案的收益、代价、风险，以及最好和最坏的结果。\n3. 按我在乎的几个维度给每个方案打分（1～5 分），做成一张表。\n4. 用三种角度各分析一次：10 分钟后、10 个月后、10 年后，我会怎么看这个选择？\n5. 指出我可能忽略的第三个选项，或者能降低风险的「小步试错」做法。\n6. 给出你的建议和理由，但最后的决定由我来做。"}, {"id": "roundtable", "title": "多视角圆桌会议", "cat": "效率", "cls": "e", "desc": "请几种立场完全不同的人（外加一个专门唱反调的）围着一个问题争论一轮。", "prompt": "我想就一个问题开一场「圆桌会议」，用几种不同的视角把它想透。\n\n议题：【例如：毕业后先工作还是先读研 / 公众号要不要转做视频】\n我的背景：【和这个议题相关的情况】\n\n请邀请 4 位与会者：\n- 3 位由你根据议题挑选，立场要真正不同（例如：投资人、刚入行的年轻人、行业老兵）。可以是某一类人，也可以借用某位公开人物的思维方式。\n- 第 4 位固定是「魔鬼代言人」，专门反对会上正在形成的共识。\n\n开会前，每位与会者用一句话写清：TA 最在乎什么、最怕什么、判断好坏的标准是什么。\n\n会议流程：\n第一轮：每人独立发表观点（150 字以内），不受其他人影响。\n第二轮：每人回应一位其他与会者，指出 TA 的盲点。\n第三轮：魔鬼代言人发言。\n最后：你作为主持人，总结共识、真正的分歧点、各方都认可的「下一步可以先做的小事」，以及还需要我补充的信息。\n\n护栏：角色是对一种思维方式的模拟，不代表真实人物的真实观点；如果借用了公开人物，请在开头注明。", "why": ["新增：对应 S31 第 08 节的「神」——蒸馏的不是步骤，而是立场和决策视角。", "设计：每个角色先写清「在乎什么、怕什么、什么标准」，否则角色只剩名字，说的话都差不多。", "设计：固定一位魔鬼代言人，专门打破一团和气的共识；最后落到一件能马上做的小事上。", "护栏：角色扮演容易被当成真人观点，所以要注明这只是模拟。"], "v1": ""}, {"id": "gepa-evolve", "title": "提示词进化器（GEPA）", "cat": "元方法", "cls": "m", "desc": "拿一个用得不满意的提示词和它跑出来的结果，反思、诊断，进化出更好的版本。", "prompt": "你是一名提示词优化师。请用 GEPA（反思式提示词进化）的思路帮我改进一个提示词：不凭感觉改，而是看它实际跑出来的结果，反思问题出在哪里，再进化出更好的版本。\n\n【原提示词】\n（在这里粘贴）\n\n【任务目标】这个提示词用来做什么，什么样的结果算好：【……】\n\n【运行记录】我用它跑了几次（最好 2～3 次，用不同的输入）：\n- 输入 1：【……】　输出 1：【粘贴或概括】　我的评价：【哪里好，哪里不满意】\n- 输入 2：【……】　输出 2：【……】　我的评价：【……】\n\n请按下面的步骤工作：\n1. 定标准：根据任务目标，写出 4～6 条可以检验的评价标准（例如「每个词都被用到」「不编造出处」「第一轮不泄露答案」）。\n2. 逐次反思：对照标准，找出每一次运行失败的地方，并追到原因——是提示词哪一句没写、写得含糊、互相矛盾，还是缺了上下文？引用原提示词里的句子来说明。\n3. 问题归类：把问题分成三类——\n   - 缺上下文：AI 不知道我是谁、为什么做、做到什么程度；\n   - 缺方法：只说了要什么，没说怎么做、每一步做到什么程度算好；\n   - 缺护栏：没有固定的输出结构，没有防编造，没有交付前自检。\n4. 三个候选：写 3 个候选版本，每个重点解决一类问题，说明它在哪种输入下最强、可能牺牲了什么。\n5. 合并：把三个候选里各自最好的改动合成一个最终版本；删掉对结果没有影响的指令（套话、空洞的语气要求、给小费之类）。\n6. 改动记录：用表格列出 | 改动 | 解决了哪次运行的什么问题 | 预期效果 |。\n7. 下一轮测试：给我 2 个最能暴露新版本弱点的测试输入，我拿去再跑一次，把结果发回来继续进化。\n\n最终版本放在一个代码块里，方便我直接复制。", "why": ["新增：这张卡就是 GEPA 本身。论文里的 GEPA 让模型读自己的运行记录、用自然语言反思，再提出新提示词，并保留几个各有所长的候选（帕累托前沿）互相取长补短。", "设计：第 4、5 步对应「多个候选 → 合并」，第 7 步对应下一轮评测——每用一次，就多一份运行记录，提示词就再进化一次。", "用法：本页的每张卡都是这样改出来的。哪张用着不顺手，把它连同输出一起丢进来。"], "v1": ""}, {"id": "distill-method", "title": "蒸馏一位高手的方法", "cat": "元方法", "cls": "m", "desc": "给几段高手的示范，提取他的步骤和判断标准（法），做成一个能反复调用的提示词。", "prompt": "我想把一位高手的「方法」提取出来，做成一个可以反复调用的提示词。我要的不是模仿他的语气和排版（那只是「形」），而是他处理问题的步骤和判断标准（「法」）。\n\n这位高手是：【例如：我的法语老教授 / 某位 UP 主 / 某位作者】\n他擅长的事：【例如：用简单的法语解释难词】\n示范样本（至少 2～3 个，越多越准）：\n样本 1：【粘贴他的一段讲解、文章或回答】\n样本 2：【……】\n样本 3：【……】\n\n请这样做：\n1. 对比样本：找出每个样本里都出现的动作，按出现的顺序排好。只出现一次的动作单独列出，标为「可能是偶然」。\n2. 写出解题路径：把共同的动作写成 3～7 个步骤，每一步写清：做什么 → 为什么这样做 → 做到什么程度算到位。\n3. 找判断标准：他在什么情况下会换一种讲法？他刻意回避什么？（比如从不用比目标词更难的词。）\n4. 分清形、法、神：\n   - 形：语气、句式、排版习惯；\n   - 法：上面的步骤和判断标准；\n   - 神：他看问题的立场、他在乎的东西。\n   分别列出，并告诉我哪些才是效果的关键。\n5. 生成提示词：写一个可以直接复制使用的提示词，以「法」为主体，附一个样本作示范，用【】留出我要填的新输入。\n6. 试跑：用一个新的输入跑一遍你生成的提示词，让我对比它和真人的样本像不像。\n\n注意：样本太少或太单一时会抽偏。如果你觉得样本不够，直接告诉我还需要补哪一类。", "why": ["新增：对应 S31 第 08 节——只排得好看是套版，能改变 AI 的解题路径才叫蒸馏。", "设计：方法要从多个样本里对比着抽，只看一个样本容易把偶然当规律，所以第 1 步专门标出「可能是偶然」。", "示例：本页的「老教授式法法释义」就是用这个思路改出来的。"], "v1": ""}, {"id": "context-card", "title": "建立我的上下文卡", "cat": "元方法", "cls": "m", "desc": "让 AI 采访你，生成一张 300 字以内的 context.md，以后每次开新对话先贴给它。", "prompt": "请帮我建立一张「我的上下文卡」（context.md）。以后每次开新对话，我会先把它贴给 AI，让 AI 不用从零开始了解我。\n\n请采访我：一次只问一个问题，等我回答后再问下一个，一共不超过 10 个问题。内容覆盖：\n1. 我是谁：身份、专业、现在所处的阶段\n2. 正在做的事：正在推进的 2～3 个项目或目标\n3. 我的水平：在常用领域里的程度（例如语言水平、技术水平）\n4. 常用工具：常用的软件和 AI 工具\n5. 回答偏好：喜欢什么样的回答，讨厌什么样的回答\n6. 红线：AI 绝对不要做的事\n\n采访结束后，输出一份 300 字以内的 context.md，使用 Markdown，结构如下：\n\n# 我的上下文\n## 我是谁\n## 正在做\n## 水平速查\n## 常用工具\n## 回答偏好\n## 不要做\n\n要求：每一条都写成 AI 可以直接照着执行的句子（例如「解释技术问题时，假设我不会写代码」），而不是形容词（例如「我很好学」）。\n\n最后告诉我：哪几条会很快过时，建议我多久更新一次。", "why": ["新增：对应 S31 第 06 节的「上下文工程」——没有上下文，AI 就不是真聪明。本页几乎每张卡开头都有一行「背景」，这张卡就是把那行背景一次写好，以后直接贴。", "设计：限 300 字，因为上下文太长反而会稀释重点；每条写成「可执行的句子」，AI 才知道该怎么用它。", "用法：其他卡收尾时说「哪里不得不猜」，把答案补进这张卡。"], "v1": ""}, {"id": "wrap-up", "title": "对话收尾 · 沉淀交接", "cat": "元方法", "cls": "m", "desc": "一次长对话结束前，把结论、踩过的坑和做法沉淀成交接记录和执行手册。", "prompt": "这次对话要结束了。请把它沉淀下来，让我下次开新窗口时能直接接上，不用从头再讲一遍。\n\n请输出两份东西：\n\n一、交接记录（我会追加到 context.md 或项目笔记里）\n- 要解决的问题：一句话\n- 结论和决定：做了哪些决定，每条附一句理由\n- 已完成：\n- 还没解决 / 下一步：按优先级排\n- 踩过的坑：哪些方法试过但不行，为什么\n- 关键信息：文件名、命令、链接、参数等，原样保留\n\n二、执行手册（如果这件事以后还会再做）\n把这次摸索出来的做法写成 SOP：\n- 适用场景：什么时候用\n- 准备：开始前需要准备什么\n- 步骤：编号步骤，每一步写清做什么、怎么判断做对了\n- 常见问题：出错时先检查什么\n\n要求：只写这次对话里真实发生过的内容，不要补充没有验证过的步骤；如果这件事是一次性的，就跳过第二部分并说明原因。\n\n最后单独一行：如果要把这次的做法变成一个可以复用的提示词，它应该叫什么名字，第一句应该怎么写。", "why": ["新增：对应 S31 第 06 节 BNY 的做法——每次交互不只留结果，还要把问题和回答沉淀进文档；只给 AI 文章不够，要给它执行手册。", "设计：交接记录对应 context.md，执行手册对应 SOP，最后一行对应「价值晋升」：一个做法从一次对话（链接）→ SOP → 一张可复用的 prompt 卡（Skill）。", "护栏：只写真实发生过的步骤——没验证过的 SOP 比没有 SOP 更危险。"], "v1": ""}];
   var byId = {}; DATA.forEach(function (d, i) { d.i = i; byId[d.id] = d; });
 
   /* ---------- theme (shares the blog's meek_theme setting) ---------- */
@@ -969,6 +1264,13 @@ body.pb-lock { overflow: hidden; }
     $("pbDlgDesc").textContent = d.desc;
     $("pbPrompt").innerHTML = esc(d.prompt).replace(/【[^】\n]*】/g, function (m) { return "<mark>" + m + "</mark>"; });
     $("pbHint").hidden = d.prompt.indexOf("【") === -1;
+    $("pbWhy").hidden = !d.why.length; $("pbWhy").open = false;
+    $("pbWhyList").innerHTML = d.why.map(function (w) {
+      var m = w.match(/^(诊断|改动|新增|设计|护栏|用法|提示|示例)：(.*)$/);
+      return "<li>" + (m ? "<i>" + m[1] + "</i>" + esc(m[2]) : esc(w)) + "</li>";
+    }).join("");
+    $("pbV1").hidden = !d.v1; $("pbV1").open = false;
+    $("pbV1Text").textContent = d.v1;
     $("pbPrompt").parentNode.scrollTop = 0;
     scrim.classList.add("on"); document.body.classList.add("pb-lock");
     if (push !== false && location.hash !== "#" + id) history.replaceState(null, "", "#" + id);
@@ -997,6 +1299,7 @@ body.pb-lock { overflow: hidden; }
     else if (e.key === "ArrowLeft" && e.target.tagName !== "INPUT") step(-1);
   });
   if (location.hash && byId[location.hash.slice(1)]) open(location.hash.slice(1), false);
+  window.addEventListener("hashchange", function () { var h = location.hash.slice(1); if (byId[h]) open(h, false); });
 
   /* ---------- copy + open AI ---------- */
   function toast(msg) {
